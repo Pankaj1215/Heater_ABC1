@@ -1,0 +1,1116 @@
+\hypertarget{app_8h}{}\section{app.\+h File Reference}
+\label{app_8h}\index{app.\+h@{app.\+h}}
+{\ttfamily \#include \char`\"{}esp\+\_\+err.\+h\char`\"{}}\\*
+Include dependency graph for app.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{app_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structauto__mode__sched__t}{auto\+\_\+mode\+\_\+sched\+\_\+t}
+\item 
+struct \hyperlink{structsettings__t}{settings\+\_\+t}
+\item 
+struct \hyperlink{structdisplay__settings__t}{display\+\_\+settings\+\_\+t}
+\item 
+struct \hyperlink{structapp__data__t}{app\+\_\+data\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries M\+A\+N\+U\+F\+A\+C\+T\+U\+R\+I\+N\+G\+\_\+\+Y\+E\+AR}~2018\hypertarget{app_8h_ad83b07b08946ed25791d384fbf7c0965}{}\label{app_8h_ad83b07b08946ed25791d384fbf7c0965}
+
+\item 
+\#define {\bfseries A\+P\+P\+\_\+\+W\+E\+L\+C\+O\+M\+E\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+MS}~5000\hypertarget{app_8h_a9660288768d87a0dce2a4a9eb84fb0bc}{}\label{app_8h_a9660288768d87a0dce2a4a9eb84fb0bc}
+
+\item 
+\#define {\bfseries H\+E\+A\+T\+E\+R\+\_\+\+O\+F\+F\+\_\+\+L\+O\+N\+G\+\_\+\+P\+R\+E\+S\+S\+\_\+\+D\+U\+R\+\_\+\+MS}~2500\hypertarget{app_8h_afb31bc0cc735539cfce72aa62bcbca44}{}\label{app_8h_afb31bc0cc735539cfce72aa62bcbca44}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+L\+O\+N\+G\+\_\+\+P\+R\+E\+S\+S\+\_\+\+D\+U\+R\+\_\+\+MS}~2500\hypertarget{app_8h_a6177ced2ae49983a01a728d05a383197}{}\label{app_8h_a6177ced2ae49983a01a728d05a383197}
+
+\item 
+\#define {\bfseries C\+H\+I\+L\+D\+\_\+\+L\+O\+C\+K\+\_\+\+L\+O\+N\+G\+\_\+\+P\+R\+E\+S\+S\+\_\+\+D\+U\+R\+\_\+\+MS}~2500\hypertarget{app_8h_a3d11f014514ce4f16a1d00122041d9eb}{}\label{app_8h_a3d11f014514ce4f16a1d00122041d9eb}
+
+\item 
+\#define {\bfseries D\+E\+B\+U\+G\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+N\+G\+\_\+\+P\+R\+E\+S\+S\+\_\+\+D\+U\+R\+\_\+\+MS}~2500\hypertarget{app_8h_ababd9807128a1d4a596f2166fb9c2f20}{}\label{app_8h_ababd9807128a1d4a596f2166fb9c2f20}
+
+\item 
+\#define {\bfseries T\+I\+M\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+R\+E\+S\+E\+T\+\_\+\+T\+I\+M\+E\+R\+\_\+\+L\+O\+N\+G\+\_\+\+P\+R\+E\+S\+S\+\_\+\+D\+U\+R\+\_\+\+MS}~2500\hypertarget{app_8h_ab1b362af741f0faa7db3e46b14121e09}{}\label{app_8h_ab1b362af741f0faa7db3e46b14121e09}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+N\+G\+\_\+\+P\+R\+E\+S\+S\+\_\+\+D\+U\+R\+\_\+\+MS}~2500\hypertarget{app_8h_a725b2bd76a3c5938fd33bd508fe9789e}{}\label{app_8h_a725b2bd76a3c5938fd33bd508fe9789e}
+
+\item 
+\#define {\bfseries M\+E\+N\+U\+\_\+\+M\+O\+D\+E\+\_\+\+L\+O\+N\+G\+\_\+\+P\+R\+E\+S\+S\+\_\+\+D\+U\+R\+\_\+\+MS}~2500\hypertarget{app_8h_a03d4ea18e54efd5c34d57270686f8cd6}{}\label{app_8h_a03d4ea18e54efd5c34d57270686f8cd6}
+
+\item 
+\#define {\bfseries Q\+U\+I\+C\+K\+\_\+\+S\+C\+R\+O\+L\+L\+\_\+\+L\+O\+N\+G\+\_\+\+P\+R\+E\+S\+S\+\_\+\+D\+U\+R\+\_\+\+MS}~2500\hypertarget{app_8h_acec0fe133f5adff18e9131342b599891}{}\label{app_8h_acec0fe133f5adff18e9131342b599891}
+
+\item 
+\#define {\bfseries C\+H\+A\+R\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+MS}~1000\hypertarget{app_8h_ad5978ff8d19e1919d68b38169245dfb4}{}\label{app_8h_ad5978ff8d19e1919d68b38169245dfb4}
+
+\item 
+\#define {\bfseries A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+O\+N\+\_\+\+S\+T\+A\+R\+T\+UP}~A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+S\+T\+A\+N\+D\+BY\hypertarget{app_8h_a96f9df2872a06d2e893b7b5165401a3c}{}\label{app_8h_a96f9df2872a06d2e893b7b5165401a3c}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+R\+E\+A\+D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+MS}~2000\hypertarget{app_8h_af479b58e77cb04f0148b123d806f3642}{}\label{app_8h_af479b58e77cb04f0148b123d806f3642}
+
+\item 
+\#define {\bfseries L\+I\+G\+H\+T\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+R\+E\+A\+D\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+MS}~1000\hypertarget{app_8h_a6e81da4f867e79a051f4a740bb8f13fe}{}\label{app_8h_a6e81da4f867e79a051f4a740bb8f13fe}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+D\+EF}~-\/14\hypertarget{app_8h_a95b74cbbefdeab1d4d05f874d61d97ff}{}\label{app_8h_a95b74cbbefdeab1d4d05f874d61d97ff}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+M\+IN}~-\/100\hypertarget{app_8h_a7dae629e58495b5492198fc6b08b660d}{}\label{app_8h_a7dae629e58495b5492198fc6b08b660d}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+M\+AX}~100\hypertarget{app_8h_aa6c0e938ea8dcf02c5ceb7a65f08de21}{}\label{app_8h_aa6c0e938ea8dcf02c5ceb7a65f08de21}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+F\+A\+H\+R\+E\+N\+H\+E\+I\+T\+\_\+\+V\+A\+L\+\_\+\+M\+IN}~32\hypertarget{app_8h_ababcaa7620213d7e976204bfa953e59f}{}\label{app_8h_ababcaa7620213d7e976204bfa953e59f}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+F\+A\+H\+R\+E\+N\+H\+E\+I\+T\+\_\+\+V\+A\+L\+\_\+\+M\+AX}~99\hypertarget{app_8h_a94e6d5641ddf32af9fb1ca52ffa3e85c}{}\label{app_8h_a94e6d5641ddf32af9fb1ca52ffa3e85c}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+F\+A\+H\+R\+E\+N\+H\+E\+I\+T\+\_\+\+V\+A\+L\+\_\+\+D\+EF}~70\hypertarget{app_8h_a13b55832bed5cda1c9e992d2034b079d}{}\label{app_8h_a13b55832bed5cda1c9e992d2034b079d}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+V\+A\+L\+\_\+\+M\+IN}~0\hypertarget{app_8h_a3da3c27883d04cde707c774ff8b376a3}{}\label{app_8h_a3da3c27883d04cde707c774ff8b376a3}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+V\+A\+L\+\_\+\+M\+AX}~37\hypertarget{app_8h_a8a2792267b3d85cf18e9f46a1ba63a91}{}\label{app_8h_a8a2792267b3d85cf18e9f46a1ba63a91}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+V\+A\+L\+\_\+\+D\+EF}~21\hypertarget{app_8h_a9e4a0cf68e509b09a47c7813292d672e}{}\label{app_8h_a9e4a0cf68e509b09a47c7813292d672e}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+D\+E\+F\+A\+U\+LT}~2\hypertarget{app_8h_a2d45253670c7854d997e7b3faa803dfc}{}\label{app_8h_a2d45253670c7854d997e7b3faa803dfc}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+M\+AX}~5\hypertarget{app_8h_a372c4f829af0a18c01ac6f2403122140}{}\label{app_8h_a372c4f829af0a18c01ac6f2403122140}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+M\+IN}~2\hypertarget{app_8h_a1015f4e3d7560ce9a458ac23fdfb7404}{}\label{app_8h_a1015f4e3d7560ce9a458ac23fdfb7404}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+F\+A\+H\+R\+E\+N\+H\+E\+I\+T\+\_\+\+D\+E\+F\+A\+U\+LT}~(T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+D\+E\+F\+A\+U\+LT $\ast$ 9 / 5)\hypertarget{app_8h_a3a489097a8097d759f21b6feb7bb92b5}{}\label{app_8h_a3a489097a8097d759f21b6feb7bb92b5}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+F\+A\+H\+R\+E\+N\+H\+E\+I\+T\+\_\+\+M\+AX}~(T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+M\+AX $\ast$ 9 / 5)\hypertarget{app_8h_a8a534cbad57f5c109bb93aa6046b75f0}{}\label{app_8h_a8a534cbad57f5c109bb93aa6046b75f0}
+
+\item 
+\#define {\bfseries T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+F\+A\+H\+R\+E\+N\+H\+E\+I\+T\+\_\+\+M\+IN}~(T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+C\+E\+L\+S\+I\+U\+S\+\_\+\+M\+IN $\ast$ 9 / 5)\hypertarget{app_8h_a66e0b5b0ecead61fdf336123e5f64c8c}{}\label{app_8h_a66e0b5b0ecead61fdf336123e5f64c8c}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+T\+A\+R\+G\+E\+T\+\_\+\+T\+E\+M\+P\+\_\+\+D\+U\+R\+\_\+\+MS}~2000\hypertarget{app_8h_a4de381361ebec05883fb354e4c3af910}{}\label{app_8h_a4de381361ebec05883fb354e4c3af910}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+T\+I\+M\+E\+R\+\_\+\+D\+U\+R\+\_\+\+MS}~2000\hypertarget{app_8h_a9ea9952240ca1079cd8c7fd2af0509e7}{}\label{app_8h_a9ea9952240ca1079cd8c7fd2af0509e7}
+
+\item 
+\#define {\bfseries T\+I\+M\+E\+R\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+\_\+\+M\+I\+N\+U\+T\+ES}~30\hypertarget{app_8h_a98e66b9bdc285565da838f83273aab18}{}\label{app_8h_a98e66b9bdc285565da838f83273aab18}
+
+\item 
+\#define {\bfseries T\+I\+M\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+A\+L\+U\+E\+\_\+\+M\+I\+N\+U\+T\+ES}~30\hypertarget{app_8h_a11491a269de22e7013c90ff756f83de3}{}\label{app_8h_a11491a269de22e7013c90ff756f83de3}
+
+\item 
+\#define {\bfseries T\+I\+M\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+A\+L\+U\+E\+\_\+\+M\+I\+N\+U\+T\+ES}~1440\hypertarget{app_8h_a8917afb46cc3fbc3f5b0575b4d1e102d}{}\label{app_8h_a8917afb46cc3fbc3f5b0575b4d1e102d}
+
+\item 
+\#define {\bfseries T\+I\+M\+E\+R\+\_\+\+E\+X\+P\+I\+R\+E\+\_\+\+W\+A\+I\+T\+\_\+\+F\+O\+R\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\+\_\+\+MS}~5000\hypertarget{app_8h_a22a06ef8406dbce990794c007f69eadb}{}\label{app_8h_a22a06ef8406dbce990794c007f69eadb}
+
+\item 
+\#define {\bfseries L\+A\+S\+T\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+E\+T\+T\+I\+N\+G\+\_\+\+M\+I\+N\+\_\+\+D\+EF}~30\hypertarget{app_8h_afb0b1df50b8b543cc07cf442c278e3b7}{}\label{app_8h_afb0b1df50b8b543cc07cf442c278e3b7}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+C\+O\+L\+OR}~1\hypertarget{app_8h_a102de4592438f610161495e60d6ae037}{}\label{app_8h_a102de4592438f610161495e60d6ae037}
+
+\item 
+\#define {\bfseries N\+T\+P\+\_\+\+S\+E\+R\+V\+ER}~\char`\"{}pool.\+ntp.\+org\char`\"{}\hypertarget{app_8h_a751e3f85cd240e89d390d18996089cd0}{}\label{app_8h_a751e3f85cd240e89d390d18996089cd0}
+
+\item 
+\#define {\bfseries M\+E\+N\+U\+\_\+\+N\+A\+V\+I\+G\+A\+T\+I\+O\+N\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+D\+U\+R\+A\+T\+I\+O\+N\+\_\+\+MS}~4000\hypertarget{app_8h_a38c5da1e3c3187ff600588c725ba7c18}{}\label{app_8h_a38c5da1e3c3187ff600588c725ba7c18}
+
+\item 
+\#define {\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+S\+\_\+\+B\+U\+F\+\_\+\+M\+A\+X\+\_\+\+L\+EN}~32\hypertarget{app_8h_ab574fe0bd09eeca6e0fdaf755ab9090a}{}\label{app_8h_ab574fe0bd09eeca6e0fdaf755ab9090a}
+
+\item 
+\#define {\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+S\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+\_\+\+M\+I\+N\+\_\+\+V\+AL}~0x20\hypertarget{app_8h_ab2dfbd2d4a6707841a367feb986fbd88}{}\label{app_8h_ab2dfbd2d4a6707841a367feb986fbd88}
+
+\item 
+\#define {\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+S\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+\_\+\+M\+A\+X\+\_\+\+V\+AL}~0x7e\hypertarget{app_8h_afdcdf50ec3ce98ebc69cd4344d0fbb90}{}\label{app_8h_afdcdf50ec3ce98ebc69cd4344d0fbb90}
+
+\item 
+\#define {\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+S\+\_\+\+I\+N\+P\+U\+T\+\_\+\+C\+H\+A\+R\+A\+C\+T\+E\+R\+\_\+\+F\+I\+R\+S\+T\+\_\+\+C\+H\+AR}~0x61\hypertarget{app_8h_a974cee700b1ca70363c8a0b290803317}{}\label{app_8h_a974cee700b1ca70363c8a0b290803317}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+M\+AX}~100\hypertarget{app_8h_aa75714abafad0b22104d19c3eb69bf50}{}\label{app_8h_aa75714abafad0b22104d19c3eb69bf50}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+M\+IN}~0\hypertarget{app_8h_a53b6250f20fb9fcf326cfe7bbd7ce162}{}\label{app_8h_a53b6250f20fb9fcf326cfe7bbd7ce162}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+D\+EF}~50\hypertarget{app_8h_ad0c55e40d29410062816548dbd474144}{}\label{app_8h_ad0c55e40d29410062816548dbd474144}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT}~10\hypertarget{app_8h_a65086e7355793c30db6375a111362e5f}{}\label{app_8h_a65086e7355793c30db6375a111362e5f}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+A\+U\+T\+O\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+MS}~1000\hypertarget{app_8h_a737b5b58184c8080b7faf8134cfe973b}{}\label{app_8h_a737b5b58184c8080b7faf8134cfe973b}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+O\+F\+F\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+\_\+\+M\+AX}~300\hypertarget{app_8h_a0478ca0c35dc6c6d12b4442198e8b028}{}\label{app_8h_a0478ca0c35dc6c6d12b4442198e8b028}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+O\+F\+F\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+\_\+\+M\+IN}~5\hypertarget{app_8h_af8adc9f327afa22d65fa8f07bb0482c8}{}\label{app_8h_af8adc9f327afa22d65fa8f07bb0482c8}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+O\+F\+F\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT}~5\hypertarget{app_8h_a6a32c03944c764c4fc342e79b037ceae}{}\label{app_8h_a6a32c03944c764c4fc342e79b037ceae}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+O\+F\+F\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+S\+E\+C\+\_\+\+D\+E\+F\+A\+U\+LT}~60\hypertarget{app_8h_ac2176ce6f4ca00e2b08163adc0d5ede6}{}\label{app_8h_ac2176ce6f4ca00e2b08163adc0d5ede6}
+
+\item 
+\#define {\bfseries D\+I\+M\+\_\+\+P\+I\+L\+O\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+MS}~1000\hypertarget{app_8h_ad4fd8902aeaf84ddf239e7fb237bf713}{}\label{app_8h_ad4fd8902aeaf84ddf239e7fb237bf713}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+D\+I\+M\+\_\+\+P\+I\+L\+O\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+M\+A\+X\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+SS}~100\hypertarget{app_8h_ae04f6b804395081b18563fb72fc2d00e}{}\label{app_8h_ae04f6b804395081b18563fb72fc2d00e}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+D\+I\+M\+\_\+\+P\+I\+L\+O\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+M\+I\+N\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+SS}~50\hypertarget{app_8h_a25e95db2ed8038144ae8bc47c7863843}{}\label{app_8h_a25e95db2ed8038144ae8bc47c7863843}
+
+\item 
+\#define {\bfseries N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+V\+A\+L\+\_\+\+D\+EF}~0x00646464\hypertarget{app_8h_af77330ab10ad76d2d5e4936cc430e72e}{}\label{app_8h_af77330ab10ad76d2d5e4936cc430e72e}
+
+\item 
+\#define {\bfseries N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+V\+A\+L\+\_\+\+M\+IN}~0x00000000\hypertarget{app_8h_ac9cfe4321af748a14bccf4d7e7ba6f64}{}\label{app_8h_ac9cfe4321af748a14bccf4d7e7ba6f64}
+
+\item 
+\#define {\bfseries N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+V\+A\+L\+\_\+\+M\+AX}~0x00646464\hypertarget{app_8h_ae0115675518ff5fbed32ecfa117cf506}{}\label{app_8h_ae0115675518ff5fbed32ecfa117cf506}
+
+\item 
+\#define {\bfseries N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+M\+AX}~100\hypertarget{app_8h_ad543cc6dc713a072d9d1a3c89eaa7084}{}\label{app_8h_ad543cc6dc713a072d9d1a3c89eaa7084}
+
+\item 
+\#define {\bfseries N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+M\+IN}~0\hypertarget{app_8h_ad0772a43f46e7315ca35e3152b66a5bb}{}\label{app_8h_ad0772a43f46e7315ca35e3152b66a5bb}
+
+\item 
+\#define {\bfseries N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L\+\_\+\+MS}~1000\hypertarget{app_8h_a84461763a8b8cb537aba315eb3635c91}{}\label{app_8h_a84461763a8b8cb537aba315eb3635c91}
+
+\item 
+\#define {\bfseries N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+O\+F\+F\+\_\+\+T\+HS}~25\hypertarget{app_8h_a79e59fd4bd0c12dcb2d039522e12ae32}{}\label{app_8h_a79e59fd4bd0c12dcb2d039522e12ae32}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+M\+O\+D\+E\+\_\+\+H\+E\+A\+T\+E\+R\+\_\+\+O\+N\+\_\+\+D\+U\+R\+\_\+\+S\+EC}~300\hypertarget{app_8h_a9f6e1cf1916ac85c0f46926010a4a33a}{}\label{app_8h_a9f6e1cf1916ac85c0f46926010a4a33a}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+M\+O\+D\+E\+\_\+\+H\+E\+A\+T\+E\+R\+\_\+\+O\+F\+F\+\_\+\+D\+U\+R\+\_\+\+S\+EC}~60\hypertarget{app_8h_a38cae82cc832b1dbb175c077af87daa5}{}\label{app_8h_a38cae82cc832b1dbb175c077af87daa5}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+M\+O\+D\+E\+\_\+\+S\+C\+H\+E\+D\+\_\+\+N\+UM}~4\hypertarget{app_8h_a68df9d14f6735db17e76f35e3737c567}{}\label{app_8h_a68df9d14f6735db17e76f35e3737c567}
+
+\item 
+\#define {\bfseries A\+U\+T\+O\+\_\+\+M\+O\+D\+E\+\_\+\+I\+N\+T\+E\+R\+P\+O\+L\+A\+TE}~1\hypertarget{app_8h_aa9249ef930675b0071c0adc5d23e0146}{}\label{app_8h_aa9249ef930675b0071c0adc5d23e0146}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+T\+E\+M\+P\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+C\+E\+L\+S\+I\+US}~\char`\"{}temp\+\_\+off\+\_\+c\char`\"{}\hypertarget{app_8h_a295592b5c79e793aef35df629e9d1cf9}{}\label{app_8h_a295592b5c79e793aef35df629e9d1cf9}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+T\+E\+M\+P\+\_\+\+C\+E\+L\+S\+I\+US}~\char`\"{}temp\+\_\+celsius\char`\"{}\hypertarget{app_8h_a8092105f30978b3fe8b995837d705c11}{}\label{app_8h_a8092105f30978b3fe8b995837d705c11}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+T\+E\+M\+P\+\_\+\+F\+A\+H\+R\+E\+N\+H\+E\+IT}~\char`\"{}temp\+\_\+fahr\char`\"{}\hypertarget{app_8h_afb0d3ad411e1e471c21a1de560b25305}{}\label{app_8h_afb0d3ad411e1e471c21a1de560b25305}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+GS}~\char`\"{}settings\char`\"{}\hypertarget{app_8h_adc8f7bb65d1cb2f9d82a52877f8264b6}{}\label{app_8h_adc8f7bb65d1cb2f9d82a52877f8264b6}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+GS}~\char`\"{}display\+\_\+cfg\char`\"{}\hypertarget{app_8h_ae89546f2291818a4caa3c1e9ebfbdfea}{}\label{app_8h_ae89546f2291818a4caa3c1e9ebfbdfea}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+\_\+\+W\+E\+E\+K\+D\+AY}~\char`\"{}sched\+\_\+wd\char`\"{}\hypertarget{app_8h_a12365e57530e702cfc0da3f21b93f371}{}\label{app_8h_a12365e57530e702cfc0da3f21b93f371}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+\_\+\+W\+E\+E\+K\+E\+ND}~\char`\"{}sched\+\_\+we\char`\"{}\hypertarget{app_8h_aa0b522aa9f1c8b62c047c0a1f3aabbda}{}\label{app_8h_aa0b522aa9f1c8b62c047c0a1f3aabbda}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+L\+A\+S\+T\+\_\+\+T\+I\+M\+E\+R\+\_\+\+S\+E\+T\+T\+I\+NG}~\char`\"{}last\+\_\+timer\char`\"{}\hypertarget{app_8h_aa662dc09f6542d505ec63f6a1d35152a}{}\label{app_8h_aa662dc09f6542d505ec63f6a1d35152a}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+I\+S\+\_\+\+A\+U\+T\+O\+\_\+\+T\+I\+M\+E\+\_\+\+D\+A\+T\+E\+\_\+\+EN}~\char`\"{}auto\+\_\+dt\char`\"{}\hypertarget{app_8h_a6718b2eeb0d6ef0eeeeaeab33fe2358e}{}\label{app_8h_a6718b2eeb0d6ef0eeeeaeab33fe2358e}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+T\+I\+M\+E\+Z\+O\+N\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+I\+N\+D\+EX}~\char`\"{}tz\+\_\+off\char`\"{}\hypertarget{app_8h_ac834f4168835a390eaad4f05d1256043}{}\label{app_8h_ac834f4168835a390eaad4f05d1256043}
+
+\item 
+\#define {\bfseries S\+T\+O\+R\+A\+G\+E\+\_\+\+K\+E\+Y\+\_\+\+N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+C\+FG}~\char`\"{}nlight\+\_\+cfg\char`\"{}\hypertarget{app_8h_a1c1d472d66c4f2268e2da0c24aea87e8}{}\label{app_8h_a1c1d472d66c4f2268e2da0c24aea87e8}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+D\+A\+T\+E\+\_\+\+A\+F\+T\+E\+R\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+MS}~2000\hypertarget{app_8h_a1cbb9752d449df804e9bcc7a51d2e7e9}{}\label{app_8h_a1cbb9752d449df804e9bcc7a51d2e7e9}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+T\+I\+M\+E\+\_\+\+A\+F\+T\+E\+R\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+MS}~2000\hypertarget{app_8h_ac6ebfcb6c5f8de88e3ce2646f0400fe3}{}\label{app_8h_ac6ebfcb6c5f8de88e3ce2646f0400fe3}
+
+\item 
+\#define {\bfseries D\+I\+S\+P\+L\+A\+Y\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+F\+L\+A\+S\+H\+\_\+\+D\+U\+R\+A\+T\+I\+O\+N\+\_\+\+MS}~2000\hypertarget{app_8h_af146255d2b37e2b3bf589d06d9ceb3fd}{}\label{app_8h_af146255d2b37e2b3bf589d06d9ceb3fd}
+
+\item 
+\#define {\bfseries D\+E\+B\+U\+G\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+N\+U\+M\+\_\+\+M\+AX}~2\hypertarget{app_8h_a435af268bc6ed97c95217d11ea237fdd}{}\label{app_8h_a435af268bc6ed97c95217d11ea237fdd}
+
+\item 
+\#define {\bfseries T\+I\+M\+E\+Z\+O\+N\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+I\+N\+D\+E\+X\+\_\+\+D\+EF}~7\hypertarget{app_8h_ad628ade7a4266788e7251117785e7a04}{}\label{app_8h_ad628ade7a4266788e7251117785e7a04}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries btn\+\_\+stat} \{ {\bfseries B\+U\+T\+T\+O\+N\+\_\+\+U\+P\+\_\+\+S\+T\+AT} = 0, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+O\+W\+N\+\_\+\+S\+T\+AT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+B\+A\+C\+K\+\_\+\+S\+T\+AT}, 
+{\bfseries B\+U\+T\+T\+O\+N\+\_\+\+T\+I\+M\+E\+R\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+S\+T\+AT}
+ \}\hypertarget{app_8h_ae36d69d48335fb2b6ebf04ff89bbb67c}{}\label{app_8h_ae36d69d48335fb2b6ebf04ff89bbb67c}
+
+\item 
+enum {\bfseries menu\+\_\+main} \{ \\*
+{\bfseries M\+E\+N\+U\+\_\+\+F\+I\+R\+ST} = 1, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+AR} = 1, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+D\+A\+TE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+NS}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+GS}, 
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+GS}, 
+{\bfseries M\+E\+N\+U\+\_\+\+U\+P\+D\+A\+TE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+L\+A\+ST} = M\+E\+N\+U\+\_\+\+U\+P\+D\+A\+TE
+ \}\hypertarget{app_8h_ac20cb8b6ad0abe627505403758ba9a9b}{}\label{app_8h_ac20cb8b6ad0abe627505403758ba9a9b}
+
+\item 
+enum {\bfseries menu\+\_\+time\+\_\+and\+\_\+date} \{ \\*
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+A\+U\+TO} = 1, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+AL}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+T\+I\+M\+E\+Z\+O\+N\+E\+\_\+\+O\+F\+F\+S\+ET}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+A\+U\+T\+O\+\_\+\+EN}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+D\+A\+TE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+T\+I\+ME}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+T\+I\+M\+E\+Z\+O\+N\+E\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+S\+ET}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+D\+A\+T\+E\+\_\+\+Y\+E\+AR}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+D\+A\+T\+E\+\_\+\+M\+O\+N\+TH}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+D\+A\+T\+E\+\_\+\+D\+AY}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+T\+I\+M\+E\+\_\+\+H\+O\+UR}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+T\+I\+M\+E\+\_\+\+M\+I\+N\+U\+TE}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+D\+A\+T\+E\+\_\+\+Y\+E\+A\+R\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+D\+A\+T\+E\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+D\+A\+T\+E\+\_\+\+D\+A\+Y\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+T\+I\+M\+E\+\_\+\+H\+O\+U\+R\+\_\+\+C\+H\+A\+N\+GE}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+T\+I\+M\+E\+\_\+\+A\+N\+D\+\_\+\+D\+A\+T\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+T\+I\+M\+E\+\_\+\+M\+I\+N\+U\+T\+E\+\_\+\+C\+H\+A\+N\+GE}
+ \}\hypertarget{app_8h_ab13c4427e24fa0e3473ada162e88160d}{}\label{app_8h_ab13c4427e24fa0e3473ada162e88160d}
+
+\item 
+enum {\bfseries menu\+\_\+communications} \{ \\*
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+A\+P\+\_\+\+M\+O\+DE} = 1, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+W\+I\+F\+I\+\_\+\+AP}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+W\+PS}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+A\+P\+\_\+\+M\+O\+D\+E\+\_\+\+EN}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+A\+P\+\_\+\+M\+O\+D\+E\+\_\+\+S\+S\+ID}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+S\+S\+ID}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+P\+A\+S\+S\+W\+O\+RD}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+W\+P\+S\+\_\+\+EN}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+A\+P\+\_\+\+M\+O\+D\+E\+\_\+\+S\+S\+I\+D\+\_\+\+V\+AL}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+S\+S\+I\+D\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+O\+M\+M\+U\+N\+I\+C\+A\+T\+I\+O\+N\+S\+\_\+\+W\+P\+S\+\_\+\+E\+N\+\_\+\+I\+N\+ST}
+ \}\hypertarget{app_8h_a32ce67c72999b5deb86b36eb00953267}{}\label{app_8h_a32ce67c72999b5deb86b36eb00953267}
+
+\item 
+enum {\bfseries menu\+\_\+settings} \{ \\*
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+N\+IT} = 1, 
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+C\+H\+I\+L\+D\+\_\+\+L\+O\+CK}, 
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+P\+I\+L\+O\+T\+\_\+\+L\+I\+G\+HT}, 
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+HT}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+IS}, 
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+U\+N\+I\+T\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+C\+H\+I\+L\+D\+\_\+\+L\+O\+C\+K\+\_\+\+EN}, 
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+P\+I\+L\+O\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+EN}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+N\+I\+G\+H\+T\+\_\+\+L\+I\+G\+H\+T\+\_\+\+C\+FG}, 
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+C\+H\+A\+N\+G\+E\+\_\+\+W\+A\+R\+N\+I\+NG}, 
+{\bfseries M\+E\+N\+U\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+H\+Y\+S\+T\+E\+R\+E\+S\+I\+S\+\_\+\+C\+H\+A\+N\+GE}
+ \}\hypertarget{app_8h_a8d0cc93b0fbd195fe04184ea8984494a}{}\label{app_8h_a8d0cc93b0fbd195fe04184ea8984494a}
+
+\item 
+enum {\bfseries menu\+\_\+display\+\_\+settings} \{ \\*
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+SS} = 1, 
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+A\+U\+T\+O\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+O\+FF}, 
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+A\+U\+T\+O\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+O\+F\+F\+\_\+\+D\+E\+L\+AY}, 
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+M\+A\+N\+U\+AL}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+A\+U\+TO}, 
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+A\+U\+T\+O\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+O\+F\+F\+\_\+\+EN}, 
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+A\+U\+T\+O\+\_\+\+S\+C\+R\+E\+E\+N\+\_\+\+O\+F\+F\+\_\+\+D\+E\+L\+A\+Y\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+C\+H\+A\+N\+GE}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+D\+I\+S\+P\+L\+A\+Y\+\_\+\+S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+B\+R\+I\+G\+H\+T\+N\+E\+S\+S\+\_\+\+A\+U\+T\+O\+\_\+\+EN}
+ \}\hypertarget{app_8h_a0a21a674953adbadd680f5c941068e00}{}\label{app_8h_a0a21a674953adbadd680f5c941068e00}
+
+\item 
+enum {\bfseries menu\+\_\+calendar} \{ \\*
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+W\+E\+E\+K\+T\+Y\+PE} = 1, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+ED}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+EN}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+I\+ME}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+E\+MP}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+E\+N\+\_\+\+S\+T\+AT}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+H\+O\+UR}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+M\+I\+N\+U\+TE}, 
+\\*
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+E\+M\+P\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+H\+O\+U\+R\+\_\+\+C\+H\+A\+N\+GE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+C\+A\+L\+E\+N\+D\+A\+R\+\_\+\+S\+C\+H\+E\+D\+\_\+\+T\+I\+M\+E\+\_\+\+M\+I\+N\+U\+T\+E\+\_\+\+C\+H\+A\+N\+GE}
+ \}\hypertarget{app_8h_a2188f1b60080d21ccf6f9761c61c99c5}{}\label{app_8h_a2188f1b60080d21ccf6f9761c61c99c5}
+
+\item 
+enum {\bfseries menu\+\_\+update} \{ {\bfseries M\+E\+N\+U\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+S\+T\+A\+T\+US} = 1, 
+{\bfseries M\+E\+N\+U\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+T\+R\+I\+G\+G\+E\+R\+\_\+\+U\+P\+D\+A\+TE}, 
+{\bfseries M\+E\+N\+U\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+O\+N\+G\+O\+I\+N\+G\+\_\+\+U\+P\+D\+A\+TE}
+ \}\hypertarget{app_8h_aef156b2c2463280092297b973cfde9cf}{}\label{app_8h_aef156b2c2463280092297b973cfde9cf}
+
+\item 
+enum {\bfseries app\+\_\+mode\+\_\+t} \{ \\*
+{\bfseries A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+S\+T\+A\+N\+D\+BY} = 1, 
+{\bfseries A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+N\+U\+A\+L\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+RE}, 
+{\bfseries A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+R\+E\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+O\+F\+F\+S\+E\+T\+\_\+\+S\+ET}, 
+{\bfseries A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT}, 
+\\*
+{\bfseries A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+A\+U\+TO}, 
+{\bfseries A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+M\+E\+NU}, 
+{\bfseries A\+P\+P\+\_\+\+M\+O\+D\+E\+\_\+\+D\+E\+B\+UG}
+ \}\hypertarget{app_8h_a7a9bfb9a089b76c069aade57efedcb7c}{}\label{app_8h_a7a9bfb9a089b76c069aade57efedcb7c}
+
+\item 
+enum {\bfseries temp\+\_\+unit\+\_\+t} \{ {\bfseries T\+E\+M\+P\+\_\+\+U\+N\+I\+T\+\_\+\+C\+E\+L\+S\+I\+US} = 0, 
+{\bfseries T\+E\+M\+P\+\_\+\+U\+N\+I\+T\+\_\+\+F\+A\+H\+R\+E\+N\+H\+E\+IT}
+ \}\hypertarget{app_8h_ad05317df62a378bdcd453be745226146}{}\label{app_8h_ad05317df62a378bdcd453be745226146}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \hyperlink{app_8h_ab1d05b3a82e4ca36ceed0b9ea47bc180}{app\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em initialize the application thread \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a83f3ab17fef31d801775815545a8e22c}{app\+\_\+set\+\_\+mode} (int mode)
+\begin{DoxyCompactList}\small\item\em application set device mode \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a3f1bf00471f41b478284c95cf9e3157a}{app\+\_\+get\+\_\+mode} (void)
+\begin{DoxyCompactList}\small\item\em application get device mode \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_af7b52c31223525cee59a444e5a3f5d6d}{app\+\_\+get\+\_\+ambient\+\_\+temp} (void)
+\begin{DoxyCompactList}\small\item\em application get ambient temperature \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_aab556d480a77a5d82595581d3b974972}{app\+\_\+set\+\_\+target\+\_\+temp} (int temp\+\_\+c)
+\begin{DoxyCompactList}\small\item\em application layer set the temperature \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a093a7802f48f2ef25ac7f719cdfbdeaf}{app\+\_\+get\+\_\+target\+\_\+temp} (void)
+\begin{DoxyCompactList}\small\item\em get the value of the current temp \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a19a0f0a02806cbcaa1173103823be68f}{app\+\_\+set\+\_\+timer} (int timer)
+\begin{DoxyCompactList}\small\item\em set the timer \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a19428583f612c05eaf52ca46f9d76a34}{app\+\_\+get\+\_\+timer} (void)
+\begin{DoxyCompactList}\small\item\em application get current timer \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a3005e5c4d287775c1d82295e5a001bd0}{app\+\_\+activate\+\_\+child\+\_\+lock} (bool en)
+\begin{DoxyCompactList}\small\item\em set child lock to activate \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_a7a341e75a542ce6a1b319b57b6d8528a}{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+activated} (void)
+\begin{DoxyCompactList}\small\item\em get current status of child lock \end{DoxyCompactList}\item 
+int {\bfseries app\+\_\+set\+\_\+sched} (void)\hypertarget{app_8h_a33a8881e63cf15436108f508d3dd42f1}{}\label{app_8h_a33a8881e63cf15436108f508d3dd42f1}
+
+\item 
+int {\bfseries app\+\_\+get\+\_\+sched} (void)\hypertarget{app_8h_a093a767bbae03c99c11b8b9d221f2a65}{}\label{app_8h_a093a767bbae03c99c11b8b9d221f2a65}
+
+\item 
+int \hyperlink{app_8h_a7ce9fc27644f776d3fde78d131c269e4}{app\+\_\+enable\+\_\+autoset\+\_\+time\+\_\+date} (bool en)
+\begin{DoxyCompactList}\small\item\em application enable auto set time and date \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_a1defbdbb13e475d146a0033302ef3825}{app\+\_\+is\+\_\+autoset\+\_\+time\+\_\+date\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em application get if autoset time date is enabled \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a4559f795e5259e9dd458ba92ffb36ae4}{app\+\_\+enable\+\_\+ap\+\_\+mode} (bool en)
+\begin{DoxyCompactList}\small\item\em application set wifi mode to ap \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_afc3b62a8c305f448f7a638e2a5c02290}{app\+\_\+is\+\_\+ap\+\_\+mode\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em application get ap mode status \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a1fcd688d459f29cb773952865f6eb397}{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+ssid} (char $\ast$ssid, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em application set sta mode ssid \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a839e6a96bed68b041b07ccb7969acb25}{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+password} (char $\ast$pw, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em application set sta mode password \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_aea581e6e399aaab888b66d26cc149039}{app\+\_\+enable\+\_\+sta\+\_\+mode} (bool en)
+\begin{DoxyCompactList}\small\item\em application set sta mode enable \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_ace49e7f7aeb155f96f11529de9ae95ee}{app\+\_\+is\+\_\+sta\+\_\+mode\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em application get if sta mode is enabled \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_ae931da542a0226ccb2f30c03121923c2}{app\+\_\+set\+\_\+temp\+\_\+unit} (int unit)
+\begin{DoxyCompactList}\small\item\em application set unit of temperature \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a633941d3e6390b61508efd203dafd0ab}{app\+\_\+get\+\_\+temp\+\_\+unit} (void)
+\begin{DoxyCompactList}\small\item\em application get the current unit of temperature \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a50a39234ccbaf924269a5033f9ded467}{app\+\_\+enable\+\_\+autodim\+\_\+pilot\+\_\+light} (bool en)
+\begin{DoxyCompactList}\small\item\em application enable autodim pilot light \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_a9dbd040cb7df67a35bc8dc83cc41e1e4}{app\+\_\+is\+\_\+autodim\+\_\+pilot\+\_\+light\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em application get if autodim is enabled or disabled \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a1cc1c64d163fd432af1eb1ce4eab676f}{app\+\_\+enable\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness} (bool en)
+\begin{DoxyCompactList}\small\item\em application enable night light auto brightness \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_a43dedfb756cc76295d5481c385138b1e}{app\+\_\+is\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em application get if auto brightness is enabled or disabled \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a5f43ff7f14c99ace9fa3a4ade62384f5}{app\+\_\+set\+\_\+night\+\_\+light\+\_\+config} (int cfg)
+\begin{DoxyCompactList}\small\item\em application set nightlight configuration \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a1149d37a7522063d307e2ee5d32642f5}{app\+\_\+get\+\_\+night\+\_\+light\+\_\+config} (void)
+\begin{DoxyCompactList}\small\item\em application get night light config \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a09b69d86d7c68632860cd68e61c7c2f7}{app\+\_\+enable\+\_\+child\+\_\+lock} (bool en)
+\begin{DoxyCompactList}\small\item\em application set child lock enabled \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_a77344577445e2a33299069b5969d0994}{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em application get child lock if enabled or disabled \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a708da592f0adc46b0448bcdb1ddd6a2f}{app\+\_\+enable\+\_\+autodim\+\_\+display} (bool en)
+\begin{DoxyCompactList}\small\item\em application set auto dim display \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_ac8456b865ff9a4d9864ea8329bccf16f}{app\+\_\+is\+\_\+autodim\+\_\+display\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em application get if auto dim is enabled \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a138b57d9f0a126414d2a7be10f1fa566}{app\+\_\+set\+\_\+screen\+\_\+brightness} (int br)
+\begin{DoxyCompactList}\small\item\em application set screen brightness \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_ab1649783957dcd05774a0e5695c524ce}{app\+\_\+get\+\_\+screen\+\_\+brightness} (void)
+\begin{DoxyCompactList}\small\item\em application get brightness level \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a462bcca2e97fecb9b41a31e23b986e45}{app\+\_\+enable\+\_\+auto\+\_\+screen\+\_\+off} (bool en)
+\begin{DoxyCompactList}\small\item\em application set auto screen off \end{DoxyCompactList}\item 
+bool \hyperlink{app_8h_a41c03eeeb7da3d9f4c0904b61369dc03}{app\+\_\+is\+\_\+auto\+\_\+screen\+\_\+off\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em application get if auto screen off is enabled \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_a708f8f6cd096faad7acbee0826d75e12}{app\+\_\+set\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay} (int delay)
+\begin{DoxyCompactList}\small\item\em application set auto screen of delay \end{DoxyCompactList}\item 
+int \hyperlink{app_8h_abc0b05bf04eb46d5f4b660c50cf2a12a}{app\+\_\+get\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay} (void)
+\begin{DoxyCompactList}\small\item\em application get auto sleep delay \end{DoxyCompactList}\item 
+int {\bfseries app\+\_\+start\+\_\+fw\+\_\+update} (void)\hypertarget{app_8h_aed88f9d82d9e1dd276ad8022f21a174d}{}\label{app_8h_aed88f9d82d9e1dd276ad8022f21a174d}
+
+\item 
+int \hyperlink{app_8h_afcf518564a95b70c9006e1b723690f68}{app\+\_\+ota\+\_\+start} (char $\ast$loc)
+\begin{DoxyCompactList}\small\item\em application run ota update \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{app.\+h@{app.\+h}!app\+\_\+activate\+\_\+child\+\_\+lock@{app\+\_\+activate\+\_\+child\+\_\+lock}}
+\index{app\+\_\+activate\+\_\+child\+\_\+lock@{app\+\_\+activate\+\_\+child\+\_\+lock}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+activate\+\_\+child\+\_\+lock(bool en)}{app_activate_child_lock(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+activate\+\_\+child\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a3005e5c4d287775c1d82295e5a001bd0}{}\label{app_8h_a3005e5c4d287775c1d82295e5a001bd0}
+
+
+set child lock to activate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em en} & enable or disable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+enable\+\_\+ap\+\_\+mode@{app\+\_\+enable\+\_\+ap\+\_\+mode}}
+\index{app\+\_\+enable\+\_\+ap\+\_\+mode@{app\+\_\+enable\+\_\+ap\+\_\+mode}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+enable\+\_\+ap\+\_\+mode(bool en)}{app_enable_ap_mode(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+enable\+\_\+ap\+\_\+mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a4559f795e5259e9dd458ba92ffb36ae4}{}\label{app_8h_a4559f795e5259e9dd458ba92ffb36ae4}
+
+
+application set wifi mode to ap 
+
+
+\begin{DoxyParams}{Parameters}
+{\em true} & if enable ap, false disabled ap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+enable\+\_\+auto\+\_\+screen\+\_\+off@{app\+\_\+enable\+\_\+auto\+\_\+screen\+\_\+off}}
+\index{app\+\_\+enable\+\_\+auto\+\_\+screen\+\_\+off@{app\+\_\+enable\+\_\+auto\+\_\+screen\+\_\+off}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+enable\+\_\+auto\+\_\+screen\+\_\+off(bool en)}{app_enable_auto_screen_off(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+enable\+\_\+auto\+\_\+screen\+\_\+off (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a462bcca2e97fecb9b41a31e23b986e45}{}\label{app_8h_a462bcca2e97fecb9b41a31e23b986e45}
+
+
+application set auto screen off 
+
+
+\begin{DoxyParams}{Parameters}
+{\em en} & true if enabled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+enable\+\_\+autodim\+\_\+display@{app\+\_\+enable\+\_\+autodim\+\_\+display}}
+\index{app\+\_\+enable\+\_\+autodim\+\_\+display@{app\+\_\+enable\+\_\+autodim\+\_\+display}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+enable\+\_\+autodim\+\_\+display(bool en)}{app_enable_autodim_display(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+enable\+\_\+autodim\+\_\+display (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a708da592f0adc46b0448bcdb1ddd6a2f}{}\label{app_8h_a708da592f0adc46b0448bcdb1ddd6a2f}
+
+
+application set auto dim display 
+
+
+\begin{DoxyParams}{Parameters}
+{\em en} & true if auto dim enabled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+enable\+\_\+autodim\+\_\+pilot\+\_\+light@{app\+\_\+enable\+\_\+autodim\+\_\+pilot\+\_\+light}}
+\index{app\+\_\+enable\+\_\+autodim\+\_\+pilot\+\_\+light@{app\+\_\+enable\+\_\+autodim\+\_\+pilot\+\_\+light}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+enable\+\_\+autodim\+\_\+pilot\+\_\+light(bool en)}{app_enable_autodim_pilot_light(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+enable\+\_\+autodim\+\_\+pilot\+\_\+light (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a50a39234ccbaf924269a5033f9ded467}{}\label{app_8h_a50a39234ccbaf924269a5033f9ded467}
+
+
+application enable autodim pilot light 
+
+
+\begin{DoxyParams}{Parameters}
+{\em true} & if enable, false if disabled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+enable\+\_\+autoset\+\_\+time\+\_\+date@{app\+\_\+enable\+\_\+autoset\+\_\+time\+\_\+date}}
+\index{app\+\_\+enable\+\_\+autoset\+\_\+time\+\_\+date@{app\+\_\+enable\+\_\+autoset\+\_\+time\+\_\+date}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+enable\+\_\+autoset\+\_\+time\+\_\+date(bool en)}{app_enable_autoset_time_date(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+enable\+\_\+autoset\+\_\+time\+\_\+date (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a7ce9fc27644f776d3fde78d131c269e4}{}\label{app_8h_a7ce9fc27644f776d3fde78d131c269e4}
+
+
+application enable auto set time and date 
+
+
+\begin{DoxyParams}{Parameters}
+{\em true} & if enable, false if disabled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+enable\+\_\+child\+\_\+lock@{app\+\_\+enable\+\_\+child\+\_\+lock}}
+\index{app\+\_\+enable\+\_\+child\+\_\+lock@{app\+\_\+enable\+\_\+child\+\_\+lock}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+enable\+\_\+child\+\_\+lock(bool en)}{app_enable_child_lock(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+enable\+\_\+child\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a09b69d86d7c68632860cd68e61c7c2f7}{}\label{app_8h_a09b69d86d7c68632860cd68e61c7c2f7}
+
+
+application set child lock enabled 
+
+
+\begin{DoxyParams}{Parameters}
+{\em en} & true if enable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+enable\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness@{app\+\_\+enable\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness}}
+\index{app\+\_\+enable\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness@{app\+\_\+enable\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+enable\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness(bool en)}{app_enable_night_light_auto_brightness(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+enable\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a1cc1c64d163fd432af1eb1ce4eab676f}{}\label{app_8h_a1cc1c64d163fd432af1eb1ce4eab676f}
+
+
+application enable night light auto brightness 
+
+
+\begin{DoxyParams}{Parameters}
+{\em en} & enabled auto brightness \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+enable\+\_\+sta\+\_\+mode@{app\+\_\+enable\+\_\+sta\+\_\+mode}}
+\index{app\+\_\+enable\+\_\+sta\+\_\+mode@{app\+\_\+enable\+\_\+sta\+\_\+mode}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+enable\+\_\+sta\+\_\+mode(bool en)}{app_enable_sta_mode(bool en)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+enable\+\_\+sta\+\_\+mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{en}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_aea581e6e399aaab888b66d26cc149039}{}\label{app_8h_aea581e6e399aaab888b66d26cc149039}
+
+
+application set sta mode enable 
+
+
+\begin{DoxyParams}{Parameters}
+{\em en} & true if enable, false if disabled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+get\+\_\+ambient\+\_\+temp@{app\+\_\+get\+\_\+ambient\+\_\+temp}}
+\index{app\+\_\+get\+\_\+ambient\+\_\+temp@{app\+\_\+get\+\_\+ambient\+\_\+temp}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+get\+\_\+ambient\+\_\+temp(void)}{app_get_ambient_temp(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+get\+\_\+ambient\+\_\+temp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_af7b52c31223525cee59a444e5a3f5d6d}{}\label{app_8h_af7b52c31223525cee59a444e5a3f5d6d}
+
+
+application get ambient temperature 
+
+\begin{DoxyReturn}{Returns}
+return current temperature 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+get\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay@{app\+\_\+get\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay}}
+\index{app\+\_\+get\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay@{app\+\_\+get\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+get\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay(void)}{app_get_auto_screen_off_delay(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+get\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_abc0b05bf04eb46d5f4b660c50cf2a12a}{}\label{app_8h_abc0b05bf04eb46d5f4b660c50cf2a12a}
+
+
+application get auto sleep delay 
+
+\begin{DoxyReturn}{Returns}
+return auto sleep delay 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+get\+\_\+mode@{app\+\_\+get\+\_\+mode}}
+\index{app\+\_\+get\+\_\+mode@{app\+\_\+get\+\_\+mode}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+get\+\_\+mode(void)}{app_get_mode(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+get\+\_\+mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a3f1bf00471f41b478284c95cf9e3157a}{}\label{app_8h_a3f1bf00471f41b478284c95cf9e3157a}
+
+
+application get device mode 
+
+\begin{DoxyReturn}{Returns}
+return current device mode 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+get\+\_\+night\+\_\+light\+\_\+config@{app\+\_\+get\+\_\+night\+\_\+light\+\_\+config}}
+\index{app\+\_\+get\+\_\+night\+\_\+light\+\_\+config@{app\+\_\+get\+\_\+night\+\_\+light\+\_\+config}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+get\+\_\+night\+\_\+light\+\_\+config(void)}{app_get_night_light_config(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+get\+\_\+night\+\_\+light\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a1149d37a7522063d307e2ee5d32642f5}{}\label{app_8h_a1149d37a7522063d307e2ee5d32642f5}
+
+
+application get night light config 
+
+\begin{DoxyReturn}{Returns}
+return night light config 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+get\+\_\+screen\+\_\+brightness@{app\+\_\+get\+\_\+screen\+\_\+brightness}}
+\index{app\+\_\+get\+\_\+screen\+\_\+brightness@{app\+\_\+get\+\_\+screen\+\_\+brightness}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+get\+\_\+screen\+\_\+brightness(void)}{app_get_screen_brightness(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+get\+\_\+screen\+\_\+brightness (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_ab1649783957dcd05774a0e5695c524ce}{}\label{app_8h_ab1649783957dcd05774a0e5695c524ce}
+
+
+application get brightness level 
+
+\begin{DoxyReturn}{Returns}
+return brightness level 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+get\+\_\+target\+\_\+temp@{app\+\_\+get\+\_\+target\+\_\+temp}}
+\index{app\+\_\+get\+\_\+target\+\_\+temp@{app\+\_\+get\+\_\+target\+\_\+temp}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+get\+\_\+target\+\_\+temp(void)}{app_get_target_temp(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+get\+\_\+target\+\_\+temp (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a093a7802f48f2ef25ac7f719cdfbdeaf}{}\label{app_8h_a093a7802f48f2ef25ac7f719cdfbdeaf}
+
+
+get the value of the current temp 
+
+\begin{DoxyReturn}{Returns}
+current temperature in integer 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+get\+\_\+temp\+\_\+unit@{app\+\_\+get\+\_\+temp\+\_\+unit}}
+\index{app\+\_\+get\+\_\+temp\+\_\+unit@{app\+\_\+get\+\_\+temp\+\_\+unit}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+get\+\_\+temp\+\_\+unit(void)}{app_get_temp_unit(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+get\+\_\+temp\+\_\+unit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a633941d3e6390b61508efd203dafd0ab}{}\label{app_8h_a633941d3e6390b61508efd203dafd0ab}
+
+
+application get the current unit of temperature 
+
+\begin{DoxyReturn}{Returns}
+return celsius or fahrenheit 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+get\+\_\+timer@{app\+\_\+get\+\_\+timer}}
+\index{app\+\_\+get\+\_\+timer@{app\+\_\+get\+\_\+timer}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+get\+\_\+timer(void)}{app_get_timer(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+get\+\_\+timer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a19428583f612c05eaf52ca46f9d76a34}{}\label{app_8h_a19428583f612c05eaf52ca46f9d76a34}
+
+
+application get current timer 
+
+\begin{DoxyReturn}{Returns}
+return current timer value 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+init@{app\+\_\+init}}
+\index{app\+\_\+init@{app\+\_\+init}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+init(void)}{app_init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t app\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_ab1d05b3a82e4ca36ceed0b9ea47bc180}{}\label{app_8h_ab1d05b3a82e4ca36ceed0b9ea47bc180}
+
+
+initialize the application thread 
+
+\begin{DoxyReturn}{Returns}
+always success 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+ap\+\_\+mode\+\_\+enabled@{app\+\_\+is\+\_\+ap\+\_\+mode\+\_\+enabled}}
+\index{app\+\_\+is\+\_\+ap\+\_\+mode\+\_\+enabled@{app\+\_\+is\+\_\+ap\+\_\+mode\+\_\+enabled}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+ap\+\_\+mode\+\_\+enabled(void)}{app_is_ap_mode_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+ap\+\_\+mode\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_afc3b62a8c305f448f7a638e2a5c02290}{}\label{app_8h_afc3b62a8c305f448f7a638e2a5c02290}
+
+
+application get ap mode status 
+
+\begin{DoxyReturn}{Returns}
+return true if ap mode is enabled 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+auto\+\_\+screen\+\_\+off\+\_\+enabled@{app\+\_\+is\+\_\+auto\+\_\+screen\+\_\+off\+\_\+enabled}}
+\index{app\+\_\+is\+\_\+auto\+\_\+screen\+\_\+off\+\_\+enabled@{app\+\_\+is\+\_\+auto\+\_\+screen\+\_\+off\+\_\+enabled}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+auto\+\_\+screen\+\_\+off\+\_\+enabled(void)}{app_is_auto_screen_off_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+auto\+\_\+screen\+\_\+off\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a41c03eeeb7da3d9f4c0904b61369dc03}{}\label{app_8h_a41c03eeeb7da3d9f4c0904b61369dc03}
+
+
+application get if auto screen off is enabled 
+
+\begin{DoxyReturn}{Returns}
+return true if enabled 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+autodim\+\_\+display\+\_\+enabled@{app\+\_\+is\+\_\+autodim\+\_\+display\+\_\+enabled}}
+\index{app\+\_\+is\+\_\+autodim\+\_\+display\+\_\+enabled@{app\+\_\+is\+\_\+autodim\+\_\+display\+\_\+enabled}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+autodim\+\_\+display\+\_\+enabled(void)}{app_is_autodim_display_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+autodim\+\_\+display\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_ac8456b865ff9a4d9864ea8329bccf16f}{}\label{app_8h_ac8456b865ff9a4d9864ea8329bccf16f}
+
+
+application get if auto dim is enabled 
+
+\begin{DoxyReturn}{Returns}
+returns true if auto dim is enabled 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+autodim\+\_\+pilot\+\_\+light\+\_\+enabled@{app\+\_\+is\+\_\+autodim\+\_\+pilot\+\_\+light\+\_\+enabled}}
+\index{app\+\_\+is\+\_\+autodim\+\_\+pilot\+\_\+light\+\_\+enabled@{app\+\_\+is\+\_\+autodim\+\_\+pilot\+\_\+light\+\_\+enabled}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+autodim\+\_\+pilot\+\_\+light\+\_\+enabled(void)}{app_is_autodim_pilot_light_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+autodim\+\_\+pilot\+\_\+light\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a9dbd040cb7df67a35bc8dc83cc41e1e4}{}\label{app_8h_a9dbd040cb7df67a35bc8dc83cc41e1e4}
+
+
+application get if autodim is enabled or disabled 
+
+\begin{DoxyReturn}{Returns}
+return true if enabled 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+autoset\+\_\+time\+\_\+date\+\_\+enabled@{app\+\_\+is\+\_\+autoset\+\_\+time\+\_\+date\+\_\+enabled}}
+\index{app\+\_\+is\+\_\+autoset\+\_\+time\+\_\+date\+\_\+enabled@{app\+\_\+is\+\_\+autoset\+\_\+time\+\_\+date\+\_\+enabled}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+autoset\+\_\+time\+\_\+date\+\_\+enabled(void)}{app_is_autoset_time_date_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+autoset\+\_\+time\+\_\+date\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a1defbdbb13e475d146a0033302ef3825}{}\label{app_8h_a1defbdbb13e475d146a0033302ef3825}
+
+
+application get if autoset time date is enabled 
+
+\begin{DoxyReturn}{Returns}
+return current state of time date 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+child\+\_\+lock\+\_\+activated@{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+activated}}
+\index{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+activated@{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+activated}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+activated(void)}{app_is_child_lock_activated(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+child\+\_\+lock\+\_\+activated (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a7a341e75a542ce6a1b319b57b6d8528a}{}\label{app_8h_a7a341e75a542ce6a1b319b57b6d8528a}
+
+
+get current status of child lock 
+
+\begin{DoxyReturn}{Returns}
+return true if activated or false if not 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+child\+\_\+lock\+\_\+enabled@{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+enabled}}
+\index{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+enabled@{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+enabled}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+child\+\_\+lock\+\_\+enabled(void)}{app_is_child_lock_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+child\+\_\+lock\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a77344577445e2a33299069b5969d0994}{}\label{app_8h_a77344577445e2a33299069b5969d0994}
+
+
+application get child lock if enabled or disabled 
+
+\begin{DoxyReturn}{Returns}
+return true if child lock enabled 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness\+\_\+enabled@{app\+\_\+is\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness\+\_\+enabled}}
+\index{app\+\_\+is\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness\+\_\+enabled@{app\+\_\+is\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness\+\_\+enabled}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness\+\_\+enabled(void)}{app_is_night_light_auto_brightness_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+night\+\_\+light\+\_\+auto\+\_\+brightness\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a43dedfb756cc76295d5481c385138b1e}{}\label{app_8h_a43dedfb756cc76295d5481c385138b1e}
+
+
+application get if auto brightness is enabled or disabled 
+
+\begin{DoxyReturn}{Returns}
+return true if enabled 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+is\+\_\+sta\+\_\+mode\+\_\+enabled@{app\+\_\+is\+\_\+sta\+\_\+mode\+\_\+enabled}}
+\index{app\+\_\+is\+\_\+sta\+\_\+mode\+\_\+enabled@{app\+\_\+is\+\_\+sta\+\_\+mode\+\_\+enabled}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+is\+\_\+sta\+\_\+mode\+\_\+enabled(void)}{app_is_sta_mode_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool app\+\_\+is\+\_\+sta\+\_\+mode\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_ace49e7f7aeb155f96f11529de9ae95ee}{}\label{app_8h_ace49e7f7aeb155f96f11529de9ae95ee}
+
+
+application get if sta mode is enabled 
+
+\begin{DoxyReturn}{Returns}
+returns true if sta mode is enabled 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+ota\+\_\+start@{app\+\_\+ota\+\_\+start}}
+\index{app\+\_\+ota\+\_\+start@{app\+\_\+ota\+\_\+start}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+ota\+\_\+start(char $\ast$loc)}{app_ota_start(char *loc)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+ota\+\_\+start (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{loc}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_afcf518564a95b70c9006e1b723690f68}{}\label{app_8h_afcf518564a95b70c9006e1b723690f68}
+
+
+application run ota update 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & location of the file to download \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay@{app\+\_\+set\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay}}
+\index{app\+\_\+set\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay@{app\+\_\+set\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay(int delay)}{app_set_auto_screen_off_delay(int delay)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+auto\+\_\+screen\+\_\+off\+\_\+delay (
+\begin{DoxyParamCaption}
+\item[{int}]{delay}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a708f8f6cd096faad7acbee0826d75e12}{}\label{app_8h_a708f8f6cd096faad7acbee0826d75e12}
+
+
+application set auto screen of delay 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delay} & duration before auto sleep \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+mode@{app\+\_\+set\+\_\+mode}}
+\index{app\+\_\+set\+\_\+mode@{app\+\_\+set\+\_\+mode}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+mode(int mode)}{app_set_mode(int mode)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+mode (
+\begin{DoxyParamCaption}
+\item[{int}]{mode}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a83f3ab17fef31d801775815545a8e22c}{}\label{app_8h_a83f3ab17fef31d801775815545a8e22c}
+
+
+application set device mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+night\+\_\+light\+\_\+config@{app\+\_\+set\+\_\+night\+\_\+light\+\_\+config}}
+\index{app\+\_\+set\+\_\+night\+\_\+light\+\_\+config@{app\+\_\+set\+\_\+night\+\_\+light\+\_\+config}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+night\+\_\+light\+\_\+config(int cfg)}{app_set_night_light_config(int cfg)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+night\+\_\+light\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{int}]{cfg}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a5f43ff7f14c99ace9fa3a4ade62384f5}{}\label{app_8h_a5f43ff7f14c99ace9fa3a4ade62384f5}
+
+
+application set nightlight configuration 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cfg} & configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+screen\+\_\+brightness@{app\+\_\+set\+\_\+screen\+\_\+brightness}}
+\index{app\+\_\+set\+\_\+screen\+\_\+brightness@{app\+\_\+set\+\_\+screen\+\_\+brightness}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+screen\+\_\+brightness(int br)}{app_set_screen_brightness(int br)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+screen\+\_\+brightness (
+\begin{DoxyParamCaption}
+\item[{int}]{br}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a138b57d9f0a126414d2a7be10f1fa566}{}\label{app_8h_a138b57d9f0a126414d2a7be10f1fa566}
+
+
+application set screen brightness 
+
+
+\begin{DoxyParams}{Parameters}
+{\em br} & brightness level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+password@{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+password}}
+\index{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+password@{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+password}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+password(char $\ast$pw, size\+\_\+t len)}{app_set_sta_mode_password(char *pw, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+password (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pw, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a839e6a96bed68b041b07ccb7969acb25}{}\label{app_8h_a839e6a96bed68b041b07ccb7969acb25}
+
+
+application set sta mode password 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pw} & password of target ssid \\
+\hline
+{\em len} & lenght of target ap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+ssid@{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+ssid}}
+\index{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+ssid@{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+ssid}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+ssid(char $\ast$ssid, size\+\_\+t len)}{app_set_sta_mode_ssid(char *ssid, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+sta\+\_\+mode\+\_\+ssid (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ssid, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a1fcd688d459f29cb773952865f6eb397}{}\label{app_8h_a1fcd688d459f29cb773952865f6eb397}
+
+
+application set sta mode ssid 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & ssid of target connection \\
+\hline
+{\em len} & lenght of ssid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+target\+\_\+temp@{app\+\_\+set\+\_\+target\+\_\+temp}}
+\index{app\+\_\+set\+\_\+target\+\_\+temp@{app\+\_\+set\+\_\+target\+\_\+temp}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+target\+\_\+temp(int temp\+\_\+c)}{app_set_target_temp(int temp_c)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+target\+\_\+temp (
+\begin{DoxyParamCaption}
+\item[{int}]{temp\+\_\+c}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_aab556d480a77a5d82595581d3b974972}{}\label{app_8h_aab556d480a77a5d82595581d3b974972}
+
+
+application layer set the temperature 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp\+\_\+c} & value of temperature to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+temp\+\_\+unit@{app\+\_\+set\+\_\+temp\+\_\+unit}}
+\index{app\+\_\+set\+\_\+temp\+\_\+unit@{app\+\_\+set\+\_\+temp\+\_\+unit}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+temp\+\_\+unit(int unit)}{app_set_temp_unit(int unit)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+temp\+\_\+unit (
+\begin{DoxyParamCaption}
+\item[{int}]{unit}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_ae931da542a0226ccb2f30c03121923c2}{}\label{app_8h_ae931da542a0226ccb2f30c03121923c2}
+
+
+application set unit of temperature 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unit} & can be celsius or fahrenheit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}
+\index{app.\+h@{app.\+h}!app\+\_\+set\+\_\+timer@{app\+\_\+set\+\_\+timer}}
+\index{app\+\_\+set\+\_\+timer@{app\+\_\+set\+\_\+timer}!app.\+h@{app.\+h}}
+\subsubsection[{\texorpdfstring{app\+\_\+set\+\_\+timer(int timer)}{app_set_timer(int timer)}}]{\setlength{\rightskip}{0pt plus 5cm}int app\+\_\+set\+\_\+timer (
+\begin{DoxyParamCaption}
+\item[{int}]{timer}
+\end{DoxyParamCaption}
+)}\hypertarget{app_8h_a19a0f0a02806cbcaa1173103823be68f}{}\label{app_8h_a19a0f0a02806cbcaa1173103823be68f}
+
+
+set the timer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timer} & value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return success if ok 
+\end{DoxyReturn}

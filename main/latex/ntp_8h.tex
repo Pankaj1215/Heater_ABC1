@@ -1,0 +1,69 @@
+\hypertarget{ntp_8h}{}\section{ntp.\+h File Reference}
+\label{ntp_8h}\index{ntp.\+h@{ntp.\+h}}
+{\ttfamily \#include \char`\"{}esp\+\_\+err.\+h\char`\"{}}\\*
+Include dependency graph for ntp.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{ntp_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \hyperlink{ntp_8h_a7c91de7218da65ad574220f2d0c0efb1}{ntp\+\_\+init} (char $\ast$server)
+\begin{DoxyCompactList}\small\item\em initialize ntp service \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \hyperlink{ntp_8h_a19e465230808d3b4c624580bd0a1fb9b}{ntp\+\_\+deinit} (void)
+\begin{DoxyCompactList}\small\item\em de initialize ntp service \end{DoxyCompactList}\item 
+bool \hyperlink{ntp_8h_a76338bbbca5f13917f976a50f2a37bb6}{ntp\+\_\+is\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em check if ntp service is running \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{ntp.\+h@{ntp.\+h}!ntp\+\_\+deinit@{ntp\+\_\+deinit}}
+\index{ntp\+\_\+deinit@{ntp\+\_\+deinit}!ntp.\+h@{ntp.\+h}}
+\subsubsection[{\texorpdfstring{ntp\+\_\+deinit(void)}{ntp_deinit(void)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t ntp\+\_\+deinit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{ntp_8h_a19e465230808d3b4c624580bd0a1fb9b}{}\label{ntp_8h_a19e465230808d3b4c624580bd0a1fb9b}
+
+
+de initialize ntp service 
+
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{ntp.\+h@{ntp.\+h}!ntp\+\_\+init@{ntp\+\_\+init}}
+\index{ntp\+\_\+init@{ntp\+\_\+init}!ntp.\+h@{ntp.\+h}}
+\subsubsection[{\texorpdfstring{ntp\+\_\+init(char $\ast$server)}{ntp_init(char *server)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t ntp\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{server}
+\end{DoxyParamCaption}
+)}\hypertarget{ntp_8h_a7c91de7218da65ad574220f2d0c0efb1}{}\label{ntp_8h_a7c91de7218da65ad574220f2d0c0efb1}
+
+
+initialize ntp service 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server} & string for ntp service \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{ntp.\+h@{ntp.\+h}!ntp\+\_\+is\+\_\+enabled@{ntp\+\_\+is\+\_\+enabled}}
+\index{ntp\+\_\+is\+\_\+enabled@{ntp\+\_\+is\+\_\+enabled}!ntp.\+h@{ntp.\+h}}
+\subsubsection[{\texorpdfstring{ntp\+\_\+is\+\_\+enabled(void)}{ntp_is_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}bool ntp\+\_\+is\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{ntp_8h_a76338bbbca5f13917f976a50f2a37bb6}{}\label{ntp_8h_a76338bbbca5f13917f976a50f2a37bb6}
+
+
+check if ntp service is running 
+
+\begin{DoxyReturn}{Returns}
+returns true if ntp service is running 
+\end{DoxyReturn}

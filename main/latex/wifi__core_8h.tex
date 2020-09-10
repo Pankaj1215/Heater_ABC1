@@ -1,0 +1,311 @@
+\hypertarget{wifi__core_8h}{}\section{wifi/include/wifi\+\_\+core.h File Reference}
+\label{wifi__core_8h}\index{wifi/include/wifi\+\_\+core.\+h@{wifi/include/wifi\+\_\+core.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries E\+S\+P32\+\_\+\+W\+I\+F\+I\+\_\+\+U\+N\+K\+N\+O\+WN}~0\hypertarget{wifi__core_8h_aba2f7487ad4596fc71345abefd9667ba}{}\label{wifi__core_8h_aba2f7487ad4596fc71345abefd9667ba}
+
+\item 
+\#define {\bfseries E\+S\+P32\+\_\+\+W\+I\+F\+I\+\_\+\+C\+L\+I\+E\+NT}~1\hypertarget{wifi__core_8h_a56561d48b70e0fc1956b75f4d99fbe67}{}\label{wifi__core_8h_a56561d48b70e0fc1956b75f4d99fbe67}
+
+\item 
+\#define {\bfseries E\+S\+P32\+\_\+\+W\+I\+F\+I\+\_\+\+AP}~2\hypertarget{wifi__core_8h_aca7f8da5924c7a5188f4d4bb04693970}{}\label{wifi__core_8h_aca7f8da5924c7a5188f4d4bb04693970}
+
+\item 
+\#define {\bfseries E\+S\+P32\+\_\+\+W\+I\+F\+I\+\_\+\+W\+PS}~3\hypertarget{wifi__core_8h_a456c0da85b1955fa7045e78c0131c66f}{}\label{wifi__core_8h_a456c0da85b1955fa7045e78c0131c66f}
+
+\item 
+\#define {\bfseries E\+S\+P32\+\_\+\+W\+I\+F\+I\+\_\+\+S\+L\+E\+EP}~4\hypertarget{wifi__core_8h_a4afdc049c009237d16bf3a1ef80c7961}{}\label{wifi__core_8h_a4afdc049c009237d16bf3a1ef80c7961}
+
+\item 
+\#define {\bfseries E\+S\+P32\+\_\+\+E\+R\+R\+OR}~5\hypertarget{wifi__core_8h_aea63aeaeabf5fca598ee30775ce266a4}{}\label{wifi__core_8h_aea63aeaeabf5fca598ee30775ce266a4}
+
+\item 
+\#define {\bfseries W\+E\+B\+\_\+\+S\+V\+R\+\_\+\+S\+T\+A\+T\+\_\+\+E\+R\+R\+OR}~-\/1\hypertarget{wifi__core_8h_acff2f38b12ab1cc538e3545e23ecd72e}{}\label{wifi__core_8h_acff2f38b12ab1cc538e3545e23ecd72e}
+
+\item 
+\#define {\bfseries W\+E\+B\+\_\+\+S\+V\+R\+\_\+\+S\+T\+A\+T\+\_\+\+U\+N\+K\+N\+O\+WN}~0\hypertarget{wifi__core_8h_a4124f515fa837a05813579c837a1034d}{}\label{wifi__core_8h_a4124f515fa837a05813579c837a1034d}
+
+\item 
+\#define {\bfseries W\+E\+B\+\_\+\+S\+V\+R\+\_\+\+S\+T\+A\+T\+\_\+\+R\+U\+N\+N\+I\+NG}~1\hypertarget{wifi__core_8h_a7d07474ca0e5b54119df618388e0c3d4}{}\label{wifi__core_8h_a7d07474ca0e5b54119df618388e0c3d4}
+
+\item 
+\#define {\bfseries W\+E\+B\+\_\+\+S\+V\+R\+\_\+\+S\+T\+A\+T\+\_\+\+S\+T\+OP}~2\hypertarget{wifi__core_8h_aabc20228fea2702c24e252c09453f3a0}{}\label{wifi__core_8h_aabc20228fea2702c24e252c09453f3a0}
+
+\item 
+\#define {\bfseries M\+A\+X\+\_\+\+R\+E\+P\+L\+Y\+\_\+\+B\+UF}~1000\hypertarget{wifi__core_8h_a6095ed8b653bfe699cd609f6ce542f54}{}\label{wifi__core_8h_a6095ed8b653bfe699cd609f6ce542f54}
+
+\item 
+\#define {\bfseries P\+A\+R\+S\+E\+R\+\_\+\+K\+EY}~\char`\"{}\&\char`\"{}\hypertarget{wifi__core_8h_af43863e1a9e379be08b5c4b8a1a3ea2d}{}\label{wifi__core_8h_af43863e1a9e379be08b5c4b8a1a3ea2d}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{wifi__core_8h_ac2da2378366314c0355307564e696480}{wifi\+\_\+version} ()
+\begin{DoxyCompactList}\small\item\em returns the firmware wifi version \end{DoxyCompactList}\item 
+int \hyperlink{wifi__core_8h_ad11cb611d51ddb4215a8a80b3c25ac8d}{esp32\+\_\+wifi\+\_\+config} (int mode, char $\ast$ssid, char $\ast$password)
+\begin{DoxyCompactList}\small\item\em set the wifi configuration \end{DoxyCompactList}\item 
+int \hyperlink{wifi__core_8h_ac1904198ace5097e4ce60ca741e48c10}{esp32\+\_\+initialise\+\_\+wifi} (void)
+\begin{DoxyCompactList}\small\item\em initialize wifi device \end{DoxyCompactList}\item 
+int {\bfseries esp32\+\_\+send\+\_\+msg} (char $\ast$destination, char $\ast$msgtosend, int lenght)\hypertarget{wifi__core_8h_a2fda6f6653bbb1f20e1b54ec5259b2c7}{}\label{wifi__core_8h_a2fda6f6653bbb1f20e1b54ec5259b2c7}
+
+\item 
+int {\bfseries esp32\+\_\+receive\+\_\+msg} (char $\ast$toreceive, int lenght)\hypertarget{wifi__core_8h_a795ebf1ff461071c25abbe9595e82ba8}{}\label{wifi__core_8h_a795ebf1ff461071c25abbe9595e82ba8}
+
+\item 
+int \hyperlink{wifi__core_8h_a6ea70de9ce00ea71181b424b3fe32509}{esp32\+\_\+wps\+\_\+enable} (void)
+\begin{DoxyCompactList}\small\item\em enable wps mode \end{DoxyCompactList}\item 
+int \hyperlink{wifi__core_8h_a95236a4493d53098fa97b5c93c642d58}{esp32\+\_\+wps\+\_\+disable} (void)
+\begin{DoxyCompactList}\small\item\em disable wps mode \end{DoxyCompactList}\item 
+int \hyperlink{wifi__core_8h_aca5202d8cead455f0d4506aaacedb217}{esp32\+\_\+wifi\+\_\+client\+\_\+enable} (char $\ast$ssid, char $\ast$pw)
+\begin{DoxyCompactList}\small\item\em set wifi device to client mode \end{DoxyCompactList}\item 
+int \hyperlink{wifi__core_8h_a1c5962064d3e95cc3f354518643c7deb}{esp32\+\_\+wifi\+\_\+ap\+\_\+enable} (char $\ast$ssid\+\_\+ap, char $\ast$pw)
+\begin{DoxyCompactList}\small\item\em set wifi to ap mode \end{DoxyCompactList}\item 
+int \hyperlink{wifi__core_8h_ae3b087887e603ddd74660cbb6cf9f86c}{esp32\+\_\+wifi\+\_\+ap\+\_\+disable} (void)
+\begin{DoxyCompactList}\small\item\em set wifi to ap mode to disable \end{DoxyCompactList}\item 
+\+\_\+\+Bool \hyperlink{wifi__core_8h_a524d9690008c116fca02b404a56d5ba9}{esp32\+\_\+wifi\+\_\+is\+\_\+ap\+\_\+enabled} (void)
+\begin{DoxyCompactList}\small\item\em check if wifi is in ap or not \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{wifi__core_8h_a1a392fadbb5f0e4d3c963f833feaf53d}{esp32\+\_\+wifi\+\_\+ap\+\_\+get\+\_\+mac} (void)
+\begin{DoxyCompactList}\small\item\em get the location of mac address string in ap mode \end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{wifi__core_8h_aa05cbe2fcbbc0545465fc0a707c05412}{esp32\+\_\+wifi\+\_\+client\+\_\+get\+\_\+mac} (void)
+\begin{DoxyCompactList}\small\item\em get the location of mac address string in client mode \end{DoxyCompactList}\item 
+int {\bfseries esp32\+\_\+wifi\+\_\+scan} (void $\ast$variable\+\_\+args)\hypertarget{wifi__core_8h_a4abd0667a0500e2e933840a5cc22f0f1}{}\label{wifi__core_8h_a4abd0667a0500e2e933840a5cc22f0f1}
+
+\item 
+int {\bfseries esp32\+\_\+wake\+\_\+up} (void $\ast$param)\hypertarget{wifi__core_8h_a190c97ce24710f3759735d87959d37a7}{}\label{wifi__core_8h_a190c97ce24710f3759735d87959d37a7}
+
+\item 
+int {\bfseries esp32\+\_\+sleep} (void)\hypertarget{wifi__core_8h_a5a44adeb5732e570c76c6cb1dbc750ce}{}\label{wifi__core_8h_a5a44adeb5732e570c76c6cb1dbc750ce}
+
+\item 
+int \hyperlink{wifi__core_8h_ab2485125aa9e50786a58f4c01d399321}{esp32\+\_\+reg\+\_\+wifi\+\_\+msg\+\_\+callback} (int($\ast$msg\+\_\+callbk)(char $\ast$msg, char $\ast$ret\+\_\+reply))
+\begin{DoxyCompactList}\small\item\em set a callback when wifi receive R\+E\+ST message \end{DoxyCompactList}\item 
+int \hyperlink{wifi__core_8h_ac4812cc9427c1cc3eda8c18d81ba862f}{esp32\+\_\+reg\+\_\+wifi\+\_\+conn\+\_\+callback} (int($\ast$wifi\+\_\+conn\+\_\+cb)(int conn\+\_\+stat))
+\begin{DoxyCompactList}\small\item\em sets the callback when wifi changed status \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+initialise\+\_\+wifi@{esp32\+\_\+initialise\+\_\+wifi}}
+\index{esp32\+\_\+initialise\+\_\+wifi@{esp32\+\_\+initialise\+\_\+wifi}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+initialise\+\_\+wifi(void)}{esp32_initialise_wifi(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+initialise\+\_\+wifi (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_ac1904198ace5097e4ce60ca741e48c10}{}\label{wifi__core_8h_ac1904198ace5097e4ce60ca741e48c10}
+
+
+initialize wifi device 
+
+\begin{DoxyReturn}{Returns}
+always success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+reg\+\_\+wifi\+\_\+conn\+\_\+callback@{esp32\+\_\+reg\+\_\+wifi\+\_\+conn\+\_\+callback}}
+\index{esp32\+\_\+reg\+\_\+wifi\+\_\+conn\+\_\+callback@{esp32\+\_\+reg\+\_\+wifi\+\_\+conn\+\_\+callback}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+reg\+\_\+wifi\+\_\+conn\+\_\+callback(int($\ast$wifi\+\_\+conn\+\_\+cb)(int conn\+\_\+stat))}{esp32_reg_wifi_conn_callback(int(*wifi_conn_cb)(int conn_stat))}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+reg\+\_\+wifi\+\_\+conn\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{int($\ast$)(int conn\+\_\+stat)}]{wifi\+\_\+conn\+\_\+cb}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_ac4812cc9427c1cc3eda8c18d81ba862f}{}\label{wifi__core_8h_ac4812cc9427c1cc3eda8c18d81ba862f}
+
+
+sets the callback when wifi changed status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wifi\+\_\+conn\+\_\+cb} & function pointer to be executed when wifi stat changed \\
+\hline
+{\em conn\+\_\+stat} & wifi status \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+reg\+\_\+wifi\+\_\+msg\+\_\+callback@{esp32\+\_\+reg\+\_\+wifi\+\_\+msg\+\_\+callback}}
+\index{esp32\+\_\+reg\+\_\+wifi\+\_\+msg\+\_\+callback@{esp32\+\_\+reg\+\_\+wifi\+\_\+msg\+\_\+callback}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+reg\+\_\+wifi\+\_\+msg\+\_\+callback(int($\ast$msg\+\_\+callbk)(char $\ast$msg, char $\ast$ret\+\_\+reply))}{esp32_reg_wifi_msg_callback(int(*msg_callbk)(char *msg, char *ret_reply))}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+reg\+\_\+wifi\+\_\+msg\+\_\+callback (
+\begin{DoxyParamCaption}
+\item[{int($\ast$)(char $\ast$msg, char $\ast$ret\+\_\+reply)}]{msg\+\_\+callbk}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_ab2485125aa9e50786a58f4c01d399321}{}\label{wifi__core_8h_ab2485125aa9e50786a58f4c01d399321}
+
+
+set a callback when wifi receive R\+E\+ST message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg\+\_\+callbk} & function pointer to be executed when wifi gets R\+E\+ST msg \\
+\hline
+{\em ret\+\_\+reply} & return string when message was handled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wifi\+\_\+ap\+\_\+disable@{esp32\+\_\+wifi\+\_\+ap\+\_\+disable}}
+\index{esp32\+\_\+wifi\+\_\+ap\+\_\+disable@{esp32\+\_\+wifi\+\_\+ap\+\_\+disable}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wifi\+\_\+ap\+\_\+disable(void)}{esp32_wifi_ap_disable(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+wifi\+\_\+ap\+\_\+disable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_ae3b087887e603ddd74660cbb6cf9f86c}{}\label{wifi__core_8h_ae3b087887e603ddd74660cbb6cf9f86c}
+
+
+set wifi to ap mode to disable 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wifi\+\_\+ap\+\_\+enable@{esp32\+\_\+wifi\+\_\+ap\+\_\+enable}}
+\index{esp32\+\_\+wifi\+\_\+ap\+\_\+enable@{esp32\+\_\+wifi\+\_\+ap\+\_\+enable}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wifi\+\_\+ap\+\_\+enable(char $\ast$ssid\+\_\+ap, char $\ast$pw)}{esp32_wifi_ap_enable(char *ssid_ap, char *pw)}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+wifi\+\_\+ap\+\_\+enable (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ssid\+\_\+ap, }
+\item[{char $\ast$}]{pw}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_a1c5962064d3e95cc3f354518643c7deb}{}\label{wifi__core_8h_a1c5962064d3e95cc3f354518643c7deb}
+
+
+set wifi to ap mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid\+\_\+ap} & set the ap mode ssid \\
+\hline
+{\em pw} & set the ap mode password \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wifi\+\_\+ap\+\_\+get\+\_\+mac@{esp32\+\_\+wifi\+\_\+ap\+\_\+get\+\_\+mac}}
+\index{esp32\+\_\+wifi\+\_\+ap\+\_\+get\+\_\+mac@{esp32\+\_\+wifi\+\_\+ap\+\_\+get\+\_\+mac}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wifi\+\_\+ap\+\_\+get\+\_\+mac(void)}{esp32_wifi_ap_get_mac(void)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ esp32\+\_\+wifi\+\_\+ap\+\_\+get\+\_\+mac (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_a1a392fadbb5f0e4d3c963f833feaf53d}{}\label{wifi__core_8h_a1a392fadbb5f0e4d3c963f833feaf53d}
+
+
+get the location of mac address string in ap mode 
+
+\begin{DoxyReturn}{Returns}
+static address location of mac address 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wifi\+\_\+client\+\_\+enable@{esp32\+\_\+wifi\+\_\+client\+\_\+enable}}
+\index{esp32\+\_\+wifi\+\_\+client\+\_\+enable@{esp32\+\_\+wifi\+\_\+client\+\_\+enable}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wifi\+\_\+client\+\_\+enable(char $\ast$ssid, char $\ast$pw)}{esp32_wifi_client_enable(char *ssid, char *pw)}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+wifi\+\_\+client\+\_\+enable (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ssid, }
+\item[{char $\ast$}]{pw}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_aca5202d8cead455f0d4506aaacedb217}{}\label{wifi__core_8h_aca5202d8cead455f0d4506aaacedb217}
+
+
+set wifi device to client mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & wifi will connect to this ssid \\
+\hline
+{\em mode} & pw will use this password to remote wifi ap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wifi\+\_\+client\+\_\+get\+\_\+mac@{esp32\+\_\+wifi\+\_\+client\+\_\+get\+\_\+mac}}
+\index{esp32\+\_\+wifi\+\_\+client\+\_\+get\+\_\+mac@{esp32\+\_\+wifi\+\_\+client\+\_\+get\+\_\+mac}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wifi\+\_\+client\+\_\+get\+\_\+mac(void)}{esp32_wifi_client_get_mac(void)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ esp32\+\_\+wifi\+\_\+client\+\_\+get\+\_\+mac (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_aa05cbe2fcbbc0545465fc0a707c05412}{}\label{wifi__core_8h_aa05cbe2fcbbc0545465fc0a707c05412}
+
+
+get the location of mac address string in client mode 
+
+\begin{DoxyReturn}{Returns}
+static address location of mac address 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wifi\+\_\+config@{esp32\+\_\+wifi\+\_\+config}}
+\index{esp32\+\_\+wifi\+\_\+config@{esp32\+\_\+wifi\+\_\+config}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wifi\+\_\+config(int mode, char $\ast$ssid, char $\ast$password)}{esp32_wifi_config(int mode, char *ssid, char *password)}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+wifi\+\_\+config (
+\begin{DoxyParamCaption}
+\item[{int}]{mode, }
+\item[{char $\ast$}]{ssid, }
+\item[{char $\ast$}]{password}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_ad11cb611d51ddb4215a8a80b3c25ac8d}{}\label{wifi__core_8h_ad11cb611d51ddb4215a8a80b3c25ac8d}
+
+
+set the wifi configuration 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & wifi mode S\+TA or AP \\
+\hline
+{\em ssid} & name of the wifi to connect if S\+TA, or ap name if AP \\
+\hline
+{\em password} & password if S\+TA, password of ap if mode is AP \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wifi\+\_\+is\+\_\+ap\+\_\+enabled@{esp32\+\_\+wifi\+\_\+is\+\_\+ap\+\_\+enabled}}
+\index{esp32\+\_\+wifi\+\_\+is\+\_\+ap\+\_\+enabled@{esp32\+\_\+wifi\+\_\+is\+\_\+ap\+\_\+enabled}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wifi\+\_\+is\+\_\+ap\+\_\+enabled(void)}{esp32_wifi_is_ap_enabled(void)}}]{\setlength{\rightskip}{0pt plus 5cm}\+\_\+\+Bool esp32\+\_\+wifi\+\_\+is\+\_\+ap\+\_\+enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_a524d9690008c116fca02b404a56d5ba9}{}\label{wifi__core_8h_a524d9690008c116fca02b404a56d5ba9}
+
+
+check if wifi is in ap or not 
+
+\begin{DoxyReturn}{Returns}
+return true if yes, falso if no 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wps\+\_\+disable@{esp32\+\_\+wps\+\_\+disable}}
+\index{esp32\+\_\+wps\+\_\+disable@{esp32\+\_\+wps\+\_\+disable}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wps\+\_\+disable(void)}{esp32_wps_disable(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+wps\+\_\+disable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_a95236a4493d53098fa97b5c93c642d58}{}\label{wifi__core_8h_a95236a4493d53098fa97b5c93c642d58}
+
+
+disable wps mode 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!esp32\+\_\+wps\+\_\+enable@{esp32\+\_\+wps\+\_\+enable}}
+\index{esp32\+\_\+wps\+\_\+enable@{esp32\+\_\+wps\+\_\+enable}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{esp32\+\_\+wps\+\_\+enable(void)}{esp32_wps_enable(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int esp32\+\_\+wps\+\_\+enable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_a6ea70de9ce00ea71181b424b3fe32509}{}\label{wifi__core_8h_a6ea70de9ce00ea71181b424b3fe32509}
+
+
+enable wps mode 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}!wifi\+\_\+version@{wifi\+\_\+version}}
+\index{wifi\+\_\+version@{wifi\+\_\+version}!wifi\+\_\+core.\+h@{wifi\+\_\+core.\+h}}
+\subsubsection[{\texorpdfstring{wifi\+\_\+version()}{wifi_version()}}]{\setlength{\rightskip}{0pt plus 5cm}int wifi\+\_\+version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{wifi__core_8h_ac2da2378366314c0355307564e696480}{}\label{wifi__core_8h_ac2da2378366314c0355307564e696480}
+
+
+returns the firmware wifi version 
+
+\begin{DoxyReturn}{Returns}
+returns wifi version 
+\end{DoxyReturn}

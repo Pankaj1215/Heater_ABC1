@@ -1,0 +1,907 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ADC_RESAMPLE_CNT_MAX	tempsensor.h	19;"	d
+APP_MODE_AUTO	app.h	/^    APP_MODE_AUTO,$/;"	e	enum:__anon3
+APP_MODE_DEBUG	app.h	/^    APP_MODE_DEBUG,$/;"	e	enum:__anon3
+APP_MODE_MANUAL_TEMPERATURE	app.h	/^    APP_MODE_MANUAL_TEMPERATURE,$/;"	e	enum:__anon3
+APP_MODE_MENU	app.h	/^    APP_MODE_MENU,$/;"	e	enum:__anon3
+APP_MODE_ON_STARTUP	app.h	18;"	d
+APP_MODE_STANDBY	app.h	/^    APP_MODE_STANDBY = 1,$/;"	e	enum:__anon3
+APP_MODE_TEMPERATURE_SENSOR_OFFSET_SET	app.h	/^    APP_MODE_TEMPERATURE_SENSOR_OFFSET_SET,$/;"	e	enum:__anon3
+APP_MODE_TIMER_INCREMENT	app.h	/^    APP_MODE_TIMER_INCREMENT,$/;"	e	enum:__anon3
+APP_WELCOME_SCREEN_DELAY_MS	app.h	7;"	d
+AUTO_DIM_PILOT_LIGHT_MAX_BRIGHTNESS	app.h	77;"	d
+AUTO_DIM_PILOT_LIGHT_MIN_BRIGHTNESS	app.h	78;"	d
+AUTO_MODE_HEATER_OFF_DUR_SEC	app.h	92;"	d
+AUTO_MODE_HEATER_ON_DUR_SEC	app.h	91;"	d
+AUTO_MODE_INTERPOLATE	app.h	94;"	d
+AUTO_MODE_LONG_PRESS_DUR_MS	app.h	13;"	d
+AUTO_MODE_SCHED_NUM	app.h	93;"	d
+AUTO_SCREEN_OFF_DELAY_SEC_DEFAULT	app.h	74;"	d
+AUTO_SCREEN_OFF_DELAY_SEC_INCREMENT	app.h	73;"	d
+AUTO_SCREEN_OFF_DELAY_SEC_MAX	app.h	71;"	d
+AUTO_SCREEN_OFF_DELAY_SEC_MIN	app.h	72;"	d
+BUFFSIZE	sdk_util/ota_update.c	21;"	d	file:
+BUTTON_DOWN_GPIO_NUM	button.h	6;"	d
+BUTTON_DOWN_STAT	app.h	/^    BUTTON_DOWN_STAT,$/;"	e	enum:btn_stat
+BUTTON_POWER_BACK_GPIO_NUM	button.h	7;"	d
+BUTTON_POWER_BACK_STAT	app.h	/^    BUTTON_POWER_BACK_STAT,$/;"	e	enum:btn_stat
+BUTTON_TIMER_FORWARD_GPIO_NUM	button.h	8;"	d
+BUTTON_TIMER_FORWARD_STAT	app.h	/^    BUTTON_TIMER_FORWARD_STAT,$/;"	e	enum:btn_stat
+BUTTON_UP_GPIO_NUM	button.h	5;"	d
+BUTTON_UP_STAT	app.h	/^    BUTTON_UP_STAT = 0,$/;"	e	enum:btn_stat
+CHAR_CHANGE_TIMEOUT_MS	app.h	16;"	d
+CHILD_LOCK_LONG_PRESS_DUR_MS	app.h	10;"	d
+COMM_STAT_ERROR	communication_server.h	22;"	d
+COMM_STAT_NONE	communication_server.h	20;"	d
+COMM_STAT_READY	communication_server.h	21;"	d
+COMM_STAT_STARTING	communication_server.h	23;"	d
+COMPONENT_ADD_INCLUDEDIRS	component.mk	/^COMPONENT_ADD_INCLUDEDIRS := . \\$/;"	m
+COMPONENT_SRCDIRS	component.mk	/^COMPONENT_SRCDIRS := . \\$/;"	m
+CONNECTED_BIT	wifi/wifi_core.c	/^const int CONNECTED_BIT = BIT0;$/;"	v
+DEBUG_MODE_LONG_PRESS_DUR_MS	app.h	11;"	d
+DEBUG_SCREEN_NUM_MAX	app.h	115;"	d
+DEMO_MQTT_CRED	lucidtron_core.h	31;"	d
+DEV_ERR_BOOTUP	lucidtron_core.h	9;"	d
+DEV_ERR_BT	communication_server_hal.h	9;"	d
+DEV_ERR_COMMSVR	lucidtron_core.h	11;"	d
+DEV_ERR_DEBUG	lucidtron_core.h	10;"	d
+DEV_ERR_GSM	communication_server_hal.h	5;"	d
+DEV_ERR_LORA	communication_server_hal.h	7;"	d
+DEV_ERR_NONE	communication_server_hal.h	4;"	d
+DEV_ERR_PERISVR	lucidtron_core.h	12;"	d
+DEV_ERR_SIGFOX	communication_server_hal.h	6;"	d
+DEV_ERR_WIFI	communication_server_hal.h	8;"	d
+DEV_NO_ERR	lucidtron_core.h	8;"	d
+DEV_STAT_BUSY	common/include/common.h	19;"	d
+DEV_STAT_CUSTOM	common/include/common.h	24;"	d
+DEV_STAT_ERROR	common/include/common.h	17;"	d
+DEV_STAT_READING	common/include/common.h	20;"	d
+DEV_STAT_READY	common/include/common.h	18;"	d
+DEV_STAT_SLEEP	common/include/common.h	22;"	d
+DEV_STAT_STANDBY	common/include/common.h	23;"	d
+DEV_STAT_WRITTING	common/include/common.h	21;"	d
+DIM_PILOT_LIGHT_UPDATE_INTERVAL_MS	app.h	76;"	d
+DISPLAY_AUTO_BRIGHTNESS_UPDATE_INTERVAL_MS	app.h	69;"	d
+DISPLAY_BRIGHTNESS_DEF	app.h	67;"	d
+DISPLAY_BRIGHTNESS_INCREMENT	app.h	68;"	d
+DISPLAY_BRIGHTNESS_MAX	app.h	65;"	d
+DISPLAY_BRIGHTNESS_MIN	app.h	66;"	d
+DISPLAY_COLOR	app.h	52;"	d
+DISPLAY_DATE_AFTER_CHANGE_MS	app.h	109;"	d
+DISPLAY_MUTEX_LOCK	display.c	17;"	d	file:
+DISPLAY_MUTEX_UNLOCK	display.c	18;"	d	file:
+DISPLAY_TARGET_TEMP_DUR_MS	app.h	41;"	d
+DISPLAY_TIMER_DUR_MS	app.h	42;"	d
+DISPLAY_TIME_AFTER_CHANGE_MS	app.h	110;"	d
+DISPLAY_UPDATE_STATUS_FLASH_DURATION_MS	app.h	112;"	d
+ERROR	common/include/common.h	11;"	d
+ESP32_ERROR	wifi/include/wifi_core.h	9;"	d
+ESP32_WIFI_AP	wifi/include/wifi_core.h	6;"	d
+ESP32_WIFI_CLIENT	wifi/include/wifi_core.h	5;"	d
+ESP32_WIFI_SLEEP	wifi/include/wifi_core.h	8;"	d
+ESP32_WIFI_UNKNOWN	wifi/include/wifi_core.h	4;"	d
+ESP32_WIFI_WPS	wifi/include/wifi_core.h	7;"	d
+FALSE	common/include/common.h	14;"	d
+GET_LED_B_VAL	app.c	48;"	d	file:
+GET_LED_G_VAL	app.c	47;"	d	file:
+GET_LED_R_VAL	app.c	4544;"	d	file:
+GET_LED_R_VAL	app.c	46;"	d	file:
+HEATER_CTL_GPIO_NUM	heater.h	5;"	d
+HEATER_OFF_LONG_PRESS_DUR_MS	app.h	8;"	d
+HTTP_CMD_FRESET	communication_server.h	29;"	d
+HTTP_CMD_PW	communication_server.h	28;"	d
+HTTP_CMD_RESET	communication_server.h	30;"	d
+HTTP_CMD_SSID	communication_server.h	27;"	d
+HTTP_CMD_WPS	communication_server.h	31;"	d
+IOT_MSG_IN	communication_server.h	8;"	d
+IOT_MSG_OUT	communication_server.h	7;"	d
+IOT_SERVER_ADDRESS	communication_server.h	5;"	d
+KEYMARK_CLOSECBRACKET	communication_msg_handler.c	22;"	d	file:
+KEYMARK_COLON	communication_msg_handler.c	20;"	d	file:
+KEYMARK_COMMA	communication_msg_handler.c	21;"	d	file:
+KEYMARK_OPENCBRACKET	communication_msg_handler.c	18;"	d	file:
+KEYMARK_QUOTE	communication_msg_handler.c	19;"	d	file:
+LAST_TIMER_SETTING_MIN_DEF	app.h	50;"	d
+LDR_ADC_ATTEN	lightsensor.h	7;"	d
+LDR_ADC_IN_CHANNEL	lightsensor.h	5;"	d
+LDR_ADC_IN_CHANNEL_GPIO_NUM	lightsensor.h	8;"	d
+LDR_ADC_MAX_VAL	lightsensor.h	11;"	d
+LDR_ADC_WIDTH	lightsensor.h	6;"	d
+LDR_MAX_DIFF_ADC	lightsensor.h	13;"	d
+LDR_RESAMPLE_CNT_MAX	lightsensor.h	12;"	d
+LDR_ROLLING_AVE_SAMPLES_CNT	lightsensor.h	14;"	d
+LDR_SAMPLES_CNT	lightsensor.h	10;"	d
+LED1_CHANNEL_INDEX	led.h	17;"	d
+LED1_GPIO_NUM	led.h	10;"	d
+LED2_CHANNEL_INDEX	led.h	18;"	d
+LED2_GPIO_NUM	led.h	11;"	d
+LEDC_CHANNEL_CNT	led.h	24;"	d
+LEDC_MAX_DUTY_VAL	led.h	25;"	d
+LEDC_SPEED_MODE	led.h	6;"	d
+LEDC_TIMER_FREQ	led.h	7;"	d
+LEDC_TIMER_RES	led.h	8;"	d
+LEDC_TIMER_SRC	led.h	5;"	d
+LED_B_CHANNEL_INDEX	led.h	22;"	d
+LED_B_GPIO_NUM	led.h	15;"	d
+LED_B_MASK	app.c	44;"	d	file:
+LED_B_POL	led.h	30;"	d
+LED_B_POS	app.c	40;"	d	file:
+LED_G_CHANNEL_INDEX	led.h	21;"	d
+LED_G_GPIO_NUM	led.h	14;"	d
+LED_G_MASK	app.c	43;"	d	file:
+LED_G_POL	led.h	29;"	d
+LED_G_POS	app.c	39;"	d	file:
+LED_MAX_BRIGHTNESS	led.h	26;"	d
+LED_R_CHANNEL_INDEX	led.h	20;"	d
+LED_R_GPIO_NUM	led.h	13;"	d
+LED_R_MASK	app.c	42;"	d	file:
+LED_R_POL	led.h	28;"	d
+LED_R_POS	app.c	38;"	d	file:
+LIGHTSENSOR_MUTEX_LOCK	lightsensor.c	16;"	d	file:
+LIGHTSENSOR_MUTEX_UNLOCK	lightsensor.c	17;"	d	file:
+LIGHT_SENSOR_READ_INTERVAL_MS	app.h	21;"	d
+LUCIDTRON_SAMPLE_MACID	lucidtron_core.h	28;"	d
+LUCIDTRON_SAMPLE_PRODID	lucidtron_core.h	29;"	d
+LUCIDTRON_UNIQUE_ID	lucidtron_core.h	27;"	d
+MAIN_APP_H	app.h	2;"	d
+MAIN_BUTTON_H	button.h	2;"	d
+MAIN_DISPLAY_H	display.h	2;"	d
+MAIN_DISPLAY_ICON_H	display_icon.h	2;"	d
+MAIN_HEATER_H	heater.h	2;"	d
+MAIN_LED_H	led.h	2;"	d
+MAIN_LIGHTSENSOR_H	lightsensor.h	2;"	d
+MAIN_NTP_H	ntp.h	2;"	d
+MAIN_TEMPSENSOR_H	tempsensor.h	2;"	d
+MANUFACTURING_YEAR	app.h	6;"	d
+MAX_BASIC_SWITCH	lucidtron_core.h	16;"	d
+MAX_LABEL_SIZE	lucidtron_core.h	14;"	d
+MAX_LED_STAT	lucidtron_core.h	15;"	d
+MAX_REPLY_BUF	wifi/include/wifi_core.h	16;"	d
+MAX_STR_BUFF_SIZE	lucidtron_core.h	18;"	d
+MENU_CALENDAR	app.h	/^    MENU_CALENDAR = 1,$/;"	e	enum:menu_main
+MENU_CALENDAR_SCHED	app.h	/^    MENU_CALENDAR_SCHED,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_EN	app.h	/^    MENU_CALENDAR_SCHED_EN,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_EN_STAT	app.h	/^    MENU_CALENDAR_SCHED_EN_STAT,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_TEMP	app.h	/^    MENU_CALENDAR_SCHED_TEMP,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_TEMP_CHANGE	app.h	/^    MENU_CALENDAR_SCHED_TEMP_CHANGE,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_TIME	app.h	/^    MENU_CALENDAR_SCHED_TIME,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_TIME_HOUR	app.h	/^    MENU_CALENDAR_SCHED_TIME_HOUR,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_TIME_HOUR_CHANGE	app.h	/^    MENU_CALENDAR_SCHED_TIME_HOUR_CHANGE,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_TIME_MINUTE	app.h	/^    MENU_CALENDAR_SCHED_TIME_MINUTE,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_SCHED_TIME_MINUTE_CHANGE	app.h	/^    MENU_CALENDAR_SCHED_TIME_MINUTE_CHANGE,$/;"	e	enum:menu_calendar
+MENU_CALENDAR_WEEKTYPE	app.h	/^    MENU_CALENDAR_WEEKTYPE = 1,$/;"	e	enum:menu_calendar
+MENU_COMMS_BUF_MAX_LEN	app.h	60;"	d
+MENU_COMMS_INPUT_CHARACTER_FIRST_CHAR	app.h	63;"	d
+MENU_COMMS_INPUT_CHARACTER_MAX_VAL	app.h	62;"	d
+MENU_COMMS_INPUT_CHARACTER_MIN_VAL	app.h	61;"	d
+MENU_COMMUNICATIONS	app.h	/^    MENU_COMMUNICATIONS,$/;"	e	enum:menu_main
+MENU_COMMUNICATIONS_AP_MODE	app.h	/^    MENU_COMMUNICATIONS_AP_MODE = 1,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_AP_MODE_EN	app.h	/^    MENU_COMMUNICATIONS_AP_MODE_EN,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_AP_MODE_SSID	app.h	/^    MENU_COMMUNICATIONS_AP_MODE_SSID,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_AP_MODE_SSID_VAL	app.h	/^    MENU_COMMUNICATIONS_AP_MODE_SSID_VAL,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_WIFI_AP	app.h	/^    MENU_COMMUNICATIONS_WIFI_AP,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_WIFI_AP_PASSWORD	app.h	/^    MENU_COMMUNICATIONS_WIFI_AP_PASSWORD,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_WIFI_AP_PASSWORD_CHANGE	app.h	/^    MENU_COMMUNICATIONS_WIFI_AP_PASSWORD_CHANGE,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_WIFI_AP_SSID	app.h	/^    MENU_COMMUNICATIONS_WIFI_AP_SSID,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_WIFI_AP_SSID_CHANGE	app.h	/^    MENU_COMMUNICATIONS_WIFI_AP_SSID_CHANGE,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_WPS	app.h	/^    MENU_COMMUNICATIONS_WPS,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_WPS_EN	app.h	/^    MENU_COMMUNICATIONS_WPS_EN,$/;"	e	enum:menu_communications
+MENU_COMMUNICATIONS_WPS_EN_INST	app.h	/^    MENU_COMMUNICATIONS_WPS_EN_INST,$/;"	e	enum:menu_communications
+MENU_DISPLAY_SETTINGS	app.h	/^    MENU_DISPLAY_SETTINGS,$/;"	e	enum:menu_main
+MENU_DISPLAY_SETTINGS_AUTO_SCREEN_OFF	app.h	/^    MENU_DISPLAY_SETTINGS_AUTO_SCREEN_OFF,$/;"	e	enum:menu_display_settings
+MENU_DISPLAY_SETTINGS_AUTO_SCREEN_OFF_DELAY	app.h	/^    MENU_DISPLAY_SETTINGS_AUTO_SCREEN_OFF_DELAY,$/;"	e	enum:menu_display_settings
+MENU_DISPLAY_SETTINGS_AUTO_SCREEN_OFF_DELAY_CHANGE	app.h	/^    MENU_DISPLAY_SETTINGS_AUTO_SCREEN_OFF_DELAY_CHANGE,$/;"	e	enum:menu_display_settings
+MENU_DISPLAY_SETTINGS_AUTO_SCREEN_OFF_EN	app.h	/^    MENU_DISPLAY_SETTINGS_AUTO_SCREEN_OFF_EN,$/;"	e	enum:menu_display_settings
+MENU_DISPLAY_SETTINGS_BRIGHTNESS	app.h	/^    MENU_DISPLAY_SETTINGS_BRIGHTNESS = 1,$/;"	e	enum:menu_display_settings
+MENU_DISPLAY_SETTINGS_BRIGHTNESS_AUTO	app.h	/^    MENU_DISPLAY_SETTINGS_BRIGHTNESS_AUTO,$/;"	e	enum:menu_display_settings
+MENU_DISPLAY_SETTINGS_BRIGHTNESS_AUTO_EN	app.h	/^    MENU_DISPLAY_SETTINGS_BRIGHTNESS_AUTO_EN,$/;"	e	enum:menu_display_settings
+MENU_DISPLAY_SETTINGS_BRIGHTNESS_MANUAL	app.h	/^    MENU_DISPLAY_SETTINGS_BRIGHTNESS_MANUAL,$/;"	e	enum:menu_display_settings
+MENU_DISPLAY_SETTINGS_BRIGHTNESS_MANUAL_CHANGE	app.h	/^    MENU_DISPLAY_SETTINGS_BRIGHTNESS_MANUAL_CHANGE,$/;"	e	enum:menu_display_settings
+MENU_FIRST	app.h	/^    MENU_FIRST = 1,$/;"	e	enum:menu_main
+MENU_LAST	app.h	/^    MENU_LAST = MENU_UPDATE,$/;"	e	enum:menu_main
+MENU_MODE_LONG_PRESS_DUR_MS	app.h	14;"	d
+MENU_NAVIGATION_SCREEN_DISPLAY_DURATION_MS	app.h	58;"	d
+MENU_SETTINGS	app.h	/^    MENU_SETTINGS,$/;"	e	enum:menu_main
+MENU_SETTINGS_CHILD_LOCK	app.h	/^    MENU_SETTINGS_CHILD_LOCK,$/;"	e	enum:menu_settings
+MENU_SETTINGS_CHILD_LOCK_EN	app.h	/^    MENU_SETTINGS_CHILD_LOCK_EN,$/;"	e	enum:menu_settings
+MENU_SETTINGS_NIGHT_LIGHT	app.h	/^    MENU_SETTINGS_NIGHT_LIGHT,$/;"	e	enum:menu_settings
+MENU_SETTINGS_NIGHT_LIGHT_CFG	app.h	/^    MENU_SETTINGS_NIGHT_LIGHT_CFG,$/;"	e	enum:menu_settings
+MENU_SETTINGS_PILOT_LIGHT	app.h	/^    MENU_SETTINGS_PILOT_LIGHT,$/;"	e	enum:menu_settings
+MENU_SETTINGS_PILOT_LIGHT_EN	app.h	/^    MENU_SETTINGS_PILOT_LIGHT_EN,$/;"	e	enum:menu_settings
+MENU_SETTINGS_TEMPERATURE_HYSTERESIS	app.h	/^    MENU_SETTINGS_TEMPERATURE_HYSTERESIS,$/;"	e	enum:menu_settings
+MENU_SETTINGS_TEMPERATURE_HYSTERESIS_CHANGE	app.h	/^    MENU_SETTINGS_TEMPERATURE_HYSTERESIS_CHANGE,$/;"	e	enum:menu_settings
+MENU_SETTINGS_TEMPERATURE_HYSTERESIS_CHANGE_WARNING	app.h	/^    MENU_SETTINGS_TEMPERATURE_HYSTERESIS_CHANGE_WARNING,$/;"	e	enum:menu_settings
+MENU_SETTINGS_TEMPERATURE_UNIT	app.h	/^    MENU_SETTINGS_TEMPERATURE_UNIT = 1,$/;"	e	enum:menu_settings
+MENU_SETTINGS_TEMPERATURE_UNIT_CHANGE	app.h	/^    MENU_SETTINGS_TEMPERATURE_UNIT_CHANGE,$/;"	e	enum:menu_settings
+MENU_TIME_AND_DATE_AUTO	app.h	/^    MENU_TIME_AND_DATE_AUTO = 1,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_AUTO_EN	app.h	/^    MENU_TIME_AND_DATE_AUTO_EN,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL	app.h	/^    MENU_TIME_AND_DATE_MANUAL,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_DATE	app.h	/^    MENU_TIME_AND_DATE_MANUAL_DATE,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_DATE_DAY	app.h	/^    MENU_TIME_AND_DATE_MANUAL_DATE_DAY,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_DATE_DAY_CHANGE	app.h	/^    MENU_TIME_AND_DATE_MANUAL_DATE_DAY_CHANGE,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_DATE_MONTH	app.h	/^    MENU_TIME_AND_DATE_MANUAL_DATE_MONTH,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_DATE_MONTH_CHANGE	app.h	/^    MENU_TIME_AND_DATE_MANUAL_DATE_MONTH_CHANGE,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_DATE_YEAR	app.h	/^    MENU_TIME_AND_DATE_MANUAL_DATE_YEAR,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_DATE_YEAR_CHANGE	app.h	/^    MENU_TIME_AND_DATE_MANUAL_DATE_YEAR_CHANGE,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_TIME	app.h	/^    MENU_TIME_AND_DATE_MANUAL_TIME,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_TIME_HOUR	app.h	/^    MENU_TIME_AND_DATE_MANUAL_TIME_HOUR,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_TIME_HOUR_CHANGE	app.h	/^    MENU_TIME_AND_DATE_MANUAL_TIME_HOUR_CHANGE,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_TIME_MINUTE	app.h	/^    MENU_TIME_AND_DATE_MANUAL_TIME_MINUTE,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_MANUAL_TIME_MINUTE_CHANGE	app.h	/^    MENU_TIME_AND_DATE_MANUAL_TIME_MINUTE_CHANGE,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_TIMEZONE_OFFSET	app.h	/^    MENU_TIME_AND_DATE_TIMEZONE_OFFSET,$/;"	e	enum:menu_time_and_date
+MENU_TIME_AND_DATE_TIMEZONE_OFFSET_SET	app.h	/^    MENU_TIME_AND_DATE_TIMEZONE_OFFSET_SET,$/;"	e	enum:menu_time_and_date
+MENU_TIME_DATE	app.h	/^    MENU_TIME_DATE,$/;"	e	enum:menu_main
+MENU_UPDATE	app.h	/^    MENU_UPDATE,$/;"	e	enum:menu_main
+MENU_UPDATE_ONGOING_UPDATE	app.h	/^    MENU_UPDATE_ONGOING_UPDATE,$/;"	e	enum:menu_update
+MENU_UPDATE_STATUS	app.h	/^    MENU_UPDATE_STATUS = 1,$/;"	e	enum:menu_update
+MENU_UPDATE_TRIGGER_UPDATE	app.h	/^    MENU_UPDATE_TRIGGER_UPDATE,$/;"	e	enum:menu_update
+MSGTYPE_GET	communication_msg_handler.h	8;"	d
+MSGTYPE_SET	communication_msg_handler.h	7;"	d
+MSGTYPE_SYSTEM	communication_msg_handler.h	6;"	d
+MSGTYPE_UNKNOWN	communication_msg_handler.h	5;"	d
+NIGHT_LED_CHANNEL_INDEX	led.h	19;"	d
+NIGHT_LED_GPIO_NUM	led.h	12;"	d
+NIGHT_LIGHT_BRIGHTNESS_MAX	app.h	84;"	d
+NIGHT_LIGHT_BRIGHTNESS_MIN	app.h	85;"	d
+NIGHT_LIGHT_BRIGHTNESS_OFF_THS	app.h	87;"	d
+NIGHT_LIGHT_UPDATE_INTERVAL_MS	app.h	86;"	d
+NIGHT_LIGHT_VAL_DEF	app.h	81;"	d
+NIGHT_LIGHT_VAL_MAX	app.h	83;"	d
+NIGHT_LIGHT_VAL_MIN	app.h	82;"	d
+NTC_ADC_ATTEN	tempsensor.h	8;"	d
+NTC_ADC_IN_CHANNEL	tempsensor.h	6;"	d
+NTC_ADC_IN_CHANNEL_GPIO_NUM	tempsensor.h	9;"	d
+NTC_ADC_MAX_VAL	tempsensor.h	12;"	d
+NTC_ADC_WIDTH	tempsensor.h	7;"	d
+NTC_BETA	tempsensor.h	13;"	d
+NTC_R_BALANCE	tempsensor.h	14;"	d
+NTC_SAMPLES_CNT	tempsensor.h	11;"	d
+NTC_VCC_GPIO_NUM	tempsensor.h	5;"	d
+NTP_OPMODE	ntp.c	8;"	d	file:
+NTP_SERVER	app.h	56;"	d
+NVS_LUCIDTRON_NAMESPACE	sdk_util/include/non_volatile_lib.h	4;"	d
+NVS_LUCIDTRON_PW_KEY	lucidtron_core.h	21;"	d
+NVS_LUCIDTRON_SSID_KEY	lucidtron_core.h	20;"	d
+NVS_MQTT_BROKER	lucidtron_core.h	22;"	d
+NVS_MQTT_CHANID	lucidtron_core.h	25;"	d
+NVS_MQTT_PASSWORD	lucidtron_core.h	24;"	d
+NVS_MQTT_USERNAME	lucidtron_core.h	23;"	d
+OLED_HEIGHT	display.h	14;"	d
+OLED_I2C_ADDR	display.h	9;"	d
+OLED_I2C_FREQ_HZ	display.h	7;"	d
+OLED_I2C_NUM	display.h	8;"	d
+OLED_I2C_SCL_GPIO_NUM	display.h	6;"	d
+OLED_I2C_SDA_GPIO_NUM	display.h	5;"	d
+OLED_PWR_CTL_GPIO_NUM	display.h	11;"	d
+OLED_RES_GPIO_NUM	display.h	10;"	d
+OLED_WIDTH	display.h	13;"	d
+PARSER_KEY	wifi/include/wifi_core.h	17;"	d
+QUICK_SCROLL_LONG_PRESS_DUR_MS	app.h	15;"	d
+REMOTE_CMD_ACTIVATE_CHILD_LOCK	communication_msg_handler.h	36;"	d
+REMOTE_CMD_CMD_HELLO	communication_msg_handler.h	14;"	d
+REMOTE_CMD_CMD_HI	communication_msg_handler.h	13;"	d
+REMOTE_CMD_CMD_OWNDEVICE	communication_msg_handler.h	12;"	d
+REMOTE_CMD_CMD_STATUS	communication_msg_handler.h	28;"	d
+REMOTE_CMD_CMD_WHOAREYOU	communication_msg_handler.h	11;"	d
+REMOTE_CMD_EN_AP_MODE	communication_msg_handler.h	15;"	d
+REMOTE_CMD_EN_AUTO_DIM_DISPLAY	communication_msg_handler.h	52;"	d
+REMOTE_CMD_EN_AUTO_DIM_PILOT_LIGHT	communication_msg_handler.h	44;"	d
+REMOTE_CMD_EN_AUTO_SCREEN_OFF	communication_msg_handler.h	56;"	d
+REMOTE_CMD_EN_AUTO_SET_TIME_DATE	communication_msg_handler.h	40;"	d
+REMOTE_CMD_EN_CHILD_LOCK	communication_msg_handler.h	50;"	d
+REMOTE_CMD_EN_NIGHT_LIGHT_AUTO_BRIGHTNESS	communication_msg_handler.h	46;"	d
+REMOTE_CMD_EN_STA_MODE	communication_msg_handler.h	19;"	d
+REMOTE_CMD_GET_AMBIENT_TEMP	communication_msg_handler.h	31;"	d
+REMOTE_CMD_GET_AUTO_SCREEN_OFF_DELAY_SEC	communication_msg_handler.h	59;"	d
+REMOTE_CMD_GET_FW_VER	communication_msg_handler.h	21;"	d
+REMOTE_CMD_GET_MODE	communication_msg_handler.h	29;"	d
+REMOTE_CMD_GET_NIGHT_LIGHT_CONFIG	communication_msg_handler.h	49;"	d
+REMOTE_CMD_GET_SCHED	communication_msg_handler.h	39;"	d
+REMOTE_CMD_GET_SCREEN_BRIGHTNESS	communication_msg_handler.h	55;"	d
+REMOTE_CMD_GET_TARGET_TEMP	communication_msg_handler.h	33;"	d
+REMOTE_CMD_GET_TEMP_UNIT	communication_msg_handler.h	43;"	d
+REMOTE_CMD_GET_TIMER_SETTING	communication_msg_handler.h	35;"	d
+REMOTE_CMD_IS_AP_MODE_EN	communication_msg_handler.h	16;"	d
+REMOTE_CMD_IS_AUTO_DIM_DISPLAY_EN	communication_msg_handler.h	53;"	d
+REMOTE_CMD_IS_AUTO_DIM_PILOT_LIGHT_EN	communication_msg_handler.h	45;"	d
+REMOTE_CMD_IS_AUTO_SCREEN_OFF_EN	communication_msg_handler.h	57;"	d
+REMOTE_CMD_IS_AUTO_SET_TIME_DATE_EN	communication_msg_handler.h	41;"	d
+REMOTE_CMD_IS_CHILD_LOCK_ACTIVATED	communication_msg_handler.h	37;"	d
+REMOTE_CMD_IS_CHILD_LOCK_EN	communication_msg_handler.h	51;"	d
+REMOTE_CMD_IS_NIGHT_LIGHT_AUTO_BRIGHTNESS_EN	communication_msg_handler.h	47;"	d
+REMOTE_CMD_IS_STA_MODE_EN	communication_msg_handler.h	20;"	d
+REMOTE_CMD_MQTT_BROKER	communication_msg_handler.h	23;"	d
+REMOTE_CMD_MQTT_CHANNEL	communication_msg_handler.h	26;"	d
+REMOTE_CMD_MQTT_PASSWORD	communication_msg_handler.h	25;"	d
+REMOTE_CMD_MQTT_USERNAME	communication_msg_handler.h	24;"	d
+REMOTE_CMD_OTA	communication_msg_handler.h	60;"	d
+REMOTE_CMD_SET_AUTO_SCREEN_OFF_DELAY_SEC	communication_msg_handler.h	58;"	d
+REMOTE_CMD_SET_MODE	communication_msg_handler.h	30;"	d
+REMOTE_CMD_SET_NIGHT_LIGHT_CONFIG	communication_msg_handler.h	48;"	d
+REMOTE_CMD_SET_SCHED	communication_msg_handler.h	38;"	d
+REMOTE_CMD_SET_SCREEN_BRIGHTNESS	communication_msg_handler.h	54;"	d
+REMOTE_CMD_SET_STA_MODE_PASSWORD	communication_msg_handler.h	18;"	d
+REMOTE_CMD_SET_STA_MODE_SSID	communication_msg_handler.h	17;"	d
+REMOTE_CMD_SET_TARGET_TEMP	communication_msg_handler.h	32;"	d
+REMOTE_CMD_SET_TEMP_UNIT	communication_msg_handler.h	42;"	d
+REMOTE_CMD_SET_TIMER_SETTING	communication_msg_handler.h	34;"	d
+REMOTE_CMD_START_FW_UPDATE	communication_msg_handler.h	22;"	d
+ROLLING_AVE_SAMPLES_CNT	tempsensor.h	21;"	d
+STORAGE_KEY_DISPLAY_SETTINGS	app.h	101;"	d
+STORAGE_KEY_IS_AUTO_TIME_DATE_EN	app.h	105;"	d
+STORAGE_KEY_LAST_TIMER_SETTING	app.h	104;"	d
+STORAGE_KEY_MANUAL_TEMP_CELSIUS	app.h	98;"	d
+STORAGE_KEY_MANUAL_TEMP_FAHRENHEIT	app.h	99;"	d
+STORAGE_KEY_NIGHT_LIGHT_CFG	app.h	107;"	d
+STORAGE_KEY_SCHED_WEEKDAY	app.h	102;"	d
+STORAGE_KEY_SCHED_WEEKEND	app.h	103;"	d
+STORAGE_KEY_SETTINGS	app.h	100;"	d
+STORAGE_KEY_TEMP_SENSOR_OFFSET_CELSIUS	app.h	97;"	d
+STORAGE_KEY_TIMEZONE_OFFSET_INDEX	app.h	106;"	d
+SUCCESS	common/include/common.h	12;"	d
+TAG	button.c	/^static char *TAG = "button";$/;"	v	file:
+TAG	sdk_util/ota_update.c	/^static const char *TAG = "ota";$/;"	v	file:
+TEMPERATURE_CELSIUS_VAL_DEF	app.h	32;"	d
+TEMPERATURE_CELSIUS_VAL_MAX	app.h	31;"	d
+TEMPERATURE_CELSIUS_VAL_MIN	app.h	30;"	d
+TEMPERATURE_FAHRENHEIT_VAL_DEF	app.h	29;"	d
+TEMPERATURE_FAHRENHEIT_VAL_MAX	app.h	28;"	d
+TEMPERATURE_FAHRENHEIT_VAL_MIN	app.h	27;"	d
+TEMPERATURE_HYSTERESIS_CELSIUS_DEFAULT	app.h	34;"	d
+TEMPERATURE_HYSTERESIS_CELSIUS_MAX	app.h	35;"	d
+TEMPERATURE_HYSTERESIS_CELSIUS_MIN	app.h	36;"	d
+TEMPERATURE_HYSTERESIS_FAHRENHEIT_DEFAULT	app.h	37;"	d
+TEMPERATURE_HYSTERESIS_FAHRENHEIT_MAX	app.h	38;"	d
+TEMPERATURE_HYSTERESIS_FAHRENHEIT_MIN	app.h	39;"	d
+TEMPERATURE_SENSOR_OFFSET_CELSIUS_DEF	app.h	23;"	d
+TEMPERATURE_SENSOR_OFFSET_CELSIUS_MAX	app.h	25;"	d
+TEMPERATURE_SENSOR_OFFSET_CELSIUS_MIN	app.h	24;"	d
+TEMP_MAX_DIFF_DEGC	tempsensor.h	20;"	d
+TEMP_OFFSET_LONG_PRESS_DUR_MS	app.h	9;"	d
+TEMP_SENSOR_READ_INTERVAL_MS	app.h	20;"	d
+TEMP_UNIT_CELSIUS	app.h	/^    TEMP_UNIT_CELSIUS = 0,$/;"	e	enum:__anon4
+TEMP_UNIT_FAHRENHEIT	app.h	/^    TEMP_UNIT_FAHRENHEIT,$/;"	e	enum:__anon4
+TEXT_BUFFSIZE	sdk_util/ota_update.c	22;"	d	file:
+TIMER_EXPIRE_WAIT_FOR_INCREMENT_MS	app.h	48;"	d
+TIMER_INCREMENT_MINUTES	app.h	44;"	d
+TIMER_MAX_VALUE_MINUTES	app.h	46;"	d
+TIMER_MIN_VALUE_MINUTES	app.h	45;"	d
+TIMER_MODE_RESET_TIMER_LONG_PRESS_DUR_MS	app.h	12;"	d
+TIMEZONE_OFFSET_INDEX_DEF	app.h	117;"	d
+TIMEZONE_OFFSET_LIST_SIZE	app.c	132;"	d	file:
+TRUE	common/include/common.h	15;"	d
+VALUE_KEY	communication_server.h	25;"	d
+VERSION_MAJOR	version.h	5;"	d
+VERSION_MINOR	version.h	6;"	d
+VERSION_REVISION	version.h	7;"	d
+V_REF	tempsensor.h	16;"	d
+WEB_PORT	wifi/wifi_core.c	35;"	d	file:
+WEB_SERVER	wifi/wifi_core.c	34;"	d	file:
+WEB_SERVER_PORT	wifi/wifi_core.c	37;"	d	file:
+WEB_SVR_STAT_ERROR	wifi/include/wifi_core.h	11;"	d
+WEB_SVR_STAT_RUNNING	wifi/include/wifi_core.h	13;"	d
+WEB_SVR_STAT_STOP	wifi/include/wifi_core.h	14;"	d
+WEB_SVR_STAT_UNKNOWN	wifi/include/wifi_core.h	12;"	d
+WEB_URL	wifi/wifi_core.c	36;"	d	file:
+WIFI_AP_MODE_SSID_BASE	communication_server.h	33;"	d
+WIFI_AP_MODE_SSID_LEN	communication_server.h	34;"	d
+WIFI_AP_SSID	communication_server.h	16;"	d
+WIFI_CONFIG_TIMEOUT	communication_server.h	18;"	d
+WIFI_MAX_LEN	communication_server_hal.h	11;"	d
+WIFI_SECURITY_NONE	communication_server_hal.h	13;"	d
+WIFI_SECURITY_WEP	communication_server_hal.h	18;"	d
+WIFI_SECURITY_WPA2	communication_server_hal.h	17;"	d
+WIFI_SECURITY_WPA_AES	communication_server_hal.h	14;"	d
+WIFI_SECURITY_WPA_TKIP	communication_server_hal.h	15;"	d
+WIFI_SECURITY_WPA_TKIP_AES	communication_server_hal.h	16;"	d
+WIFI_STAT_CONFIG	communication_server.h	12;"	d
+WIFI_STAT_ERROR	communication_server.h	14;"	d
+WIFI_STAT_NONE	communication_server.h	10;"	d
+WIFI_STAT_READY	communication_server.h	11;"	d
+WIFI_STAT_SLEEP	communication_server.h	13;"	d
+__COMMON_H__	common/include/common.h	2;"	d
+__COMMUNICATION_MSG_HANDLER_H__	communication_msg_handler.h	2;"	d
+__COMMUNICATION_SERVER_HAL_H__	communication_server_hal.h	2;"	d
+__COMMUNICATION_SERVER_H_	communication_server.h	2;"	d
+__LUCIDTRON_CORE_H__	lucidtron_core.h	2;"	d
+__NON_VOLATILE_H__	sdk_util/include/non_volatile_lib.h	2;"	d
+__OTA_UPDATE_H__	sdk_util/include/ota_update.h	2;"	d
+__RTOS_UTIL_H__	sdk_util/include/sdk_util.h	2;"	d
+__VERSION_H__	version.h	2;"	d
+__WIFI_CORE_H__	wifi/include/wifi_core.h	2;"	d
+acclerometer	lucidtron_core.h	/^    void* acclerometer;$/;"	m	struct:lucidtron_peripheral_device
+adc_to_degc	tempsensor.c	/^static float adc_to_degc(int adc_sample) {$/;"	f	file:
+ambient_light	app.h	/^    int ambient_light;$/;"	m	struct:__anon8
+ambient_temperature_celsius	app.h	/^    int ambient_temperature_celsius;$/;"	m	struct:__anon8
+ambient_temperature_offset_celsius	app.h	/^    int ambient_temperature_offset_celsius;$/;"	m	struct:__anon8
+ap_info	app.c	/^static wifi_ap_record_t ap_info;$/;"	v	file:
+ap_mac	wifi/wifi_core.c	/^static uint8_t ap_mac[6];$/;"	v	file:
+ap_pw	app.h	/^    char ap_pw[65];$/;"	m	struct:__anon8
+ap_ssid	app.h	/^    char ap_ssid[33];$/;"	m	struct:__anon8
+app_activate_child_lock	app.c	/^int app_activate_child_lock(bool en) {$/;"	f
+app_data	app.c	/^app_data_t *app_data = NULL;$/;"	v
+app_data_t	app.h	/^} app_data_t;$/;"	t	typeref:struct:__anon8
+app_enable_ap_mode	app.c	/^int app_enable_ap_mode(bool en) {$/;"	f
+app_enable_auto_screen_off	app.c	/^int app_enable_auto_screen_off(bool en) {$/;"	f
+app_enable_autodim_display	app.c	/^int app_enable_autodim_display(bool en) {$/;"	f
+app_enable_autodim_pilot_light	app.c	/^int app_enable_autodim_pilot_light(bool en) {$/;"	f
+app_enable_autoset_time_date	app.c	/^int app_enable_autoset_time_date(bool en) {$/;"	f
+app_enable_child_lock	app.c	/^int app_enable_child_lock(bool en) {$/;"	f
+app_enable_night_light_auto_brightness	app.c	/^int app_enable_night_light_auto_brightness(bool en) {$/;"	f
+app_enable_sta_mode	app.c	/^int app_enable_sta_mode(bool en) {$/;"	f
+app_get_ambient_temp	app.c	/^int app_get_ambient_temp(void) {$/;"	f
+app_get_auto_screen_off_delay	app.c	/^int app_get_auto_screen_off_delay(void) {$/;"	f
+app_get_mode	app.c	/^int app_get_mode(void) {$/;"	f
+app_get_night_light_config	app.c	/^int app_get_night_light_config(void) {$/;"	f
+app_get_sched	app.c	/^int app_get_sched(void) {$/;"	f
+app_get_screen_brightness	app.c	/^int app_get_screen_brightness(void) {$/;"	f
+app_get_target_temp	app.c	/^int app_get_target_temp(void) {$/;"	f
+app_get_temp_unit	app.c	/^int app_get_temp_unit(void) {$/;"	f
+app_get_timer	app.c	/^int app_get_timer(void) {$/;"	f
+app_init	app.c	/^esp_err_t app_init(void) {$/;"	f
+app_is_ap_mode_enabled	app.c	/^bool app_is_ap_mode_enabled(void) {$/;"	f
+app_is_auto_screen_off_enabled	app.c	/^bool app_is_auto_screen_off_enabled(void) {$/;"	f
+app_is_autodim_display_enabled	app.c	/^bool app_is_autodim_display_enabled(void) {$/;"	f
+app_is_autodim_pilot_light_enabled	app.c	/^bool app_is_autodim_pilot_light_enabled(void) {$/;"	f
+app_is_autoset_time_date_enabled	app.c	/^bool app_is_autoset_time_date_enabled(void) {$/;"	f
+app_is_child_lock_activated	app.c	/^bool app_is_child_lock_activated(void) {$/;"	f
+app_is_child_lock_enabled	app.c	/^bool app_is_child_lock_enabled(void) {$/;"	f
+app_is_night_light_auto_brightness_enabled	app.c	/^bool app_is_night_light_auto_brightness_enabled(void) {$/;"	f
+app_is_sta_mode_enabled	app.c	/^bool app_is_sta_mode_enabled(void) {$/;"	f
+app_main	main.c	/^void app_main(void) {$/;"	f
+app_mode_t	app.h	/^} app_mode_t;$/;"	t	typeref:enum:__anon3
+app_ota_start	app.c	/^int app_ota_start(char* loc)$/;"	f
+app_set_auto_screen_off_delay	app.c	/^int app_set_auto_screen_off_delay(int delay) {$/;"	f
+app_set_mode	app.c	/^int app_set_mode(int mode) {$/;"	f
+app_set_night_light_config	app.c	/^int app_set_night_light_config(int cfg) {$/;"	f
+app_set_sched	app.c	/^int app_set_sched(void) {$/;"	f
+app_set_screen_brightness	app.c	/^int app_set_screen_brightness(int br) {$/;"	f
+app_set_sta_mode_password	app.c	/^int app_set_sta_mode_password(char *pw, size_t len) {$/;"	f
+app_set_sta_mode_ssid	app.c	/^int app_set_sta_mode_ssid(char *ssid, size_t len) {$/;"	f
+app_set_target_temp	app.c	/^int app_set_target_temp(int temp_c) {$/;"	f
+app_set_temp_unit	app.c	/^int app_set_temp_unit(int unit) {$/;"	f
+app_set_timer	app.c	/^int app_set_timer(int timer) {$/;"	f
+app_start_fw_update	app.c	/^int app_start_fw_update(void) {$/;"	f
+app_task	app.c	/^static void app_task(void *param) {$/;"	f	file:
+audio_codec	lucidtron_core.h	/^    void* audio_codec;$/;"	m	struct:lucidtron_peripheral_device
+aurora_msg_handler	communication_msg_handler.c	/^int aurora_msg_handler(char* msg, char* response)$/;"	f
+auto_icon	display_icon.c	/^const display_icon_t auto_icon = {$/;"	v
+auto_img	display_icon.c	/^const char auto_img[] = {$/;"	v
+auto_mode_sched_t	app.h	/^} auto_mode_sched_t;$/;"	t	typeref:struct:__anon5
+auto_mode_task	app.c	/^static void auto_mode_task(app_data_t *data) {$/;"	f	file:
+auto_screen_off_delay_sec	app.h	/^    int auto_screen_off_delay_sec;$/;"	m	struct:__anon7
+basic_switches	lucidtron_core.h	/^    void* basic_switches[MAX_BASIC_SWITCH];$/;"	m	struct:lucidtron_peripheral_device
+binary_file_length	sdk_util/ota_update.c	/^static int binary_file_length = 0;$/;"	v	file:
+bluetooth_handler	communication_server.c	/^void bluetooth_handler(void* param)$/;"	f
+bt	lucidtron_core.h	/^    void* bt;$/;"	m	struct:lucidtron_comm_device
+btn_stat	app.h	/^enum btn_stat {$/;"	g
+button	button.c	/^static button_t *button;$/;"	v	file:
+button_cb_t	button.h	/^typedef void (*button_cb_t) (int level);$/;"	t
+button_down_cb	app.c	/^static void button_down_cb(int level) {$/;"	f	file:
+button_down_get_level	button.c	/^int button_down_get_level(void) {$/;"	f
+button_down_set_cb	button.c	/^esp_err_t button_down_set_cb(button_cb_t cb) {$/;"	f
+button_init	button.c	/^esp_err_t button_init(void) {$/;"	f
+button_isr_handler	button.c	/^static void IRAM_ATTR button_isr_handler(void* param)$/;"	f	file:
+button_power_back_cb	app.c	/^static void button_power_back_cb(int level) {$/;"	f	file:
+button_power_back_get_level	button.c	/^int button_power_back_get_level(void) {$/;"	f
+button_power_back_set_cb	button.c	/^esp_err_t button_power_back_set_cb(button_cb_t cb) {$/;"	f
+button_status	app.h	/^    int button_status;$/;"	m	struct:__anon8
+button_t	button.c	/^} button_t;$/;"	t	typeref:struct:__anon2	file:
+button_task	button.c	/^void button_task(void *param)$/;"	f
+button_timer_forward_cb	app.c	/^static void button_timer_forward_cb(int level) {$/;"	f	file:
+button_timer_forward_get_level	button.c	/^int button_timer_forward_get_level(void) {$/;"	f
+button_timer_forward_set_cb	button.c	/^esp_err_t button_timer_forward_set_cb(button_cb_t cb) {$/;"	f
+button_up_cb	app.c	/^static void button_up_cb(int level) {$/;"	f	file:
+button_up_get_level	button.c	/^int button_up_get_level(void) {$/;"	f
+button_up_set_cb	button.c	/^esp_err_t button_up_set_cb(button_cb_t cb) {$/;"	f
+cbt_dev	communication_msg_handler.c	/^struct comm_bluetooth* cbt_dev;$/;"	v	typeref:struct:comm_bluetooth
+celsius_to_fahr	app.c	54;"	d	file:
+cgsm_dev	communication_msg_handler.c	/^struct comm_gsm* cgsm_dev;$/;"	v	typeref:struct:comm_gsm
+characteristics	tempsensor.c	/^static esp_adc_cal_characteristics_t characteristics;$/;"	v	file:
+child_lock_icon	display_icon.c	/^const display_icon_t child_lock_icon = {$/;"	v
+child_lock_img	display_icon.c	/^const char child_lock_img[] = {$/;"	v
+clora_dev	communication_msg_handler.c	/^struct comm_lora* clora_dev;$/;"	v	typeref:struct:comm_lora
+comm_bluetooth	communication_server.h	/^struct comm_bluetooth {$/;"	s
+comm_bt_dev	communication_server.c	/^struct comm_bluetooth comm_bt_dev;$/;"	v	typeref:struct:comm_bluetooth
+comm_device_status	communication_server.c	/^int comm_device_status = DEV_ERR_NONE;$/;"	v
+comm_gsm	communication_server.h	/^struct comm_gsm {$/;"	s
+comm_gsm_dev	communication_server.c	/^struct comm_gsm comm_gsm_dev;$/;"	v	typeref:struct:comm_gsm
+comm_lora	communication_server.h	/^struct comm_lora {$/;"	s
+comm_lora_dev	communication_server.c	/^struct comm_lora comm_lora_dev;$/;"	v	typeref:struct:comm_lora
+comm_sig_dev	communication_server.c	/^struct comm_sigfox comm_sig_dev;$/;"	v	typeref:struct:comm_sigfox
+comm_sigfox	communication_server.h	/^struct comm_sigfox {$/;"	s
+comm_wifi	communication_server.h	/^struct comm_wifi {$/;"	s
+comm_wifi_dev	app.c	/^static struct comm_wifi *comm_wifi_dev = NULL;$/;"	v	typeref:struct:comm_wifi	file:
+comm_wifi_dev	communication_server.c	/^struct comm_wifi comm_wifi_dev;$/;"	v	typeref:struct:comm_wifi
+connect_to_http_server	sdk_util/ota_update.c	/^static bool connect_to_http_server()$/;"	f	file:
+create_driver	sdk_util/sdk_util.c	/^void* create_driver(int size)$/;"	f
+create_thread	sdk_util/sdk_util.c	/^int create_thread(void (*thread)(void* param), char* label)$/;"	f
+create_thread_with_stackvalue	sdk_util/sdk_util.c	/^int create_thread_with_stackvalue(void (*thread)(void* param), char* label, int stackvalue)$/;"	f
+csig_dev	communication_msg_handler.c	/^struct comm_sigfox* csig_dev;$/;"	v	typeref:struct:comm_sigfox
+current_timer_setting_min	app.h	/^    int current_timer_setting_min;$/;"	m	struct:__anon8
+cwifi_dev	communication_msg_handler.c	/^struct comm_wifi* cwifi_dev;$/;"	v	typeref:struct:comm_wifi
+debug	lucidtron_core.h	/^    void* debug;$/;"	m	struct:lucidtron_device
+debug_mode_task	app.c	/^static void debug_mode_task(app_data_t *data) {$/;"	f	file:
+delay_milli	sdk_util/sdk_util.c	/^int delay_milli(int milli)$/;"	f
+delay_sec	sdk_util/sdk_util.c	/^int delay_sec(int sec)$/;"	f
+device_info	lucidtron_core.h	/^    char device_info[MAX_LABEL_SIZE];$/;"	m	struct:lucidtron_device
+device_led_status	lucidtron_core.h	/^    void* device_led_status[MAX_LED_STAT];$/;"	m	struct:lucidtron_device
+display_auto_icon	display.c	/^esp_err_t display_auto_icon(int color) {$/;"	f
+display_auto_mode	display.c	/^esp_err_t display_auto_mode(int ambient_temp, int target_temp, int color) {$/;"	f
+display_brightness	app.h	/^    int display_brightness;$/;"	m	struct:__anon7
+display_brightness_task	app.c	/^static void display_brightness_task(void *param) {$/;"	f	file:
+display_brightness_val	display.c	/^esp_err_t display_brightness_val(int val, int color) {$/;"	f
+display_child_lock_icon	display.c	/^esp_err_t display_child_lock_icon(int color) {$/;"	f
+display_clear_last_char_ssid_pw	display.c	/^esp_err_t display_clear_last_char_ssid_pw(char ch)$/;"	f
+display_clear_screen	display.c	/^esp_err_t display_clear_screen(void) {$/;"	f
+display_date	display.c	/^esp_err_t display_date(int yr, int mo, int day, int color) {$/;"	f
+display_day	display.c	/^esp_err_t display_day(int val, int color) {$/;"	f
+display_debug_screen_1	display.c	/^esp_err_t display_debug_screen_1(int temp_c, int temp_offset_c, int ambient_light, int screen_br, int pilot_light_br, int color) {$/;"	f
+display_debug_screen_2	display.c	/^esp_err_t display_debug_screen_2(bool conn, bool internet, bool kaa, bool ap_mode_en, char *ap_ssid, int color) {$/;"	f
+display_energy	display.c	/^esp_err_t display_energy(int val, char *unit, int color) {$/;"	f
+display_hour	display.c	/^esp_err_t display_hour(int val, int color) {$/;"	f
+display_hysteresis_setting_warning	display.c	/^esp_err_t display_hysteresis_setting_warning(int color) {$/;"	f
+display_icon_auto	display_icon.c	/^const display_icon_t *display_icon_auto = &auto_icon;$/;"	v
+display_icon_auto	display_icon.h	/^const display_icon_t *display_icon_auto;$/;"	v
+display_icon_child_lock	display_icon.c	/^const display_icon_t *display_icon_child_lock = &child_lock_icon;$/;"	v
+display_icon_child_lock	display_icon.h	/^const display_icon_t *display_icon_child_lock;$/;"	v
+display_icon_menu_inst	display_icon.c	/^const display_icon_t *display_icon_menu_inst = &menu_inst_icon;$/;"	v
+display_icon_menu_inst	display_icon.h	/^const display_icon_t *display_icon_menu_inst;$/;"	v
+display_icon_power	display_icon.c	/^const display_icon_t *display_icon_power = &power_icon;$/;"	v
+display_icon_power	display_icon.h	/^const display_icon_t *display_icon_power;$/;"	v
+display_icon_t	display_icon.h	/^} display_icon_t;$/;"	t	typeref:struct:__anon1
+display_icon_timer	display_icon.c	/^const display_icon_t *display_icon_timer = &timer_icon;$/;"	v
+display_icon_timer	display_icon.h	/^const display_icon_t *display_icon_timer;$/;"	v
+display_icon_welcome_screen	display_icon.c	/^const display_icon_t *display_icon_welcome_screen = &welcome_screen_icon;$/;"	v
+display_icon_welcome_screen	display_icon.h	/^const display_icon_t *display_icon_welcome_screen;$/;"	v
+display_icon_wifi	display_icon.c	/^const display_icon_t *display_icon_wifi = &wifi_icon;$/;"	v
+display_icon_wifi	display_icon.h	/^const display_icon_t *display_icon_wifi;$/;"	v
+display_init	display.c	/^esp_err_t display_init(void) {$/;"	f
+display_manual_temperature_normal	display.c	/^esp_err_t display_manual_temperature_normal(int ambient_temp, int target_temp, int color) {$/;"	f
+display_menu	display.c	/^esp_err_t display_menu(char *str1, int str1_color, char *str2, int str2_color) {$/;"	f
+display_menu_inst	display.c	/^esp_err_t display_menu_inst(int color) {$/;"	f
+display_minute	display.c	/^esp_err_t display_minute(int val, int color) {$/;"	f
+display_month	display.c	/^esp_err_t display_month(int val, int color) {$/;"	f
+display_off	display.c	/^esp_err_t display_off(void) {$/;"	f
+display_on	display.c	/^esp_err_t display_on(void) {$/;"	f
+display_password	display.c	/^esp_err_t display_password(char *pw, int color) {$/;"	f
+display_password_masked	display.c	/^esp_err_t display_password_masked(int pw_len, int color) {$/;"	f
+display_screen_timeout	display.c	/^esp_err_t display_screen_timeout(int sec, int color) {$/;"	f
+display_set_brightness	display.c	/^esp_err_t display_set_brightness(int brightness) {$/;"	f
+display_settings	app.h	/^    display_settings_t display_settings;$/;"	m	struct:__anon8
+display_settings_t	app.h	/^} display_settings_t;$/;"	t	typeref:struct:__anon7
+display_ssid	display.c	/^esp_err_t display_ssid(char *ssid, int color) {$/;"	f
+display_standby_message	display.c	/^esp_err_t display_standby_message(int color) {$/;"	f
+display_temperature	display.c	/^esp_err_t display_temperature(int val, int color) {$/;"	f
+display_temperature_offset_set_mode	display.c	/^esp_err_t display_temperature_offset_set_mode(int ambient_temp, int offset_temp, int color) {$/;"	f
+display_time	display.c	/^esp_err_t display_time(int hr, int min, int color) {$/;"	f
+display_timer_icon	display.c	/^esp_err_t display_timer_icon(int color) {$/;"	f
+display_timer_mode_changed	display.c	/^esp_err_t display_timer_mode_changed(int timer_min, int color) {$/;"	f
+display_timer_mode_normal	display.c	/^esp_err_t display_timer_mode_normal(int ambient_temp, int target_temp, int timer_min, int color) {$/;"	f
+display_timer_value	display.c	/^esp_err_t display_timer_value(int val, int color) {$/;"	f
+display_timezone	display.c	/^esp_err_t display_timezone(int min, int color) {$/;"	f
+display_update_installing_msg	display.c	/^esp_err_t display_update_installing_msg(int color) {$/;"	f
+display_update_status	display.c	/^esp_err_t display_update_status(int stat, int fw_ver, int color) {$/;"	f
+display_update_trigger_msg	display.c	/^esp_err_t display_update_trigger_msg(int color) {$/;"	f
+display_welcome_screen	display.c	/^esp_err_t display_welcome_screen(int color) {$/;"	f
+display_wifi_icon	display.c	/^esp_err_t display_wifi_icon(int color) {$/;"	f
+display_wps_mode_msg	display.c	/^esp_err_t display_wps_mode_msg(int color) {$/;"	f
+display_year	display.c	/^esp_err_t display_year(int val, int color) {$/;"	f
+down_cb	button.c	/^    button_cb_t down_cb;$/;"	m	struct:__anon2	file:
+ecompass	lucidtron_core.h	/^    void* ecompass;$/;"	m	struct:lucidtron_peripheral_device
+en	app.h	/^    bool en;$/;"	m	struct:__anon5
+erase_data_in_storage	sdk_util/non_volatile_lib.c	/^int erase_data_in_storage(char* key)$/;"	f
+erase_integer_in_storage	sdk_util/non_volatile_lib.c	/^int erase_integer_in_storage(char* key)$/;"	f
+erase_storage_all	sdk_util/non_volatile_lib.c	/^int erase_storage_all(void)$/;"	f
+erase_string_in_storage	sdk_util/non_volatile_lib.c	/^int erase_string_in_storage(char* key)$/;"	f
+esp32_initialise_wifi	wifi/wifi_core.c	/^int esp32_initialise_wifi(void)$/;"	f
+esp32_receive_msg	wifi/wifi_core.c	/^int esp32_receive_msg(char* toreceive, int lenght)$/;"	f
+esp32_reg_wifi_conn_callback	wifi/wifi_core.c	/^int esp32_reg_wifi_conn_callback(int (*wifi_conn_cb)(int conn_stat)) {$/;"	f
+esp32_reg_wifi_msg_callback	wifi/wifi_core.c	/^int esp32_reg_wifi_msg_callback(int (*wifi_callback)(char* msg, char* ret_reply))$/;"	f
+esp32_send_msg	wifi/wifi_core.c	/^int esp32_send_msg(char* destination, char* msgtosend, int lenght)$/;"	f
+esp32_sleep	wifi/wifi_core.c	/^int esp32_sleep(void)$/;"	f
+esp32_wake_up	wifi/wifi_core.c	/^int esp32_wake_up(void* param)$/;"	f
+esp32_wifi_ap_disable	wifi/wifi_core.c	/^int esp32_wifi_ap_disable(void) {$/;"	f
+esp32_wifi_ap_enable	wifi/wifi_core.c	/^int esp32_wifi_ap_enable(char* ssid_ap, char *pw)$/;"	f
+esp32_wifi_ap_get_mac	wifi/wifi_core.c	/^uint8_t *esp32_wifi_ap_get_mac(void)$/;"	f
+esp32_wifi_client_enable	wifi/wifi_core.c	/^int esp32_wifi_client_enable(char* ssid, char* pw)$/;"	f
+esp32_wifi_client_get_mac	wifi/wifi_core.c	/^uint8_t *esp32_wifi_client_get_mac(void)$/;"	f
+esp32_wifi_config	wifi/wifi_core.c	/^int esp32_wifi_config(int mode, char* ssid, char* password)$/;"	f
+esp32_wifi_is_ap_enabled	wifi/wifi_core.c	/^bool esp32_wifi_is_ap_enabled(void) {$/;"	f
+esp32_wifi_scan	wifi/wifi_core.c	/^int esp32_wifi_scan(void* variable_args)$/;"	f
+esp32_wifi_status	wifi/wifi_core.c	/^int esp32_wifi_status = ESP32_WIFI_UNKNOWN;$/;"	v
+esp32_wps_disable	wifi/wifi_core.c	/^int esp32_wps_disable(void)$/;"	f
+esp32_wps_enable	wifi/wifi_core.c	/^int esp32_wps_enable(void)$/;"	f
+event_handler	wifi/wifi_core.c	/^int event_handler(void *ctx, system_event_t *event)$/;"	f
+event_handler_for_kaa	communication_server.c	/^int event_handler_for_kaa(char* cmd, char* param)$/;"	f
+evt_queue	button.c	/^    xQueueHandle evt_queue;$/;"	m	struct:__anon2	file:
+fahr_to_celsius	app.c	53;"	d	file:
+filename	communication_server.c	/^char filename[255];$/;"	v
+firmware_ver	lucidtron_core.h	/^    char firmware_ver[MAX_LABEL_SIZE];$/;"	m	struct:lucidtron_device
+g_filename	sdk_util/ota_update.c	/^char* g_filename;$/;"	v
+g_server_ip	sdk_util/ota_update.c	/^char* g_server_ip;$/;"	v
+g_server_port	sdk_util/ota_update.c	/^int g_server_port;$/;"	v
+get_bluetooth_dev	communication_server.c	/^struct comm_bluetooth* get_bluetooth_dev(void)$/;"	f
+get_data_from_storage	sdk_util/non_volatile_lib.c	/^int get_data_from_storage(char* key, void *data)$/;"	f
+get_file	common/filesystem_lib.c	/^int get_file(char* haysack, char* buff)$/;"	f
+get_filepath	common/filesystem_lib.c	/^int get_filepath(char* haysack, char* buff)$/;"	f
+get_gsm_dev	communication_server.c	/^struct comm_gsm* get_gsm_dev(void)$/;"	f
+get_integer_from_storage	sdk_util/non_volatile_lib.c	/^int get_integer_from_storage(char* key, int* value)$/;"	f
+get_iot_information	communication_server.c	/^int get_iot_information(char* field, char* value)$/;"	f
+get_ip	common/filesystem_lib.c	/^int get_ip(char* haysack, char* buff)$/;"	f
+get_lora_dev	communication_server.c	/^struct comm_lora* get_lora_dev(void)$/;"	f
+get_path	common/filesystem_lib.c	/^int get_path(char* haysack, char* buff)$/;"	f
+get_port	common/filesystem_lib.c	/^int get_port(char* haysack, char* buff)$/;"	f
+get_sig_dev	communication_server.c	/^struct comm_sigfox* get_sig_dev(void)$/;"	f
+get_string_from_storage	sdk_util/non_volatile_lib.c	/^int get_string_from_storage(char* key, char* buffer)$/;"	f
+get_url	common/filesystem_lib.c	/^int get_url(char* haysack, char* buff)$/;"	f
+get_version	version.c	/^size_t get_version(char *buf)$/;"	f
+get_version_major	version.c	/^uint32_t get_version_major(void)$/;"	f
+get_version_minor	version.c	/^uint32_t get_version_minor(void)$/;"	f
+get_version_revision	version.c	/^uint32_t get_version_revision(void)$/;"	f
+get_wifi_dev	communication_server.c	/^struct comm_wifi* get_wifi_dev(void)$/;"	f
+global_wifi_config	wifi/wifi_core.c	/^wifi_config_t global_wifi_config;$/;"	v
+gps	lucidtron_core.h	/^    void* gps;$/;"	m	struct:lucidtron_peripheral_device
+gsm	lucidtron_core.h	/^    void* gsm;$/;"	m	struct:lucidtron_comm_device
+gsm_handler	communication_server.c	/^void gsm_handler(void* param)$/;"	f
+hal_initialize_bluetooth	communication_server_hal.c	/^int hal_initialize_bluetooth()$/;"	f
+hal_initialize_gsm	communication_server_hal.c	/^int hal_initialize_gsm()$/;"	f
+hal_initialize_lora	communication_server_hal.c	/^int hal_initialize_lora()$/;"	f
+hal_initialize_sigfox	communication_server_hal.c	/^int hal_initialize_sigfox()$/;"	f
+hal_initialize_wifi	communication_server_hal.c	/^int hal_initialize_wifi()$/;"	f
+heater_init	heater.c	/^esp_err_t heater_init(void) {$/;"	f
+heater_off	heater.c	/^esp_err_t heater_off(void) {$/;"	f
+heater_on	heater.c	/^esp_err_t heater_on(void) {$/;"	f
+height	display_icon.h	/^    size_t height;$/;"	m	struct:__anon1
+hour	app.h	/^    uint8_t hour;$/;"	m	struct:__anon5
+http_html_header	wifi/wifi_core.c	/^const static char http_html_header[] =$/;"	v	file:
+http_html_reply	wifi/wifi_core.c	/^const static char http_html_reply[] =$/;"	v	file:
+http_request	sdk_util/ota_update.c	/^static char http_request[64] = {0};$/;"	v	file:
+http_web_server	wifi/wifi_core.c	/^void http_web_server()$/;"	f
+humidity	lucidtron_core.h	/^    void* humidity;$/;"	m	struct:lucidtron_peripheral_device
+i2c_init	display.c	/^static void i2c_init(void) {$/;"	f	file:
+i2c_write	display.c	/^void i2c_write(uint8_t reg, uint8_t *buf, size_t size) {$/;"	f
+image	display_icon.h	/^    const char *image;$/;"	m	struct:__anon1
+initialize	communication_server.h	/^    int (*initialize)(void);$/;"	m	struct:comm_bluetooth
+initialize	communication_server.h	/^    int (*initialize)(void);$/;"	m	struct:comm_gsm
+initialize	communication_server.h	/^    int (*initialize)(void);$/;"	m	struct:comm_lora
+initialize	communication_server.h	/^    int (*initialize)(void);$/;"	m	struct:comm_sigfox
+initialize	communication_server.h	/^    int (*initialize)(void);$/;"	m	struct:comm_wifi
+initialize_all_devices	communication_server.c	/^int initialize_all_devices()$/;"	f
+initialize_communication_service	communication_server.c	/^int initialize_communication_service(void)$/;"	f
+initilize_communication_devices	communication_server_hal.c	/^int initilize_communication_devices()$/;"	f
+internet_conn	app.h	/^    bool internet_conn;$/;"	m	struct:__anon8
+iot_message	communication_server.h	/^struct iot_message {$/;"	s
+ip	communication_server.c	/^char ip[100];$/;"	v
+is_auto_display_brightness_en	app.h	/^    bool is_auto_display_brightness_en;$/;"	m	struct:__anon7
+is_auto_screen_off_en	app.h	/^    bool is_auto_screen_off_en;$/;"	m	struct:__anon7
+is_auto_time_date_en	app.h	/^    bool is_auto_time_date_en;$/;"	m	struct:__anon8
+is_child_lock_active	app.h	/^    bool is_child_lock_active;$/;"	m	struct:__anon8
+is_child_lock_en	app.h	/^    bool is_child_lock_en;$/;"	m	struct:__anon6
+is_connected	app.h	/^    bool is_connected;$/;"	m	struct:__anon8
+is_dim_pilot_light_en	app.h	/^    bool is_dim_pilot_light_en;$/;"	m	struct:__anon6
+is_mqtt_running	communication_server.c	/^int is_mqtt_running = 0;$/;"	v
+is_night_light_auto_brightness_en	app.h	/^    bool is_night_light_auto_brightness_en;$/;"	m	struct:__anon6
+is_wifi_ap_enabled	communication_server.h	/^    _Bool (*is_wifi_ap_enabled)(void);$/;"	m	struct:comm_wifi
+last_timer_setting_min	app.h	/^    int last_timer_setting_min;$/;"	m	struct:__anon8
+led1_off	led.c	/^esp_err_t led1_off(void) {$/;"	f
+led1_on	led.c	/^esp_err_t led1_on(void) {$/;"	f
+led1_set_brightness	led.c	/^esp_err_t led1_set_brightness(uint8_t br) {$/;"	f
+led2_off	led.c	/^esp_err_t led2_off(void) {$/;"	f
+led2_on	led.c	/^esp_err_t led2_on(void) {$/;"	f
+led2_set_brightness	led.c	/^esp_err_t led2_set_brightness(uint8_t br) {$/;"	f
+led_b_off	led.c	/^esp_err_t led_b_off(void) {$/;"	f
+led_b_on	led.c	/^esp_err_t led_b_on(void) {$/;"	f
+led_b_set_brightness	led.c	/^esp_err_t led_b_set_brightness(uint8_t br) {$/;"	f
+led_g_off	led.c	/^esp_err_t led_g_off(void) {$/;"	f
+led_g_on	led.c	/^esp_err_t led_g_on(void) {$/;"	f
+led_g_set_brightness	led.c	/^esp_err_t led_g_set_brightness(uint8_t br) {$/;"	f
+led_init	led.c	/^esp_err_t led_init(void) {$/;"	f
+led_r_off	led.c	/^esp_err_t led_r_off(void) {$/;"	f
+led_r_on	led.c	/^esp_err_t led_r_on(void) {$/;"	f
+led_r_set_brightness	led.c	/^esp_err_t led_r_set_brightness(uint8_t br) {$/;"	f
+ledc_channel	led.c	/^ledc_channel_config_t ledc_channel[LEDC_CHANNEL_CNT] = {$/;"	v
+light_sensor_task	app.c	/^static void light_sensor_task(void *param) {$/;"	f	file:
+lightsensor	lucidtron_core.h	/^    void* lightsensor;$/;"	m	struct:lucidtron_peripheral_device
+lightsensor_get_val	lightsensor.c	/^int lightsensor_get_val(void) {$/;"	f
+lightsensor_init	lightsensor.c	/^esp_err_t lightsensor_init(void) {$/;"	f
+load_balancing_comm_devices	communication_server.c	/^int load_balancing_comm_devices(void)$/;"	f
+lora	lucidtron_core.h	/^    void* lora;$/;"	m	struct:lucidtron_comm_device
+lora_handler	communication_server.c	/^void lora_handler(void* param)$/;"	f
+ls_lock	lightsensor.c	/^static xSemaphoreHandle ls_lock = NULL;$/;"	v	file:
+lucidtron_comm_device	lucidtron_core.h	/^struct lucidtron_comm_device {$/;"	s
+lucidtron_device	lucidtron_core.h	/^struct lucidtron_device {$/;"	s
+lucidtron_nvs_handle	sdk_util/non_volatile_lib.c	/^nvs_handle lucidtron_nvs_handle;$/;"	v
+lucidtron_peripheral_device	lucidtron_core.h	/^struct lucidtron_peripheral_device {$/;"	s
+mainflux_msg_handler	communication_msg_handler.c	/^int mainflux_msg_handler(char* msg, char* response)$/;"	f
+manual_temperature_celsius	app.h	/^    int manual_temperature_celsius;$/;"	m	struct:__anon8
+manual_temperature_fahrenheit	app.h	/^    int manual_temperature_fahrenheit;$/;"	m	struct:__anon8
+manual_temperature_mode_task	app.c	/^static void manual_temperature_mode_task(app_data_t *data) {$/;"	f	file:
+menu_calendar	app.c	/^static app_mode_t menu_calendar(app_data_t *data) {$/;"	f	file:
+menu_calendar	app.h	/^enum menu_calendar {$/;"	g
+menu_communications	app.c	/^static app_mode_t menu_communications(app_data_t *data) {$/;"	f	file:
+menu_communications	app.h	/^enum menu_communications {$/;"	g
+menu_display_settings	app.c	/^static app_mode_t menu_display_settings(app_data_t *data) {$/;"	f	file:
+menu_display_settings	app.h	/^enum menu_display_settings {$/;"	g
+menu_inst_icon	display_icon.c	/^const display_icon_t menu_inst_icon = {$/;"	v
+menu_inst_img	display_icon.c	/^const char menu_inst_img[] = {$/;"	v
+menu_main	app.h	/^enum menu_main {$/;"	g
+menu_mode_exit_mode	app.h	/^    app_mode_t menu_mode_exit_mode;$/;"	m	struct:__anon8
+menu_mode_task	app.c	/^static void menu_mode_task(app_data_t *data) {$/;"	f	file:
+menu_settings	app.c	/^static app_mode_t menu_settings(app_data_t *data) {$/;"	f	file:
+menu_settings	app.h	/^enum menu_settings {$/;"	g
+menu_time_and_date	app.c	/^static app_mode_t menu_time_and_date(app_data_t *data) {$/;"	f	file:
+menu_time_and_date	app.h	/^enum menu_time_and_date {$/;"	g
+menu_update	app.c	/^static app_mode_t menu_update(app_data_t *data) {$/;"	f	file:
+menu_update	app.h	/^enum menu_update {$/;"	g
+message	communication_server.h	/^    char* message;$/;"	m	struct:iot_message
+message_label_value_handler	communication_msg_handler.c	/^int message_label_value_handler(char* label, char* value, char* reply_buff)$/;"	f
+minute	app.h	/^    uint8_t minute;$/;"	m	struct:__anon5
+mode	app.h	/^    app_mode_t mode;$/;"	m	struct:__anon8
+month_str	display.c	/^const char *month_str[12] = {$/;"	v
+msg_direction	communication_server.h	/^    int msg_direction;$/;"	m	struct:iot_message
+mutex_lock	display.c	/^xSemaphoreHandle mutex_lock = NULL;$/;"	v
+night_led_off	led.c	/^esp_err_t night_led_off(void) {$/;"	f
+night_led_on	led.c	/^esp_err_t night_led_on(void) {$/;"	f
+night_led_set_brightness	led.c	/^esp_err_t night_led_set_brightness(uint8_t br) {$/;"	f
+night_light_cfg	app.h	/^    int night_light_cfg;$/;"	m	struct:__anon8
+night_light_off	app.c	51;"	d	file:
+night_light_set_br	app.c	50;"	d	file:
+night_light_task	app.c	/^static void night_light_task(void *param) {$/;"	f	file:
+ntp_deinit	ntp.c	/^esp_err_t ntp_deinit(void) {$/;"	f
+ntp_init	ntp.c	/^esp_err_t ntp_init(char *server) {$/;"	f
+ntp_is_enabled	ntp.c	/^bool ntp_is_enabled(void) {$/;"	f
+nvs_storage_init	sdk_util/non_volatile_lib.c	/^int nvs_storage_init(void)$/;"	f
+ota_start	communication_server.c	/^int ota_start(char* loc)$/;"	f
+ota_update	sdk_util/ota_update.c	/^static void ota_update()$/;"	f	file:
+ota_update_flag	communication_server.c	/^int ota_update_flag = 0;$/;"	v
+ota_update_path_start	sdk_util/ota_update.c	/^int ota_update_path_start(char* completepath)$/;"	f
+ota_update_start	sdk_util/ota_update.c	/^int ota_update_start(char* serverip, int port, char* filename)$/;"	f
+ota_update_thread	communication_server.c	/^void ota_update_thread(void* param)$/;"	f
+ota_write_data	sdk_util/ota_update.c	/^static char ota_write_data[BUFFSIZE + 1] = { 0 };$/;"	v	file:
+pilot_light_brightness	app.h	/^    int pilot_light_brightness;$/;"	m	struct:__anon8
+pilot_light_off	app.c	34;"	d	file:
+pilot_light_on	app.c	33;"	d	file:
+pilot_light_set_brightness	app.c	35;"	d	file:
+pilot_light_task	app.c	/^static void pilot_light_task(void *param) {$/;"	f	file:
+ping_results	app.c	/^esp_err_t ping_results(ping_target_id_t msgType, esp_ping_found * pf) {$/;"	f
+ping_task	app.c	/^static void ping_task(void *param) {$/;"	f	file:
+poll_iot_information	communication_server.c	/^void poll_iot_information(void* param)$/;"	f
+port	communication_server.c	/^char port[10];$/;"	v
+power_back_cb	button.c	/^    button_cb_t power_back_cb;$/;"	m	struct:__anon2	file:
+power_icon	display_icon.c	/^const display_icon_t power_icon = {$/;"	v
+power_img	display_icon.c	/^const char power_img[] = {$/;"	v
+pressure	lucidtron_core.h	/^    void* pressure;$/;"	m	struct:lucidtron_peripheral_device
+print_fw_version	app.c	/^static void print_fw_version(void)$/;"	f	file:
+product_identifier	lucidtron_core.h	/^    char product_identifier[MAX_LABEL_SIZE];$/;"	m	struct:lucidtron_device
+project_name	lucidtron_core.h	/^    char project_name[MAX_LABEL_SIZE];$/;"	m	struct:lucidtron_device
+read_past_http_header	sdk_util/ota_update.c	/^static bool read_past_http_header(char text[], int total_len, esp_ota_handle_t update_handle)$/;"	f	file:
+read_until	sdk_util/ota_update.c	/^static int read_until(char *buffer, char delim, int len)$/;"	f	file:
+receive_msg	communication_server.h	/^    int (*receive_msg)(char* toreceive, int lenght);$/;"	m	struct:comm_bluetooth
+receive_msg	communication_server.h	/^    int (*receive_msg)(char* toreceive, int lenght);$/;"	m	struct:comm_gsm
+receive_msg	communication_server.h	/^    int (*receive_msg)(char* toreceive, int lenght);$/;"	m	struct:comm_lora
+receive_msg	communication_server.h	/^    int (*receive_msg)(char* toreceive, int lenght);$/;"	m	struct:comm_sigfox
+receive_msg	communication_server.h	/^    int (*receive_msg)(char* toreceive, int lenght);$/;"	m	struct:comm_wifi
+register_bt_handler	communication_server_hal.c	/^void register_bt_handler(struct comm_bluetooth* cbt)$/;"	f
+register_gsm_handler	communication_server_hal.c	/^void register_gsm_handler(struct comm_gsm* cg)$/;"	f
+register_lora_handler	communication_server_hal.c	/^void register_lora_handler(struct comm_lora* cl)$/;"	f
+register_sigfox_handler	communication_server_hal.c	/^void register_sigfox_handler(struct comm_sigfox* cs)$/;"	f
+register_wifi_conn_stat_callbk	communication_server_hal.c	/^void register_wifi_conn_stat_callbk(int (*conn_stat_callbk)(int stat))$/;"	f
+register_wifi_handler	communication_server_hal.c	/^void register_wifi_handler(struct comm_wifi* cw)$/;"	f
+register_wifi_msg_callbk	communication_server_hal.c	/^void register_wifi_msg_callbk(int (*msg_callbk)(char* msg, char* ret_reply))$/;"	f
+reset_device	sdk_util/sdk_util.c	/^void reset_device(void)$/;"	f
+rolling_ave	lightsensor.c	/^static int rolling_ave[LDR_ROLLING_AVE_SAMPLES_CNT];$/;"	v	file:
+rolling_ave	tempsensor.c	/^static int rolling_ave[ROLLING_AVE_SAMPLES_CNT];$/;"	v	file:
+run_msg_handler_callback	wifi/wifi_core.c	/^void run_msg_handler_callback(void* param)$/;"	f
+sched_weekday	app.c	/^auto_mode_sched_t sched_weekday[AUTO_MODE_SCHED_NUM];$/;"	v
+sched_weekend	app.c	/^auto_mode_sched_t sched_weekend[AUTO_MODE_SCHED_NUM];$/;"	v
+send_iot_information	communication_server.c	/^int send_iot_information(char* field, char* value)$/;"	f
+send_msg	communication_server.h	/^    int (*send_msg)(char* destination, char* msgtosend, int lenght);$/;"	m	struct:comm_bluetooth
+send_msg	communication_server.h	/^    int (*send_msg)(char* destination, char* msgtosend, int lenght);$/;"	m	struct:comm_gsm
+send_msg	communication_server.h	/^    int (*send_msg)(char* destination, char* msgtosend, int lenght);$/;"	m	struct:comm_lora
+send_msg	communication_server.h	/^    int (*send_msg)(char* destination, char* msgtosend, int lenght);$/;"	m	struct:comm_sigfox
+send_msg	communication_server.h	/^    int (*send_msg)(char* destination, char* msgtosend, int lenght);$/;"	m	struct:comm_wifi
+set_data_to_storage	sdk_util/non_volatile_lib.c	/^int set_data_to_storage(char* key, void *data, size_t len)$/;"	f
+set_integer_to_storage	sdk_util/non_volatile_lib.c	/^int set_integer_to_storage(char* key, int value)$/;"	f
+set_night_light_init_config	led.c	/^static void set_night_light_init_config(void)$/;"	f	file:
+set_string_to_storage	sdk_util/non_volatile_lib.c	/^int set_string_to_storage(char* key, char* value)$/;"	f
+set_wifi_conn_status_change_cb	communication_server.c	/^void set_wifi_conn_status_change_cb(int (*cb)(int conn_stat)) {$/;"	f
+settings	app.h	/^    settings_t settings;$/;"	m	struct:__anon8
+settings_t	app.h	/^} settings_t;$/;"	t	typeref:struct:__anon6
+sh1106	display.c	/^static sh1106_t* sh1106 = NULL;$/;"	v	file:
+sigfox	lucidtron_core.h	/^    void* sigfox;$/;"	m	struct:lucidtron_comm_device
+sigfox_handler	communication_server.c	/^void sigfox_handler(void* param)$/;"	f
+sleep	communication_server.h	/^    int (*sleep)(void);$/;"	m	struct:comm_wifi
+sleep	communication_server.h	/^    int (*sleep)(void* param);$/;"	m	struct:comm_bluetooth
+sleep	communication_server.h	/^    int (*sleep)(void* param);$/;"	m	struct:comm_gsm
+sleep	communication_server.h	/^    int (*sleep)(void* param);$/;"	m	struct:comm_lora
+sleep	communication_server.h	/^    int (*sleep)(void* param);$/;"	m	struct:comm_sigfox
+socket_id	sdk_util/ota_update.c	/^static int socket_id = -1;$/;"	v	file:
+space_char_decode	communication_msg_handler.c	/^static void space_char_decode(char *str)$/;"	f	file:
+sta_mac	wifi/wifi_core.c	/^static uint8_t sta_mac[6];$/;"	v	file:
+sta_pw	app.h	/^    char sta_pw[65];$/;"	m	struct:__anon8
+sta_ssid	app.h	/^    char sta_ssid[33];$/;"	m	struct:__anon8
+standby_mode_task	app.c	/^static void standby_mode_task(app_data_t *data) {$/;"	f	file:
+status	communication_server.h	/^    int status;$/;"	m	struct:comm_bluetooth
+status	communication_server.h	/^    int status;$/;"	m	struct:comm_gsm
+status	communication_server.h	/^    int status;$/;"	m	struct:comm_lora
+status	communication_server.h	/^    int status;$/;"	m	struct:comm_sigfox
+status	communication_server.h	/^    int status;$/;"	m	struct:comm_wifi
+status	communication_server.h	/^    int status;$/;"	m	struct:iot_message
+str_replace	communication_msg_handler.c	/^static char* str_replace(char* str, char* a, char* b)$/;"	f	file:
+task_fatal_error	sdk_util/ota_update.c	/^static void __attribute__((noreturn)) task_fatal_error()$/;"	f	file:
+temp_c	app.h	/^    uint8_t temp_c;$/;"	m	struct:__anon5
+temp_f	app.h	/^    uint8_t temp_f;$/;"	m	struct:__anon5
+temp_sensor_task	app.c	/^static void temp_sensor_task(void *param) {$/;"	f	file:
+temp_unit_t	app.h	/^} temp_unit_t;$/;"	t	typeref:enum:__anon4
+temperature_hysteresis_celsius	app.h	/^    int temperature_hysteresis_celsius;$/;"	m	struct:__anon6
+temperature_hysteresis_fahrenheit	app.h	/^    int temperature_hysteresis_fahrenheit;$/;"	m	struct:__anon6
+temperature_offset_set_mode_task	app.c	/^static void temperature_offset_set_mode_task(app_data_t *data) {$/;"	f	file:
+temperature_unit	app.h	/^    temp_unit_t temperature_unit;$/;"	m	struct:__anon6
+tempsensor_get_temperature	tempsensor.c	/^float tempsensor_get_temperature(void) {$/;"	f
+tempsensor_init	tempsensor.c	/^esp_err_t tempsensor_init(void) {$/;"	f
+text	sdk_util/ota_update.c	/^static char text[BUFFSIZE + 1] = { 0 };$/;"	v	file:
+thermalsensor	lucidtron_core.h	/^    void* thermalsensor;$/;"	m	struct:lucidtron_peripheral_device
+timer_forward_cb	button.c	/^    button_cb_t timer_forward_cb;$/;"	m	struct:__anon2	file:
+timer_icon	display_icon.c	/^const display_icon_t timer_icon = {$/;"	v
+timer_img	display_icon.c	/^const char timer_img[] = {$/;"	v
+timer_increment_mode_task	app.c	/^static void timer_increment_mode_task(app_data_t *data) {$/;"	f	file:
+timezone_offset_idx	app.h	/^    int timezone_offset_idx;$/;"	m	struct:__anon8
+timezone_offset_list_min	app.c	/^static int timezone_offset_list_min[] = {$/;"	v	file:
+touch	lucidtron_core.h	/^    void* touch;            \/\/can be disregarded in substiute with basic_switches$/;"	m	struct:lucidtron_peripheral_device
+ultrasonic	lucidtron_core.h	/^    void* ultrasonic;$/;"	m	struct:lucidtron_peripheral_device
+up_cb	button.c	/^    button_cb_t up_cb;$/;"	m	struct:__anon2	file:
+url_to_string	common/common.c	/^int url_to_string(char* url)$/;"	f
+vibration	lucidtron_core.h	/^    void* vibration;$/;"	m	struct:lucidtron_peripheral_device
+waiting_results	app.c	/^uint32_t waiting_results = 0;$/;"	v
+wake_up	communication_server.h	/^    int (*wake_up)(void* param);$/;"	m	struct:comm_bluetooth
+wake_up	communication_server.h	/^    int (*wake_up)(void* param);$/;"	m	struct:comm_gsm
+wake_up	communication_server.h	/^    int (*wake_up)(void* param);$/;"	m	struct:comm_lora
+wake_up	communication_server.h	/^    int (*wake_up)(void* param);$/;"	m	struct:comm_sigfox
+wake_up	communication_server.h	/^    int (*wake_up)(void* param);$/;"	m	struct:comm_wifi
+web_server_msg_handler	wifi/wifi_core.c	/^int (*web_server_msg_handler)(char* msg, char* response, int res_len) = NULL;$/;"	v
+web_server_status	wifi/wifi_core.c	/^int web_server_status = WEB_SVR_STAT_UNKNOWN;$/;"	v
+welcome_screen_icon	display_icon.c	/^const display_icon_t welcome_screen_icon = {$/;"	v
+welcome_screen_img	display_icon.c	/^const char welcome_screen_img[] = {$/;"	v
+width	display_icon.h	/^    size_t width;$/;"	m	struct:__anon1
+wifi	lucidtron_core.h	/^    void* wifi;$/;"	m	struct:lucidtron_comm_device
+wifi_ap_authmode	communication_server_hal.h	/^    int wifi_ap_authmode;$/;"	m	struct:wifi_config
+wifi_ap_beacon_interval	communication_server_hal.h	/^    int wifi_ap_beacon_interval;$/;"	m	struct:wifi_config
+wifi_ap_channel	communication_server_hal.h	/^    int wifi_ap_channel;$/;"	m	struct:wifi_config
+wifi_ap_disable	communication_server.h	/^    int (*wifi_ap_disable)(void);$/;"	m	struct:comm_wifi
+wifi_ap_en	wifi/wifi_core.c	/^static bool wifi_ap_en = false;$/;"	v	file:
+wifi_ap_enable	communication_server.h	/^    int (*wifi_ap_enable)(char* ssid_ap, char* pw);$/;"	m	struct:comm_wifi
+wifi_ap_get_mac	communication_server.h	/^    unsigned char * (*wifi_ap_get_mac)(void);$/;"	m	struct:comm_wifi
+wifi_ap_max_connection	communication_server_hal.h	/^    int wifi_ap_max_connection;$/;"	m	struct:wifi_config
+wifi_ap_password	communication_server_hal.h	/^    char wifi_ap_password[WIFI_MAX_LEN];$/;"	m	struct:wifi_config
+wifi_ap_pw	communication_server.h	/^    char wifi_ap_pw[64];$/;"	m	struct:comm_wifi
+wifi_ap_ssid	communication_server.h	/^    char wifi_ap_ssid[WIFI_AP_MODE_SSID_LEN + 1];$/;"	m	struct:comm_wifi
+wifi_ap_ssid	communication_server_hal.h	/^    char wifi_ap_ssid[WIFI_MAX_LEN];$/;"	m	struct:wifi_config
+wifi_ap_ssid_hidden	communication_server_hal.h	/^    int wifi_ap_ssid_hidden;$/;"	m	struct:wifi_config
+wifi_ap_ssid_len	communication_server_hal.h	/^    int wifi_ap_ssid_len;$/;"	m	struct:wifi_config
+wifi_client_enable	communication_server.h	/^    int (*wifi_client_enable)(char* ssid, char* pw);$/;"	m	struct:comm_wifi
+wifi_client_get_mac	communication_server.h	/^    unsigned char * (*wifi_client_get_mac)(void);$/;"	m	struct:comm_wifi
+wifi_config	communication_server_hal.h	/^struct wifi_config {$/;"	s
+wifi_conn_stat	app.c	/^static int wifi_conn_stat(int stat) {$/;"	f	file:
+wifi_conn_stat_callback	wifi/wifi_core.c	/^int (*wifi_conn_stat_callback)(int conn_stat) = NULL;$/;"	v
+wifi_event_group	wifi/wifi_core.c	/^static EventGroupHandle_t wifi_event_group;$/;"	v	file:
+wifi_handler	communication_server.c	/^void wifi_handler(void* param)$/;"	f
+wifi_icon	display_icon.c	/^const display_icon_t wifi_icon = {$/;"	v
+wifi_img	display_icon.c	/^const char wifi_img[] = {$/;"	v
+wifi_mode	communication_server_hal.h	/^    int wifi_mode;$/;"	m	struct:wifi_config
+wifi_msg_handler_callback	wifi/wifi_core.c	/^int (*wifi_msg_handler_callback)(char* msg, char* ret_reply) = NULL;$/;"	v
+wifi_protocol	communication_server_hal.h	/^    int wifi_protocol;$/;"	m	struct:wifi_config
+wifi_scan	communication_server.h	/^    int (*wifi_scan)(void* variable_args);$/;"	m	struct:comm_wifi
+wifi_security	communication_server_hal.h	/^    int wifi_security;$/;"	m	struct:wifi_config
+wifi_sta_bssid	communication_server_hal.h	/^    int wifi_sta_bssid;$/;"	m	struct:wifi_config
+wifi_sta_bssid_set	communication_server_hal.h	/^    int wifi_sta_bssid_set;$/;"	m	struct:wifi_config
+wifi_sta_channel	communication_server_hal.h	/^    int wifi_sta_channel;$/;"	m	struct:wifi_config
+wifi_sta_password	communication_server_hal.h	/^    char wifi_sta_password[WIFI_MAX_LEN];$/;"	m	struct:wifi_config
+wifi_sta_ssid	communication_server_hal.h	/^    char wifi_sta_ssid[WIFI_MAX_LEN];$/;"	m	struct:wifi_config
+wps_disable	communication_server.h	/^    int (*wps_disable)(void);$/;"	m	struct:comm_wifi
+wps_enable	communication_server.h	/^    int (*wps_enable)(void);$/;"	m	struct:comm_wifi

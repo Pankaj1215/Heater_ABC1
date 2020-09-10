@@ -1,0 +1,179 @@
+\hypertarget{communication__server_8h}{}\section{communication\+\_\+server.\+h File Reference}
+\label{communication__server_8h}\index{communication\+\_\+server.\+h@{communication\+\_\+server.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{communication__server_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structiot__message}{iot\+\_\+message}
+\item 
+struct \hyperlink{structcomm__wifi}{comm\+\_\+wifi}
+\item 
+struct \hyperlink{structcomm__bluetooth}{comm\+\_\+bluetooth}
+\item 
+struct \hyperlink{structcomm__sigfox}{comm\+\_\+sigfox}
+\item 
+struct \hyperlink{structcomm__lora}{comm\+\_\+lora}
+\item 
+struct \hyperlink{structcomm__gsm}{comm\+\_\+gsm}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I\+O\+T\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+A\+D\+D\+R\+E\+SS}~\char`\"{}172.\+31.\+26.\+240\char`\"{}\hypertarget{communication__server_8h_aabe36fa3c778e2161790ded2ee83ab49}{}\label{communication__server_8h_aabe36fa3c778e2161790ded2ee83ab49}
+
+\item 
+\#define {\bfseries I\+O\+T\+\_\+\+M\+S\+G\+\_\+\+O\+UT}~1\hypertarget{communication__server_8h_a0d94a120052ad69fc4e743ffaad17c8b}{}\label{communication__server_8h_a0d94a120052ad69fc4e743ffaad17c8b}
+
+\item 
+\#define {\bfseries I\+O\+T\+\_\+\+M\+S\+G\+\_\+\+IN}~2\hypertarget{communication__server_8h_a10a20697cdfa89dfd2db457976c9a93d}{}\label{communication__server_8h_a10a20697cdfa89dfd2db457976c9a93d}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+S\+T\+A\+T\+\_\+\+N\+O\+NE}~0\hypertarget{communication__server_8h_a539341873058012f9a19617972fb90c8}{}\label{communication__server_8h_a539341873058012f9a19617972fb90c8}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+S\+T\+A\+T\+\_\+\+R\+E\+A\+DY}~1\hypertarget{communication__server_8h_aa48f0ea1e1d36dfaf4877030f559a5d5}{}\label{communication__server_8h_aa48f0ea1e1d36dfaf4877030f559a5d5}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+S\+T\+A\+T\+\_\+\+C\+O\+N\+F\+IG}~2\hypertarget{communication__server_8h_a192f4796160196f15154d7e83fae5add}{}\label{communication__server_8h_a192f4796160196f15154d7e83fae5add}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+S\+T\+A\+T\+\_\+\+S\+L\+E\+EP}~3\hypertarget{communication__server_8h_a2a20f91e0081f0984b0f032600ae971b}{}\label{communication__server_8h_a2a20f91e0081f0984b0f032600ae971b}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+S\+T\+A\+T\+\_\+\+E\+R\+R\+OR}~4\hypertarget{communication__server_8h_a4901c29a6283f669d42e882ef36aad64}{}\label{communication__server_8h_a4901c29a6283f669d42e882ef36aad64}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+S\+S\+ID}~\char`\"{}Lucidtron\+\_\+wifi\char`\"{}\hypertarget{communication__server_8h_a8e19d13af09f7ed0afad391730f1e3e7}{}\label{communication__server_8h_a8e19d13af09f7ed0afad391730f1e3e7}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+T\+I\+M\+E\+O\+UT}~30\hypertarget{communication__server_8h_a42443f63295ac8a7b0c9ecca06a7de8c}{}\label{communication__server_8h_a42443f63295ac8a7b0c9ecca06a7de8c}
+
+\item 
+\#define {\bfseries C\+O\+M\+M\+\_\+\+S\+T\+A\+T\+\_\+\+N\+O\+NE}~0\hypertarget{communication__server_8h_a587655054806a4c0171bf4e611503350}{}\label{communication__server_8h_a587655054806a4c0171bf4e611503350}
+
+\item 
+\#define {\bfseries C\+O\+M\+M\+\_\+\+S\+T\+A\+T\+\_\+\+R\+E\+A\+DY}~1\hypertarget{communication__server_8h_a868d1cb9d07d33d26f3058a1f5270ff6}{}\label{communication__server_8h_a868d1cb9d07d33d26f3058a1f5270ff6}
+
+\item 
+\#define {\bfseries C\+O\+M\+M\+\_\+\+S\+T\+A\+T\+\_\+\+E\+R\+R\+OR}~2\hypertarget{communication__server_8h_a9da0e1e755de3bd95c5facddbd7b09d0}{}\label{communication__server_8h_a9da0e1e755de3bd95c5facddbd7b09d0}
+
+\item 
+\#define {\bfseries C\+O\+M\+M\+\_\+\+S\+T\+A\+T\+\_\+\+S\+T\+A\+R\+T\+I\+NG}~3\hypertarget{communication__server_8h_ae513b5c703533543c6007dbc002f0737}{}\label{communication__server_8h_ae513b5c703533543c6007dbc002f0737}
+
+\item 
+\#define {\bfseries V\+A\+L\+U\+E\+\_\+\+K\+EY}~\char`\"{}=\char`\"{}\hypertarget{communication__server_8h_a610713b2d4738d111c0c946c93acff0f}{}\label{communication__server_8h_a610713b2d4738d111c0c946c93acff0f}
+
+\item 
+\#define {\bfseries H\+T\+T\+P\+\_\+\+C\+M\+D\+\_\+\+S\+S\+ID}~\char`\"{}ssid\char`\"{}\hypertarget{communication__server_8h_ac1f3beb92c7abb260a1b974510176652}{}\label{communication__server_8h_ac1f3beb92c7abb260a1b974510176652}
+
+\item 
+\#define {\bfseries H\+T\+T\+P\+\_\+\+C\+M\+D\+\_\+\+PW}~\char`\"{}password\char`\"{}\hypertarget{communication__server_8h_a631befccf30ef9e5e857ed4ff2731852}{}\label{communication__server_8h_a631befccf30ef9e5e857ed4ff2731852}
+
+\item 
+\#define {\bfseries H\+T\+T\+P\+\_\+\+C\+M\+D\+\_\+\+F\+R\+E\+S\+ET}~\char`\"{}factoryreset\char`\"{}\hypertarget{communication__server_8h_a09c64248d03a59d94027848a8bb0aca9}{}\label{communication__server_8h_a09c64248d03a59d94027848a8bb0aca9}
+
+\item 
+\#define {\bfseries H\+T\+T\+P\+\_\+\+C\+M\+D\+\_\+\+R\+E\+S\+ET}~\char`\"{}reset\char`\"{}\hypertarget{communication__server_8h_a779bc67b72f5005284927f30ea12cc08}{}\label{communication__server_8h_a779bc67b72f5005284927f30ea12cc08}
+
+\item 
+\#define {\bfseries H\+T\+T\+P\+\_\+\+C\+M\+D\+\_\+\+W\+PS}~\char`\"{}wps\char`\"{}\hypertarget{communication__server_8h_aef8e4f94c246f8e9bfa06c6ecf47c416}{}\label{communication__server_8h_aef8e4f94c246f8e9bfa06c6ecf47c416}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+M\+O\+D\+E\+\_\+\+S\+S\+I\+D\+\_\+\+B\+A\+SE}~\char`\"{}envi\char`\"{}\hypertarget{communication__server_8h_a5badb952d1259d8a1bffefb20edaaa30}{}\label{communication__server_8h_a5badb952d1259d8a1bffefb20edaaa30}
+
+\item 
+\#define {\bfseries W\+I\+F\+I\+\_\+\+A\+P\+\_\+\+M\+O\+D\+E\+\_\+\+S\+S\+I\+D\+\_\+\+L\+EN}~11\hypertarget{communication__server_8h_a022dbcbb686b7799110d45e377638dff}{}\label{communication__server_8h_a022dbcbb686b7799110d45e377638dff}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries get\+\_\+iot\+\_\+information} (char $\ast$field, char $\ast$value)\hypertarget{communication__server_8h_aec8eb06495a9b4bcc6359bdf653a2c5b}{}\label{communication__server_8h_aec8eb06495a9b4bcc6359bdf653a2c5b}
+
+\item 
+int {\bfseries send\+\_\+iot\+\_\+information} (char $\ast$field, char $\ast$value)\hypertarget{communication__server_8h_a7dca1a87c69ea5f7224b3d4f988bc057}{}\label{communication__server_8h_a7dca1a87c69ea5f7224b3d4f988bc057}
+
+\item 
+int \hyperlink{communication__server_8h_a3ea846bdf567f5b5f3c49049e77129bd}{initialize\+\_\+communication\+\_\+service} (void)
+\begin{DoxyCompactList}\small\item\em initialize communication services and devices \end{DoxyCompactList}\item 
+struct \hyperlink{structcomm__wifi}{comm\+\_\+wifi} $\ast$ \hyperlink{communication__server_8h_a59e90ec553cbce210e3428211b4dc184}{get\+\_\+wifi\+\_\+dev} (void)
+\begin{DoxyCompactList}\small\item\em get wifi device structure \end{DoxyCompactList}\item 
+void \hyperlink{communication__server_8h_a7ef772daa5cd5ff2a3b53d4eed82b30b}{set\+\_\+wifi\+\_\+conn\+\_\+status\+\_\+change\+\_\+cb} (int($\ast$cb)(int conn\+\_\+stat))
+\begin{DoxyCompactList}\small\item\em set wifi connection change callback \end{DoxyCompactList}\item 
+int \hyperlink{communication__server_8h_af918e02bbf2ef41519f1d88adbcfbc26}{ota\+\_\+start} (char $\ast$loc)
+\begin{DoxyCompactList}\small\item\em run ota service \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{communication\+\_\+server.\+h@{communication\+\_\+server.\+h}!get\+\_\+wifi\+\_\+dev@{get\+\_\+wifi\+\_\+dev}}
+\index{get\+\_\+wifi\+\_\+dev@{get\+\_\+wifi\+\_\+dev}!communication\+\_\+server.\+h@{communication\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+wifi\+\_\+dev(void)}{get_wifi_dev(void)}}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf comm\+\_\+wifi}$\ast$ get\+\_\+wifi\+\_\+dev (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{communication__server_8h_a59e90ec553cbce210e3428211b4dc184}{}\label{communication__server_8h_a59e90ec553cbce210e3428211b4dc184}
+
+
+get wifi device structure 
+
+\begin{DoxyReturn}{Returns}
+returns success or fail if no wifi found 
+\end{DoxyReturn}
+\index{communication\+\_\+server.\+h@{communication\+\_\+server.\+h}!initialize\+\_\+communication\+\_\+service@{initialize\+\_\+communication\+\_\+service}}
+\index{initialize\+\_\+communication\+\_\+service@{initialize\+\_\+communication\+\_\+service}!communication\+\_\+server.\+h@{communication\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{initialize\+\_\+communication\+\_\+service(void)}{initialize_communication_service(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int initialize\+\_\+communication\+\_\+service (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{communication__server_8h_a3ea846bdf567f5b5f3c49049e77129bd}{}\label{communication__server_8h_a3ea846bdf567f5b5f3c49049e77129bd}
+
+
+initialize communication services and devices 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{communication\+\_\+server.\+h@{communication\+\_\+server.\+h}!ota\+\_\+start@{ota\+\_\+start}}
+\index{ota\+\_\+start@{ota\+\_\+start}!communication\+\_\+server.\+h@{communication\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{ota\+\_\+start(char $\ast$loc)}{ota_start(char *loc)}}]{\setlength{\rightskip}{0pt plus 5cm}int ota\+\_\+start (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{loc}
+\end{DoxyParamCaption}
+)}\hypertarget{communication__server_8h_af918e02bbf2ef41519f1d88adbcfbc26}{}\label{communication__server_8h_af918e02bbf2ef41519f1d88adbcfbc26}
+
+
+run ota service 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & target location to download the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{communication\+\_\+server.\+h@{communication\+\_\+server.\+h}!set\+\_\+wifi\+\_\+conn\+\_\+status\+\_\+change\+\_\+cb@{set\+\_\+wifi\+\_\+conn\+\_\+status\+\_\+change\+\_\+cb}}
+\index{set\+\_\+wifi\+\_\+conn\+\_\+status\+\_\+change\+\_\+cb@{set\+\_\+wifi\+\_\+conn\+\_\+status\+\_\+change\+\_\+cb}!communication\+\_\+server.\+h@{communication\+\_\+server.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+wifi\+\_\+conn\+\_\+status\+\_\+change\+\_\+cb(int($\ast$cb)(int conn\+\_\+stat))}{set_wifi_conn_status_change_cb(int(*cb)(int conn_stat))}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+wifi\+\_\+conn\+\_\+status\+\_\+change\+\_\+cb (
+\begin{DoxyParamCaption}
+\item[{int($\ast$)(int conn\+\_\+stat)}]{cb}
+\end{DoxyParamCaption}
+)}\hypertarget{communication__server_8h_a7ef772daa5cd5ff2a3b53d4eed82b30b}{}\label{communication__server_8h_a7ef772daa5cd5ff2a3b53d4eed82b30b}
+
+
+set wifi connection change callback 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & when wifi status was changed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}

@@ -1,0 +1,24 @@
+\hypertarget{index_sub1}{}\section{Longhorn Source Code}\label{index_sub1}
+\hypertarget{index_sub2}{}\subsection{Configuring the Project}\label{index_sub2}
+make menuconfig
+
+Opens a text-\/based configuration menu for the project.~\newline
+~\newline
+ Use up \& down arrow keys to navigate the menu.~\newline
+ Use Enter key to go into a submenu, Escape key to go out or to exit.~\newline
+ Type ? to see a help screen. Enter key exits the help screen.~\newline
+ Use Space key, or Y and N keys to enable (Yes) and disable (No) configuration items with checkboxes \char`\"{}`\mbox{[}$\ast$\mbox{]}`\char`\"{}~\newline
+ Pressing ? while highlighting a configuration item displays help about that item.~\newline
+ Type / to search the configuration items.~\newline
+~\newline
+ Once done configuring, press Escape multiple times to exit and say \char`\"{}\+Yes\char`\"{} to save the new configuration when prompted.\hypertarget{index_sub3}{}\subsection{Compiling the Project}\label{index_sub3}
+make all -\/ compiles the app and bootloader and generates a partition table based on the configuration~\newline
+ make bootloader -\/ compiles the bootloader only~\newline
+ make app -\/ builds the app only~\newline
+ \hypertarget{index_sub4}{}\subsection{Flashing the Project}\label{index_sub4}
+make flash -\/ updates both the application and bootloader~\newline
+ make bootloader-\/flash -\/ updates the bootloader only~\newline
+ make app-\/flash -\/ updates the application only~\newline
+\hypertarget{index_sub5}{}\subsection{Erasing Flash}\label{index_sub5}
+make erase\+\_\+flash\hypertarget{index_sub6}{}\subsection{Viewing the Serial Output}\label{index_sub6}
+make monitor 

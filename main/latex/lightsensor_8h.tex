@@ -1,0 +1,70 @@
+\hypertarget{lightsensor_8h}{}\section{lightsensor.\+h File Reference}
+\label{lightsensor_8h}\index{lightsensor.\+h@{lightsensor.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+\_\+\+C\+H\+A\+N\+N\+EL}~A\+D\+C1\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+1\hypertarget{lightsensor_8h_a971be5aee89915cbad2814f0cc49cfaa}{}\label{lightsensor_8h_a971be5aee89915cbad2814f0cc49cfaa}
+
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+A\+D\+C\+\_\+\+W\+I\+D\+TH}~A\+D\+C\+\_\+\+W\+I\+D\+T\+H\+\_\+12\+Bit\hypertarget{lightsensor_8h_ad0dc6babf3a8a22a8e860b220e77a699}{}\label{lightsensor_8h_ad0dc6babf3a8a22a8e860b220e77a699}
+
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+A\+D\+C\+\_\+\+A\+T\+T\+EN}~A\+D\+C\+\_\+\+A\+T\+T\+E\+N\+\_\+\+D\+B\+\_\+11\hypertarget{lightsensor_8h_a145a72d07071841e6e7bb6c8f983612f}{}\label{lightsensor_8h_a145a72d07071841e6e7bb6c8f983612f}
+
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+A\+D\+C\+\_\+\+I\+N\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~37\hypertarget{lightsensor_8h_a143530d482b37d9baebfbebc68265338}{}\label{lightsensor_8h_a143530d482b37d9baebfbebc68265338}
+
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+C\+NT}~32\hypertarget{lightsensor_8h_aa092695111a18d0f740462bbb7c83054}{}\label{lightsensor_8h_aa092695111a18d0f740462bbb7c83054}
+
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+A\+D\+C\+\_\+\+M\+A\+X\+\_\+\+V\+AL}~400\hypertarget{lightsensor_8h_aabfb502535e3bdb53eac617747514a84}{}\label{lightsensor_8h_aabfb502535e3bdb53eac617747514a84}
+
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+R\+E\+S\+A\+M\+P\+L\+E\+\_\+\+C\+N\+T\+\_\+\+M\+AX}~3\hypertarget{lightsensor_8h_af11d3dc4660f52b9539d0b76a06cc259}{}\label{lightsensor_8h_af11d3dc4660f52b9539d0b76a06cc259}
+
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+M\+A\+X\+\_\+\+D\+I\+F\+F\+\_\+\+A\+DC}~100\hypertarget{lightsensor_8h_a8fa7113d29eca980f2d03a0a88a3f0d0}{}\label{lightsensor_8h_a8fa7113d29eca980f2d03a0a88a3f0d0}
+
+\item 
+\#define {\bfseries L\+D\+R\+\_\+\+R\+O\+L\+L\+I\+N\+G\+\_\+\+A\+V\+E\+\_\+\+S\+A\+M\+P\+L\+E\+S\+\_\+\+C\+NT}~8\hypertarget{lightsensor_8h_aaf7ee7ed522e7bc662845b11f0e93bda}{}\label{lightsensor_8h_aaf7ee7ed522e7bc662845b11f0e93bda}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \hyperlink{lightsensor_8h_a6f0420e9875d3dc2d52a86341cdbb41b}{lightsensor\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em initialize light sensor device \end{DoxyCompactList}\item 
+int \hyperlink{lightsensor_8h_a1428b224cc44fe5bdeaa84ffe1555123}{lightsensor\+\_\+get\+\_\+val} (void)
+\begin{DoxyCompactList}\small\item\em get the light sensor value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{lightsensor.\+h@{lightsensor.\+h}!lightsensor\+\_\+get\+\_\+val@{lightsensor\+\_\+get\+\_\+val}}
+\index{lightsensor\+\_\+get\+\_\+val@{lightsensor\+\_\+get\+\_\+val}!lightsensor.\+h@{lightsensor.\+h}}
+\subsubsection[{\texorpdfstring{lightsensor\+\_\+get\+\_\+val(void)}{lightsensor_get_val(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int lightsensor\+\_\+get\+\_\+val (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{lightsensor_8h_a1428b224cc44fe5bdeaa84ffe1555123}{}\label{lightsensor_8h_a1428b224cc44fe5bdeaa84ffe1555123}
+
+
+get the light sensor value 
+
+\begin{DoxyReturn}{Returns}
+returns the light sensor value 
+\end{DoxyReturn}
+\index{lightsensor.\+h@{lightsensor.\+h}!lightsensor\+\_\+init@{lightsensor\+\_\+init}}
+\index{lightsensor\+\_\+init@{lightsensor\+\_\+init}!lightsensor.\+h@{lightsensor.\+h}}
+\subsubsection[{\texorpdfstring{lightsensor\+\_\+init(void)}{lightsensor_init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t lightsensor\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{lightsensor_8h_a6f0420e9875d3dc2d52a86341cdbb41b}{}\label{lightsensor_8h_a6f0420e9875d3dc2d52a86341cdbb41b}
+
+
+initialize light sensor device 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}

@@ -1,0 +1,251 @@
+\hypertarget{non__volatile__lib_8h}{}\section{sdk\+\_\+util/include/non\+\_\+volatile\+\_\+lib.h File Reference}
+\label{non__volatile__lib_8h}\index{sdk\+\_\+util/include/non\+\_\+volatile\+\_\+lib.\+h@{sdk\+\_\+util/include/non\+\_\+volatile\+\_\+lib.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries N\+V\+S\+\_\+\+L\+U\+C\+I\+D\+T\+R\+O\+N\+\_\+\+N\+A\+M\+E\+S\+P\+A\+CE}~\char`\"{}lucidtron\char`\"{}\hypertarget{non__volatile__lib_8h_a6d82fdbe6afb833dcb4fa92b73de56e0}{}\label{non__volatile__lib_8h_a6d82fdbe6afb833dcb4fa92b73de56e0}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{non__volatile__lib_8h_aa620277d3aadaaae739a4befabff2432}{nvs\+\_\+storage\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em initialize the nvs before using, this should be called at bootup \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_a022f0f6d22fa1237e5cac56c57c351df}{erase\+\_\+storage\+\_\+all} (void)
+\begin{DoxyCompactList}\small\item\em this will erase all the stored data in nvs \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_a81ee07872d2c679e01b5317d2a43e04a}{erase\+\_\+string\+\_\+in\+\_\+storage} (char $\ast$key)
+\begin{DoxyCompactList}\small\item\em erase string data type stored in nvs \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_aa035e8ef141bf3e47d2b7e0ed7d9169c}{set\+\_\+string\+\_\+to\+\_\+storage} (char $\ast$key, char $\ast$value)
+\begin{DoxyCompactList}\small\item\em store the data together with the label key \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_a067950d91a23b87db3d2d2f8da9ff4df}{get\+\_\+string\+\_\+from\+\_\+storage} (char $\ast$key, char $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em retrieve the data stored in nvs \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_a00f43220db0ac22a248a68aff5c663ac}{erase\+\_\+integer\+\_\+in\+\_\+storage} (char $\ast$key)
+\begin{DoxyCompactList}\small\item\em erase integer data type stored in nvs \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_acb3c55f60f94272ed4ad45ebd1972492}{set\+\_\+integer\+\_\+to\+\_\+storage} (char $\ast$key, int value)
+\begin{DoxyCompactList}\small\item\em store the integer data using key as reference label \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_a70698ee7f7deec4f6ebb6eb81edc2e75}{get\+\_\+integer\+\_\+from\+\_\+storage} (char $\ast$key, int $\ast$value)
+\begin{DoxyCompactList}\small\item\em get the integer value from storage \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_a720142e3e6449fba8f0a31e05ee3b29a}{erase\+\_\+data\+\_\+in\+\_\+storage} (char $\ast$key)
+\begin{DoxyCompactList}\small\item\em erase the stored label \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_a8974d95fc014a34ad96132de0bce9b77}{set\+\_\+data\+\_\+to\+\_\+storage} (char $\ast$key, void $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em using void pointer as data type to be stored \end{DoxyCompactList}\item 
+int \hyperlink{non__volatile__lib_8h_a362eebc1b2a12daf89a2ecbf93872ee4}{get\+\_\+data\+\_\+from\+\_\+storage} (char $\ast$key, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em get raw data from storage \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!erase\+\_\+data\+\_\+in\+\_\+storage@{erase\+\_\+data\+\_\+in\+\_\+storage}}
+\index{erase\+\_\+data\+\_\+in\+\_\+storage@{erase\+\_\+data\+\_\+in\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{erase\+\_\+data\+\_\+in\+\_\+storage(char $\ast$key)}{erase_data_in_storage(char *key)}}]{\setlength{\rightskip}{0pt plus 5cm}int erase\+\_\+data\+\_\+in\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_a720142e3e6449fba8f0a31e05ee3b29a}{}\label{non__volatile__lib_8h_a720142e3e6449fba8f0a31e05ee3b29a}
+
+
+erase the stored label 
+
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!erase\+\_\+integer\+\_\+in\+\_\+storage@{erase\+\_\+integer\+\_\+in\+\_\+storage}}
+\index{erase\+\_\+integer\+\_\+in\+\_\+storage@{erase\+\_\+integer\+\_\+in\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{erase\+\_\+integer\+\_\+in\+\_\+storage(char $\ast$key)}{erase_integer_in_storage(char *key)}}]{\setlength{\rightskip}{0pt plus 5cm}int erase\+\_\+integer\+\_\+in\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_a00f43220db0ac22a248a68aff5c663ac}{}\label{non__volatile__lib_8h_a00f43220db0ac22a248a68aff5c663ac}
+
+
+erase integer data type stored in nvs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & label of the storage used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!erase\+\_\+storage\+\_\+all@{erase\+\_\+storage\+\_\+all}}
+\index{erase\+\_\+storage\+\_\+all@{erase\+\_\+storage\+\_\+all}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{erase\+\_\+storage\+\_\+all(void)}{erase_storage_all(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int erase\+\_\+storage\+\_\+all (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_a022f0f6d22fa1237e5cac56c57c351df}{}\label{non__volatile__lib_8h_a022f0f6d22fa1237e5cac56c57c351df}
+
+
+this will erase all the stored data in nvs 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!erase\+\_\+string\+\_\+in\+\_\+storage@{erase\+\_\+string\+\_\+in\+\_\+storage}}
+\index{erase\+\_\+string\+\_\+in\+\_\+storage@{erase\+\_\+string\+\_\+in\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{erase\+\_\+string\+\_\+in\+\_\+storage(char $\ast$key)}{erase_string_in_storage(char *key)}}]{\setlength{\rightskip}{0pt plus 5cm}int erase\+\_\+string\+\_\+in\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_a81ee07872d2c679e01b5317d2a43e04a}{}\label{non__volatile__lib_8h_a81ee07872d2c679e01b5317d2a43e04a}
+
+
+erase string data type stored in nvs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & key label used to store data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!get\+\_\+data\+\_\+from\+\_\+storage@{get\+\_\+data\+\_\+from\+\_\+storage}}
+\index{get\+\_\+data\+\_\+from\+\_\+storage@{get\+\_\+data\+\_\+from\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+data\+\_\+from\+\_\+storage(char $\ast$key, void $\ast$data)}{get_data_from_storage(char *key, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+data\+\_\+from\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_a362eebc1b2a12daf89a2ecbf93872ee4}{}\label{non__volatile__lib_8h_a362eebc1b2a12daf89a2ecbf93872ee4}
+
+
+get raw data from storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & label of data stored \\
+\hline
+{\em data$\ast$} & storage location of data to be fetched \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!get\+\_\+integer\+\_\+from\+\_\+storage@{get\+\_\+integer\+\_\+from\+\_\+storage}}
+\index{get\+\_\+integer\+\_\+from\+\_\+storage@{get\+\_\+integer\+\_\+from\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+integer\+\_\+from\+\_\+storage(char $\ast$key, int $\ast$value)}{get_integer_from_storage(char *key, int *value)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+integer\+\_\+from\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key, }
+\item[{int $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_a70698ee7f7deec4f6ebb6eb81edc2e75}{}\label{non__volatile__lib_8h_a70698ee7f7deec4f6ebb6eb81edc2e75}
+
+
+get the integer value from storage 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & label used when storing integer \\
+\hline
+{\em value} & location where to store the value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!get\+\_\+string\+\_\+from\+\_\+storage@{get\+\_\+string\+\_\+from\+\_\+storage}}
+\index{get\+\_\+string\+\_\+from\+\_\+storage@{get\+\_\+string\+\_\+from\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+string\+\_\+from\+\_\+storage(char $\ast$key, char $\ast$buffer)}{get_string_from_storage(char *key, char *buffer)}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+string\+\_\+from\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key, }
+\item[{char $\ast$}]{buffer}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_a067950d91a23b87db3d2d2f8da9ff4df}{}\label{non__volatile__lib_8h_a067950d91a23b87db3d2d2f8da9ff4df}
+
+
+retrieve the data stored in nvs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the label used when storing data \\
+\hline
+{\em buff} & location to be used in fetching data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!nvs\+\_\+storage\+\_\+init@{nvs\+\_\+storage\+\_\+init}}
+\index{nvs\+\_\+storage\+\_\+init@{nvs\+\_\+storage\+\_\+init}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{nvs\+\_\+storage\+\_\+init(void)}{nvs_storage_init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int nvs\+\_\+storage\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_aa620277d3aadaaae739a4befabff2432}{}\label{non__volatile__lib_8h_aa620277d3aadaaae739a4befabff2432}
+
+
+initialize the nvs before using, this should be called at bootup 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!set\+\_\+data\+\_\+to\+\_\+storage@{set\+\_\+data\+\_\+to\+\_\+storage}}
+\index{set\+\_\+data\+\_\+to\+\_\+storage@{set\+\_\+data\+\_\+to\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+data\+\_\+to\+\_\+storage(char $\ast$key, void $\ast$data, size\+\_\+t len)}{set_data_to_storage(char *key, void *data, size_t len)}}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+data\+\_\+to\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key, }
+\item[{void $\ast$}]{data, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_a8974d95fc014a34ad96132de0bce9b77}{}\label{non__volatile__lib_8h_a8974d95fc014a34ad96132de0bce9b77}
+
+
+using void pointer as data type to be stored 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & label of the value to be stored \\
+\hline
+{\em data$\ast$} & pointer of the location of data \\
+\hline
+{\em len} & lenght of data to be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!set\+\_\+integer\+\_\+to\+\_\+storage@{set\+\_\+integer\+\_\+to\+\_\+storage}}
+\index{set\+\_\+integer\+\_\+to\+\_\+storage@{set\+\_\+integer\+\_\+to\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+integer\+\_\+to\+\_\+storage(char $\ast$key, int value)}{set_integer_to_storage(char *key, int value)}}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+integer\+\_\+to\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key, }
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_acb3c55f60f94272ed4ad45ebd1972492}{}\label{non__volatile__lib_8h_acb3c55f60f94272ed4ad45ebd1972492}
+
+
+store the integer data using key as reference label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & label used in storing data \\
+\hline
+{\em value} & raw integer value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
+\index{non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}!set\+\_\+string\+\_\+to\+\_\+storage@{set\+\_\+string\+\_\+to\+\_\+storage}}
+\index{set\+\_\+string\+\_\+to\+\_\+storage@{set\+\_\+string\+\_\+to\+\_\+storage}!non\+\_\+volatile\+\_\+lib.\+h@{non\+\_\+volatile\+\_\+lib.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+string\+\_\+to\+\_\+storage(char $\ast$key, char $\ast$value)}{set_string_to_storage(char *key, char *value)}}]{\setlength{\rightskip}{0pt plus 5cm}int set\+\_\+string\+\_\+to\+\_\+storage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{key, }
+\item[{char $\ast$}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{non__volatile__lib_8h_aa035e8ef141bf3e47d2b7e0ed7d9169c}{}\label{non__volatile__lib_8h_aa035e8ef141bf3e47d2b7e0ed7d9169c}
+
+
+store the data together with the label key 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & label used when storing data \\
+\hline
+{\em value} & the raw value to be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}

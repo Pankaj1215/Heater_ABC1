@@ -1,0 +1,1 @@
+cmd='C:/ESP-IDF/.espressif/tools/cmake/3.13.4/bin/cmake.exe;-DSDKCONFIG=C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/sdkconfig;-DIDF_PATH=C:/msys32/home/mahesh_tripathi/esp/esp-idf;-DSECURE_BOOT_SIGNING_KEY=C:/Users/mahesh_tripathi/eclipse-workspace/ABC1;-DEXTRA_COMPONENT_DIRS=C:/msys32/home/mahesh_tripathi/esp/esp-idf/components/bootloader;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'

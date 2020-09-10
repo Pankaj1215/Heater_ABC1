@@ -1,0 +1,117 @@
+\hypertarget{sdk__util_8h}{}\section{sdk\+\_\+util/include/sdk\+\_\+util.h File Reference}
+\label{sdk__util_8h}\index{sdk\+\_\+util/include/sdk\+\_\+util.\+h@{sdk\+\_\+util/include/sdk\+\_\+util.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{sdk__util_8h_a38aafa6b86352170570d72fe3e4067e2}{create\+\_\+thread} (void($\ast$thread)(void $\ast$param), char $\ast$label)
+\begin{DoxyCompactList}\small\item\em create a new thread specifying the function to be called \end{DoxyCompactList}\item 
+int \hyperlink{sdk__util_8h_a05c9869521087717826e6682310fc5cf}{create\+\_\+thread\+\_\+with\+\_\+stackvalue} (void($\ast$thread)(void $\ast$param), char $\ast$label, int stackvalue)
+\begin{DoxyCompactList}\small\item\em create a new thread specifying but the stack value must be indicated \end{DoxyCompactList}\item 
+int \hyperlink{sdk__util_8h_a6371ed104f3ac1501117c4d0d0170ac3}{delay\+\_\+sec} (int sec)
+\begin{DoxyCompactList}\small\item\em create delay in sec \end{DoxyCompactList}\item 
+int \hyperlink{sdk__util_8h_a6c2393b32bb74e9c6b8e55d03d2d6720}{delay\+\_\+milli} (int milli)
+\begin{DoxyCompactList}\small\item\em create delay in milliseconds \end{DoxyCompactList}\item 
+void \hyperlink{sdk__util_8h_adba200c71868233b5965841f2de944bb}{reset\+\_\+device} (void)
+\begin{DoxyCompactList}\small\item\em restart the device \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}!create\+\_\+thread@{create\+\_\+thread}}
+\index{create\+\_\+thread@{create\+\_\+thread}!sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}}
+\subsubsection[{\texorpdfstring{create\+\_\+thread(void($\ast$thread)(void $\ast$param), char $\ast$label)}{create_thread(void(*thread)(void *param), char *label)}}]{\setlength{\rightskip}{0pt plus 5cm}int create\+\_\+thread (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(void $\ast$param)}]{thread, }
+\item[{char $\ast$}]{label}
+\end{DoxyParamCaption}
+)}\hypertarget{sdk__util_8h_a38aafa6b86352170570d72fe3e4067e2}{}\label{sdk__util_8h_a38aafa6b86352170570d72fe3e4067e2}
+
+
+create a new thread specifying the function to be called 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & function to be called of thread \\
+\hline
+{\em label} & label for the thread \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success, fail if cannot allocate 
+\end{DoxyReturn}
+\index{sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}!create\+\_\+thread\+\_\+with\+\_\+stackvalue@{create\+\_\+thread\+\_\+with\+\_\+stackvalue}}
+\index{create\+\_\+thread\+\_\+with\+\_\+stackvalue@{create\+\_\+thread\+\_\+with\+\_\+stackvalue}!sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}}
+\subsubsection[{\texorpdfstring{create\+\_\+thread\+\_\+with\+\_\+stackvalue(void($\ast$thread)(void $\ast$param), char $\ast$label, int stackvalue)}{create_thread_with_stackvalue(void(*thread)(void *param), char *label, int stackvalue)}}]{\setlength{\rightskip}{0pt plus 5cm}int create\+\_\+thread\+\_\+with\+\_\+stackvalue (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(void $\ast$param)}]{thread, }
+\item[{char $\ast$}]{label, }
+\item[{int}]{stackvalue}
+\end{DoxyParamCaption}
+)}\hypertarget{sdk__util_8h_a05c9869521087717826e6682310fc5cf}{}\label{sdk__util_8h_a05c9869521087717826e6682310fc5cf}
+
+
+create a new thread specifying but the stack value must be indicated 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread} & function to be called of thread \\
+\hline
+{\em label} & label for the thread \\
+\hline
+{\em stackvalue} & stackvalue must be indicated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success, fail if cannot allocate 
+\end{DoxyReturn}
+\index{sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}!delay\+\_\+milli@{delay\+\_\+milli}}
+\index{delay\+\_\+milli@{delay\+\_\+milli}!sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}}
+\subsubsection[{\texorpdfstring{delay\+\_\+milli(int milli)}{delay_milli(int milli)}}]{\setlength{\rightskip}{0pt plus 5cm}int delay\+\_\+milli (
+\begin{DoxyParamCaption}
+\item[{int}]{milli}
+\end{DoxyParamCaption}
+)}\hypertarget{sdk__util_8h_a6c2393b32bb74e9c6b8e55d03d2d6720}{}\label{sdk__util_8h_a6c2393b32bb74e9c6b8e55d03d2d6720}
+
+
+create delay in milliseconds 
+
+
+\begin{DoxyParams}{Parameters}
+{\em milli} & value how long the delay in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+always success 
+\end{DoxyReturn}
+\index{sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}!delay\+\_\+sec@{delay\+\_\+sec}}
+\index{delay\+\_\+sec@{delay\+\_\+sec}!sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}}
+\subsubsection[{\texorpdfstring{delay\+\_\+sec(int sec)}{delay_sec(int sec)}}]{\setlength{\rightskip}{0pt plus 5cm}int delay\+\_\+sec (
+\begin{DoxyParamCaption}
+\item[{int}]{sec}
+\end{DoxyParamCaption}
+)}\hypertarget{sdk__util_8h_a6371ed104f3ac1501117c4d0d0170ac3}{}\label{sdk__util_8h_a6371ed104f3ac1501117c4d0d0170ac3}
+
+
+create delay in sec 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & value how long the delay in seconds \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+always success 
+\end{DoxyReturn}
+\index{sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}!reset\+\_\+device@{reset\+\_\+device}}
+\index{reset\+\_\+device@{reset\+\_\+device}!sdk\+\_\+util.\+h@{sdk\+\_\+util.\+h}}
+\subsubsection[{\texorpdfstring{reset\+\_\+device(void)}{reset_device(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void reset\+\_\+device (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{sdk__util_8h_adba200c71868233b5965841f2de944bb}{}\label{sdk__util_8h_adba200c71868233b5965841f2de944bb}
+
+
+restart the device 
+
+\begin{DoxyReturn}{Returns}
+always success 
+\end{DoxyReturn}

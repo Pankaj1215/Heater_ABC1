@@ -1,0 +1,193 @@
+\hypertarget{button_8h}{}\section{button.\+h File Reference}
+\label{button_8h}\index{button.\+h@{button.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries B\+U\+T\+T\+O\+N\+\_\+\+U\+P\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~26\hypertarget{button_8h_ab2e1e71ef087270ee241602a5f33b59a}{}\label{button_8h_ab2e1e71ef087270ee241602a5f33b59a}
+
+\item 
+\#define {\bfseries B\+U\+T\+T\+O\+N\+\_\+\+D\+O\+W\+N\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~25\hypertarget{button_8h_a1a6906c10c8667a16478c5fd9f6f0793}{}\label{button_8h_a1a6906c10c8667a16478c5fd9f6f0793}
+
+\item 
+\#define {\bfseries B\+U\+T\+T\+O\+N\+\_\+\+P\+O\+W\+E\+R\+\_\+\+B\+A\+C\+K\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~34\hypertarget{button_8h_a590fc3b065bc0cabbf8b216972154f4e}{}\label{button_8h_a590fc3b065bc0cabbf8b216972154f4e}
+
+\item 
+\#define {\bfseries B\+U\+T\+T\+O\+N\+\_\+\+T\+I\+M\+E\+R\+\_\+\+F\+O\+R\+W\+A\+R\+D\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~35\hypertarget{button_8h_af44c03357e0afcf540c98f5995c1b4a3}{}\label{button_8h_af44c03357e0afcf540c98f5995c1b4a3}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ {\bfseries button\+\_\+cb\+\_\+t}) (int level)\hypertarget{button_8h_a8e904fcd569d69961d585e5849b79a3a}{}\label{button_8h_a8e904fcd569d69961d585e5849b79a3a}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \hyperlink{button_8h_a564f08a3094c4b560997eae89c45c327}{button\+\_\+init} (void)
+\begin{DoxyCompactList}\small\item\em initialize button device \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \hyperlink{button_8h_a2937eb2b6018fb98865e054d817986d9}{button\+\_\+up\+\_\+set\+\_\+cb} (button\+\_\+cb\+\_\+t cb)
+\begin{DoxyCompactList}\small\item\em set callback when button up was pressed \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \hyperlink{button_8h_ac71dfde3f573091b38be7df159c4c9c0}{button\+\_\+down\+\_\+set\+\_\+cb} (button\+\_\+cb\+\_\+t cb)
+\begin{DoxyCompactList}\small\item\em set callback when button down was pressed \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \hyperlink{button_8h_ad37fe06e435198618c9af79ba2601bfd}{button\+\_\+power\+\_\+back\+\_\+set\+\_\+cb} (button\+\_\+cb\+\_\+t cb)
+\begin{DoxyCompactList}\small\item\em set callback when button power\+\_\+back was pressed \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \hyperlink{button_8h_aca184c540faaa8feb22f051beed818cc}{button\+\_\+timer\+\_\+forward\+\_\+set\+\_\+cb} (button\+\_\+cb\+\_\+t cb)
+\begin{DoxyCompactList}\small\item\em set callback when button timer\+\_\+forward was pressed \end{DoxyCompactList}\item 
+int \hyperlink{button_8h_ac3197741a60599827503de740a602fa8}{button\+\_\+up\+\_\+get\+\_\+level} (void)
+\begin{DoxyCompactList}\small\item\em button up was pressed \end{DoxyCompactList}\item 
+int \hyperlink{button_8h_abfcc1ea7bb22fb9271477c39bc49aa3b}{button\+\_\+down\+\_\+get\+\_\+level} (void)
+\begin{DoxyCompactList}\small\item\em button down was pressed \end{DoxyCompactList}\item 
+int \hyperlink{button_8h_a3c9bf7d31a4fab155cf615aae96eaf98}{button\+\_\+power\+\_\+back\+\_\+get\+\_\+level} (void)
+\begin{DoxyCompactList}\small\item\em button back was pressed \end{DoxyCompactList}\item 
+int \hyperlink{button_8h_a4ef5803516f131064b0c616a5d63e802}{button\+\_\+timer\+\_\+forward\+\_\+get\+\_\+level} (void)
+\begin{DoxyCompactList}\small\item\em button forward was pressed \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{button.\+h@{button.\+h}!button\+\_\+down\+\_\+get\+\_\+level@{button\+\_\+down\+\_\+get\+\_\+level}}
+\index{button\+\_\+down\+\_\+get\+\_\+level@{button\+\_\+down\+\_\+get\+\_\+level}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+down\+\_\+get\+\_\+level(void)}{button_down_get_level(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int button\+\_\+down\+\_\+get\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_abfcc1ea7bb22fb9271477c39bc49aa3b}{}\label{button_8h_abfcc1ea7bb22fb9271477c39bc49aa3b}
+
+
+button down was pressed 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{button.\+h@{button.\+h}!button\+\_\+down\+\_\+set\+\_\+cb@{button\+\_\+down\+\_\+set\+\_\+cb}}
+\index{button\+\_\+down\+\_\+set\+\_\+cb@{button\+\_\+down\+\_\+set\+\_\+cb}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+down\+\_\+set\+\_\+cb(button\+\_\+cb\+\_\+t cb)}{button_down_set_cb(button_cb_t cb)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t button\+\_\+down\+\_\+set\+\_\+cb (
+\begin{DoxyParamCaption}
+\item[{button\+\_\+cb\+\_\+t}]{cb}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_ac71dfde3f573091b38be7df159c4c9c0}{}\label{button_8h_ac71dfde3f573091b38be7df159c4c9c0}
+
+
+set callback when button down was pressed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{button.\+h@{button.\+h}!button\+\_\+init@{button\+\_\+init}}
+\index{button\+\_\+init@{button\+\_\+init}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+init(void)}{button_init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t button\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_a564f08a3094c4b560997eae89c45c327}{}\label{button_8h_a564f08a3094c4b560997eae89c45c327}
+
+
+initialize button device 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{button.\+h@{button.\+h}!button\+\_\+power\+\_\+back\+\_\+get\+\_\+level@{button\+\_\+power\+\_\+back\+\_\+get\+\_\+level}}
+\index{button\+\_\+power\+\_\+back\+\_\+get\+\_\+level@{button\+\_\+power\+\_\+back\+\_\+get\+\_\+level}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+power\+\_\+back\+\_\+get\+\_\+level(void)}{button_power_back_get_level(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int button\+\_\+power\+\_\+back\+\_\+get\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_a3c9bf7d31a4fab155cf615aae96eaf98}{}\label{button_8h_a3c9bf7d31a4fab155cf615aae96eaf98}
+
+
+button back was pressed 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{button.\+h@{button.\+h}!button\+\_\+power\+\_\+back\+\_\+set\+\_\+cb@{button\+\_\+power\+\_\+back\+\_\+set\+\_\+cb}}
+\index{button\+\_\+power\+\_\+back\+\_\+set\+\_\+cb@{button\+\_\+power\+\_\+back\+\_\+set\+\_\+cb}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+power\+\_\+back\+\_\+set\+\_\+cb(button\+\_\+cb\+\_\+t cb)}{button_power_back_set_cb(button_cb_t cb)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t button\+\_\+power\+\_\+back\+\_\+set\+\_\+cb (
+\begin{DoxyParamCaption}
+\item[{button\+\_\+cb\+\_\+t}]{cb}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_ad37fe06e435198618c9af79ba2601bfd}{}\label{button_8h_ad37fe06e435198618c9af79ba2601bfd}
+
+
+set callback when button power\+\_\+back was pressed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{button.\+h@{button.\+h}!button\+\_\+timer\+\_\+forward\+\_\+get\+\_\+level@{button\+\_\+timer\+\_\+forward\+\_\+get\+\_\+level}}
+\index{button\+\_\+timer\+\_\+forward\+\_\+get\+\_\+level@{button\+\_\+timer\+\_\+forward\+\_\+get\+\_\+level}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+timer\+\_\+forward\+\_\+get\+\_\+level(void)}{button_timer_forward_get_level(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int button\+\_\+timer\+\_\+forward\+\_\+get\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_a4ef5803516f131064b0c616a5d63e802}{}\label{button_8h_a4ef5803516f131064b0c616a5d63e802}
+
+
+button forward was pressed 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{button.\+h@{button.\+h}!button\+\_\+timer\+\_\+forward\+\_\+set\+\_\+cb@{button\+\_\+timer\+\_\+forward\+\_\+set\+\_\+cb}}
+\index{button\+\_\+timer\+\_\+forward\+\_\+set\+\_\+cb@{button\+\_\+timer\+\_\+forward\+\_\+set\+\_\+cb}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+timer\+\_\+forward\+\_\+set\+\_\+cb(button\+\_\+cb\+\_\+t cb)}{button_timer_forward_set_cb(button_cb_t cb)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t button\+\_\+timer\+\_\+forward\+\_\+set\+\_\+cb (
+\begin{DoxyParamCaption}
+\item[{button\+\_\+cb\+\_\+t}]{cb}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_aca184c540faaa8feb22f051beed818cc}{}\label{button_8h_aca184c540faaa8feb22f051beed818cc}
+
+
+set callback when button timer\+\_\+forward was pressed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{button.\+h@{button.\+h}!button\+\_\+up\+\_\+get\+\_\+level@{button\+\_\+up\+\_\+get\+\_\+level}}
+\index{button\+\_\+up\+\_\+get\+\_\+level@{button\+\_\+up\+\_\+get\+\_\+level}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+up\+\_\+get\+\_\+level(void)}{button_up_get_level(void)}}]{\setlength{\rightskip}{0pt plus 5cm}int button\+\_\+up\+\_\+get\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_ac3197741a60599827503de740a602fa8}{}\label{button_8h_ac3197741a60599827503de740a602fa8}
+
+
+button up was pressed 
+
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}
+\index{button.\+h@{button.\+h}!button\+\_\+up\+\_\+set\+\_\+cb@{button\+\_\+up\+\_\+set\+\_\+cb}}
+\index{button\+\_\+up\+\_\+set\+\_\+cb@{button\+\_\+up\+\_\+set\+\_\+cb}!button.\+h@{button.\+h}}
+\subsubsection[{\texorpdfstring{button\+\_\+up\+\_\+set\+\_\+cb(button\+\_\+cb\+\_\+t cb)}{button_up_set_cb(button_cb_t cb)}}]{\setlength{\rightskip}{0pt plus 5cm}esp\+\_\+err\+\_\+t button\+\_\+up\+\_\+set\+\_\+cb (
+\begin{DoxyParamCaption}
+\item[{button\+\_\+cb\+\_\+t}]{cb}
+\end{DoxyParamCaption}
+)}\hypertarget{button_8h_a2937eb2b6018fb98865e054d817986d9}{}\label{button_8h_a2937eb2b6018fb98865e054d817986d9}
+
+
+set callback when button up was pressed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em callback} & function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success 
+\end{DoxyReturn}

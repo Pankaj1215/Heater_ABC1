@@ -1,0 +1,161 @@
+\hypertarget{display_8h}{}\section{display.\+h File Reference}
+\label{display_8h}\index{display.\+h@{display.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+I2\+C\+\_\+\+S\+D\+A\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~16\hypertarget{display_8h_a5bd577b420368dc4fe70511657f752c0}{}\label{display_8h_a5bd577b420368dc4fe70511657f752c0}
+
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+I2\+C\+\_\+\+S\+C\+L\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~17\hypertarget{display_8h_a966f0977b528b518d33cef3189bdf9d3}{}\label{display_8h_a966f0977b528b518d33cef3189bdf9d3}
+
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+I2\+C\+\_\+\+F\+R\+E\+Q\+\_\+\+HZ}~1000000\hypertarget{display_8h_a7fb5cd8e0d08f63239698f784ad02375}{}\label{display_8h_a7fb5cd8e0d08f63239698f784ad02375}
+
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+I2\+C\+\_\+\+N\+UM}~I2\+C\+\_\+\+N\+U\+M\+\_\+1\hypertarget{display_8h_aa55a8fbdec7224f3c4ec32236116ccfc}{}\label{display_8h_aa55a8fbdec7224f3c4ec32236116ccfc}
+
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+I2\+C\+\_\+\+A\+D\+DR}~0x3C\hypertarget{display_8h_a55080314a7eda4f068285ca5a0320d1d}{}\label{display_8h_a55080314a7eda4f068285ca5a0320d1d}
+
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+R\+E\+S\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~15\hypertarget{display_8h_a7a93f69766a8df02de982e697d5a6af4}{}\label{display_8h_a7a93f69766a8df02de982e697d5a6af4}
+
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+P\+W\+R\+\_\+\+C\+T\+L\+\_\+\+G\+P\+I\+O\+\_\+\+N\+UM}~4\hypertarget{display_8h_a9a3a3bae23bdd0e2407dcbb6531d8440}{}\label{display_8h_a9a3a3bae23bdd0e2407dcbb6531d8440}
+
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+W\+I\+D\+TH}~S\+H1106\+\_\+\+P\+I\+X\+E\+L\+\_\+X\hypertarget{display_8h_a9885a007def27c91dd1720fb65d55f87}{}\label{display_8h_a9885a007def27c91dd1720fb65d55f87}
+
+\item 
+\#define {\bfseries O\+L\+E\+D\+\_\+\+H\+E\+I\+G\+HT}~S\+H1106\+\_\+\+P\+I\+X\+E\+L\+\_\+Y\hypertarget{display_8h_a149f081665424602c8c0f90a6e935f3b}{}\label{display_8h_a149f081665424602c8c0f90a6e935f3b}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+init} (void)\hypertarget{display_8h_af7f985bb062d4b8d15962be88af4ca38}{}\label{display_8h_af7f985bb062d4b8d15962be88af4ca38}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+clear\+\_\+screen} (void)\hypertarget{display_8h_ab65580848462496f8dc25e5304e396db}{}\label{display_8h_ab65580848462496f8dc25e5304e396db}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+welcome\+\_\+screen} (int color)\hypertarget{display_8h_ae981414473bb626881a0fb0040784a41}{}\label{display_8h_ae981414473bb626881a0fb0040784a41}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+standby\+\_\+message} (int color)\hypertarget{display_8h_a4301283d19c012bdc4dced15657f51e4}{}\label{display_8h_a4301283d19c012bdc4dced15657f51e4}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+menu} (char $\ast$str1, int str1\+\_\+color, char $\ast$str2, int str2\+\_\+color)\hypertarget{display_8h_a252f4ae60d249cad61c84824700c8b17}{}\label{display_8h_a252f4ae60d249cad61c84824700c8b17}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+temperature} (int val, int color)\hypertarget{display_8h_ad77e44ce4cebe548d0fb1a26dc89732d}{}\label{display_8h_ad77e44ce4cebe548d0fb1a26dc89732d}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+manual\+\_\+temperature\+\_\+normal} (int ambient\+\_\+temp, int target\+\_\+temp, int color)\hypertarget{display_8h_a1645034d7d0372b14db3d5c9e6dfcb39}{}\label{display_8h_a1645034d7d0372b14db3d5c9e6dfcb39}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+temperature\+\_\+offset\+\_\+set\+\_\+mode} (int ambient\+\_\+temp, int offset\+\_\+temp, int color)\hypertarget{display_8h_a6b4955cd5539c0206c8e77a9a86e112d}{}\label{display_8h_a6b4955cd5539c0206c8e77a9a86e112d}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+timer\+\_\+value} (int val, int color)\hypertarget{display_8h_a6afd42198bdc2efbf798fdbc3652a8cc}{}\label{display_8h_a6afd42198bdc2efbf798fdbc3652a8cc}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+timer\+\_\+mode\+\_\+normal} (int ambient\+\_\+temp, int target\+\_\+temp, int timer\+\_\+min, int color)\hypertarget{display_8h_ac02fe20d46fc207b3014a1d777bd74b7}{}\label{display_8h_ac02fe20d46fc207b3014a1d777bd74b7}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+timer\+\_\+mode\+\_\+changed} (int timer\+\_\+min, int color)\hypertarget{display_8h_a0e2cd606d495aed9ab5b2bee5ba58a27}{}\label{display_8h_a0e2cd606d495aed9ab5b2bee5ba58a27}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+auto\+\_\+mode} (int ambient\+\_\+temp, int target\+\_\+temp, int color)\hypertarget{display_8h_ac2c3d2f4665e6eb54631dd33e864b9d0}{}\label{display_8h_ac2c3d2f4665e6eb54631dd33e864b9d0}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+energy} (int val, char $\ast$unit, int color)\hypertarget{display_8h_a5c6f3066eb43c07fd562f95844c92a81}{}\label{display_8h_a5c6f3066eb43c07fd562f95844c92a81}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+year} (int val, int color)\hypertarget{display_8h_a6d051607620dd343cbe0ea57bda2fe47}{}\label{display_8h_a6d051607620dd343cbe0ea57bda2fe47}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+month} (int val, int color)\hypertarget{display_8h_a45bdee11c67b81e5d2c95b574eeb1c1d}{}\label{display_8h_a45bdee11c67b81e5d2c95b574eeb1c1d}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+day} (int val, int color)\hypertarget{display_8h_a95dfb0f3095218d92d40508664e429e8}{}\label{display_8h_a95dfb0f3095218d92d40508664e429e8}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+date} (int yr, int mo, int day, int color)\hypertarget{display_8h_a19eb95c20186ec2b809aa46f786b952f}{}\label{display_8h_a19eb95c20186ec2b809aa46f786b952f}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+hour} (int val, int color)\hypertarget{display_8h_a1812b2466b4a2dba99e4bdc59b243e1d}{}\label{display_8h_a1812b2466b4a2dba99e4bdc59b243e1d}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+minute} (int val, int color)\hypertarget{display_8h_ab090128110a9b6ce44240b1e179243f5}{}\label{display_8h_ab090128110a9b6ce44240b1e179243f5}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+time} (int hr, int min, int color)\hypertarget{display_8h_a5639eec48fce98496caf7358db129d4d}{}\label{display_8h_a5639eec48fce98496caf7358db129d4d}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+timezone} (int min, int color)\hypertarget{display_8h_a08a0c165090d5a309da59ec8e5f13496}{}\label{display_8h_a08a0c165090d5a309da59ec8e5f13496}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+ssid} (char $\ast$ssid, int color)\hypertarget{display_8h_a783d70260a9064d2556370ae91894d14}{}\label{display_8h_a783d70260a9064d2556370ae91894d14}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+password} (char $\ast$pw, int color)\hypertarget{display_8h_ae6613556c9be92e9ab53acb198f71d76}{}\label{display_8h_ae6613556c9be92e9ab53acb198f71d76}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+clear\+\_\+last\+\_\+char\+\_\+ssid\+\_\+pw} (char ch)\hypertarget{display_8h_a6d1e6f5e199773c71efec33a0defc7be}{}\label{display_8h_a6d1e6f5e199773c71efec33a0defc7be}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+password\+\_\+masked} (int pw\+\_\+len, int color)\hypertarget{display_8h_aee7971d8987835a6604ebb2c6190a243}{}\label{display_8h_aee7971d8987835a6604ebb2c6190a243}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+wps\+\_\+mode\+\_\+msg} (int color)\hypertarget{display_8h_ac2dfbf3a2c28adb10a62f447b2b898e6}{}\label{display_8h_ac2dfbf3a2c28adb10a62f447b2b898e6}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+brightness\+\_\+val} (int val, int color)\hypertarget{display_8h_ae20a5d9f5beb8750d55d9ed9b83d0e70}{}\label{display_8h_ae20a5d9f5beb8750d55d9ed9b83d0e70}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+screen\+\_\+timeout} (int sec, int color)\hypertarget{display_8h_a0053bd918f3f878cd41596d435e2d556}{}\label{display_8h_a0053bd918f3f878cd41596d435e2d556}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+child\+\_\+lock\+\_\+icon} (int color)\hypertarget{display_8h_ab07f2c0964584a790df3fb9c942dcddd}{}\label{display_8h_ab07f2c0964584a790df3fb9c942dcddd}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+timer\+\_\+icon} (int color)\hypertarget{display_8h_ab4f31ad2f376aa87c2b60c8702a45979}{}\label{display_8h_ab4f31ad2f376aa87c2b60c8702a45979}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+auto\+\_\+icon} (int color)\hypertarget{display_8h_a5c8537aa13fe46bbefb3e69f6fdbdac4}{}\label{display_8h_a5c8537aa13fe46bbefb3e69f6fdbdac4}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+wifi\+\_\+icon} (int color)\hypertarget{display_8h_a3811c20646fc609a9a3aad5c5d3a680b}{}\label{display_8h_a3811c20646fc609a9a3aad5c5d3a680b}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+menu\+\_\+inst} (int color)\hypertarget{display_8h_a92b150bdc8f8e9d9fa5ee03f57e64f88}{}\label{display_8h_a92b150bdc8f8e9d9fa5ee03f57e64f88}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+hysteresis\+\_\+setting\+\_\+warning} (int color)\hypertarget{display_8h_a198616f238dcec4b6a0c2201f41eeed3}{}\label{display_8h_a198616f238dcec4b6a0c2201f41eeed3}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+update\+\_\+status} (int stat, int fw\+\_\+ver, int color)\hypertarget{display_8h_ad614dfb73a85603c29e1e7983f066cb7}{}\label{display_8h_ad614dfb73a85603c29e1e7983f066cb7}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+update\+\_\+trigger\+\_\+msg} (int color)\hypertarget{display_8h_a4190312f24ea001d0210f7da1febc83d}{}\label{display_8h_a4190312f24ea001d0210f7da1febc83d}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+update\+\_\+installing\+\_\+msg} (int color)\hypertarget{display_8h_a7d6642d9016284e9026a0aec88acb9f3}{}\label{display_8h_a7d6642d9016284e9026a0aec88acb9f3}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+on} (void)\hypertarget{display_8h_ab7d75bac83ee31a3ce16d021a91a4902}{}\label{display_8h_ab7d75bac83ee31a3ce16d021a91a4902}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+off} (void)\hypertarget{display_8h_a819213ca6b7733fe1d87c95340f9eebe}{}\label{display_8h_a819213ca6b7733fe1d87c95340f9eebe}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+set\+\_\+brightness} (int brightness)\hypertarget{display_8h_aa3ee0acc3955f6a41eab73128286e3cd}{}\label{display_8h_aa3ee0acc3955f6a41eab73128286e3cd}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+debug\+\_\+screen\+\_\+1} (int temp\+\_\+c, int temp\+\_\+offset\+\_\+c, int ambient\+\_\+light, int screen\+\_\+br, int pilot\+\_\+light\+\_\+br, int color)\hypertarget{display_8h_aad8cc0389b088dfc5521c991cd9ba26c}{}\label{display_8h_aad8cc0389b088dfc5521c991cd9ba26c}
+
+\item 
+esp\+\_\+err\+\_\+t {\bfseries display\+\_\+debug\+\_\+screen\+\_\+2} (bool conn, bool internet, bool kaa, bool ap\+\_\+mode\+\_\+en, char $\ast$ap\+\_\+ssid, int color)\hypertarget{display_8h_a425074435a0b41d479982d6facaf8a3c}{}\label{display_8h_a425074435a0b41d479982d6facaf8a3c}
+
+\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\hypertarget{ota__update_8h}{}\section{sdk\+\_\+util/include/ota\+\_\+update.h File Reference}
+\label{ota__update_8h}\index{sdk\+\_\+util/include/ota\+\_\+update.\+h@{sdk\+\_\+util/include/ota\+\_\+update.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{ota__update_8h_a862a55e431c44342d29574d74773d020}{ota\+\_\+update\+\_\+path\+\_\+start} (char $\ast$completepath)
+\begin{DoxyCompactList}\small\item\em update using the filepath \end{DoxyCompactList}\item 
+int \hyperlink{ota__update_8h_a116d401a354b93b1f6a3d7cb2886d5f6}{ota\+\_\+update\+\_\+start} (char $\ast$serverip, int port, char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em update using the ip port and filename \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{ota\+\_\+update.\+h@{ota\+\_\+update.\+h}!ota\+\_\+update\+\_\+path\+\_\+start@{ota\+\_\+update\+\_\+path\+\_\+start}}
+\index{ota\+\_\+update\+\_\+path\+\_\+start@{ota\+\_\+update\+\_\+path\+\_\+start}!ota\+\_\+update.\+h@{ota\+\_\+update.\+h}}
+\subsubsection[{\texorpdfstring{ota\+\_\+update\+\_\+path\+\_\+start(char $\ast$completepath)}{ota_update_path_start(char *completepath)}}]{\setlength{\rightskip}{0pt plus 5cm}int ota\+\_\+update\+\_\+path\+\_\+start (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{completepath}
+\end{DoxyParamCaption}
+)}\hypertarget{ota__update_8h_a862a55e431c44342d29574d74773d020}{}\label{ota__update_8h_a862a55e431c44342d29574d74773d020}
+
+
+update using the filepath 
+
+
+\begin{DoxyParams}{Parameters}
+{\em completepath} & storage location of the filename \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success update complete, negative if fail 
+\end{DoxyReturn}
+\index{ota\+\_\+update.\+h@{ota\+\_\+update.\+h}!ota\+\_\+update\+\_\+start@{ota\+\_\+update\+\_\+start}}
+\index{ota\+\_\+update\+\_\+start@{ota\+\_\+update\+\_\+start}!ota\+\_\+update.\+h@{ota\+\_\+update.\+h}}
+\subsubsection[{\texorpdfstring{ota\+\_\+update\+\_\+start(char $\ast$serverip, int port, char $\ast$filename)}{ota_update_start(char *serverip, int port, char *filename)}}]{\setlength{\rightskip}{0pt plus 5cm}int ota\+\_\+update\+\_\+start (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{serverip, }
+\item[{int}]{port, }
+\item[{char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{ota__update_8h_a116d401a354b93b1f6a3d7cb2886d5f6}{}\label{ota__update_8h_a116d401a354b93b1f6a3d7cb2886d5f6}
+
+
+update using the ip port and filename 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serverip} & server location or url \\
+\hline
+{\em port} & used by the server \\
+\hline
+{\em filename} & name of file to be downloaded from server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns success or fail if not found 
+\end{DoxyReturn}
