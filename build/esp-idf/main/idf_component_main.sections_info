@@ -1693,161 +1693,157 @@ wifi_core.c.obj:     file format elf32-xtensa-le
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .literal.simulateRoomTemperature 00000014  00000000  00000000  00000034  2**2
+  0 .literal.event_handler 00000058  00000000  00000000  00000034  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  1 .literal.event_handler 00000058  00000000  00000000  00000048  2**2
+  1 .literal.iot_subscribe_callback_handler 00000024  00000000  00000000  0000008c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  2 .literal.ShadowUpdateStatusCallback 0000004c  00000000  00000000  000000a0  2**2
+  2 .literal.disconnectCallbackHandler 00000048  00000000  00000000  000000b0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  3 .literal.windowActuate_Callback 00000010  00000000  00000000  000000ec  2**2
+  3 .literal.esp32_reg_wifi_msg_callback 00000004  00000000  00000000  000000f8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  4 .literal.esp32_reg_wifi_msg_callback 00000004  00000000  00000000  000000fc  2**2
+  4 .literal.esp32_reg_wifi_conn_callback 00000004  00000000  00000000  000000fc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  5 .literal.esp32_reg_wifi_conn_callback 00000004  00000000  00000000  00000100  2**2
+  5 .literal.http_web_server 000000d8  00000000  00000000  00000100  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  6 .literal.http_web_server 000000d8  00000000  00000000  00000104  2**2
+  6 .literal.run_msg_handler_callback 0000000c  00000000  00000000  000001d8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  7 .literal.run_msg_handler_callback 0000000c  00000000  00000000  000001dc  2**2
+  7 .literal.esp32_initialise_wifi 00000060  00000000  00000000  000001e4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  8 .literal.esp32_initialise_wifi 00000060  00000000  00000000  000001e8  2**2
+  8 .literal.esp32_wifi_config 0000005c  00000000  00000000  00000244  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  9 .literal.esp32_wifi_config 0000005c  00000000  00000000  00000248  2**2
+  9 .literal.esp32_wps_enable 00000020  00000000  00000000  000002a0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 10 .literal.esp32_wps_enable 00000020  00000000  00000000  000002a4  2**2
+ 10 .literal.esp32_wps_disable 00000004  00000000  00000000  000002c0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 11 .literal.esp32_wps_disable 00000004  00000000  00000000  000002c4  2**2
+ 11 .literal.esp32_wifi_client_enable 00000010  00000000  00000000  000002c4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 12 .literal.esp32_wifi_client_enable 00000010  00000000  00000000  000002c8  2**2
+ 12 .literal.esp32_wifi_ap_enable 0000000c  00000000  00000000  000002d4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 13 .literal.esp32_wifi_ap_enable 0000000c  00000000  00000000  000002d8  2**2
+ 13 .literal.esp32_wifi_ap_disable 00000008  00000000  00000000  000002e0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 14 .literal.esp32_wifi_ap_disable 00000008  00000000  00000000  000002e4  2**2
+ 14 .literal.esp32_wifi_is_ap_enabled 00000004  00000000  00000000  000002e8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 15 .literal.esp32_wifi_is_ap_enabled 00000004  00000000  00000000  000002ec  2**2
+ 15 .literal.esp32_wifi_ap_get_mac 00000008  00000000  00000000  000002ec  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 16 .literal.esp32_wifi_ap_get_mac 00000008  00000000  00000000  000002f0  2**2
+ 16 .literal.esp32_wifi_client_get_mac 00000008  00000000  00000000  000002f4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 17 .literal.esp32_wifi_client_get_mac 00000008  00000000  00000000  000002f8  2**2
+ 17 .literal.aws_iot_task 00000134  00000000  00000000  000002fc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 18 .literal.aws_iot_task 00000160  00000000  00000000  00000300  2**2
-                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 19 .text         00000000  00000000  00000000  00000460  2**0
+ 18 .text         00000000  00000000  00000000  00000430  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 20 .data         00000000  00000000  00000000  00000460  2**0
+ 19 .data         00000000  00000000  00000000  00000430  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 21 .bss          00000000  00000000  00000000  00000460  2**0
+ 20 .bss          00000000  00000000  00000000  00000430  2**0
                   ALLOC
- 22 .text.simulateRoomTemperature 0000003f  00000000  00000000  00000460  2**2
-                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 23 .rodata.str1.4 0000072f  00000000  00000000  000004a0  2**2
+ 21 .rodata.str1.4 0000064f  00000000  00000000  00000430  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 24 .text.event_handler 000000f2  00000000  00000000  00000bd0  2**2
+ 22 .text.event_handler 000000f3  00000000  00000000  00000a80  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 25 .rodata.event_handler 00000048  00000000  00000000  00000cc4  2**2
+ 23 .rodata.event_handler 00000048  00000000  00000000  00000b74  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
- 26 .text.ShadowUpdateStatusCallback 0000008e  00000000  00000000  00000d0c  2**2
+ 24 .text.iot_subscribe_callback_handler 00000052  00000000  00000000  00000bbc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 27 .text.windowActuate_Callback 00000026  00000000  00000000  00000d9c  2**2
+ 25 .text.disconnectCallbackHandler 000000a0  00000000  00000000  00000c10  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 28 .text.esp32_reg_wifi_msg_callback 00000012  00000000  00000000  00000dc4  2**2
+ 26 .text.esp32_reg_wifi_msg_callback 00000012  00000000  00000000  00000cb0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 29 .text.esp32_reg_wifi_conn_callback 00000012  00000000  00000000  00000dd8  2**2
+ 27 .text.esp32_reg_wifi_conn_callback 00000012  00000000  00000000  00000cc4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 30 .text.http_web_server 00000296  00000000  00000000  00000dec  2**2
+ 28 .text.http_web_server 00000296  00000000  00000000  00000cd8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 31 .text.run_msg_handler_callback 00000015  00000000  00000000  00001084  2**2
+ 29 .text.run_msg_handler_callback 00000015  00000000  00000000  00000f70  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 32 .text.esp32_initialise_wifi 000000d5  00000000  00000000  0000109c  2**2
+ 30 .text.esp32_initialise_wifi 000000d5  00000000  00000000  00000f88  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 33 .text.esp32_wifi_config 000000fc  00000000  00000000  00001174  2**2
+ 31 .text.esp32_wifi_config 000000fc  00000000  00000000  00001060  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 34 .text.esp32_wake_up 00000007  00000000  00000000  00001270  2**2
+ 32 .text.esp32_wake_up 00000007  00000000  00000000  0000115c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 35 .text.esp32_sleep 00000007  00000000  00000000  00001278  2**2
+ 33 .text.esp32_sleep 00000007  00000000  00000000  00001164  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 36 .text.esp32_send_msg 00000007  00000000  00000000  00001280  2**2
+ 34 .text.esp32_send_msg 00000007  00000000  00000000  0000116c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 37 .text.esp32_receive_msg 00000007  00000000  00000000  00001288  2**2
+ 35 .text.esp32_receive_msg 00000007  00000000  00000000  00001174  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 38 .text.esp32_wifi_scan 00000007  00000000  00000000  00001290  2**2
+ 36 .text.esp32_wifi_scan 00000007  00000000  00000000  0000117c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 39 .rodata       000000b8  00000000  00000000  00001298  2**2
+ 37 .rodata       000000ac  00000000  00000000  00001184  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
- 40 .text.esp32_wps_enable 00000048  00000000  00000000  00001350  2**2
+ 38 .text.esp32_wps_enable 00000048  00000000  00000000  00001230  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 41 .text.esp32_wps_disable 0000000d  00000000  00000000  00001398  2**2
+ 39 .text.esp32_wps_disable 0000000d  00000000  00000000  00001278  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 42 .text.esp32_wifi_client_enable 00000026  00000000  00000000  000013a8  2**2
+ 40 .text.esp32_wifi_client_enable 00000026  00000000  00000000  00001288  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 43 .text.esp32_wifi_ap_enable 0000001e  00000000  00000000  000013d0  2**2
+ 41 .text.esp32_wifi_ap_enable 0000001e  00000000  00000000  000012b0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 44 .text.esp32_wifi_ap_disable 0000001c  00000000  00000000  000013f0  2**2
+ 42 .text.esp32_wifi_ap_disable 0000001c  00000000  00000000  000012d0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 45 .text.esp32_wifi_is_ap_enabled 0000000b  00000000  00000000  0000140c  2**2
+ 43 .text.esp32_wifi_is_ap_enabled 0000000b  00000000  00000000  000012ec  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 46 .text.esp32_wifi_ap_get_mac 00000012  00000000  00000000  00001418  2**2
+ 44 .text.esp32_wifi_ap_get_mac 00000012  00000000  00000000  000012f8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 47 .text.esp32_wifi_client_get_mac 00000012  00000000  00000000  0000142c  2**2
+ 45 .text.esp32_wifi_client_get_mac 00000012  00000000  00000000  0000130c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 48 .text.aws_iot_task 00000422  00000000  00000000  00001440  2**2
+ 46 .text.aws_iot_task 00000336  00000000  00000000  00001320  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 49 .bss.deltaChange$12885 00000004  00000000  00000000  00001864  2**2
-                  ALLOC
- 50 .rodata.__func__$12825 00000012  00000000  00000000  00001864  2**2
+ 47 .rodata.__func__$12825 00000012  00000000  00000000  00001658  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 51 .rodata.__func__$12816 00000016  00000000  00000000  00001878  2**2
+ 48 .rodata.__func__$12816 00000016  00000000  00000000  0000166c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 52 .rodata.__func__$12781 00000010  00000000  00000000  00001890  2**2
+ 49 .rodata.__func__$12781 00000010  00000000  00000000  00001684  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 53 .bss.shadowUpdateInProgress 00000001  00000000  00000000  000018a0  2**0
+ 50 .data.port    00000004  00000000  00000000  00001694  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 51 .data.HostAddress 000000ff  00000000  00000000  00001698  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+ 52 .bss.wifi_ap_en 00000001  00000000  00000000  00001797  2**0
                   ALLOC
- 54 .bss.wifi_ap_en 00000001  00000000  00000000  000018a0  2**0
+ 53 .bss.sta_mac  00000006  00000000  00000000  00001798  2**2
                   ALLOC
- 55 .bss.sta_mac  00000006  00000000  00000000  000018a0  2**2
+ 54 .bss.ap_mac   00000006  00000000  00000000  00001798  2**2
                   ALLOC
- 56 .bss.ap_mac   00000006  00000000  00000000  000018a0  2**2
+ 55 .bss.web_server_status 00000004  00000000  00000000  00001798  2**2
                   ALLOC
- 57 .bss.web_server_status 00000004  00000000  00000000  000018a0  2**2
+ 56 .bss.esp32_wifi_status 00000004  00000000  00000000  00001798  2**2
                   ALLOC
- 58 .bss.esp32_wifi_status 00000004  00000000  00000000  000018a0  2**2
+ 57 .bss.wifi_conn_stat_callback 00000004  00000000  00000000  00001798  2**2
                   ALLOC
- 59 .bss.wifi_conn_stat_callback 00000004  00000000  00000000  000018a0  2**2
+ 58 .bss.web_server_msg_handler 00000004  00000000  00000000  00001798  2**2
                   ALLOC
- 60 .bss.web_server_msg_handler 00000004  00000000  00000000  000018a0  2**2
+ 59 .bss.wifi_msg_handler_callback 00000004  00000000  00000000  00001798  2**2
                   ALLOC
- 61 .bss.wifi_msg_handler_callback 00000004  00000000  00000000  000018a0  2**2
-                  ALLOC
- 62 .rodata.http_html_reply 00000026  00000000  00000000  000018a0  2**2
+ 60 .rodata.http_html_reply 00000026  00000000  00000000  00001798  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 63 .rodata.http_html_header 0000002d  00000000  00000000  000018c8  2**2
+ 61 .rodata.http_html_header 0000002d  00000000  00000000  000017c0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 64 .rodata.CONNECTED_BIT 00000004  00000000  00000000  000018f8  2**2
+ 62 .rodata.CONNECTED_BIT 00000004  00000000  00000000  000017f0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 65 .bss.wifi_event_group 00000004  00000000  00000000  000018fc  2**2
+ 63 .bss.wifi_event_group 00000004  00000000  00000000  000017f4  2**2
                   ALLOC
- 66 .debug_frame  00000250  00000000  00000000  000018fc  2**2
+ 64 .debug_frame  00000238  00000000  00000000  000017f4  2**2
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 67 .debug_info   0000585c  00000000  00000000  00001b4c  2**0
+ 65 .debug_info   000056c9  00000000  00000000  00001a2c  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 68 .debug_abbrev 000004d6  00000000  00000000  000073a8  2**0
+ 66 .debug_abbrev 000004df  00000000  00000000  000070f5  2**0
                   CONTENTS, READONLY, DEBUGGING
- 69 .debug_loc    00000519  00000000  00000000  0000787e  2**0
+ 67 .debug_loc    000005ac  00000000  00000000  000075d4  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 70 .debug_aranges 000000d8  00000000  00000000  00007d97  2**0
+ 68 .debug_aranges 000000d0  00000000  00000000  00007b80  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 71 .debug_ranges 000000c8  00000000  00000000  00007e6f  2**0
+ 69 .debug_ranges 000000c0  00000000  00000000  00007c50  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 72 .debug_line   0000121a  00000000  00000000  00007f37  2**0
+ 70 .debug_line   00001121  00000000  00000000  00007d10  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 73 .debug_str    00004541  00000000  00000000  00009151  2**0
+ 71 .debug_str    00004220  00000000  00000000  00008e31  2**0
                   CONTENTS, READONLY, DEBUGGING
- 74 .comment      0000003c  00000000  00000000  0000d692  2**0
+ 72 .comment      0000003c  00000000  00000000  0000d051  2**0
                   CONTENTS, READONLY
- 75 .xtensa.info  00000038  00000000  00000000  0000d6ce  2**0
+ 73 .xtensa.info  00000038  00000000  00000000  0000d08d  2**0
                   CONTENTS, READONLY
- 76 .xt.lit       00000098  00000000  00000000  0000d706  2**0
+ 74 .xt.lit       00000090  00000000  00000000  0000d0c5  2**0
                   CONTENTS, RELOC, READONLY
- 77 .xt.prop      00000834  00000000  00000000  0000d79e  2**0
+ 75 .xt.prop      00000798  00000000  00000000  0000d155  2**0
                   CONTENTS, RELOC, READONLY
 
 filesystem_lib.c.obj:     file format elf32-xtensa-le
