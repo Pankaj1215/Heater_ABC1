@@ -52,9 +52,21 @@
 #include "lucidtron_core.h"
 #include "wifi_core.h"
 
+// #include "thing_shadow_sample.c"  // new added for connected bit // p14Sept20
 
 #ifdef P_TESTING
-  #include "esp_http_client.h"    // New Added Header Files for HTTP File..28Aug2020//
+
+#define thing_Shadow   // for define thing shadow
+
+#ifdef thing_Shadow
+#include "aws_iot_config.h"
+#include "aws_iot_log.h"
+#include "aws_iot_version.h"
+#include "aws_iot_mqtt_client_interface.h"
+#include "aws_iot_shadow_interface.h"
+#endif
+
+ #include "esp_http_client.h"    // New Added Header Files for HTTP File..28Aug2020//
  // #define DATA_HTTP_BIN_ORG                               // For Showing Data On httpbin.org
   //  #define WORKING_DATA_ON_THINK_SPEAK_SERVER           // For Showing data on Thinkspeak server
    // #define WORKING_AWS_HTTP_GET_POST                    // FOr Get POSt HTTP_working_Backup_function
@@ -356,6 +368,7 @@ int esp32_initialise_wifi(void)
     return 0;
 }
 
+
 int esp32_wifi_config(int mode, char* ssid, char* password)
 {
     //this config will save the config in ram, theres also an option to
@@ -600,10 +613,11 @@ static void http_get_task(void *pvParameters)
 
 
 
-
+//#define HTTP_CLIENT_Code
 
 #ifdef P_TESTING    //    // New Added For HTTP_PS_20
 
+#ifdef HTTP_CLIENT_Code
 static const char *TAG = "HTTP_CLIENT";
 
 esp_err_t _http_event_handler(esp_http_client_event_t *evt)
@@ -883,10 +897,7 @@ static void http_rest_with_url()
 #endif
 
 
-
-
-
- void http_test_task(void *pvParameters)
+void http_test_task(void *pvParameters)
  {
 	 while(1)
 	 {
@@ -912,9 +923,8 @@ static void http_rest_with_url()
     // vTaskDelete(NULL);
 	 }// end of while
  }
-
+#endif // ifdef HTTP_CLIENT_Code
 #endif // end of // ifdef P_TESTING
-
 
 
 
@@ -955,4 +965,364 @@ static void http_rest_with_url()
      return success;
  }
 #endif
+
+
+
+
+#ifdef thing_Shadow
+
+ static const char *TAG = "shadow";
+
+ #define ROOMTEMPERATURE_UPPERLIMIT 32.0f
+ #define ROOMTEMPERATURE_LOWERLIMIT 25.0f
+ #define STARTING_ROOMTEMPERATURE ROOMTEMPERATURE_LOWERLIMIT
+
+  #define MAX_LENGTH_OF_UPDATE_JSON_BUFFER 200   // Original
+
+ // #define MAX_LENGTH_OF_UPDATE_JSON_BUFFER 400   // Testing   // 6 Parameter error covered by buffer 400
+ // #define MAX_LENGTH_OF_UPDATE_JSON_BUFFER 250   // Testing   // 6 Parameter error covered by buffer 400
+
+ //// New added for testing..b
+ //#define CONFIG_WIFI_SSID   "WF-HOME"
+ //#define CONFIG_WIFI_PASSWORD   "bksm1554"
+ //#define CONFIG_EXAMPLE_EMBEDDED_CERTS
+ //#define CONFIG_AWS_EXAMPLE_THING_NAME  "Heater"
+ //#define CONFIG_AWS_EXAMPLE_CLIENT_ID   "0001"
+ // end
+
+
+ /* The examples use simple WiFi configuration that you can set via
+    'make menuconfig'.
+
+    If you'd rather not, just change the below entries to strings with
+    the config you want - ie #define EXAMPLE_WIFI_SSID "mywifissid"
+ */
+ #define EXAMPLE_WIFI_SSID CONFIG_WIFI_SSID
+ #define EXAMPLE_WIFI_PASS CONFIG_WIFI_PASSWORD
+
+ /* FreeRTOS event group to signal when we are connected & ready to make a request */
+ static EventGroupHandle_t wifi_event_group;
+
+ /* The event group allows multiple bits for each event,
+    but we only care about one event - are we connected
+    to the AP with an IP? */
+ // const int CONNECTED_BIT = BIT0;  //Commented for testing..
+ /* CA Root certificate, device ("Thing") certificate and device
+  * ("Thing") key.
+    Example can be configured one of two ways:
+    "Embedded Certs" are loaded from files in "certs/" and embedded into the app binary.
+    "Filesystem Certs" are loaded from the filesystem (SD card, etc.)
+    See example README for more details.
+ */
+ #if defined(CONFIG_EXAMPLE_EMBEDDED_CERTS)
+
+ extern const uint8_t aws_root_ca_pem_start[] asm("_binary_aws_root_ca_pem_start");
+ extern const uint8_t aws_root_ca_pem_end[] asm("_binary_aws_root_ca_pem_end");
+ extern const uint8_t certificate_pem_crt_start[] asm("_binary_certificate_pem_crt_start");
+ extern const uint8_t certificate_pem_crt_end[] asm("_binary_certificate_pem_crt_end");
+ extern const uint8_t private_pem_key_start[] asm("_binary_private_pem_key_start");
+ extern const uint8_t private_pem_key_end[] asm("_binary_private_pem_key_end");
+
+ #elif defined(CONFIG_EXAMPLE_FILESYSTEM_CERTS)
+
+ static const char * DEVICE_CERTIFICATE_PATH = CONFIG_EXAMPLE_CERTIFICATE_PATH;
+ static const char * DEVICE_PRIVATE_KEY_PATH = CONFIG_EXAMPLE_PRIVATE_KEY_PATH;
+ static const char * ROOT_CA_PATH = CONFIG_EXAMPLE_ROOT_CA_PATH;
+
+ #else
+ #error "Invalid method for loading certs"
+ #endif
+
+
+
+
+ static void simulateRoomTemperature(float *pRoomTemperature) {
+     static float deltaChange;
+
+     if(*pRoomTemperature >= ROOMTEMPERATURE_UPPERLIMIT) {
+         deltaChange = -0.5f;
+     } else if(*pRoomTemperature <= ROOMTEMPERATURE_LOWERLIMIT) {
+         deltaChange = 0.5f;
+     }
+
+     *pRoomTemperature += deltaChange;
+ }
+
+ static bool shadowUpdateInProgress;
+
+
+ void ShadowUpdateStatusCallback(const char *pThingName, ShadowActions_t action, Shadow_Ack_Status_t status,
+                                 const char *pReceivedJsonDocument, void *pContextData) {
+
+
+     IOT_UNUSED(pThingName);
+     IOT_UNUSED(action);
+     IOT_UNUSED(pReceivedJsonDocument);
+     IOT_UNUSED(pContextData);
+
+     shadowUpdateInProgress = false;
+
+     if(SHADOW_ACK_TIMEOUT == status)
+     {
+         ESP_LOGE(TAG, "Update timed out");
+         printf("Update timed out \n ");
+     } else if(SHADOW_ACK_REJECTED == status)
+     {
+         ESP_LOGE(TAG, "Update rejected");
+         printf("Update rejected \n ");
+
+     } else if(SHADOW_ACK_ACCEPTED == status)
+     {
+         ESP_LOGI(TAG, "Update accepted");
+         printf("Update accepted \n ");
+     }
+
+     printf("pReceivedJsonDocument %s\n", pReceivedJsonDocument);
+ }
+
+
+
+ void windowActuate_Callback(const char *pJsonString, uint32_t JsonStringDataLen, jsonStruct_t *pContext) {
+     IOT_UNUSED(pJsonString);
+     IOT_UNUSED(JsonStringDataLen);
+
+     if(pContext != NULL) {
+         ESP_LOGI(TAG, "Delta - Window state changed to %d", *(bool *) (pContext->pData));
+     }
+ }
+
+
+
+ void aws_iot_task(void *param) {
+     IoT_Error_t rc = FAILURE;
+
+     char JsonDocumentBuffer[MAX_LENGTH_OF_UPDATE_JSON_BUFFER];
+     char JsonDocumentBuffer1[MAX_LENGTH_OF_UPDATE_JSON_BUFFER];
+
+     size_t sizeOfJsonDocumentBuffer = sizeof(JsonDocumentBuffer) / sizeof(JsonDocumentBuffer[0]);
+     float temperature = 0.0;
+     float temperature1 = 0.0; // Testing only
+     float temperature2 = 0.0;  // Testing only
+
+     char HeaterState[12] = "HEATER_ON";
+     char Thermostate_Status[12] = "Thermo_ON";
+
+     bool windowOpen = false;  //Original
+    // char windowOpen[200] = "welcome";
+
+     jsonStruct_t windowActuator;
+     windowActuator.cb = windowActuate_Callback;
+     windowActuator.pData = &windowOpen;
+      windowActuator.pKey = "windowOpen";   //Original
+    // windowActuator.pKey = "welcome"; // TEST
+
+      windowActuator.type = SHADOW_JSON_BOOL;
+      windowActuator.dataLength = sizeof(bool);
+
+    // windowActuator.type = SHADOW_JSON_STRING;  // TEST
+    //  windowActuator.dataLength =200;  // string length
+
+     jsonStruct_t temperatureHandler;
+     temperatureHandler.cb = NULL;
+     temperatureHandler.pKey = "temperature";
+     temperatureHandler.pData = &temperature;
+     temperatureHandler.type = SHADOW_JSON_FLOAT;
+     temperatureHandler.dataLength = sizeof(float);
+
+
+     //Testing..Begin
+     jsonStruct_t temperatureHandler1;
+     temperatureHandler1.cb = NULL;
+     temperatureHandler1.pKey = "temperature1";
+     temperatureHandler1.pData = &temperature1;
+     temperatureHandler1.type = SHADOW_JSON_FLOAT;
+     temperatureHandler1.dataLength = sizeof(float);
+    //Test End
+
+     //Testing..Begin
+         jsonStruct_t temperatureHandler2;
+         temperatureHandler2.cb = NULL;
+         temperatureHandler2.pKey = "temperature2";
+         temperatureHandler2.pData = &temperature2;
+         temperatureHandler2.type = SHADOW_JSON_FLOAT;
+         temperatureHandler2.dataLength = sizeof(float);
+        //Test End
+
+         //Testing..Begin
+ 		jsonStruct_t HeaterStateHandler;
+ 		HeaterStateHandler.cb = NULL;
+ 		HeaterStateHandler.pKey = "Heater State";
+ 		HeaterStateHandler.pData = &HeaterState;
+ 		HeaterStateHandler.type = SHADOW_JSON_STRING;
+ 		HeaterStateHandler.dataLength = 12;
+ 	   //Test End
+
+ //                //Testing..Begin
+ //			   jsonStruct_t ThermostateHandler;
+ //			   ThermostateHandler.cb = NULL;
+ //			   ThermostateHandler.pKey = "ThermoStatus";
+ //			   ThermostateHandler.pData = &Thermostate_Status;
+ //			   ThermostateHandler.type = SHADOW_JSON_STRING;
+ //			   ThermostateHandler.dataLength = 16;
+ //			  //Test End
+
+     ESP_LOGI(TAG, "AWS IoT SDK Version %d.%d.%d-%s", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_TAG);
+
+     // initialize the mqtt client
+     AWS_IoT_Client mqttClient;
+
+     ShadowInitParameters_t sp = ShadowInitParametersDefault;
+     sp.pHost = AWS_IOT_MQTT_HOST;
+     // sp.pHost = "a1s70xa3tg6svk-ats.iot.ap-south-1.amazonaws.com";
+     sp.port = AWS_IOT_MQTT_PORT;
+
+ #if defined(CONFIG_EXAMPLE_EMBEDDED_CERTS)
+     sp.pClientCRT = (const char *)certificate_pem_crt_start;
+     sp.pClientKey = (const char *)private_pem_key_start;
+     sp.pRootCA = (const char *)aws_root_ca_pem_start;
+ #elif defined(CONFIG_EXAMPLE_FILESYSTEM_CERTS)
+     sp.pClientCRT = DEVICE_CERTIFICATE_PATH;
+     sp.pClientKey = DEVICE_PRIVATE_KEY_PATH;
+     sp.pRootCA = ROOT_CA_PATH;
+ #endif
+     sp.enableAutoReconnect = false;
+     sp.disconnectHandler = NULL;
+
+ #ifdef CONFIG_EXAMPLE_SDCARD_CERTS
+     ESP_LOGI(TAG, "Mounting SD card...");
+     sdmmc_host_t host = SDMMC_HOST_DEFAULT();
+     sdmmc_slot_config_t slot_config = SDMMC_SLOT_CONFIG_DEFAULT();
+     esp_vfs_fat_sdmmc_mount_config_t mount_config = {
+         .format_if_mount_failed = false,
+         .max_files = 3,
+     };
+     sdmmc_card_t* card;
+     esp_err_t ret = esp_vfs_fat_sdmmc_mount("/sdcard", &host, &slot_config, &mount_config, &card);
+     if (ret != ESP_OK) {
+         ESP_LOGE(TAG, "Failed to mount SD card VFAT filesystem. Error: %s", esp_err_to_name(ret));
+         abort();
+     }
+ #endif
+
+
+
+//     /* Wait for WiFI to show as connected */   // Commented only for testing..in main firmware as wifi has that event..
+ //   xEventGroupWaitBits(wifi_event_group, CONNECTED_BIT,
+  //                       false, true, portMAX_DELAY);
+
+
+     ESP_LOGI(TAG, "Shadow Init");
+     rc = aws_iot_shadow_init(&mqttClient, &sp);
+     if(SUCCESS != rc) {
+         ESP_LOGE(TAG, "aws_iot_shadow_init returned error %d, aborting...", rc);
+         abort();
+     }
+
+     ShadowConnectParameters_t scp = ShadowConnectParametersDefault;
+
+     scp.pMyThingName = CONFIG_AWS_EXAMPLE_THING_NAME;
+     scp.pMqttClientId = CONFIG_AWS_EXAMPLE_CLIENT_ID;
+     scp.mqttClientIdLen = (uint16_t) strlen(CONFIG_AWS_EXAMPLE_CLIENT_ID);
+
+     ESP_LOGI(TAG, "Shadow Connect");
+     rc = aws_iot_shadow_connect(&mqttClient, &scp);
+     if(SUCCESS != rc) {
+         ESP_LOGE(TAG, "aws_iot_shadow_connect returned error %d, aborting...", rc);
+         abort();
+     }
+
+     /*
+      * Enable Auto Reconnect functionality. Minimum and Maximum time of Exponential backoff are set in aws_iot_config.h
+      *  #AWS_IOT_MQTT_MIN_RECONNECT_WAIT_INTERVAL
+      *  #AWS_IOT_MQTT_MAX_RECONNECT_WAIT_INTERVAL
+      */
+     rc = aws_iot_shadow_set_autoreconnect_status(&mqttClient, true);
+     if(SUCCESS != rc) {
+         ESP_LOGE(TAG, "Unable to set Auto Reconnect to true - %d, aborting...", rc);
+         abort();
+     }
+
+
+     rc = aws_iot_shadow_register_delta(&mqttClient, &windowActuator);   // Commented for Testing
+     if(SUCCESS != rc) {
+         ESP_LOGE(TAG, "Shadow Register Delta Error");
+     }
+
+     temperature = STARTING_ROOMTEMPERATURE;
+     temperature1 = 85.0;   // Added Fonly for Testing
+     temperature2 = 95.0;   // Added Fonly for Testing
+
+     // loop and publish a change in temperature
+     while(NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc) {
+         rc = aws_iot_shadow_yield(&mqttClient, 200);
+         if(NETWORK_ATTEMPTING_RECONNECT == rc || shadowUpdateInProgress) {
+             rc = aws_iot_shadow_yield(&mqttClient, 1000);
+             // If the client is attempting to reconnect, or already waiting on a shadow update,
+             // we will skip the rest of the loop.
+             continue;
+         }
+         ESP_LOGI(TAG, "=======================================================================================");
+
+        // ESP_LOGI(TAG, "On Device: window state %s", windowOpen ? "true" : "false");  // commentd for test
+
+         simulateRoomTemperature(&temperature);
+
+         rc = aws_iot_shadow_init_json_document(JsonDocumentBuffer, sizeOfJsonDocumentBuffer);
+        // printf(" After aws_iot_shadow_init_json_document \n ");
+
+         if(SUCCESS == rc) {
+         	// OriginalLines
+ //            rc = aws_iot_shadow_add_reported(JsonDocumentBuffer, sizeOfJsonDocumentBuffer, 2, &temperatureHandler,
+ //                                             &windowActuator);
+
+         	//printf("before Shadow Add Reported\n ");
+
+         	//Testing only..Begin
+             rc = aws_iot_shadow_add_reported(JsonDocumentBuffer, sizeOfJsonDocumentBuffer, 5, &temperatureHandler,
+                                              &windowActuator, &temperatureHandler1,  &temperatureHandler2 , &HeaterStateHandler );
+
+ //            rc = aws_iot_shadow_add_reported(JsonDocumentBuffer, sizeOfJsonDocumentBuffer, 6, &temperatureHandler,
+ //                                             &windowActuator, &temperatureHandler1,  &temperatureHandler2 , &HeaterStateHandler , &ThermostateHandler );
+             //Testing only..End
+
+             if(SUCCESS == rc) {
+             	// printf("after Shadow Add Reported\n ");
+                 rc = aws_iot_finalize_json_document(JsonDocumentBuffer, sizeOfJsonDocumentBuffer);
+                 if(SUCCESS == rc) {
+                 	// printf("after success aws_iot_finalize_json_document\n ");
+                     ESP_LOGI(TAG, "Update Shadow: %s", JsonDocumentBuffer);
+
+
+                     // Original
+                    rc = aws_iot_shadow_update(&mqttClient, CONFIG_AWS_EXAMPLE_THING_NAME, JsonDocumentBuffer,
+                                               ShadowUpdateStatusCallback, NULL, 4, true);
+
+                     shadowUpdateInProgress = true;
+                 }
+             }
+         }
+         ESP_LOGI(TAG, "*****************************************************************************************");
+         ESP_LOGI(TAG, "Stack remaining for task '%s' is %d bytes", pcTaskGetTaskName(NULL), uxTaskGetStackHighWaterMark(NULL));
+
+         vTaskDelay(1000 / portTICK_RATE_MS);   // original
+         //vTaskDelay(60000 / portTICK_RATE_MS);    // Testing..
+     }
+
+     if(SUCCESS != rc) {
+         ESP_LOGE(TAG, "An error occurred in the loop %d", rc);
+     }
+
+     ESP_LOGI(TAG, "Disconnecting");
+     rc = aws_iot_shadow_disconnect(&mqttClient);
+
+     if(SUCCESS != rc) {
+         ESP_LOGE(TAG, "Disconnect error %d", rc);
+     }
+
+     vTaskDelete(NULL);   // comments for testing
+ }
+
+#endif
+
+
 

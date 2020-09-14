@@ -673,6 +673,25 @@ rule C_STATIC_LIBRARY_LINKER__idf_component_jsmn
 #############################################
 # Rule for compiling C files.
 
+rule C_COMPILER__idf_component_aws_iot
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache C:\ESP-IDF\.espressif\tools\xtensa-esp32-elf\1.22.0-96-g28523988-5.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out   -c $in
+  description = Building C object $out
+
+
+#############################################
+# Rule for linking C static library.
+
+rule C_STATIC_LIBRARY_LINKER__idf_component_aws_iot
+  command = cmd.exe /C "$PRE_LINK && C:\ESP-IDF\.espressif\tools\cmake\3.13.4\bin\cmake.exe -E remove $TARGET_FILE && C:\ESP-IDF\.espressif\tools\xtensa-esp32-elf\1.22.0-96-g28523988-5.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\ESP-IDF\.espressif\tools\xtensa-esp32-elf\1.22.0-96-g28523988-5.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking C static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling C files.
+
 rule C_COMPILER__idf_component_coap
   depfile = $DEP_FILE
   deps = gcc
@@ -1193,6 +1212,16 @@ rule C_STATIC_LIBRARY_LINKER__idf_component_wifi_provisioning
   command = cmd.exe /C "$PRE_LINK && C:\ESP-IDF\.espressif\tools\cmake\3.13.4\bin\cmake.exe -E remove $TARGET_FILE && C:\ESP-IDF\.espressif\tools\xtensa-esp32-elf\1.22.0-96-g28523988-5.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\ESP-IDF\.espressif\tools\xtensa-esp32-elf\1.22.0-96-g28523988-5.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-ranlib.exe $TARGET_FILE && $POST_BUILD"
   description = Linking C static library $TARGET_FILE
   restat = $RESTAT
+
+
+#############################################
+# Rule for compiling ASM files.
+
+rule ASM_COMPILER__idf_component_main
+  depfile = $DEP_FILE
+  deps = gcc
+  command = ccache C:\ESP-IDF\.espressif\tools\xtensa-esp32-elf\1.22.0-96-g28523988-5.2.0\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building ASM object $out
 
 
 #############################################

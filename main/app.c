@@ -128,6 +128,7 @@ auto_mode_sched_t sched_weekend[AUTO_MODE_SCHED_NUM];
 #ifdef P_TESTING
 
 void http_test_task(void *pvParameters);   // ADDED FOR TESTING ..PS28aUG
+void aws_iot_task(void *pvParameters);   // ADDED FOR TESTING ..PS28aUG
 // void http_rest_with_url();   // ADDED FOR TESTING ..PS28aUG
 #endif
 
@@ -301,11 +302,17 @@ esp_err_t app_init(void) {
     if (button_timer_forward_get_level())
         *stat |= 1 << BUTTON_TIMER_FORWARD_STAT;
 
+
+
     // set Wi-Fi status change callback
     set_wifi_conn_status_change_cb(wifi_conn_stat);
      // initialize and start communication service
     initialize_communication_service();
      comm_wifi_dev = get_wifi_dev();
+
+
+
+
 
     // wait for at least APP_WELCOME_SCREEN_DELAY_MS
     if ((xTaskGetTickCount() * portTICK_PERIOD_MS - t_start_ms) < APP_WELCOME_SCREEN_DELAY_MS)
@@ -349,7 +356,9 @@ static void app_task(void *param) {
 
 #ifdef P_TESTING
     // onLY FOR tESTING
-    xTaskCreate(&http_test_task, "http_test_task", 8192, NULL, 5, NULL);
+   // xTaskCreate(&http_test_task, "http_test_task", 8192, NULL, 5, NULL);
+    printf("I am in main firmware \n ");
+     xTaskCreate(&aws_iot_task, "aws_iot_task", 8192, NULL, 5, NULL);   // aws iot task .. initiation..
 #endif
 
     // start task that reads ambient temperature

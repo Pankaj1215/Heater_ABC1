@@ -296,10 +296,12 @@ C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/jsmn/CMakeFiles/in
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/jsmn/CMakeFiles/edit_cache.dir
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/jsmn/CMakeFiles/rebuild_cache.dir
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/jsmn/CMakeFiles/list_install_components.dir
+C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/idf_component_aws_iot.dir
+C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/rebuild_cache.dir
+C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/idf_component_aws_iot_sections_info.dir
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/install/local.dir
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/install.dir
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/edit_cache.dir
-C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/rebuild_cache.dir
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/list_install_components.dir
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/aws_iot/CMakeFiles/install/strip.dir
 C:/Users/mahesh_tripathi/eclipse-workspace/ABC1/build/esp-idf/bootloader/CMakeFiles/install/local.dir

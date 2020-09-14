@@ -10,7 +10,8 @@ set(COMPONENT_SRCS "main.c" "app.c" "led.c" "heater.c" "button.c"  "display.c"  
                    "./sdk_util/ota_update.c"
                    "./sdk_util/non_volatile_lib.c"
                    "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/components/mqtt_client/mqtt.c" 
-                   "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/components/display/font/dejavu_sans.c")
+                   "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/components/display/font/dejavu_sans.c"
+                   "./thing_Shadow/thing_shadow_sample.c")
                    
 set(COMPONENT_ADD_INCLUDEDIRS "." "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/components/clock/include"
                      "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/components/display/include" 
@@ -25,8 +26,17 @@ set(COMPONENT_ADD_INCLUDEDIRS "." "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1
                      "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/sdk_list/esp-idf_40/components/nvs_flash/include"
                      "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/sdk_list/esp-idf_40/components/freertos/include"
                      "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/sdk_list/esp-idf_40/components/esp_rom/include"
-                     "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/sdk_list/esp-idf_40/components/esp_common/include" )
-
+                     "C:/E_HEATER/longhorn_fw_v1.6.0/longhorn_fw_v1.6.0/sdk_list/esp-idf_40/components/esp_common/include" 
+                     "C:/msys32/home/mahesh_tripathi/esp/esp-idf/components/aws_iot/include"
+                     "C:/msys32/home/mahesh_tripathi/esp/esp-idf/components/aws_iot/aws-iot-device-sdk-embedded-C/include")
 
 register_component()
+
+
+if(CONFIG_EXAMPLE_EMBEDDED_CERTS)
+target_add_binary_data(${COMPONENT_TARGET} "certs/aws-root-ca.pem" TEXT)
+target_add_binary_data(${COMPONENT_TARGET} "certs/certificate.pem.crt" TEXT)
+target_add_binary_data(${COMPONENT_TARGET} "certs/private.pem.key" TEXT)
+endif()
+
 
