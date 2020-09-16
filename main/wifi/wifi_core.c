@@ -76,7 +76,7 @@
 
 // #define HTTP_CLIENT_Code
 
- #include "esp_http_client.h"    // New Added Header Files for HTTP File..28Aug2020//
+#include "esp_http_client.h"    // New Added Header Files for HTTP File..28Aug2020//
  // #define DATA_HTTP_BIN_ORG                               // For Showing Data On httpbin.org
   //  #define WORKING_DATA_ON_THINK_SPEAK_SERVER           // For Showing data on Thinkspeak server
    // #define WORKING_AWS_HTTP_GET_POST                    // FOr Get POSt HTTP_working_Backup_function
@@ -148,6 +148,8 @@ int esp32_reg_wifi_conn_callback(int (*wifi_conn_cb)(int conn_stat)) {
 
     return 0;
 }
+
+
 
 //TODO: improve label value checking, this may cause hangup if wrong command
 void http_web_server()
@@ -276,83 +278,90 @@ void http_web_server()
 }
 
 
-int event_handler(void *ctx, system_event_t *event)
-{
-    switch(event->event_id) {
-        //deprecated
-        case SYSTEM_EVENT_WIFI_READY:
-        case SYSTEM_EVENT_SCAN_DONE:
-            break;
-            //deprecated
 
-            //WIFI_MODE_STA
-        case SYSTEM_EVENT_STA_START:
-            esp_wifi_connect();
-            break;
-        case SYSTEM_EVENT_STA_STOP:
-            break;
-        case SYSTEM_EVENT_STA_CONNECTED:
-            if (wifi_conn_stat_callback)
-                wifi_conn_stat_callback(1);
-            break;
-        case SYSTEM_EVENT_STA_DISCONNECTED:
-            /* This is a workaround as ESP32 WiFi libs don't currently
-               auto-reassociate. */
-            printf("disconnected\n");
-            esp_wifi_connect();
-            xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
-            if (wifi_conn_stat_callback)
-                wifi_conn_stat_callback(0);
-            break;
-        case SYSTEM_EVENT_STA_AUTHMODE_CHANGE:
-            break;
-        case SYSTEM_EVENT_STA_GOT_IP:
-            xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
-            printf("connected\n");
-            break;
-            //case SYSTEM_EVENT_AP_STA_GOT_IP:  //no macro like this TODO
-            //break;
 
-            //WIFI_MODE_AP
-        case SYSTEM_EVENT_AP_START:
-            wifi_ap_en = true;
-            break;
-        case SYSTEM_EVENT_AP_STOP:
-            wifi_ap_en = false;
-            break;
-        case SYSTEM_EVENT_AP_STACONNECTED:
-            if (wifi_conn_stat_callback)
-                wifi_conn_stat_callback(1);
-            break;
-        case SYSTEM_EVENT_AP_STADISCONNECTED:
-            if (wifi_conn_stat_callback)
-                wifi_conn_stat_callback(0);
-            break;
-        case SYSTEM_EVENT_AP_PROBEREQRECVED:
-            break;
+//  Commented for testing
+//int event_handler(void *ctx, system_event_t *event)
+//{
+//    switch(event->event_id) {
+//        //deprecated
+//        case SYSTEM_EVENT_WIFI_READY:
+//        case SYSTEM_EVENT_SCAN_DONE:
+//            break;
+//            //deprecated
+//
+//            //WIFI_MODE_STA
+//        case SYSTEM_EVENT_STA_START:
+//            esp_wifi_connect();
+//            break;
+//        case SYSTEM_EVENT_STA_STOP:
+//            break;
+//        case SYSTEM_EVENT_STA_CONNECTED:
+//            if (wifi_conn_stat_callback)
+//                wifi_conn_stat_callback(1);
+//            break;
+//        case SYSTEM_EVENT_STA_DISCONNECTED:
+//            /* This is a workaround as ESP32 WiFi libs don't currently
+//               auto-reassociate. */
+//            printf("disconnected\n");
+//            esp_wifi_connect();
+//            xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
+//            if (wifi_conn_stat_callback)
+//                wifi_conn_stat_callback(0);
+//            break;
+//        case SYSTEM_EVENT_STA_AUTHMODE_CHANGE:
+//            break;
+//        case SYSTEM_EVENT_STA_GOT_IP:
+//            xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
+//            printf("connected\n");
+//            break;
+//            //case SYSTEM_EVENT_AP_STA_GOT_IP:  //no macro like this TODO
+//            //break;
+//
+//            //WIFI_MODE_AP
+//        case SYSTEM_EVENT_AP_START:
+//            wifi_ap_en = true;
+//            break;
+//        case SYSTEM_EVENT_AP_STOP:
+//            wifi_ap_en = false;
+//            break;
+//        case SYSTEM_EVENT_AP_STACONNECTED:
+//            if (wifi_conn_stat_callback)
+//                wifi_conn_stat_callback(1);
+//            break;
+//        case SYSTEM_EVENT_AP_STADISCONNECTED:
+//            if (wifi_conn_stat_callback)
+//                wifi_conn_stat_callback(0);
+//            break;
+//        case SYSTEM_EVENT_AP_PROBEREQRECVED:
+//            break;
+//
+//            //WIFI WPS
+//        case SYSTEM_EVENT_STA_WPS_ER_SUCCESS:
+//            esp_wifi_wps_disable();
+//            // save SSID and password
+//            memset(&global_wifi_config, 0, sizeof(global_wifi_config));
+//            esp_wifi_get_config(WIFI_IF_STA, &global_wifi_config);
+//            set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, (char *)(global_wifi_config.sta.ssid));
+//            set_string_to_storage(NVS_LUCIDTRON_PW_KEY, (char *)(global_wifi_config.sta.password));
+//            esp_wifi_connect();
+//            break;
+//        case SYSTEM_EVENT_STA_WPS_ER_FAILED:
+//            break;
+//        case SYSTEM_EVENT_STA_WPS_ER_TIMEOUT:
+//            break;
+//        case SYSTEM_EVENT_STA_WPS_ER_PIN:
+//            break;
+//
+//        default:
+//            break;
+//    }
+//    return ESP_OK;
+//}
 
-            //WIFI WPS
-        case SYSTEM_EVENT_STA_WPS_ER_SUCCESS:
-            esp_wifi_wps_disable();
-            // save SSID and password
-            memset(&global_wifi_config, 0, sizeof(global_wifi_config));
-            esp_wifi_get_config(WIFI_IF_STA, &global_wifi_config);
-            set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, (char *)(global_wifi_config.sta.ssid));
-            set_string_to_storage(NVS_LUCIDTRON_PW_KEY, (char *)(global_wifi_config.sta.password));
-            esp_wifi_connect();
-            break;
-        case SYSTEM_EVENT_STA_WPS_ER_FAILED:
-            break;
-        case SYSTEM_EVENT_STA_WPS_ER_TIMEOUT:
-            break;
-        case SYSTEM_EVENT_STA_WPS_ER_PIN:
-            break;
 
-        default:
-            break;
-    }
-    return ESP_OK;
-}
+
+
 
 int esp32_initialise_wifi(void)
 {
@@ -360,8 +369,8 @@ int esp32_initialise_wifi(void)
     tcpip_adapter_init();
     wifi_event_group = xEventGroupCreate();
 
-    //prepare the event callback
-    ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
+    //prepare the event callback  // Commented for testing_P16Sept2020_TBUC
+   // ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
     //this initialize the wifi driver 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
@@ -758,6 +767,7 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt)
 
 extern const char howsmyssl_com_root_cert_pem_start[] asm("_binary_howsmyssl_com_root_cert_pem_start");
 extern const char howsmyssl_com_root_cert_pem_end[]   asm("_binary_howsmyssl_com_root_cert_pem_end");
+
 static void http_rest_with_url()
 {
     esp_http_client_config_t config = {
@@ -773,7 +783,12 @@ static void http_rest_with_url()
    // esp_http_client_set_url(client, "https://czza30pbce.execute-api.us-west-1.amazonaws.com/hellotest/hellotest");
    // esp_http_client_set_url(client, "https://9755hum0sk.execute-api.us-west-1.amazonaws.com/dev/upercase");
 
-    esp_http_client_set_url(client, "https://l0ui6i285c.execute-api.us-west-1.amazonaws.com/prod/createuser");
+   // esp_http_client_set_url(client, "https://l0ui6i285c.execute-api.us-west-1.amazonaws.com/prod/createuser");  ///off
+  //  esp_http_client_set_url(client, "https://63swuc7z9c.execute-api.us-west-1.amazonaws.com/dev/apiRegistration/registration?12");  // per
+
+ //  esp_http_client_set_url(client, "https://h9kcdhbvc4.execute-api.ap-south-1.amazonaws.com/beta/get");  // per
+    esp_http_client_set_url(client, " https://s268s34khg.execute-api.us-west-1.amazonaws.com/default/HeaterLambdaFunction");  // per
+
     esp_http_client_set_method(client, HTTP_METHOD_GET);   // New added as get was not working...
     esp_err_t err = esp_http_client_perform(client);
 
@@ -792,7 +807,13 @@ static void http_rest_with_url()
   // esp_http_client_set_url(client, "https://czza30pbce.execute-api.us-west-1.amazonaws.com/hellotest/hellotest");
   // esp_http_client_set_url(client, "https://9755hum0sk.execute-api.us-west-1.amazonaws.com/dev/upercase");
 
-   esp_http_client_set_url(client, "https://l0ui6i285c.execute-api.us-west-1.amazonaws.com/prod/createuser");
+  // esp_http_client_set_url(client, "https://l0ui6i285c.execute-api.us-west-1.amazonaws.com/prod/createuser");  // off
+  // esp_http_client_set_url(client, "https://63swuc7z9c.execute-api.us-west-1.amazonaws.com/dev/apiRegistration/registration?12");  // per
+  // esp_http_client_set_url(client, " https://h9kcdhbvc4.execute-api.ap-south-1.amazonaws.com/beta/post");  // per
+
+    esp_http_client_set_url(client, " https://s268s34khg.execute-api.us-west-1.amazonaws.com/default/HeaterLambdaFunction");  // per
+
+
    esp_http_client_set_method(client, HTTP_METHOD_POST);
    esp_http_client_set_post_field(client, post_data, strlen(post_data));
 
@@ -1282,9 +1303,7 @@ void http_test_task(void *pvParameters)
          	// OriginalLines
  //            rc = aws_iot_shadow_add_reported(JsonDocumentBuffer, sizeOfJsonDocumentBuffer, 2, &temperatureHandler,
  //                                             &windowActuator);
-
          	//printf("before Shadow Add Reported\n ");
-
          	//Testing only..Begin
              rc = aws_iot_shadow_add_reported(JsonDocumentBuffer, sizeOfJsonDocumentBuffer, 5, &temperatureHandler,
                                               &windowActuator, &temperatureHandler1,  &temperatureHandler2 , &HeaterStateHandler );
@@ -1331,8 +1350,6 @@ void http_test_task(void *pvParameters)
  }
 
 #endif
-
-
 
 
 
@@ -1394,14 +1411,14 @@ void http_test_task(void *pvParameters)
   */
  uint32_t port = AWS_IOT_MQTT_PORT;
 
-
  void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, uint16_t topicNameLen,
                                      IoT_Publish_Message_Params *params, void *pData) {
      ESP_LOGI(TAG, "Subscribe callback");
      ESP_LOGI(TAG, "%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *)params->payload);
 
-     printf(" params->payload) %s \n ", (char*) params-> payload);
+    printf(" params->payload) %s \n ", (char*) params-> payload);
  }
+
 
  void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
      ESP_LOGW(TAG, "MQTT Disconnect");
@@ -1425,9 +1442,11 @@ void http_test_task(void *pvParameters)
  }
 
 
- void aws_iot_task(void *param) {
-     char cPayload[100];
+#define HeaterParameterSendingToAWS
 
+ void aws_iot_task(void *param) {
+
+	 char cPayload[100];
      int32_t i = 0;
 
      IoT_Error_t rc = FAILURE;
@@ -1436,8 +1455,12 @@ void http_test_task(void *pvParameters)
      IoT_Client_Init_Params mqttInitParams = iotClientInitParamsDefault;
      IoT_Client_Connect_Params connectParams = iotClientConnectParamsDefault;
 
-     IoT_Publish_Message_Params paramsQOS0;
-     IoT_Publish_Message_Params paramsQOS1;
+//     IoT_Publish_Message_Params paramsQOS0;
+//     IoT_Publish_Message_Params paramsQOS1;
+
+#ifdef HeaterParameterSendingToAWS
+     IoT_Publish_Message_Params HeaterParameter;
+#endif
 
      ESP_LOGI(TAG, "AWS IoT SDK Version %d.%d.%d-%s", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_TAG);
 
@@ -1484,13 +1507,14 @@ void http_test_task(void *pvParameters)
          abort();
      }
 
-     /* Wait for WiFI to show as connected */
-     xEventGroupWaitBits(wifi_event_group, CONNECTED_BIT,
-                         false, true, portMAX_DELAY);
+     /* Wait for WiFI to show as connected */   // Commented fro testing only
+//     xEventGroupWaitBits(wifi_event_group, CONNECTED_BIT,
+//                         false, true, portMAX_DELAY);
 
      connectParams.keepAliveIntervalInSec = 10;
      connectParams.isCleanSession = true;
      connectParams.MQTTVersion = MQTT_3_1_1;
+
      /* Client ID is set in the menuconfig of the example */
      connectParams.pClientID = CONFIG_AWS_EXAMPLE_CLIENT_ID;
      connectParams.clientIDLen = (uint16_t) strlen(CONFIG_AWS_EXAMPLE_CLIENT_ID);
@@ -1516,6 +1540,49 @@ void http_test_task(void *pvParameters)
          abort();
      }
 
+
+#ifdef HeaterParameterSendingToAWS
+         const char *TOPIC1 = "HeaterParameter";
+         const int TOPIC_LEN1 = strlen(TOPIC1);
+
+         ESP_LOGI(TAG, "Subscribing...");
+         rc = aws_iot_mqtt_subscribe(&client, TOPIC1, TOPIC_LEN1, QOS0, iot_subscribe_callback_handler, NULL);
+         if(SUCCESS != rc) {
+             ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+             abort();
+         }
+
+		const char *TOPIC2 = "set_Temp";
+		const int TOPIC_LEN2 = strlen(TOPIC2);
+
+		ESP_LOGI(TAG, "Subscribing...");
+		rc = aws_iot_mqtt_subscribe(&client, TOPIC2, TOPIC_LEN2, QOS0, iot_subscribe_callback_handler, NULL);
+		if(SUCCESS != rc) {
+		  ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+		  abort();
+		}
+
+		const char *TOPIC3 = "set_Timer";
+		const int TOPIC_LEN3 = strlen(TOPIC3);
+
+		ESP_LOGI(TAG, "Subscribing...");
+		rc = aws_iot_mqtt_subscribe(&client, TOPIC3, TOPIC_LEN3, QOS0, iot_subscribe_callback_handler, NULL);
+		if(SUCCESS != rc) {
+		   ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+		   abort();
+		}
+
+		const char *TOPIC4 = "set_schdule";
+		const int TOPIC_LEN4 = strlen(TOPIC4);
+
+		ESP_LOGI(TAG, "Subscribing...");
+		rc = aws_iot_mqtt_subscribe(&client, TOPIC4, TOPIC_LEN4, QOS0, iot_subscribe_callback_handler, NULL);
+		if(SUCCESS != rc) {
+			ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+			abort();
+		}
+#endif  // end of #ifdef HeaterParameterSendingToAWS
+
      const char *TOPIC = "test_topic/esp32";
      const int TOPIC_LEN = strlen(TOPIC);
 
@@ -1526,15 +1593,23 @@ void http_test_task(void *pvParameters)
          abort();
      }
 
-     sprintf(cPayload, "%s : %d ", "hello from SDK", i);
 
-     paramsQOS0.qos = QOS0;
-     paramsQOS0.payload = (void *) cPayload;
-     paramsQOS0.isRetained = 0;
+     //Commented For Testing..
+//     sprintf(cPayload, "%s : %d ", "hello from SDK", i);
+//     paramsQOS0.qos = QOS0;
+//     paramsQOS0.payload = (void *) cPayload;
+//     paramsQOS0.isRetained = 0;
+//
+//     paramsQOS1.qos = QOS1;
+//     paramsQOS1.payload = (void *) cPayload;
+//     paramsQOS1.isRetained = 0;
 
-     paramsQOS1.qos = QOS1;
-     paramsQOS1.payload = (void *) cPayload;
-     paramsQOS1.isRetained = 0;
+#ifdef HeaterParameterSendingToAWS
+     char cPayload1[100];
+     HeaterParameter.qos = QOS1;
+     HeaterParameter.payload = (void *) cPayload1;
+     HeaterParameter.isRetained = 0;
+#endif
 
      while((NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc)) {
 
@@ -1546,14 +1621,27 @@ void http_test_task(void *pvParameters)
          }
 
          ESP_LOGI(TAG, "Stack remaining for task '%s' is %d bytes", pcTaskGetTaskName(NULL), uxTaskGetStackHighWaterMark(NULL));
-         vTaskDelay(1000 / portTICK_RATE_MS);
-         sprintf(cPayload, "%s : %d ", "hello from ESP32 (QOS0)", i++);
-         paramsQOS0.payloadLen = strlen(cPayload);
-         rc = aws_iot_mqtt_publish(&client, TOPIC, TOPIC_LEN, &paramsQOS0);
 
-         sprintf(cPayload, "%s : %d ", "hello from ESP32 (QOS1)", i++);
-         paramsQOS1.payloadLen = strlen(cPayload);
-         rc = aws_iot_mqtt_publish(&client, TOPIC, TOPIC_LEN, &paramsQOS1);
+     //  vTaskDelay(1000 / portTICK_RATE_MS);   //Original Lines
+         vTaskDelay(1000 / portTICK_RATE_MS);
+
+         // Commented for testing
+//         sprintf(cPayload, "%s : %d ", "hello from ESP32 (QOS0)", i++);
+//         paramsQOS0.payloadLen = strlen(cPayload);
+//         rc = aws_iot_mqtt_publish(&client, TOPIC, TOPIC_LEN, &paramsQOS0);
+//
+//         sprintf(cPayload, "%s : %d ", "hello from ESP32 (QOS1)", i++);
+//         paramsQOS1.payloadLen = strlen(cPayload);
+//         rc = aws_iot_mqtt_publish(&client, TOPIC, TOPIC_LEN, &paramsQOS1);
+
+
+#ifdef HeaterParameterSendingToAWS
+         sprintf(cPayload1, "%s : %d  %s : %d %s : %d %s : %d %s : %d", "Ambient Temp", 40,"Set Temp", 50, "Heater Status", 1, "Timer",1, "Schedule", 0);
+         HeaterParameter.payloadLen = strlen(cPayload1);
+         rc = aws_iot_mqtt_publish(&client, TOPIC1, TOPIC_LEN1, &HeaterParameter);
+#endif
+
+         //  printf("After publish HeaterParameterSendingToAWS\n ");
          if (rc == MQTT_REQUEST_TIMEOUT_ERROR) {
              ESP_LOGW(TAG, "QOS1 publish ack not received.");
              rc = SUCCESS;
@@ -1561,8 +1649,237 @@ void http_test_task(void *pvParameters)
      }
 
      ESP_LOGE(TAG, "An error occurred in the main loop.");
-     abort();
+    // abort();  // Commented Abort for Tesing
  }
+
+
+
+//  Working AWS_IOt_task
+// void aws_iot_task(void *param) {
+//     char cPayload[100];
+//
+//     int32_t i = 0;
+//
+//     IoT_Error_t rc = FAILURE;
+//
+//     AWS_IoT_Client client;
+//     IoT_Client_Init_Params mqttInitParams = iotClientInitParamsDefault;
+//     IoT_Client_Connect_Params connectParams = iotClientConnectParamsDefault;
+//
+//     IoT_Publish_Message_Params paramsQOS0;
+//     IoT_Publish_Message_Params paramsQOS1;
+//
+//     ESP_LOGI(TAG, "AWS IoT SDK Version %d.%d.%d-%s", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_TAG);
+//
+//     mqttInitParams.enableAutoReconnect = false; // We enable this later below
+//     mqttInitParams.pHostURL = HostAddress;
+//     mqttInitParams.port = port;
+//
+// #if defined(CONFIG_EXAMPLE_EMBEDDED_CERTS)
+//     mqttInitParams.pRootCALocation = (const char *)aws_root_ca_pem_start;
+//     mqttInitParams.pDeviceCertLocation = (const char *)certificate_pem_crt_start;
+//     mqttInitParams.pDevicePrivateKeyLocation = (const char *)private_pem_key_start;
+//
+// #elif defined(CONFIG_EXAMPLE_FILESYSTEM_CERTS)
+//     mqttInitParams.pRootCALocation = ROOT_CA_PATH;
+//     mqttInitParams.pDeviceCertLocation = DEVICE_CERTIFICATE_PATH;
+//     mqttInitParams.pDevicePrivateKeyLocation = DEVICE_PRIVATE_KEY_PATH;
+// #endif
+//
+//     mqttInitParams.mqttCommandTimeout_ms = 20000;
+//     mqttInitParams.tlsHandshakeTimeout_ms = 5000;
+//     mqttInitParams.isSSLHostnameVerify = true;
+//     mqttInitParams.disconnectHandler = disconnectCallbackHandler;
+//     mqttInitParams.disconnectHandlerData = NULL;
+//
+// #ifdef CONFIG_EXAMPLE_SDCARD_CERTS
+//     ESP_LOGI(TAG, "Mounting SD card...");
+//     sdmmc_host_t host = SDMMC_HOST_DEFAULT();
+//     sdmmc_slot_config_t slot_config = SDMMC_SLOT_CONFIG_DEFAULT();
+//     esp_vfs_fat_sdmmc_mount_config_t mount_config = {
+//         .format_if_mount_failed = false,
+//         .max_files = 3,
+//     };
+//     sdmmc_card_t* card;
+//     esp_err_t ret = esp_vfs_fat_sdmmc_mount("/sdcard", &host, &slot_config, &mount_config, &card);
+//     if (ret != ESP_OK) {
+//         ESP_LOGE(TAG, "Failed to mount SD card VFAT filesystem. Error: %s", esp_err_to_name(ret));
+//         abort();
+//     }
+// #endif
+//
+//     rc = aws_iot_mqtt_init(&client, &mqttInitParams);
+//     if(SUCCESS != rc) {
+//         ESP_LOGE(TAG, "aws_iot_mqtt_init returned error : %d ", rc);
+//         abort();
+//     }
+//
+//     /* Wait for WiFI to show as connected */
+//     xEventGroupWaitBits(wifi_event_group, CONNECTED_BIT,
+//                         false, true, portMAX_DELAY);
+//
+//     connectParams.keepAliveIntervalInSec = 10;
+//     connectParams.isCleanSession = true;
+//     connectParams.MQTTVersion = MQTT_3_1_1;
+//
+//     /* Client ID is set in the menuconfig of the example */
+//     connectParams.pClientID = CONFIG_AWS_EXAMPLE_CLIENT_ID;
+//     connectParams.clientIDLen = (uint16_t) strlen(CONFIG_AWS_EXAMPLE_CLIENT_ID);
+//     connectParams.isWillMsgPresent = false;
+//
+//     ESP_LOGI(TAG, "Connecting to AWS...");
+//     do {
+//         rc = aws_iot_mqtt_connect(&client, &connectParams);
+//         if(SUCCESS != rc) {
+//             ESP_LOGE(TAG, "Error(%d) connecting to %s:%d", rc, mqttInitParams.pHostURL, mqttInitParams.port);
+//             vTaskDelay(1000 / portTICK_RATE_MS);
+//         }
+//     } while(SUCCESS != rc);
+//
+//     /*
+//      * Enable Auto Reconnect functionality. Minimum and Maximum time of Exponential backoff are set in aws_iot_config.h
+//      *  #AWS_IOT_MQTT_MIN_RECONNECT_WAIT_INTERVAL
+//      *  #AWS_IOT_MQTT_MAX_RECONNECT_WAIT_INTERVAL
+//      */
+//     rc = aws_iot_mqtt_autoreconnect_set_status(&client, true);
+//     if(SUCCESS != rc) {
+//         ESP_LOGE(TAG, "Unable to set Auto Reconnect to true - %d", rc);
+//         abort();
+//     }
+//
+//     const char *TOPIC = "test_topic/esp32";
+//     const int TOPIC_LEN = strlen(TOPIC);
+//
+//     ESP_LOGI(TAG, "Subscribing...");
+//     rc = aws_iot_mqtt_subscribe(&client, TOPIC, TOPIC_LEN, QOS0, iot_subscribe_callback_handler, NULL);
+//     if(SUCCESS != rc) {
+//         ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+//         abort();
+//     }
+//
+//     sprintf(cPayload, "%s : %d ", "hello from SDK", i);
+//
+//     paramsQOS0.qos = QOS0;
+//     paramsQOS0.payload = (void *) cPayload;
+//     paramsQOS0.isRetained = 0;
+//
+//     paramsQOS1.qos = QOS1;
+//     paramsQOS1.payload = (void *) cPayload;
+//     paramsQOS1.isRetained = 0;
+//
+//     while((NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc)) {
+//
+//         //Max time the yield function will wait for read messages
+//         rc = aws_iot_mqtt_yield(&client, 100);
+//         if(NETWORK_ATTEMPTING_RECONNECT == rc) {
+//             // If the client is attempting to reconnect we will skip the rest of the loop.
+//             continue;
+//         }
+//
+//         ESP_LOGI(TAG, "Stack remaining for task '%s' is %d bytes", pcTaskGetTaskName(NULL), uxTaskGetStackHighWaterMark(NULL));
+//         vTaskDelay(1000 / portTICK_RATE_MS);
+//         sprintf(cPayload, "%s : %d ", "hello from ESP32 (QOS0)", i++);
+//         paramsQOS0.payloadLen = strlen(cPayload);
+//         rc = aws_iot_mqtt_publish(&client, TOPIC, TOPIC_LEN, &paramsQOS0);
+//
+//         sprintf(cPayload, "%s : %d ", "hello from ESP32 (QOS1)", i++);
+//         paramsQOS1.payloadLen = strlen(cPayload);
+//         rc = aws_iot_mqtt_publish(&client, TOPIC, TOPIC_LEN, &paramsQOS1);
+//         if (rc == MQTT_REQUEST_TIMEOUT_ERROR) {
+//             ESP_LOGW(TAG, "QOS1 publish ack not received.");
+//             rc = SUCCESS;
+//         }
+//     }
+//
+//     ESP_LOGE(TAG, "An error occurred in the main loop.");
+//     abort();
+// }
+
+
+#define Wifi_sub_pub
+
+#ifdef Wifi_sub_pub
+   void initialise_wifi(void);
+   void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data);
+ //  static esp_err_t event_handler(void *ctx, system_event_t *event);
+#endif
+
+
+#ifdef Wifi_sub_pub
+ // static esp_err_t event_handler(void *ctx, system_event_t *event)
+  esp_err_t event_handler(void *ctx, system_event_t *event)
+ {
+     switch(event->event_id) {
+     case SYSTEM_EVENT_STA_START:
+         esp_wifi_connect();
+         break;
+     case SYSTEM_EVENT_STA_GOT_IP:
+         xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
+         break;
+     case SYSTEM_EVENT_STA_DISCONNECTED:
+         /* This is a workaround as ESP32 WiFi libs don't currently
+            auto-reassociate. */
+         esp_wifi_connect();
+         xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
+         break;
+     default:
+         break;
+     }
+     return ESP_OK;
+ }
+
+
+// void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
+//     ESP_LOGW(TAG, "MQTT Disconnect");
+//     IoT_Error_t rc = FAILURE;
+//
+//     if(NULL == pClient) {
+//         return;
+//     }
+//
+//     if(aws_iot_is_autoreconnect_enabled(pClient)) {
+//         ESP_LOGI(TAG, "Auto Reconnect is enabled, Reconnecting attempt will start now");
+//     } else {
+//         ESP_LOGW(TAG, "Auto Reconnect not enabled. Starting manual reconnect...");
+//         rc = aws_iot_mqtt_attempt_reconnect(pClient);
+//         if(NETWORK_RECONNECTED == rc) {
+//             ESP_LOGW(TAG, "Manual Reconnect Successful");
+//         } else {
+//             ESP_LOGW(TAG, "Manual Reconnect Failed - %d", rc);
+//         }
+//     }
+// }
+
+
+void initialise_wifi(void)
+ {
+     tcpip_adapter_init();
+     wifi_event_group = xEventGroupCreate();
+     ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
+     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+     ESP_ERROR_CHECK( esp_wifi_init(&cfg) );
+     ESP_ERROR_CHECK( esp_wifi_set_storage(WIFI_STORAGE_RAM) );
+
+     wifi_config_t wifi_config = {
+         .sta = {
+             .ssid = EXAMPLE_WIFI_SSID,
+             .password = EXAMPLE_WIFI_PASS,
+         },
+     };
+
+ //    wifi_config_t wifi_config = {
+ //        .sta = {
+ //            .ssid = "WF-Home",
+ //            .password = "bksm1554",
+ //        },
+ //    };
+
+     ESP_LOGI(TAG, "Setting WiFi configuration SSID %s...", wifi_config.sta.ssid);
+     ESP_ERROR_CHECK( esp_wifi_set_mode(WIFI_MODE_STA) );
+     ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
+     ESP_ERROR_CHECK( esp_wifi_start() );
+ }
+#endif//  end of #ifdef Wifi_sub_pub
 
 
 #endif  // end for subscribe and publish..

@@ -120,7 +120,7 @@
 void app_main(void) {
     /* Hardware peripherals init start */
     led_init();
-    nvs_storage_init();
+ //   nvs_storage_init();  // Commneted for testing
     display_init();
     button_init();
     tempsensor_init();

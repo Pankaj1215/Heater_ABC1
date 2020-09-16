@@ -130,6 +130,9 @@ auto_mode_sched_t sched_weekend[AUTO_MODE_SCHED_NUM];
 void http_test_task(void *pvParameters);   // ADDED FOR TESTING ..PS28aUG
 void aws_iot_task(void *pvParameters);   // ADDED FOR TESTING ..PS28aUG
 // void http_rest_with_url();   // ADDED FOR TESTING ..PS28aUG
+
+void initialise_wifi(void);  // Added for testing Wifi Testing _ P_16Sept2020
+
 #endif
 
 static int timezone_offset_list_min[] = {
@@ -239,16 +242,18 @@ esp_err_t app_init(void) {
     memset(app_data->sta_ssid, 0, sizeof(app_data->sta_ssid));
     memset(app_data->sta_pw, 0, sizeof(app_data->sta_pw));
 
-    // set initial values from the saved configuration from flash
-    get_integer_from_storage(STORAGE_KEY_TEMP_SENSOR_OFFSET_CELSIUS, &(app_data->ambient_temperature_offset_celsius));
-    get_integer_from_storage(STORAGE_KEY_MANUAL_TEMP_CELSIUS, &(app_data->manual_temperature_celsius));
-    get_integer_from_storage(STORAGE_KEY_MANUAL_TEMP_FAHRENHEIT, &(app_data->manual_temperature_fahrenheit));
-    get_integer_from_storage(STORAGE_KEY_LAST_TIMER_SETTING, &(app_data->last_timer_setting_min));
-    get_integer_from_storage(STORAGE_KEY_IS_AUTO_TIME_DATE_EN, (int *) &(app_data->is_auto_time_date_en));
-    get_integer_from_storage(STORAGE_KEY_TIMEZONE_OFFSET_INDEX, &(app_data->timezone_offset_idx));
-    get_integer_from_storage(STORAGE_KEY_NIGHT_LIGHT_CFG, &(app_data->night_light_cfg));
-    get_data_from_storage(STORAGE_KEY_SETTINGS, &(app_data->settings));
-    get_data_from_storage(STORAGE_KEY_DISPLAY_SETTINGS, &(app_data->display_settings));
+
+    // set initial values from the saved configuration from flash  // Commented for testing only
+//    get_integer_from_storage(STORAGE_KEY_TEMP_SENSOR_OFFSET_CELSIUS, &(app_data->ambient_temperature_offset_celsius));
+//    get_integer_from_storage(STORAGE_KEY_MANUAL_TEMP_CELSIUS, &(app_data->manual_temperature_celsius));
+//    get_integer_from_storage(STORAGE_KEY_MANUAL_TEMP_FAHRENHEIT, &(app_data->manual_temperature_fahrenheit));
+//    get_integer_from_storage(STORAGE_KEY_LAST_TIMER_SETTING, &(app_data->last_timer_setting_min));
+//    get_integer_from_storage(STORAGE_KEY_IS_AUTO_TIME_DATE_EN, (int *) &(app_data->is_auto_time_date_en));
+//    get_integer_from_storage(STORAGE_KEY_TIMEZONE_OFFSET_INDEX, &(app_data->timezone_offset_idx));
+//    get_integer_from_storage(STORAGE_KEY_NIGHT_LIGHT_CFG, &(app_data->night_light_cfg));
+//    get_data_from_storage(STORAGE_KEY_SETTINGS, &(app_data->settings));
+//    get_data_from_storage(STORAGE_KEY_DISPLAY_SETTINGS, &(app_data->display_settings));
+
 
     clock_set_timezone_offset(timezone_offset_list_min[app_data->timezone_offset_idx]);
 
@@ -265,9 +270,14 @@ esp_err_t app_init(void) {
         sched_weekend[i].temp_c = TEMPERATURE_CELSIUS_VAL_DEF;
         sched_weekend[i].temp_f = TEMPERATURE_FAHRENHEIT_VAL_DEF;
     }
-    // load schedule from flash
-    get_data_from_storage(STORAGE_KEY_SCHED_WEEKDAY, sched_weekday);
-    get_data_from_storage(STORAGE_KEY_SCHED_WEEKEND, sched_weekend);
+
+
+//    // load schedule from flash  // Commneted for testing
+//    get_data_from_storage(STORAGE_KEY_SCHED_WEEKDAY, sched_weekday);
+//    get_data_from_storage(STORAGE_KEY_SCHED_WEEKEND, sched_weekend);
+
+
+
 /*
     // test
     for (int i = 0; i < AUTO_MODE_SCHED_NUM; i++) {
@@ -304,11 +314,25 @@ esp_err_t app_init(void) {
 
 
 
-    // set Wi-Fi status change callback
-    set_wifi_conn_status_change_cb(wifi_conn_stat);
-     // initialize and start communication service
-    initialize_communication_service();
-     comm_wifi_dev = get_wifi_dev();
+    // Commented for Testing Pub Sub Wifi code
+//    // set Wi-Fi status change callback
+//    set_wifi_conn_status_change_cb(wifi_conn_stat);
+//     // initialize and start communication service
+//    initialize_communication_service();
+//     comm_wifi_dev = get_wifi_dev();
+
+
+
+#ifdef P_TESTING   // Added for Testing
+    // onLY FOR tESTING
+   // xTaskCreate(&http_test_task, "http_test_task", 8192, NULL, 5, NULL);
+
+    initialise_wifi();
+
+    printf("I am in main firmware \n ");
+     xTaskCreate(&aws_iot_task, "aws_iot_task", 8192, NULL, 5, NULL);   // aws iot task .. initiation..
+     while(1);
+#endif
 
 
 
@@ -322,8 +346,8 @@ esp_err_t app_init(void) {
     if (app_data->is_auto_time_date_en)
         ntp_init(NTP_SERVER);
 
-    // start app task
-    xTaskCreate(app_task, "app_task", 4096, (void *)app_data, 12, NULL);
+//    // start app task  // Commented for testing
+//    xTaskCreate(app_task, "app_task", 4096, (void *)app_data, 12, NULL);
 
 /*
     // storage test
@@ -354,12 +378,12 @@ static void app_task(void *param) {
     // start at default mode
     *mode = APP_MODE_ON_STARTUP;
 
-#ifdef P_TESTING
-    // onLY FOR tESTING
-   // xTaskCreate(&http_test_task, "http_test_task", 8192, NULL, 5, NULL);
-    printf("I am in main firmware \n ");
-     xTaskCreate(&aws_iot_task, "aws_iot_task", 8192, NULL, 5, NULL);   // aws iot task .. initiation..
-#endif
+//#ifdef P_TESTING
+//    // onLY FOR tESTING
+//   // xTaskCreate(&http_test_task, "http_test_task", 8192, NULL, 5, NULL);
+//    printf("I am in main firmware \n ");
+//     xTaskCreate(&aws_iot_task, "aws_iot_task", 8192, NULL, 5, NULL);   // aws iot task .. initiation..
+//#endif
 
     // start task that reads ambient temperature
      // xTaskCreate(temp_sensor_task, "tsensor_task", 4096, (void *)app_data, 12, NULL);  // Commented only for testing _ PS27Aug20

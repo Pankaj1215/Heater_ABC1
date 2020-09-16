@@ -158,7 +158,10 @@ void wifi_handler(void* param)
     printf("I am in wifi handler\n ");
 
     set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, "WF-Home");   // Added  Only For Testing _PS28Aug2020
-     set_string_to_storage(NVS_LUCIDTRON_PW_KEY, "bksm1554");    // Added only for Testing _PS28Aug2020
+    set_string_to_storage(NVS_LUCIDTRON_PW_KEY, "bksm1554");    // Added only for Testing _PS28Aug2020
+
+    // set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, "moto");   // Added  Only For Testing _PS28Aug2020
+    // set_string_to_storage(NVS_LUCIDTRON_PW_KEY, "Heyramramji");    // Added only for Testing _PS28Aug2020
 
     //LOG_INFO("%s running\n", __func__);
     //TODO: please revise this handler to match with wifi_core.c

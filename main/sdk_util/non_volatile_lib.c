@@ -82,28 +82,26 @@ int nvs_storage_init(void)
     }
 
     err |= nvs_flash_init();
-    if (err != ESP_OK)    // Original Lines
-    {
-    	printf("\nError in nvs_flash_init():\n");
-    	return ERROR;     // Original Lines
-    }
+//    if (err != ESP_OK)    // Original Lines
+//    {
+//    	printf("\nError in nvs_flash_init():\n");
+//    	return ERROR;     // Original Lines
+//    }
 
     // Only For Testing _Begin..//
-//    if (err != ESP_OK)
-//    {
-//    	  printf("not Init NVS\n "); // Added_PS2020
-//          ESP_ERROR_CHECK(nvs_flash_erase());  // Added_PS2020
-//          err |= nvs_flash_init();
-//          if (err != ESP_OK)
-//          {    printf("not Init NVS after erase ...\n "); // Added_PS2020
-//        	  return ERROR;   // commentd only for testingAdded_PS2020
-//          }
-//    }
+    if (err != ESP_OK)
+    {
+    	  printf("not Init NVS\n "); // Added_PS2020
+          ESP_ERROR_CHECK(nvs_flash_erase());  // Added_PS2020
+          err |= nvs_flash_init();
+          if (err != ESP_OK)
+          {    printf("not Init NVS after erase ...\n "); // Added_PS2020
+        	  return ERROR;   // commentd only for testingAdded_PS2020
+          }
+    }
 
     printf("Init NVS\n "); // Added_PS2020
     // End//
-
-
     return SUCCESS;
 }
 
