@@ -54,6 +54,7 @@
 
 // #include "thing_shadow_sample.c"  // new added for connected bit // p14Sept20
 
+
 #ifdef P_TESTING
 
 // #define thing_Shadow   // for define thing shadow
@@ -72,6 +73,12 @@
 #include "aws_iot_version.h"
 #include "aws_iot_mqtt_client_interface.h"
 #include "aws_iot_shadow_interface.h"
+
+#include "common.h"  // new added for connected bit // p17Sept20
+
+unsigned char uchTopic_Set_temp_subscribe_status = FALSE;
+unsigned char uchTopic_HeaterParameter_Publish_status = TRUE;  // By Default publish Heater Parameter
+
 #endif
 
 // #define HTTP_CLIENT_Code
@@ -1374,7 +1381,6 @@ void http_test_task(void *pvParameters)
     to the AP with an IP? */
 // const int CONNECTED_BIT = BIT0;   // commented for merge code..
 
-
  /* CA Root certificate, device ("Thing") certificate and device
   * ("Thing") key.
     Example can be configured one of two ways:
@@ -1413,11 +1419,34 @@ void http_test_task(void *pvParameters)
 
  void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, uint16_t topicNameLen,
                                      IoT_Publish_Message_Params *params, void *pData) {
+
+	 unsigned char uchTopicMatch = 1;
+     char * set_Temp = "set_Temp";
+     char * set_Timer = "set_Timer";
+     char * set_schdule = "set_schdule";
+
      ESP_LOGI(TAG, "Subscribe callback");
      ESP_LOGI(TAG, "%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *)params->payload);
 
-    printf(" params->payload) %s \n ", (char*) params-> payload);
+     printf("\n params->payload) %s \n ", (char*) params-> payload);
+
+//    if(uchTopicMatch == strcmp(topicName,set_Temp))
+//    {
+//    	uchTopic_Set_temp_subscribe_status = TRUE;
+//    	uchTopic_HeaterParameter_Publish_status = FALSE;
+//    	printf("set_Temp Topic \n ");
+//    }
+//    if(uchTopicMatch == strcmp(topicName,set_Timer))
+//    {
+//    	printf("set_Timer");
+//    }
+//     if(uchTopicMatch == strcmp(topicName,set_schdule))
+//    {
+//    	printf("set_schdule");
+//    }
+
  }
+
 
 
  void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
@@ -1442,6 +1471,8 @@ void http_test_task(void *pvParameters)
  }
 
 
+
+
 #define HeaterParameterSendingToAWS
 
  void aws_iot_task(void *param) {
@@ -1460,6 +1491,10 @@ void http_test_task(void *pvParameters)
 
 #ifdef HeaterParameterSendingToAWS
      IoT_Publish_Message_Params HeaterParameter;
+     IoT_Publish_Message_Params Set_Temp_Parameter;
+    // IoT_Publish_Message_Params HeaterParameter;
+
+
 #endif
 
      ESP_LOGI(TAG, "AWS IoT SDK Version %d.%d.%d-%s", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_TAG);
@@ -1540,59 +1575,62 @@ void http_test_task(void *pvParameters)
          abort();
      }
 
-
 #ifdef HeaterParameterSendingToAWS
-         const char *TOPIC1 = "HeaterParameter";
-         const int TOPIC_LEN1 = strlen(TOPIC1);
 
+     const char *TOPIC1 = "HeaterParameter";
+     const int TOPIC_LEN1 = strlen(TOPIC1);
+
+	 const char *TOPIC2 = "set_Temp";
+	 const int TOPIC_LEN2 = strlen(TOPIC2);
+
+//     if(uchTopic_Set_temp_subscribe_status == FALSE)
+//      {
          ESP_LOGI(TAG, "Subscribing...");
-         rc = aws_iot_mqtt_subscribe(&client, TOPIC1, TOPIC_LEN1, QOS0, iot_subscribe_callback_handler, NULL);
+         rc = aws_iot_mqtt_subscribe(&client, TOPIC1, TOPIC_LEN1, QOS0, iot_subscribe_callback_handler, NULL);  // TOPIC1 = "HeaterParameter";
          if(SUCCESS != rc) {
              ESP_LOGE(TAG, "Error subscribing : %d ", rc);
              abort();
          }
 
-		const char *TOPIC2 = "set_Temp";
-		const int TOPIC_LEN2 = strlen(TOPIC2);
-
 		ESP_LOGI(TAG, "Subscribing...");
-		rc = aws_iot_mqtt_subscribe(&client, TOPIC2, TOPIC_LEN2, QOS0, iot_subscribe_callback_handler, NULL);
+		rc = aws_iot_mqtt_subscribe(&client, TOPIC2, TOPIC_LEN2, QOS0, iot_subscribe_callback_handler, NULL);  // TOPIC2 = "set_Temp";
 		if(SUCCESS != rc) {
 		  ESP_LOGE(TAG, "Error subscribing : %d ", rc);
 		  abort();
 		}
 
-		const char *TOPIC3 = "set_Timer";
-		const int TOPIC_LEN3 = strlen(TOPIC3);
 
-		ESP_LOGI(TAG, "Subscribing...");
-		rc = aws_iot_mqtt_subscribe(&client, TOPIC3, TOPIC_LEN3, QOS0, iot_subscribe_callback_handler, NULL);
-		if(SUCCESS != rc) {
-		   ESP_LOGE(TAG, "Error subscribing : %d ", rc);
-		   abort();
-		}
 
-		const char *TOPIC4 = "set_schdule";
-		const int TOPIC_LEN4 = strlen(TOPIC4);
-
-		ESP_LOGI(TAG, "Subscribing...");
-		rc = aws_iot_mqtt_subscribe(&client, TOPIC4, TOPIC_LEN4, QOS0, iot_subscribe_callback_handler, NULL);
-		if(SUCCESS != rc) {
-			ESP_LOGE(TAG, "Error subscribing : %d ", rc);
-			abort();
-		}
+//		const char *TOPIC3 = "set_Timer";
+//		const int TOPIC_LEN3 = strlen(TOPIC3);
+//
+//		ESP_LOGI(TAG, "Subscribing...");
+//		rc = aws_iot_mqtt_subscribe(&client, TOPIC3, TOPIC_LEN3, QOS0, iot_subscribe_callback_handler, NULL);
+//		if(SUCCESS != rc) {
+//		   ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+//		   abort();
+//		}
+//
+//		const char *TOPIC4 = "set_schdule";
+//		const int TOPIC_LEN4 = strlen(TOPIC4);
+//
+//		ESP_LOGI(TAG, "Subscribing...");
+//		rc = aws_iot_mqtt_subscribe(&client, TOPIC4, TOPIC_LEN4, QOS0, iot_subscribe_callback_handler, NULL);
+//		if(SUCCESS != rc) {
+//			ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+//			abort();
+//		}
 #endif  // end of #ifdef HeaterParameterSendingToAWS
 
-     const char *TOPIC = "test_topic/esp32";
-     const int TOPIC_LEN = strlen(TOPIC);
-
-     ESP_LOGI(TAG, "Subscribing...");
-     rc = aws_iot_mqtt_subscribe(&client, TOPIC, TOPIC_LEN, QOS0, iot_subscribe_callback_handler, NULL);
-     if(SUCCESS != rc) {
-         ESP_LOGE(TAG, "Error subscribing : %d ", rc);
-         abort();
-     }
-
+//     const char *TOPIC = "test_topic/esp32";
+//     const int TOPIC_LEN = strlen(TOPIC);
+//
+//     ESP_LOGI(TAG, "Subscribing...");
+//     rc = aws_iot_mqtt_subscribe(&client, TOPIC, TOPIC_LEN, QOS0, iot_subscribe_callback_handler, NULL);
+//     if(SUCCESS != rc) {
+//         ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+//         abort();
+//     }
 
      //Commented For Testing..
 //     sprintf(cPayload, "%s : %d ", "hello from SDK", i);
@@ -1605,10 +1643,16 @@ void http_test_task(void *pvParameters)
 //     paramsQOS1.isRetained = 0;
 
 #ifdef HeaterParameterSendingToAWS
+
      char cPayload1[100];
      HeaterParameter.qos = QOS1;
      HeaterParameter.payload = (void *) cPayload1;
      HeaterParameter.isRetained = 0;
+
+	 char cPayload2[30];
+	 Set_Temp_Parameter.qos = QOS1;
+	 Set_Temp_Parameter.payload = (void *) cPayload2;
+	 Set_Temp_Parameter.isRetained = 0;
 #endif
 
      while((NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc)) {
@@ -1636,9 +1680,28 @@ void http_test_task(void *pvParameters)
 
 
 #ifdef HeaterParameterSendingToAWS
-         sprintf(cPayload1, "%s : %d  %s : %d %s : %d %s : %d %s : %d", "Ambient Temp", 40,"Set Temp", 50, "Heater Status", 1, "Timer",1, "Schedule", 0);
-         HeaterParameter.payloadLen = strlen(cPayload1);
-         rc = aws_iot_mqtt_publish(&client, TOPIC1, TOPIC_LEN1, &HeaterParameter);
+
+//        if(uchTopic_Set_temp_subscribe_status == TRUE)
+//         {
+//        	printf("\n I am in Set Temp paramter publish \n\n ");
+//        	memset(cPayload2,0,sizeof(cPayload2));
+//        	sprintf(cPayload2, "%s : %d", "Temperature is set to ",40);
+//        	Set_Temp_Parameter.payloadLen = strlen(cPayload2);
+//            rc = aws_iot_mqtt_publish(&client, TOPIC2, TOPIC_LEN2, &Set_Temp_Parameter);
+//            uchTopic_Set_temp_subscribe_status = FALSE;
+//            uchTopic_HeaterParameter_Publish_status = TRUE;
+//           // data->manual_temperature_celsius = 40;
+//         }
+
+//        if(uchTopic_HeaterParameter_Publish_status == TRUE)
+//          {
+        	   printf("\n I am in Topic_HeaterParameter_Publish\n ");
+				// uchTopic_Set_temp_subscribe_status = TRUE;
+				memset(cPayload1,0,sizeof(cPayload1));
+				sprintf(cPayload1, "%s : %d  %s : %d %s : %d %s : %d %s : %d", "Ambient Temp", 40,"Set Temp", 50, "Heater Status", 1, "Timer",1, "Schedule", 0);
+				HeaterParameter.payloadLen = strlen(cPayload1);
+				rc = aws_iot_mqtt_publish(&client, TOPIC1, TOPIC_LEN1, &HeaterParameter);
+        //  }
 #endif
 
          //  printf("After publish HeaterParameterSendingToAWS\n ");
