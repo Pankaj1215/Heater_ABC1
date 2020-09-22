@@ -331,11 +331,8 @@ esp_err_t app_init(void) {
 
     printf("I am in main firmware \n ");
      xTaskCreate(&aws_iot_task, "aws_iot_task", 8192, NULL, 5, NULL);   // aws iot task .. initiation..
-     while(1);
+   //  while(1);
 #endif
-
-
-
 
 
     // wait for at least APP_WELCOME_SCREEN_DELAY_MS
@@ -346,8 +343,8 @@ esp_err_t app_init(void) {
     if (app_data->is_auto_time_date_en)
         ntp_init(NTP_SERVER);
 
-//    // start app task  // Commented for testing
-//    xTaskCreate(app_task, "app_task", 4096, (void *)app_data, 12, NULL);
+    // start app task  // Commented for testing
+    xTaskCreate(app_task, "app_task", 4096, (void *)app_data, 12, NULL);
 
 /*
     // storage test

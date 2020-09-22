@@ -79,7 +79,13 @@
 unsigned char uchTopic_Set_temp_subscribe_status = 0;
 unsigned char uchTopic_HeaterParameter_Publish_status = 1;  // By Default publish Heater Parameter
 
+unsigned char uchTopic_HeaterON_Publish_status = 0;
+unsigned char uchTopic_HeaterOFF_Publish_status = 0;
+
+
 int temperatureSetByCMD = 0;  // Added only for Testing
+unsigned char HeaterOnByCMD = 0;// By Default Heater OFF
+
 
 // const char *TOPIC1 = "HeaterParameter";
 //const int TOPIC_LEN1 = strlen(TOPIC1);
@@ -1461,7 +1467,7 @@ void http_test_task(void *pvParameters)
 
 	 char replybuffer[512];
 	 // char replySubBuffer[30];
-	 char replySubBuffer[6];
+	 char replySubBuffer[6];  // Buffer for match of keyword eg Temp, HOON, HOFF
 	 char replySubBuffer2[30];
 	 char label[6];
 
@@ -1489,13 +1495,11 @@ void http_test_task(void *pvParameters)
 	     uchTopic_Set_temp_subscribe_status = 1;    // Set Temp is subscribed.
 	     uchTopic_HeaterParameter_Publish_status  = 0;
       }
-    else{
+    else
+      {
 	     uchTopic_Set_temp_subscribe_status = 0;    // Set Temp is subscribed.
 	     uchTopic_HeaterParameter_Publish_status  = 1;
        }
-
-
-
    // }// end of if
  }
 
@@ -1545,7 +1549,7 @@ void http_test_task(void *pvParameters)
 #ifdef HeaterParameterSendingToAWS
      IoT_Publish_Message_Params HeaterParameter;
      IoT_Publish_Message_Params Set_Temp_Parameter;
-    // IoT_Publish_Message_Params HeaterParameter;
+     // IoT_Publish_Message_Params HeaterParameter;
 
 
 #endif
@@ -1640,8 +1644,9 @@ void http_test_task(void *pvParameters)
              abort();
          }
 
-    	 const char *TOPIC2 = "set_Temp";
-    	 const int TOPIC_LEN2 = strlen(TOPIC2);
+
+    	const char *TOPIC2 = "set_Temp";
+    	const int TOPIC_LEN2 = strlen(TOPIC2);
 
 		ESP_LOGI(TAG, "Subscribing...");
 		rc = aws_iot_mqtt_subscribe(&client, TOPIC2, TOPIC_LEN2, QOS0, iot_subscribe_callback_handler, NULL);  // TOPIC2 = "set_Temp";
@@ -1649,6 +1654,26 @@ void http_test_task(void *pvParameters)
 		  ESP_LOGE(TAG, "Error subscribing : %d ", rc);
 		  abort();
 		}
+
+//		const char *TOPIC3 = "Heater_ON";
+//		const int TOPIC_LEN3 = strlen(TOPIC3);
+//
+//		ESP_LOGI(TAG, "Subscribing...");
+//		rc = aws_iot_mqtt_subscribe(&client, TOPIC3, TOPIC_LEN3, QOS0, iot_subscribe_callback_handler, NULL);  // TOPIC3 = "Heater_ON";
+//		if(SUCCESS != rc) {
+//		  ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+//		  abort();
+//		}
+//
+//		const char *TOPIC4 = "Heater_OFF";
+//		const int TOPIC_LEN4 = strlen(TOPIC4);
+//
+//		ESP_LOGI(TAG, "Subscribing...");
+//		rc = aws_iot_mqtt_subscribe(&client, TOPIC4, TOPIC_LEN4, QOS0, iot_subscribe_callback_handler, NULL);  // TOPIC4 = "Heater_OFF";
+//		if(SUCCESS != rc) {
+//		  ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+//		  abort();
+//		}
 
 #endif  // end of #ifdef HeaterParameterSendingToAWS
 
@@ -1697,12 +1722,13 @@ void http_test_task(void *pvParameters)
 			  // printf("\n I am in Topic_HeaterParameter_Publish\n ");
 				// uchTopic_Set_temp_subscribe_status = TRUE;
 				memset(cPayload1,0,sizeof(cPayload1));
-				sprintf(cPayload1, "%s : %d  %s : %d %s : %d %s : %d %s : %d", "Ambient Temp", 40,"Set Temp", 50, "Heater Status", 1, "Timer",1, "Schedule", 0);
+				sprintf(cPayload1, "%s : %d  %s : %d %s : %d %s : %d %s : %d", "Ambient Temp", 40,"Set Temp", temperatureSetByCMD, "Heater Status", 1, "Timer",1, "Schedule", 0);
 				HeaterParameter.payloadLen = strlen(cPayload1);
 				rc = aws_iot_mqtt_publish(&client, TOPIC1, TOPIC_LEN1, &HeaterParameter);
 				// ESP_LOGI(TAG, "%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *)params->cPayload1);
 				// uchTopic_Set_temp_subscribe_status = 0;
 		  }
+
 
 		 if(uchTopic_Set_temp_subscribe_status == 1)
 			{
@@ -1712,9 +1738,6 @@ void http_test_task(void *pvParameters)
 				Set_Temp_Parameter.payloadLen = strlen(cPayload2);
 				  rc = aws_iot_mqtt_publish(&client, TOPIC2, TOPIC_LEN2, &Set_Temp_Parameter);
 				  uchTopic_Set_temp_subscribe_status = 0;
-				 // uchTopic_HeaterParameter_Publish_status = 1;
-				 // data->manual_temperature_celsius = 40;
-
 				  uchTopic_Set_temp_subscribe_status = 1;    // Set Temp is subscribed.
 				  uchTopic_HeaterParameter_Publish_status  = 0;
 			}

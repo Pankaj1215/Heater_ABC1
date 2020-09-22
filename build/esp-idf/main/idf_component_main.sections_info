@@ -129,219 +129,307 @@ app.c.obj:     file format elf32-xtensa-le
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .literal.button_timer_forward_cb 0000000c  00000000  00000000  00000034  2**2
+  0 .literal.ping_results 00000020  00000000  00000000  00000034  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  1 .literal.button_power_back_cb 0000000c  00000000  00000000  00000040  2**2
+  1 .literal.button_timer_forward_cb 0000000c  00000000  00000000  00000054  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  2 .literal.button_down_cb 0000000c  00000000  00000000  0000004c  2**2
+  2 .literal.button_power_back_cb 0000000c  00000000  00000000  00000060  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  3 .literal.button_up_cb 0000000c  00000000  00000000  00000058  2**2
+  3 .literal.button_down_cb 0000000c  00000000  00000000  0000006c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  4 .literal.print_fw_version 00000014  00000000  00000000  00000064  2**2
+  4 .literal.button_up_cb 0000000c  00000000  00000000  00000078  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  5 .literal.app_init 00000094  00000000  00000000  00000078  2**2
+  5 .literal.display_brightness_task 00000024  00000000  00000000  00000084  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  6 .literal.ping_results 00000020  00000000  00000000  0000010c  2**2
+  6 .literal.night_light_task 00000038  00000000  00000000  000000a8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  7 .literal.app_set_mode 00000004  00000000  00000000  0000012c  2**2
+  7 .literal.pilot_light_task 00000030  00000000  00000000  000000e0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  8 .literal.app_get_mode 00000004  00000000  00000000  00000130  2**2
+  8 .literal.standby_mode_task 00000054  00000000  00000000  00000110  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
-  9 .literal.app_get_ambient_temp 00000008  00000000  00000000  00000134  2**2
+  9 .literal.manual_temperature_mode_task 000000a4  00000000  00000000  00000164  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 10 .literal.app_set_target_temp 00000018  00000000  00000000  0000013c  2**2
+ 10 .literal.temperature_offset_set_mode_task 0000005c  00000000  00000000  00000208  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 11 .literal.app_get_target_temp 00000008  00000000  00000000  00000154  2**2
+ 11 .literal.timer_increment_mode_task 000000e0  00000000  00000000  00000264  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 12 .literal.app_set_timer 0000000c  00000000  00000000  0000015c  2**2
+ 12 .literal.auto_mode_task 00000088  00000000  00000000  00000344  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 13 .literal.app_get_timer 00000008  00000000  00000000  00000168  2**2
+ 13 .literal.menu_calendar 000000c4  00000000  00000000  000003cc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 14 .literal.app_activate_child_lock 00000004  00000000  00000000  00000170  2**2
+ 14 .literal.menu_time_and_date 00000178  00000000  00000000  00000490  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 15 .literal.app_is_child_lock_activated 00000004  00000000  00000000  00000174  2**2
+ 15 .literal.menu_communications 00000180  00000000  00000000  00000608  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 16 .literal.app_set_sched 00000004  00000000  00000000  00000178  2**2
+ 16 .literal.menu_settings 0000010c  00000000  00000000  00000788  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 17 .literal.app_get_sched 00000004  00000000  00000000  0000017c  2**2
+ 17 .literal.menu_display_settings 0000009c  00000000  00000000  00000894  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 18 .literal.app_enable_autoset_time_date 00000020  00000000  00000000  00000180  2**2
+ 18 .literal.menu_update 00000048  00000000  00000000  00000930  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 19 .literal.app_is_autoset_time_date_enabled 00000004  00000000  00000000  000001a0  2**2
+ 19 .literal.menu_mode_task 0000009c  00000000  00000000  00000978  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 20 .literal.app_set_sta_mode_ssid 0000000c  00000000  00000000  000001a4  2**2
+ 20 .literal.ping_task 00000040  00000000  00000000  00000a14  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 21 .literal.app_set_sta_mode_password 0000000c  00000000  00000000  000001b0  2**2
+ 21 .literal.print_fw_version 00000014  00000000  00000000  00000a54  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 22 .literal.app_is_sta_mode_enabled 00000004  00000000  00000000  000001bc  2**2
+ 22 .literal.debug_mode_task 00000064  00000000  00000000  00000a68  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 23 .literal.app_set_temp_unit 0000000c  00000000  00000000  000001c0  2**2
+ 23 .literal.app_task 0000008c  00000000  00000000  00000acc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 24 .literal.app_get_temp_unit 00000004  00000000  00000000  000001cc  2**2
+ 24 .literal.app_init 000000c0  00000000  00000000  00000b58  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 25 .literal.app_enable_autodim_pilot_light 0000000c  00000000  00000000  000001d0  2**2
+ 25 .literal.app_set_mode 00000004  00000000  00000000  00000c18  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 26 .literal.app_is_autodim_pilot_light_enabled 00000004  00000000  00000000  000001dc  2**2
+ 26 .literal.app_get_mode 00000004  00000000  00000000  00000c1c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 27 .literal.app_enable_night_light_auto_brightness 0000000c  00000000  00000000  000001e0  2**2
+ 27 .literal.app_get_ambient_temp 00000008  00000000  00000000  00000c20  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 28 .literal.app_is_night_light_auto_brightness_enabled 00000004  00000000  00000000  000001ec  2**2
+ 28 .literal.app_set_target_temp 00000018  00000000  00000000  00000c28  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 29 .literal.app_set_night_light_config 00000014  00000000  00000000  000001f0  2**2
+ 29 .literal.app_get_target_temp 00000008  00000000  00000000  00000c40  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 30 .literal.app_get_night_light_config 00000004  00000000  00000000  00000204  2**2
+ 30 .literal.app_set_timer 0000000c  00000000  00000000  00000c48  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 31 .literal.app_enable_child_lock 0000000c  00000000  00000000  00000208  2**2
+ 31 .literal.app_get_timer 00000008  00000000  00000000  00000c54  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 32 .literal.app_is_child_lock_enabled 00000004  00000000  00000000  00000214  2**2
+ 32 .literal.app_activate_child_lock 00000004  00000000  00000000  00000c5c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 33 .literal.app_enable_autodim_display 0000000c  00000000  00000000  00000218  2**2
+ 33 .literal.app_is_child_lock_activated 00000004  00000000  00000000  00000c60  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 34 .literal.app_is_autodim_display_enabled 00000004  00000000  00000000  00000224  2**2
+ 34 .literal.app_set_sched 00000004  00000000  00000000  00000c64  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 35 .literal.app_set_screen_brightness 0000000c  00000000  00000000  00000228  2**2
+ 35 .literal.app_get_sched 00000004  00000000  00000000  00000c68  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 36 .literal.app_get_screen_brightness 00000008  00000000  00000000  00000234  2**2
+ 36 .literal.app_enable_autoset_time_date 00000020  00000000  00000000  00000c6c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 37 .literal.app_enable_auto_screen_off 0000000c  00000000  00000000  0000023c  2**2
+ 37 .literal.app_is_autoset_time_date_enabled 00000004  00000000  00000000  00000c8c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 38 .literal.app_is_auto_screen_off_enabled 00000004  00000000  00000000  00000248  2**2
+ 38 .literal.app_set_sta_mode_ssid 0000000c  00000000  00000000  00000c90  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 39 .literal.app_set_auto_screen_off_delay 0000000c  00000000  00000000  0000024c  2**2
+ 39 .literal.app_set_sta_mode_password 0000000c  00000000  00000000  00000c9c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 40 .literal.app_get_auto_screen_off_delay 00000008  00000000  00000000  00000258  2**2
+ 40 .literal.app_is_sta_mode_enabled 00000004  00000000  00000000  00000ca8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 41 .literal.app_ota_start 00000004  00000000  00000000  00000260  2**2
+ 41 .literal.app_set_temp_unit 0000000c  00000000  00000000  00000cac  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 42 .text         00000000  00000000  00000000  00000264  2**0
+ 42 .literal.app_get_temp_unit 00000004  00000000  00000000  00000cb8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 43 .literal.app_enable_autodim_pilot_light 0000000c  00000000  00000000  00000cbc  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 44 .literal.app_is_autodim_pilot_light_enabled 00000004  00000000  00000000  00000cc8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 45 .literal.app_enable_night_light_auto_brightness 0000000c  00000000  00000000  00000ccc  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 46 .literal.app_is_night_light_auto_brightness_enabled 00000004  00000000  00000000  00000cd8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 47 .literal.app_set_night_light_config 00000014  00000000  00000000  00000cdc  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 48 .literal.app_get_night_light_config 00000004  00000000  00000000  00000cf0  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 49 .literal.app_enable_child_lock 0000000c  00000000  00000000  00000cf4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 50 .literal.app_is_child_lock_enabled 00000004  00000000  00000000  00000d00  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 51 .literal.app_enable_autodim_display 0000000c  00000000  00000000  00000d04  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 52 .literal.app_is_autodim_display_enabled 00000004  00000000  00000000  00000d10  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 53 .literal.app_set_screen_brightness 0000000c  00000000  00000000  00000d14  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 54 .literal.app_get_screen_brightness 00000008  00000000  00000000  00000d20  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 55 .literal.app_enable_auto_screen_off 0000000c  00000000  00000000  00000d28  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 56 .literal.app_is_auto_screen_off_enabled 00000004  00000000  00000000  00000d34  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 57 .literal.app_set_auto_screen_off_delay 0000000c  00000000  00000000  00000d38  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 58 .literal.app_get_auto_screen_off_delay 00000008  00000000  00000000  00000d44  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 59 .literal.app_ota_start 00000004  00000000  00000000  00000d4c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 60 .text         00000000  00000000  00000000  00000d50  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 43 .data         00000000  00000000  00000000  00000264  2**0
+ 61 .data         00000000  00000000  00000000  00000d50  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 44 .bss          00000000  00000000  00000000  00000264  2**0
+ 62 .bss          00000000  00000000  00000000  00000d50  2**0
                   ALLOC
- 45 .rodata.str1.4 00000178  00000000  00000000  00000264  2**2
+ 63 .rodata.str1.4 000009a7  00000000  00000000  00000d50  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 46 .text.button_timer_forward_cb 0000003c  00000000  00000000  000003dc  2**2
+ 64 .text.ping_results 00000068  00000000  00000000  000016f8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 47 .text.button_power_back_cb 0000003c  00000000  00000000  00000418  2**2
+ 65 .text.button_timer_forward_cb 0000003c  00000000  00000000  00001760  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 48 .text.button_down_cb 0000003c  00000000  00000000  00000454  2**2
+ 66 .text.button_power_back_cb 0000003c  00000000  00000000  0000179c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 49 .text.button_up_cb 0000003c  00000000  00000000  00000490  2**2
+ 67 .text.button_down_cb 0000003c  00000000  00000000  000017d8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 50 .text.print_fw_version 00000028  00000000  00000000  000004cc  2**2
+ 68 .text.button_up_cb 0000003c  00000000  00000000  00001814  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 51 .text.app_init 000001f4  00000000  00000000  000004f4  2**2
+ 69 .text.display_brightness_task 0000006f  00000000  00000000  00001850  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 52 .text.ping_results 00000068  00000000  00000000  000006e8  2**2
+ 70 .text.night_light_task 00000101  00000000  00000000  000018c0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 53 .text.app_set_mode 00000024  00000000  00000000  00000750  2**2
+ 71 .text.pilot_light_task 000000bb  00000000  00000000  000019c4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 54 .text.app_get_mode 00000012  00000000  00000000  00000774  2**2
+ 72 .text.standby_mode_task 00000218  00000000  00000000  00001a80  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 55 .text.app_get_ambient_temp 00000015  00000000  00000000  00000788  2**2
+ 73 .text.manual_temperature_mode_task 000003de  00000000  00000000  00001c98  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 56 .text.app_set_target_temp 00000050  00000000  00000000  000007a0  2**2
+ 74 .text.temperature_offset_set_mode_task 000001e6  00000000  00000000  00002078  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 57 .text.app_get_target_temp 00000015  00000000  00000000  000007f0  2**2
+ 75 .text.timer_increment_mode_task 00000590  00000000  00000000  00002260  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 58 .text.app_set_timer 0000002c  00000000  00000000  00000808  2**2
+ 76 .text.auto_mode_task 000004fb  00000000  00000000  000027f0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 59 .text.app_get_timer 00000015  00000000  00000000  00000834  2**2
+ 77 .text.menu_calendar 0000060c  00000000  00000000  00002cec  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 60 .text.app_activate_child_lock 00000018  00000000  00000000  0000084c  2**2
+ 78 .rodata.menu_calendar 000000e4  00000000  00000000  000032f8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 79 .text.menu_time_and_date 000006dc  00000000  00000000  000033dc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 61 .text.app_is_child_lock_activated 00000014  00000000  00000000  00000864  2**2
+ 80 .rodata.menu_time_and_date 00000154  00000000  00000000  00003ab8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 81 .text.menu_communications 0000087e  00000000  00000000  00003c0c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 62 .text.app_set_sched 00000012  00000000  00000000  00000878  2**2
+ 82 .rodata.menu_communications 000000f8  00000000  00000000  0000448c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 83 .text.menu_settings 000004c2  00000000  00000000  00004584  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 63 .text.app_get_sched 00000012  00000000  00000000  0000088c  2**2
+ 84 .rodata.menu_settings 000000ec  00000000  00000000  00004a48  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 85 .text.menu_display_settings 00000432  00000000  00000000  00004b34  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 64 .text.app_enable_autoset_time_date 00000054  00000000  00000000  000008a0  2**2
+ 86 .rodata.menu_display_settings 000000b8  00000000  00000000  00004f68  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 87 .text.menu_update 00000160  00000000  00000000  00005020  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 65 .text.app_is_autoset_time_date_enabled 00000013  00000000  00000000  000008f4  2**2
+ 88 .text.menu_mode_task 00000242  00000000  00000000  00005180  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 66 .text.app_enable_ap_mode 00000007  00000000  00000000  00000908  2**2
+ 89 .rodata.menu_mode_task 00000038  00000000  00000000  000053c4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 90 .text.ping_task 0000009c  00000000  00000000  000053fc  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 91 .text.print_fw_version 00000028  00000000  00000000  00005498  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 92 .text.debug_mode_task 00000246  00000000  00000000  000054c0  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 93 .text.app_task 000000f9  00000000  00000000  00005708  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 94 .rodata.app_task 00000020  00000000  00000000  00005804  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+ 95 .text.app_init 0000025c  00000000  00000000  00005824  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 96 .text.app_set_mode 00000024  00000000  00000000  00005a80  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 97 .text.app_get_mode 00000012  00000000  00000000  00005aa4  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 98 .text.app_get_ambient_temp 00000015  00000000  00000000  00005ab8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+ 99 .text.app_set_target_temp 00000050  00000000  00000000  00005ad0  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+100 .text.app_get_target_temp 00000015  00000000  00000000  00005b20  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+101 .text.app_set_timer 0000002c  00000000  00000000  00005b38  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+102 .text.app_get_timer 00000015  00000000  00000000  00005b64  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+103 .text.app_activate_child_lock 00000018  00000000  00000000  00005b7c  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+104 .text.app_is_child_lock_activated 00000014  00000000  00000000  00005b94  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+105 .text.app_set_sched 00000012  00000000  00000000  00005ba8  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+106 .text.app_get_sched 00000012  00000000  00000000  00005bbc  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+107 .text.app_enable_autoset_time_date 00000054  00000000  00000000  00005bd0  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+108 .text.app_is_autoset_time_date_enabled 00000014  00000000  00000000  00005c24  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+109 .text.app_enable_ap_mode 00000007  00000000  00000000  00005c38  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 67 .text.app_is_ap_mode_enabled 00000007  00000000  00000000  00000910  2**2
+110 .text.app_is_ap_mode_enabled 00000007  00000000  00000000  00005c40  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 68 .text.app_set_sta_mode_ssid 0000001d  00000000  00000000  00000918  2**2
+111 .text.app_set_sta_mode_ssid 0000001d  00000000  00000000  00005c48  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 69 .text.app_set_sta_mode_password 0000001d  00000000  00000000  00000938  2**2
+112 .text.app_set_sta_mode_password 0000001d  00000000  00000000  00005c68  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 70 .text.app_enable_sta_mode 00000007  00000000  00000000  00000958  2**2
+113 .text.app_enable_sta_mode 00000007  00000000  00000000  00005c88  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 71 .text.app_is_sta_mode_enabled 00000012  00000000  00000000  00000960  2**2
+114 .text.app_is_sta_mode_enabled 00000012  00000000  00000000  00005c90  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 72 .text.app_set_temp_unit 00000029  00000000  00000000  00000974  2**2
+115 .text.app_set_temp_unit 00000029  00000000  00000000  00005ca4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 73 .text.app_get_temp_unit 00000012  00000000  00000000  000009a0  2**2
+116 .text.app_get_temp_unit 00000012  00000000  00000000  00005cd0  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 74 .text.app_enable_autodim_pilot_light 00000030  00000000  00000000  000009b4  2**2
+117 .text.app_enable_autodim_pilot_light 00000030  00000000  00000000  00005ce4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 75 .text.app_is_autodim_pilot_light_enabled 00000014  00000000  00000000  000009e4  2**2
+118 .text.app_is_autodim_pilot_light_enabled 00000014  00000000  00000000  00005d14  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 76 .text.app_enable_night_light_auto_brightness 00000030  00000000  00000000  000009f8  2**2
+119 .text.app_enable_night_light_auto_brightness 00000030  00000000  00000000  00005d28  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 77 .text.app_is_night_light_auto_brightness_enabled 00000014  00000000  00000000  00000a28  2**2
+120 .text.app_is_night_light_auto_brightness_enabled 00000014  00000000  00000000  00005d58  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 78 .text.app_set_night_light_config 0000004c  00000000  00000000  00000a3c  2**2
+121 .text.app_set_night_light_config 0000004c  00000000  00000000  00005d6c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 79 .text.app_get_night_light_config 00000012  00000000  00000000  00000a88  2**2
+122 .text.app_get_night_light_config 00000012  00000000  00000000  00005db8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 80 .text.app_enable_child_lock 00000030  00000000  00000000  00000a9c  2**2
+123 .text.app_enable_child_lock 00000030  00000000  00000000  00005dcc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 81 .text.app_is_child_lock_enabled 00000014  00000000  00000000  00000acc  2**2
+124 .text.app_is_child_lock_enabled 00000014  00000000  00000000  00005dfc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 82 .text.app_enable_autodim_display 00000030  00000000  00000000  00000ae0  2**2
+125 .text.app_enable_autodim_display 00000030  00000000  00000000  00005e10  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 83 .text.app_is_autodim_display_enabled 00000014  00000000  00000000  00000b10  2**2
+126 .text.app_is_autodim_display_enabled 00000014  00000000  00000000  00005e40  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 84 .text.app_set_screen_brightness 00000038  00000000  00000000  00000b24  2**2
+127 .text.app_set_screen_brightness 00000038  00000000  00000000  00005e54  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 85 .text.app_get_screen_brightness 00000015  00000000  00000000  00000b5c  2**2
+128 .text.app_get_screen_brightness 00000015  00000000  00000000  00005e8c  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 86 .text.app_enable_auto_screen_off 00000030  00000000  00000000  00000b74  2**2
+129 .text.app_enable_auto_screen_off 00000030  00000000  00000000  00005ea4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 87 .text.app_is_auto_screen_off_enabled 00000014  00000000  00000000  00000ba4  2**2
+130 .text.app_is_auto_screen_off_enabled 00000014  00000000  00000000  00005ed4  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 88 .text.app_set_auto_screen_off_delay 0000003a  00000000  00000000  00000bb8  2**2
+131 .text.app_set_auto_screen_off_delay 0000003a  00000000  00000000  00005ee8  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 89 .text.app_get_auto_screen_off_delay 00000015  00000000  00000000  00000bf4  2**2
+132 .text.app_get_auto_screen_off_delay 00000015  00000000  00000000  00005f24  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 90 .text.app_start_fw_update 00000007  00000000  00000000  00000c0c  2**2
+133 .text.app_start_fw_update 00000007  00000000  00000000  00005f3c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 91 .text.app_ota_start 00000010  00000000  00000000  00000c14  2**2
+134 .text.app_ota_start 00000010  00000000  00000000  00005f44  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 92 .bss.waiting_results 00000004  00000000  00000000  00000c24  2**2
+135 .bss.waiting_results 00000004  00000000  00000000  00005f54  2**2
                   ALLOC
- 93 .rodata.timezone_offset_list_min 00000098  00000000  00000000  00000c24  2**2
+136 .rodata.timezone_offset_list_min 00000098  00000000  00000000  00005f54  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 94 .bss.app_data 00000004  00000000  00000000  00000cbc  2**2
+137 .bss.ap_info  00000050  00000000  00000000  00005fec  2**2
                   ALLOC
- 95 .debug_frame  00000460  00000000  00000000  00000cbc  2**2
+138 .bss.app_data 00000004  00000000  00000000  00005fec  2**2
+                  ALLOC
+139 .debug_frame  00000610  00000000  00000000  00005fec  2**2
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 96 .debug_info   000017e0  00000000  00000000  0000111c  2**0
+140 .debug_info   0000585a  00000000  00000000  000065fc  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 97 .debug_abbrev 00000386  00000000  00000000  000028fc  2**0
+141 .debug_abbrev 00000464  00000000  00000000  0000be56  2**0
                   CONTENTS, READONLY, DEBUGGING
- 98 .debug_loc    00000861  00000000  00000000  00002c82  2**0
+142 .debug_loc    000052a5  00000000  00000000  0000c2ba  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 99 .debug_aranges 00000188  00000000  00000000  000034e3  2**0
+143 .debug_aranges 00000218  00000000  00000000  0001155f  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
-100 .debug_ranges 00000238  00000000  00000000  0000366b  2**0
+144 .debug_ranges 000003e8  00000000  00000000  00011777  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
-101 .debug_line   00000f06  00000000  00000000  000038a3  2**0
+145 .debug_line   00004a4e  00000000  00000000  00011b5f  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
-102 .debug_str    000012b8  00000000  00000000  000047a9  2**0
+146 .debug_str    000027d4  00000000  00000000  000165ad  2**0
                   CONTENTS, READONLY, DEBUGGING
-103 .comment      0000003c  00000000  00000000  00005a61  2**0
+147 .comment      0000003c  00000000  00000000  00018d81  2**0
                   CONTENTS, READONLY
-104 .xtensa.info  00000038  00000000  00000000  00005a9d  2**0
+148 .xtensa.info  00000038  00000000  00000000  00018dbd  2**0
                   CONTENTS, READONLY
-105 .xt.lit       00000150  00000000  00000000  00005ad5  2**0
+149 .xt.lit       000001e0  00000000  00000000  00018df5  2**0
                   CONTENTS, RELOC, READONLY
-106 .xt.prop      00000eb8  00000000  00000000  00005c25  2**0
+150 .xt.prop      00004fec  00000000  00000000  00018fd5  2**0
                   CONTENTS, RELOC, READONLY
 
 led.c.obj:     file format elf32-xtensa-le
@@ -1687,73 +1775,73 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
  46 .text.iot_subscribe_callback_handler 000000e0  00000000  00000000  00001434  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 47 .text.aws_iot_task 000003e4  00000000  00000000  00001514  2**2
+ 47 .text.aws_iot_task 000003e8  00000000  00000000  00001514  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 48 .text.initialise_wifi 0000017a  00000000  00000000  000018f8  2**2
+ 48 .text.initialise_wifi 0000017a  00000000  00000000  000018fc  2**2
                   CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
- 49 .rodata.__func__$12954 00000010  00000000  00000000  00001a74  2**2
+ 49 .rodata.__func__$12954 00000010  00000000  00000000  00001a78  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 50 .rodata.__func__$12822 00000012  00000000  00000000  00001a84  2**2
+ 50 .rodata.__func__$12822 00000012  00000000  00000000  00001a88  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 51 .rodata.__func__$12815 00000016  00000000  00000000  00001a98  2**2
+ 51 .rodata.__func__$12815 00000016  00000000  00000000  00001a9c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 52 .rodata.__func__$12802 00000010  00000000  00000000  00001ab0  2**2
+ 52 .rodata.__func__$12802 00000010  00000000  00000000  00001ab4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 53 .data.port    00000004  00000000  00000000  00001ac0  2**2
+ 53 .data.port    00000004  00000000  00000000  00001ac4  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 54 .data.HostAddress 000000ff  00000000  00000000  00001ac4  2**2
+ 54 .data.HostAddress 000000ff  00000000  00000000  00001ac8  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 55 .bss.sta_mac  00000006  00000000  00000000  00001bc4  2**2
+ 55 .bss.sta_mac  00000006  00000000  00000000  00001bc8  2**2
                   ALLOC
- 56 .bss.ap_mac   00000006  00000000  00000000  00001bc4  2**2
+ 56 .bss.ap_mac   00000006  00000000  00000000  00001bc8  2**2
                   ALLOC
- 57 .bss.web_server_status 00000004  00000000  00000000  00001bc4  2**2
+ 57 .bss.web_server_status 00000004  00000000  00000000  00001bc8  2**2
                   ALLOC
- 58 .bss.esp32_wifi_status 00000004  00000000  00000000  00001bc4  2**2
+ 58 .bss.esp32_wifi_status 00000004  00000000  00000000  00001bc8  2**2
                   ALLOC
- 59 .bss.wifi_conn_stat_callback 00000004  00000000  00000000  00001bc4  2**2
+ 59 .bss.wifi_conn_stat_callback 00000004  00000000  00000000  00001bc8  2**2
                   ALLOC
- 60 .bss.web_server_msg_handler 00000004  00000000  00000000  00001bc4  2**2
+ 60 .bss.web_server_msg_handler 00000004  00000000  00000000  00001bc8  2**2
                   ALLOC
- 61 .bss.wifi_msg_handler_callback 00000004  00000000  00000000  00001bc4  2**2
+ 61 .bss.wifi_msg_handler_callback 00000004  00000000  00000000  00001bc8  2**2
                   ALLOC
- 62 .rodata.http_html_reply 00000026  00000000  00000000  00001bc4  2**2
+ 62 .rodata.http_html_reply 00000026  00000000  00000000  00001bc8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 63 .rodata.http_html_header 0000002d  00000000  00000000  00001bec  2**2
+ 63 .rodata.http_html_header 0000002d  00000000  00000000  00001bf0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 64 .rodata.CONNECTED_BIT 00000004  00000000  00000000  00001c1c  2**2
+ 64 .rodata.CONNECTED_BIT 00000004  00000000  00000000  00001c20  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
- 65 .bss.wifi_event_group 00000004  00000000  00000000  00001c20  2**2
+ 65 .bss.wifi_event_group 00000004  00000000  00000000  00001c24  2**2
                   ALLOC
- 66 .bss.temperatureSetByCMD 00000004  00000000  00000000  00001c20  2**2
+ 66 .bss.temperatureSetByCMD 00000004  00000000  00000000  00001c24  2**2
                   ALLOC
- 67 .data.uchTopic_HeaterParameter_Publish_status 00000001  00000000  00000000  00001c20  2**0
+ 67 .data.uchTopic_HeaterParameter_Publish_status 00000001  00000000  00000000  00001c24  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 68 .bss.uchTopic_Set_temp_subscribe_status 00000001  00000000  00000000  00001c21  2**0
+ 68 .bss.uchTopic_Set_temp_subscribe_status 00000001  00000000  00000000  00001c25  2**0
                   ALLOC
- 69 .debug_frame  00000268  00000000  00000000  00001c24  2**2
+ 69 .debug_frame  00000268  00000000  00000000  00001c28  2**2
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 70 .debug_info   00005bad  00000000  00000000  00001e8c  2**0
+ 70 .debug_info   00005baa  00000000  00000000  00001e90  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 71 .debug_abbrev 000004ed  00000000  00000000  00007a39  2**0
+ 71 .debug_abbrev 000004ed  00000000  00000000  00007a3a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 72 .debug_loc    000006a6  00000000  00000000  00007f26  2**0
+ 72 .debug_loc    000006a6  00000000  00000000  00007f27  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 73 .debug_aranges 000000e0  00000000  00000000  000085cc  2**0
+ 73 .debug_aranges 000000e0  00000000  00000000  000085cd  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 74 .debug_ranges 000000d0  00000000  00000000  000086ac  2**0
+ 74 .debug_ranges 000000d0  00000000  00000000  000086ad  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 75 .debug_line   000011ea  00000000  00000000  0000877c  2**0
+ 75 .debug_line   000011eb  00000000  00000000  0000877d  2**0
                   CONTENTS, RELOC, READONLY, DEBUGGING
- 76 .debug_str    00004303  00000000  00000000  00009966  2**0
+ 76 .debug_str    00004303  00000000  00000000  00009968  2**0
                   CONTENTS, READONLY, DEBUGGING
- 77 .comment      0000003c  00000000  00000000  0000dc69  2**0
+ 77 .comment      0000003c  00000000  00000000  0000dc6b  2**0
                   CONTENTS, READONLY
- 78 .xtensa.info  00000038  00000000  00000000  0000dca5  2**0
+ 78 .xtensa.info  00000038  00000000  00000000  0000dca7  2**0
                   CONTENTS, READONLY
- 79 .xt.lit       00000098  00000000  00000000  0000dcdd  2**0
+ 79 .xt.lit       00000098  00000000  00000000  0000dcdf  2**0
                   CONTENTS, RELOC, READONLY
- 80 .xt.prop      00000828  00000000  00000000  0000dd75  2**0
+ 80 .xt.prop      00000828  00000000  00000000  0000dd77  2**0
                   CONTENTS, RELOC, READONLY
 
 filesystem_lib.c.obj:     file format elf32-xtensa-le
