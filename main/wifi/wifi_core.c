@@ -54,7 +54,6 @@
 
 // #include "thing_shadow_sample.c"  // new added for connected bit // p14Sept20
 
-
 #ifdef P_TESTING
 
 // #define thing_Shadow   // for define thing shadow
@@ -1462,6 +1461,7 @@ void http_test_task(void *pvParameters)
  }
 
 
+
  void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicName, uint16_t topicNameLen,
                                      IoT_Publish_Message_Params *params, void *pData) {
 
@@ -1480,12 +1480,20 @@ void http_test_task(void *pvParameters)
      // printf("\n replybuffer %s \n ", replybuffer);
 
      // printf ("Output string is: %s", strstr(replybuffer, 'Temp'));
-     getSubString(replybuffer,replySubBuffer,2, 5);  // eg Temp:30
-     // printf ("\n\n replySubBuffer is: %s", replySubBuffer);
+
+    // getSubString(replybuffer,replySubBuffer,2, 5);  // eg {"Temp:30"};  // OK
+     getSubString(replybuffer,replySubBuffer,1, 4);  // eg  {Temp:30};    //OK
+
+     // getSubString(replybuffer,replySubBuffer,0, 3);  // eg  Temp:30;  // NotOk
+    // printf ("\n\n replySubBuffer is: %s", replySubBuffer);
 
     if(strcmp(replySubBuffer,"Temp") == 0)
       {
-		 getSubString(replybuffer,replySubBuffer2,7,8);
+		// getSubString(replybuffer,replySubBuffer2,7,8); // eg {"Temp:30"};  // ok
+		 getSubString(replybuffer,replySubBuffer2,6,7); // eg {Temp:30};      // ok
+
+		// getSubString(replybuffer,replySubBuffer2,5,6); // eg Temp:30;  // Not Ok
+
 		 //printf("String matched\n");
 		 printf("Value of temp is: %s\n",replySubBuffer2);
 		 temperatureSetByCMD = (atoi)(replySubBuffer2);
@@ -1634,7 +1642,8 @@ void http_test_task(void *pvParameters)
 
 #ifdef HeaterParameterSendingToAWS
 
-     const char *TOPIC1 = "HeaterParameter";
+     //const char *TOPIC1 = "HeaterParameter";  // original
+     const char *TOPIC1 = "topic1";  // testing for param key..
      const int TOPIC_LEN1 = strlen(TOPIC1);
 
          ESP_LOGI(TAG, "Subscribing...");

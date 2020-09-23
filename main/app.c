@@ -326,9 +326,7 @@ esp_err_t app_init(void) {
 #ifdef P_TESTING   // Added for Testing
     // onLY FOR tESTING
    // xTaskCreate(&http_test_task, "http_test_task", 8192, NULL, 5, NULL);
-
     initialise_wifi();
-
     printf("I am in main firmware \n ");
      xTaskCreate(&aws_iot_task, "aws_iot_task", 8192, NULL, 5, NULL);   // aws iot task .. initiation..
    //  while(1);
@@ -996,7 +994,8 @@ static void debug_mode_task(app_data_t *data) {
     //TODO: bool kaa_status = is_kaa_connected();
     //TODO: bool prev_kaa_status = ~kaa_status;
     bool ap_en = -1, prev_ap_en = -1;
-    char *ap_ssid = comm_wifi_dev->wifi_ap_ssid;
+
+   // char *ap_ssid = comm_wifi_dev->wifi_ap_ssid;  // commented to remove warning of unused variablesP__22Sept2020
 
     bool update_display = true;
     bool screen_off = false;
