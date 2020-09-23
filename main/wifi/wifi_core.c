@@ -81,7 +81,6 @@ unsigned char uchTopic_HeaterParameter_Publish_status = 1;  // By Default publis
 unsigned char uchTopic_HeaterON_Publish_status = 0;
 unsigned char uchTopic_HeaterOFF_Publish_status = 0;
 
-
 int temperatureSetByCMD = 0;  // Added only for Testing
 unsigned char HeaterOnByCMD = 0;// By Default Heater OFF
 
@@ -1476,16 +1475,15 @@ void http_test_task(void *pvParameters)
 
     // printf("\n params->payload) %s \n ", (char*) params-> payload);
      // if(){
+	 memset(replybuffer,0,sizeof(replybuffer));
      memcpy(replybuffer,(char*) params-> payload,sizeof(replybuffer));
      // printf("\n replybuffer %s \n ", replybuffer);
 
-     // printf ("Output string is: %s", strstr(replybuffer, 'Temp'));
-
-    // getSubString(replybuffer,replySubBuffer,2, 5);  // eg {"Temp:30"};  // OK
+     // getSubString(replybuffer,replySubBuffer,2, 5);  // eg {"Temp:30"};  // OK
      getSubString(replybuffer,replySubBuffer,1, 4);  // eg  {Temp:30};    //OK
-
      // getSubString(replybuffer,replySubBuffer,0, 3);  // eg  Temp:30;  // NotOk
-    // printf ("\n\n replySubBuffer is: %s", replySubBuffer);
+
+     // printf ("\n\n replySubBuffer is: %s", replySubBuffer);
 
     if(strcmp(replySubBuffer,"Temp") == 0)
       {
@@ -1502,12 +1500,37 @@ void http_test_task(void *pvParameters)
 	     memset(replySubBuffer,0,sizeof(replySubBuffer));
 	     uchTopic_Set_temp_subscribe_status = 1;    // Set Temp is subscribed.
 	     uchTopic_HeaterParameter_Publish_status  = 0;
+
+		  uchTopic_HeaterON_Publish_status = 0;
+		  uchTopic_HeaterOFF_Publish_status = 0;
+      }
+    else if(strcmp(replySubBuffer,"HEON") == 0)
+    {
+	     memset(replySubBuffer,0,sizeof(replySubBuffer));
+	     memset(replybuffer,0,sizeof(replybuffer));
+
+	     uchTopic_Set_temp_subscribe_status = 0;    // Set Temp is subscribed.
+	     uchTopic_HeaterParameter_Publish_status  = 0;
+		  uchTopic_HeaterON_Publish_status = 1;
+		  uchTopic_HeaterOFF_Publish_status = 0;
+
+    }
+    else if(strcmp(replySubBuffer,"HEOF") == 0)
+     {
+	       memset(replySubBuffer,0,sizeof(replySubBuffer));
+	       memset(replybuffer,0,sizeof(replybuffer));
+    	     uchTopic_Set_temp_subscribe_status = 0;    // Set Temp is subscribed.
+    	     uchTopic_HeaterParameter_Publish_status  = 0;
+    		  uchTopic_HeaterON_Publish_status = 0;
+    		  uchTopic_HeaterOFF_Publish_status = 1;
       }
     else
       {
 	     uchTopic_Set_temp_subscribe_status = 0;    // Set Temp is subscribed.
 	     uchTopic_HeaterParameter_Publish_status  = 1;
-       }
+		  uchTopic_HeaterON_Publish_status = 0;
+		  uchTopic_HeaterOFF_Publish_status = 0;
+      }
    // }// end of if
  }
 
@@ -1557,8 +1580,7 @@ void http_test_task(void *pvParameters)
 #ifdef HeaterParameterSendingToAWS
      IoT_Publish_Message_Params HeaterParameter;
      IoT_Publish_Message_Params Set_Temp_Parameter;
-     // IoT_Publish_Message_Params HeaterParameter;
-
+     IoT_Publish_Message_Params HeaterOnOff;
 
 #endif
 
@@ -1664,16 +1686,17 @@ void http_test_task(void *pvParameters)
 		  abort();
 		}
 
-//		const char *TOPIC3 = "Heater_ON";
-//		const int TOPIC_LEN3 = strlen(TOPIC3);
-//
-//		ESP_LOGI(TAG, "Subscribing...");
-//		rc = aws_iot_mqtt_subscribe(&client, TOPIC3, TOPIC_LEN3, QOS0, iot_subscribe_callback_handler, NULL);  // TOPIC3 = "Heater_ON";
-//		if(SUCCESS != rc) {
-//		  ESP_LOGE(TAG, "Error subscribing : %d ", rc);
-//		  abort();
-//		}
-//
+		const char *TOPIC3_HeaterOnOff= "Heater_ON_OFF";
+		const int TOPIC_LEN3_HeaterOnOff = strlen(TOPIC3_HeaterOnOff);
+
+		ESP_LOGI(TAG, "Subscribing...");
+		rc = aws_iot_mqtt_subscribe(&client, TOPIC3_HeaterOnOff, TOPIC_LEN3_HeaterOnOff, QOS0, iot_subscribe_callback_handler, NULL);  // TOPIC3 = "Heater_ON";
+		if(SUCCESS != rc) {
+		  ESP_LOGE(TAG, "Error subscribing : %d ", rc);
+		  abort();
+		}
+
+
 //		const char *TOPIC4 = "Heater_OFF";
 //		const int TOPIC_LEN4 = strlen(TOPIC4);
 //
@@ -1698,6 +1721,12 @@ void http_test_task(void *pvParameters)
 	 Set_Temp_Parameter.qos = QOS1;
 	 Set_Temp_Parameter.payload = (void *) cPayload2;
 	 Set_Temp_Parameter.isRetained = 0;
+
+	 char cPayload3_HeaterOnOff[10];
+	 HeaterOnOff.qos = QOS1;
+	 HeaterOnOff.payload = (void *) cPayload3_HeaterOnOff;
+	 HeaterOnOff.isRetained = 0;
+
 #endif
 
      while((NETWORK_ATTEMPTING_RECONNECT == rc || NETWORK_RECONNECTED == rc || SUCCESS == rc)) {
@@ -1747,9 +1776,39 @@ void http_test_task(void *pvParameters)
 				Set_Temp_Parameter.payloadLen = strlen(cPayload2);
 				  rc = aws_iot_mqtt_publish(&client, TOPIC2, TOPIC_LEN2, &Set_Temp_Parameter);
 				  uchTopic_Set_temp_subscribe_status = 0;
-				  uchTopic_Set_temp_subscribe_status = 1;    // Set Temp is subscribed.
-				  uchTopic_HeaterParameter_Publish_status  = 0;
+				  uchTopic_HeaterParameter_Publish_status  = 1;
+				  uchTopic_HeaterON_Publish_status = 0;
+				  uchTopic_HeaterOFF_Publish_status = 0;
 			}
+
+
+
+		 if(uchTopic_HeaterON_Publish_status == 1)
+		 {
+		   printf("\n I am in uchTopic_HeaterOn_Publish_status \n\n ");
+			memset(cPayload3_HeaterOnOff,0,sizeof(cPayload3_HeaterOnOff));
+			sprintf(cPayload3_HeaterOnOff, "%s  : %d", "Heater ON",1);
+			HeaterOnOff.payloadLen = strlen(cPayload3_HeaterOnOff);
+			 rc = aws_iot_mqtt_publish(&client, TOPIC3_HeaterOnOff, TOPIC_LEN3_HeaterOnOff, &HeaterOnOff);
+			  uchTopic_Set_temp_subscribe_status = 0;
+			  uchTopic_HeaterParameter_Publish_status  = 1;
+			  uchTopic_HeaterON_Publish_status = 0;
+			  uchTopic_HeaterOFF_Publish_status = 0;
+		  }
+
+
+		 if(uchTopic_HeaterOFF_Publish_status == 1)
+		 {
+			 printf("\n I am in uchTopic_HeaterOFF_Publish_status \n\n ");
+			 memset(cPayload3_HeaterOnOff,0,sizeof(cPayload3_HeaterOnOff));
+			 sprintf(cPayload3_HeaterOnOff, "%s  : %d", "Heater OFF", 2);
+			 HeaterOnOff.payloadLen = strlen(cPayload3_HeaterOnOff);
+			 rc = aws_iot_mqtt_publish(&client, TOPIC3_HeaterOnOff, TOPIC_LEN3_HeaterOnOff, &HeaterOnOff);
+			 uchTopic_Set_temp_subscribe_status = 0;
+			 uchTopic_HeaterParameter_Publish_status  = 1;
+			  uchTopic_HeaterON_Publish_status = 0;
+			  uchTopic_HeaterOFF_Publish_status = 0;
+		  }
 
 #endif
 
