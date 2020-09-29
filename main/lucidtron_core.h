@@ -45,12 +45,12 @@
 
 #define MAX_STR_BUFF_SIZE       150
 
-// #define NVS_LUCIDTRON_SSID_KEY      "ssid_key"             // Original Lines
-// #define NVS_LUCIDTRON_PW_KEY        "password_key"         // Original Lines
+#define NVS_LUCIDTRON_SSID_KEY      "ssid_key"             // Original Lines
+#define NVS_LUCIDTRON_PW_KEY        "password_key"         // Original Lines
 
- #define NVS_LUCIDTRON_SSID_KEY      "WF-Home"        //   Added only for Testing_PS27Aug2020
- #define NVS_LUCIDTRON_PW_KEY        "bksm1554"         //   Added only for Testing_PS27Aug2020
 
+// #define NVS_LUCIDTRON_SSID_KEY      "WF-Home"        //   Added only for Testing_PS27Aug2020
+// #define NVS_LUCIDTRON_PW_KEY        "bksm1554"         //   Added only for Testing_PS27Aug2020
 // #define NVS_LUCIDTRON_SSID_KEY      "moto"        //   Added only for Testing_PS27Aug2020
 // #define NVS_LUCIDTRON_PW_KEY        "jamesBond"         //   Added only for Testing_PS27Aug2020
 

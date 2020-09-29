@@ -121,6 +121,7 @@ int initialize_all_devices()
     return SUCCESS;
 }
 
+
 //NOTE: returns
 int event_handler_for_kaa(char* cmd, char* param)
 {
@@ -143,6 +144,8 @@ int event_handler_for_kaa(char* cmd, char* param)
     return 0;
 }
 
+
+
 void wifi_handler(void* param)
 {
     char wifi_ssid_config[MAX_STR_BUFF_SIZE];
@@ -157,8 +160,8 @@ void wifi_handler(void* param)
 
     printf("I am in wifi handler\n ");
 
-    set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, "WF-Home");   // Added  Only For Testing _PS28Aug2020
-    set_string_to_storage(NVS_LUCIDTRON_PW_KEY, "bksm1554");    // Added only for Testing _PS28Aug2020
+//  set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, "WF-Home");   // Added  Only For Testing _PS28Aug2020
+//  set_string_to_storage(NVS_LUCIDTRON_PW_KEY, "bksm1554");    // Added only for Testing _PS28Aug2020
 
     // set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, "moto");   // Added  Only For Testing _PS28Aug2020
     // set_string_to_storage(NVS_LUCIDTRON_PW_KEY, "Heyramramji");    // Added only for Testing _PS28Aug2020
@@ -179,7 +182,7 @@ void wifi_handler(void* param)
        // set_string_to_storage(NVS_LUCIDTRON_PW_KEY, "jamesBond");    // Added only for Testing _PS28Aug2020
 
         //Begin Testing Only...
-      // printf("\n Status of WiFi = %d\n", wifi_status );   // Added only for Testing _PS28Aug2020
+       printf("\n Status of WiFi = %d\n", wifi_status );   // Added only for Testing _PS28Aug2020
         #endif
         switch(wifi_status)
         {
@@ -200,6 +203,7 @@ void wifi_handler(void* param)
                     //set wifi to ap and start config
                     printf("wifi config found... connecting to ...\n");
                     printf("ssid=%s pw=%s\n", wifi_ssid_config, wifi_pw_config);
+
                     comm_wifi_dev.wifi_client_enable(wifi_ssid_config, wifi_pw_config);    // become station for mobile hotspot.
                 }
                 else
@@ -207,7 +211,12 @@ void wifi_handler(void* param)
                     wifi_status = WIFI_STAT_CONFIG;
                     //LOG_INFO("Config not found, starting as AP %s\n", WIFI_AP_SSID);
                     comm_wifi_dev.wifi_ap_enable(comm_wifi_dev.wifi_ap_ssid, comm_wifi_dev.wifi_ap_pw);   // become wifi for laptop .
+
+                    printf("IN AP Mode wifi config found... connecting to ...\n");
+                    printf("ssid=%s pw=%s\n", wifi_ssid_config, wifi_pw_config);
+
                 }
+
                 break;
             case WIFI_STAT_READY:
                 break;
@@ -299,6 +308,8 @@ void wifi_handler(void* param)
         delay_milli(1000);
     }
 }
+
+
 
 void bluetooth_handler(void* param)
 {

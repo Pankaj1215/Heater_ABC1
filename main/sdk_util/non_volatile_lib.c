@@ -41,8 +41,6 @@ int nvs_storage_init(void)
 {
     int err;
 
-
-
 /*
     nvs_flash_init();
 

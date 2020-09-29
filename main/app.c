@@ -177,6 +177,56 @@ static int timezone_offset_list_min[] = {
 };
 #define TIMEZONE_OFFSET_LIST_SIZE (sizeof(timezone_offset_list_min)/sizeof(int))
 
+// #define Test_Storage
+
+#ifdef Test_Storage
+void test_storage(void);
+
+void test_storage(void)
+{
+  #define STORAGE_KEY_TEST_TEST_VLAUE  "Test_nVlaue"
+  #define STORAGE_KEY_TEST_TEST_LABEL  "Test_cLabel"
+  #define STORAGE_KEY_TEST_TEST_NAME   "Test_name"
+
+  int nVlaue = 20;
+  char cLabel = 'P';
+  char name[10] = "some";
+  char name1[10];
+
+#define read_Flash
+// #define write_Flash
+
+#ifdef write_Flash
+    // set_integer_to_storage(STORAGE_KEY_TEMP_SENSOR_OFFSET_CELSIUS, 65);  // Working one.
+    set_integer_to_storage(STORAGE_KEY_TEST_TEST_VLAUE, 80);
+    set_integer_to_storage(STORAGE_KEY_TEST_TEST_LABEL, 'k');
+
+    memcpy(name1,name,sizeof(name1));
+    //  set_string_to_storage(STORAGE_KEY_TEST_TEST_NAME, "Lome");
+    set_string_to_storage(STORAGE_KEY_TEST_TEST_NAME, name1);
+    printf("In writing \n ");
+#endif
+
+#ifdef read_Flash
+    // get_integer_from_storage(STORAGE_KEY_TEMP_SENSOR_OFFSET_CELSIUS, &(app_data->ambient_temperature_offset_celsius));  // Working one.
+    get_integer_from_storage(STORAGE_KEY_TEST_TEST_VLAUE, &nVlaue);
+    get_integer_from_storage(STORAGE_KEY_TEST_TEST_LABEL, &cLabel);
+    get_string_from_storage(STORAGE_KEY_TEST_TEST_NAME, name);
+
+    memcpy(name1,name,sizeof(name1));
+
+    printf("In reading \n ");
+    printf("nVlaue: %d\n", nVlaue);
+    printf("cLabel: %c\n", cLabel);
+    printf("name: %s\n", name);
+    printf("name1: %s\n", name1);
+#endif
+
+    vTaskDelay(3000 / portTICK_RATE_MS);
+    while(1);
+}// end of void test_storage(void)
+#endif
+
 
 static void print_fw_version(void)
 {
@@ -184,6 +234,7 @@ static void print_fw_version(void)
     get_version(fw_version); 
     ESP_LOGI("firmware_version", "%s", fw_version);
 }
+
 
 esp_err_t app_init(void) {
     print_fw_version();
@@ -242,18 +293,20 @@ esp_err_t app_init(void) {
     memset(app_data->sta_ssid, 0, sizeof(app_data->sta_ssid));
     memset(app_data->sta_pw, 0, sizeof(app_data->sta_pw));
 
+#ifdef Test_Storage
+     test_storage();
+#endif
 
     // set initial values from the saved configuration from flash  // Commented for testing only
-//    get_integer_from_storage(STORAGE_KEY_TEMP_SENSOR_OFFSET_CELSIUS, &(app_data->ambient_temperature_offset_celsius));
-//    get_integer_from_storage(STORAGE_KEY_MANUAL_TEMP_CELSIUS, &(app_data->manual_temperature_celsius));
-//    get_integer_from_storage(STORAGE_KEY_MANUAL_TEMP_FAHRENHEIT, &(app_data->manual_temperature_fahrenheit));
-//    get_integer_from_storage(STORAGE_KEY_LAST_TIMER_SETTING, &(app_data->last_timer_setting_min));
-//    get_integer_from_storage(STORAGE_KEY_IS_AUTO_TIME_DATE_EN, (int *) &(app_data->is_auto_time_date_en));
-//    get_integer_from_storage(STORAGE_KEY_TIMEZONE_OFFSET_INDEX, &(app_data->timezone_offset_idx));
-//    get_integer_from_storage(STORAGE_KEY_NIGHT_LIGHT_CFG, &(app_data->night_light_cfg));
-//    get_data_from_storage(STORAGE_KEY_SETTINGS, &(app_data->settings));
-//    get_data_from_storage(STORAGE_KEY_DISPLAY_SETTINGS, &(app_data->display_settings));
-
+    get_integer_from_storage(STORAGE_KEY_TEMP_SENSOR_OFFSET_CELSIUS, &(app_data->ambient_temperature_offset_celsius));
+    get_integer_from_storage(STORAGE_KEY_MANUAL_TEMP_CELSIUS, &(app_data->manual_temperature_celsius));
+    get_integer_from_storage(STORAGE_KEY_MANUAL_TEMP_FAHRENHEIT, &(app_data->manual_temperature_fahrenheit));
+    get_integer_from_storage(STORAGE_KEY_LAST_TIMER_SETTING, &(app_data->last_timer_setting_min));
+    get_integer_from_storage(STORAGE_KEY_IS_AUTO_TIME_DATE_EN, (int *) &(app_data->is_auto_time_date_en));
+    get_integer_from_storage(STORAGE_KEY_TIMEZONE_OFFSET_INDEX, &(app_data->timezone_offset_idx));
+    get_integer_from_storage(STORAGE_KEY_NIGHT_LIGHT_CFG, &(app_data->night_light_cfg));
+    get_data_from_storage(STORAGE_KEY_SETTINGS, &(app_data->settings));
+    get_data_from_storage(STORAGE_KEY_DISPLAY_SETTINGS, &(app_data->display_settings));
 
     clock_set_timezone_offset(timezone_offset_list_min[app_data->timezone_offset_idx]);
 
@@ -273,9 +326,8 @@ esp_err_t app_init(void) {
 
 
 //    // load schedule from flash  // Commneted for testing
-//    get_data_from_storage(STORAGE_KEY_SCHED_WEEKDAY, sched_weekday);
-//    get_data_from_storage(STORAGE_KEY_SCHED_WEEKEND, sched_weekend);
-
+    get_data_from_storage(STORAGE_KEY_SCHED_WEEKDAY, sched_weekday);
+    get_data_from_storage(STORAGE_KEY_SCHED_WEEKEND, sched_weekend);
 
 
 /*
@@ -293,6 +345,7 @@ esp_err_t app_init(void) {
         sched_weekend[i].temp_f = TEMPERATURE_FAHRENHEIT_VAL_DEF + i; //celsius_to_fahr(sched_weekend[i].temp_c);
     }
 */
+
 
     ret |= button_up_set_cb(button_up_cb);
     ret |= button_down_set_cb(button_down_cb);
@@ -313,25 +366,23 @@ esp_err_t app_init(void) {
         *stat |= 1 << BUTTON_TIMER_FORWARD_STAT;
 
 
-
     // Commented for Testing Pub Sub Wifi code
-//    // set Wi-Fi status change callback
-//    set_wifi_conn_status_change_cb(wifi_conn_stat);
-//     // initialize and start communication service
-//    initialize_communication_service();
-//     comm_wifi_dev = get_wifi_dev();
+    // set Wi-Fi status change callback
+    set_wifi_conn_status_change_cb(wifi_conn_stat);
+     // initialize and start communication service
+    initialize_communication_service();
+    comm_wifi_dev = get_wifi_dev();
 
-
+// while(1);
 
 #ifdef P_TESTING   // Added for Testing
     // onLY FOR tESTING
    // xTaskCreate(&http_test_task, "http_test_task", 8192, NULL, 5, NULL);
-    initialise_wifi();
+   // initialise_wifi();
     printf("I am in main firmware \n ");
      xTaskCreate(&aws_iot_task, "aws_iot_task", 8192, NULL, 5, NULL);   // aws iot task .. initiation..
    //  while(1);
 #endif
-
 
     // wait for at least APP_WELCOME_SCREEN_DELAY_MS
     if ((xTaskGetTickCount() * portTICK_PERIOD_MS - t_start_ms) < APP_WELCOME_SCREEN_DELAY_MS)
@@ -343,6 +394,7 @@ esp_err_t app_init(void) {
 
     // start app task  // Commented for testing
     xTaskCreate(app_task, "app_task", 4096, (void *)app_data, 12, NULL);
+
 
 /*
     // storage test
@@ -365,6 +417,7 @@ esp_err_t app_init(void) {
 
     return ret;
 }
+
 
 static void app_task(void *param) {
     app_data_t *data = (app_data_t *) param;
@@ -585,6 +638,8 @@ static void standby_mode_task(app_data_t *data) {
     if (screen_off)
        display_on();
 }
+
+
 
 static void manual_temperature_mode_task(app_data_t *data) {
     int *btn = &(data->button_status);
@@ -831,6 +886,7 @@ static void manual_temperature_mode_task(app_data_t *data) {
        display_on();
 }
 
+
 static void temperature_offset_set_mode_task(app_data_t *data) {
     int *btn = &(data->button_status);
     int prev_btn = 0;
@@ -976,6 +1032,7 @@ static void temperature_offset_set_mode_task(app_data_t *data) {
     if (screen_off)
        display_on();
 }
+
 
 static void debug_mode_task(app_data_t *data) {
     int *btn = &(data->button_status);
@@ -1496,16 +1553,22 @@ static void timer_increment_mode_task(app_data_t *data) {
        display_on();
 }
 
+
+
+
 static void auto_mode_task(app_data_t *data) {
     int *btn = &(data->button_status);
     int prev_btn = *btn;
     app_mode_t *mode = &(data->mode);
     time_t btn_power_press_ms = 0, btn_up_press_ms = 0, btn_down_press_ms = 0;
     bool is_heater_on = false;
+
     int *ambient_temp_c = &(data->ambient_temperature_celsius), prev_ambient_temp_c = -1;
+
     int *temp_hysteresis_c = &(data->settings.temperature_hysteresis_celsius);
     int *temp_hysteresis_f = &(data->settings.temperature_hysteresis_fahrenheit);
     int hysteresis_c = 0;
+
     temp_unit_t *temp_unit = &(data->settings.temperature_unit);
 
     bool screen_off = false;
@@ -1821,6 +1884,7 @@ static void auto_mode_task(app_data_t *data) {
     if (screen_off)
        display_on();
 }
+
 
 static void menu_mode_task(app_data_t *data) {
     int *btn = &(data->button_status);
@@ -2974,6 +3038,7 @@ static app_mode_t menu_time_and_date(app_data_t *data) {
     return next_mode;
 }
 
+
 static app_mode_t menu_communications(app_data_t *data) {
     int *btn = &(data->button_status);
     int prev_btn = *btn;
@@ -3444,6 +3509,7 @@ static app_mode_t menu_communications(app_data_t *data) {
     return next_mode;
 }
 
+
 static app_mode_t menu_settings(app_data_t *data) {
     int *btn = &(data->button_status);
     int prev_btn = *btn;
@@ -3754,6 +3820,7 @@ static app_mode_t menu_settings(app_data_t *data) {
     // return new mode
     return next_mode;
 }
+
 
 static app_mode_t menu_display_settings(app_data_t *data) {
     int *btn = &(data->button_status);
@@ -4144,6 +4211,7 @@ static app_mode_t menu_update(app_data_t *data) {
     return next_mode;
 }
 
+
 static void temp_sensor_task(void *param) {
     app_data_t *data = (app_data_t *) param;
     int *ambient_temp_c = &(data->ambient_temperature_celsius);
@@ -4157,6 +4225,8 @@ static void temp_sensor_task(void *param) {
         vTaskDelay(TEMP_SENSOR_READ_INTERVAL_MS / portTICK_RATE_MS);
     }
 }
+
+
 
 static void light_sensor_task(void *param) {
     app_data_t *data = (app_data_t *) param;

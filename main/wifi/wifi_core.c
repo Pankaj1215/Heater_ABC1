@@ -76,13 +76,11 @@
 #include "common.h"  // new added for connected bit // p17Sept20
 #include "heater.h"  // new Added fot Heater OnOff functions..
 
-
 unsigned char uchTopic_Set_temp_subscribe_status = 0;
 unsigned char uchTopic_HeaterParameter_Publish_status = 1;  // By Default publish Heater Parameter
 
 unsigned char uchTopic_HeaterON_Publish_status = 0;
 unsigned char uchTopic_HeaterOFF_Publish_status = 0;
-
 
 // unsigned char uchHeaterOnOffStatus = 0;
 int HeaterOnOffStatus = 0;
@@ -107,7 +105,7 @@ unsigned char HeaterOnByCMD = 0;// By Default Heater OFF
    // #define WORKING_AWS_HTTP_GET_POST                    // FOr Get POSt HTTP_working_Backup_function
     #define ONLY_FOR_TESTING_DATA_SERVER                // For Testing TalkBack feature of ThinkSpeak for Get Data.
 
-// #define HTTP_POST_FUNCTION_PRADEEP_SIR    // Testing of Function HTTP_POST_Function  by Praddep SIR
+// #define HTTP_POST_FUNCTION_PRADEEP_SIR    // Testing of Function HTTP_POST_Function  by Pradeep SIR
 
 
 /* Constants that aren't configurable in menuconfig */
@@ -173,7 +171,6 @@ int esp32_reg_wifi_conn_callback(int (*wifi_conn_cb)(int conn_stat)) {
 
     return 0;
 }
-
 
 
 //TODO: improve label value checking, this may cause hangup if wrong command
@@ -305,84 +302,85 @@ void http_web_server()
 
 
 
-//  Commented for testing
-//int event_handler(void *ctx, system_event_t *event)
-//{
-//    switch(event->event_id) {
-//        //deprecated
-//        case SYSTEM_EVENT_WIFI_READY:
-//        case SYSTEM_EVENT_SCAN_DONE:
-//            break;
-//            //deprecated
-//
-//            //WIFI_MODE_STA
-//        case SYSTEM_EVENT_STA_START:
-//            esp_wifi_connect();
-//            break;
-//        case SYSTEM_EVENT_STA_STOP:
-//            break;
-//        case SYSTEM_EVENT_STA_CONNECTED:
-//            if (wifi_conn_stat_callback)
-//                wifi_conn_stat_callback(1);
-//            break;
-//        case SYSTEM_EVENT_STA_DISCONNECTED:
-//            /* This is a workaround as ESP32 WiFi libs don't currently
-//               auto-reassociate. */
-//            printf("disconnected\n");
-//            esp_wifi_connect();
-//            xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
-//            if (wifi_conn_stat_callback)
-//                wifi_conn_stat_callback(0);
-//            break;
-//        case SYSTEM_EVENT_STA_AUTHMODE_CHANGE:
-//            break;
-//        case SYSTEM_EVENT_STA_GOT_IP:
-//            xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
-//            printf("connected\n");
-//            break;
-//            //case SYSTEM_EVENT_AP_STA_GOT_IP:  //no macro like this TODO
-//            //break;
-//
-//            //WIFI_MODE_AP
-//        case SYSTEM_EVENT_AP_START:
-//            wifi_ap_en = true;
-//            break;
-//        case SYSTEM_EVENT_AP_STOP:
-//            wifi_ap_en = false;
-//            break;
-//        case SYSTEM_EVENT_AP_STACONNECTED:
-//            if (wifi_conn_stat_callback)
-//                wifi_conn_stat_callback(1);
-//            break;
-//        case SYSTEM_EVENT_AP_STADISCONNECTED:
-//            if (wifi_conn_stat_callback)
-//                wifi_conn_stat_callback(0);
-//            break;
-//        case SYSTEM_EVENT_AP_PROBEREQRECVED:
-//            break;
-//
-//            //WIFI WPS
-//        case SYSTEM_EVENT_STA_WPS_ER_SUCCESS:
-//            esp_wifi_wps_disable();
-//            // save SSID and password
-//            memset(&global_wifi_config, 0, sizeof(global_wifi_config));
-//            esp_wifi_get_config(WIFI_IF_STA, &global_wifi_config);
-//            set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, (char *)(global_wifi_config.sta.ssid));
-//            set_string_to_storage(NVS_LUCIDTRON_PW_KEY, (char *)(global_wifi_config.sta.password));
-//            esp_wifi_connect();
-//            break;
-//        case SYSTEM_EVENT_STA_WPS_ER_FAILED:
-//            break;
-//        case SYSTEM_EVENT_STA_WPS_ER_TIMEOUT:
-//            break;
-//        case SYSTEM_EVENT_STA_WPS_ER_PIN:
-//            break;
-//
-//        default:
-//            break;
-//    }
-//    return ESP_OK;
-//}
+// Commented for testing  // This is the Original Code for event handler
+// For doing for pub sub testing. This function needs to be commented //
+int event_handler(void *ctx, system_event_t *event)
+{
+    switch(event->event_id) {
+        //deprecated
+        case SYSTEM_EVENT_WIFI_READY:
+        case SYSTEM_EVENT_SCAN_DONE:
+            break;
+            //deprecated
+
+            //WIFI_MODE_STA
+        case SYSTEM_EVENT_STA_START:
+            esp_wifi_connect();
+            break;
+        case SYSTEM_EVENT_STA_STOP:
+            break;
+        case SYSTEM_EVENT_STA_CONNECTED:
+            if (wifi_conn_stat_callback)
+                wifi_conn_stat_callback(1);
+            break;
+        case SYSTEM_EVENT_STA_DISCONNECTED:
+            /* This is a workaround as ESP32 WiFi libs don't currently
+               auto-reassociate. */
+            printf("disconnected\n");
+            esp_wifi_connect();
+            xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
+            if (wifi_conn_stat_callback)
+                wifi_conn_stat_callback(0);
+            break;
+        case SYSTEM_EVENT_STA_AUTHMODE_CHANGE:
+            break;
+        case SYSTEM_EVENT_STA_GOT_IP:
+            xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
+            printf("connected\n");
+            break;
+            //case SYSTEM_EVENT_AP_STA_GOT_IP:  //no macro like this TODO
+            //break;
+
+            //WIFI_MODE_AP
+        case SYSTEM_EVENT_AP_START:
+            wifi_ap_en = true;
+            break;
+        case SYSTEM_EVENT_AP_STOP:
+            wifi_ap_en = false;
+            break;
+        case SYSTEM_EVENT_AP_STACONNECTED:
+            if (wifi_conn_stat_callback)
+                wifi_conn_stat_callback(1);
+            break;
+        case SYSTEM_EVENT_AP_STADISCONNECTED:
+            if (wifi_conn_stat_callback)
+                wifi_conn_stat_callback(0);
+            break;
+        case SYSTEM_EVENT_AP_PROBEREQRECVED:
+            break;
+
+            //WIFI WPS
+        case SYSTEM_EVENT_STA_WPS_ER_SUCCESS:
+            esp_wifi_wps_disable();
+            // save SSID and password
+            memset(&global_wifi_config, 0, sizeof(global_wifi_config));
+            esp_wifi_get_config(WIFI_IF_STA, &global_wifi_config);
+            set_string_to_storage(NVS_LUCIDTRON_SSID_KEY, (char *)(global_wifi_config.sta.ssid));
+            set_string_to_storage(NVS_LUCIDTRON_PW_KEY, (char *)(global_wifi_config.sta.password));
+            esp_wifi_connect();
+            break;
+        case SYSTEM_EVENT_STA_WPS_ER_FAILED:
+            break;
+        case SYSTEM_EVENT_STA_WPS_ER_TIMEOUT:
+            break;
+        case SYSTEM_EVENT_STA_WPS_ER_PIN:
+            break;
+
+        default:
+            break;
+    }
+    return ESP_OK;
+}
 
 
 
@@ -395,7 +393,8 @@ int esp32_initialise_wifi(void)
     wifi_event_group = xEventGroupCreate();
 
     //prepare the event callback  // Commented for testing_P16Sept2020_TBUC
-   // ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
+    // This will be enale for original code and testing wifi pub_sub below api should be commented.
+    ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
     //this initialize the wifi driver 
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
@@ -463,9 +462,10 @@ int esp32_wifi_config(int mode, char* ssid, char* password)
         ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_AP, &global_wifi_config) );
     }
 
-    //ESP_ERROR_CHECK( esp_wifi_start() );
+    //ESP_ERROR_CHECK( esp_wifi_start() );  // These are original line.Commented ..
     return 0;
 }
+
 
 int esp32_wake_up(void* param)
 {
@@ -1598,7 +1598,6 @@ void http_test_task(void *pvParameters)
      IoT_Publish_Message_Params HeaterParameter;
      IoT_Publish_Message_Params Set_Temp_Parameter;
      IoT_Publish_Message_Params HeaterOnOff;
-
 #endif
 
      ESP_LOGI(TAG, "AWS IoT SDK Version %d.%d.%d-%s", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_TAG);
@@ -2001,27 +2000,32 @@ void http_test_task(void *pvParameters)
 
 
 #ifdef Wifi_sub_pub
+
+
  // static esp_err_t event_handler(void *ctx, system_event_t *event)
-  esp_err_t event_handler(void *ctx, system_event_t *event)
- {
-     switch(event->event_id) {
-     case SYSTEM_EVENT_STA_START:
-         esp_wifi_connect();
-         break;
-     case SYSTEM_EVENT_STA_GOT_IP:
-         xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
-         break;
-     case SYSTEM_EVENT_STA_DISCONNECTED:
-         /* This is a workaround as ESP32 WiFi libs don't currently
-            auto-reassociate. */
-         esp_wifi_connect();
-         xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
-         break;
-     default:
-         break;
-     }
-     return ESP_OK;
- }
+  // This event_handler is used for the own AWS pubsub testing only.
+  // These subroutine is used for wifi pub sub testing only ..
+
+//  esp_err_t event_handler(void *ctx, system_event_t *event)
+// {
+//     switch(event->event_id) {
+//     case SYSTEM_EVENT_STA_START:
+//         esp_wifi_connect();
+//         break;
+//     case SYSTEM_EVENT_STA_GOT_IP:
+//         xEventGroupSetBits(wifi_event_group, CONNECTED_BIT);
+//         break;
+//     case SYSTEM_EVENT_STA_DISCONNECTED:
+//         /* This is a workaround as ESP32 WiFi libs don't currently
+//            auto-reassociate. */
+//         esp_wifi_connect();
+//         xEventGroupClearBits(wifi_event_group, CONNECTED_BIT);
+//         break;
+//     default:
+//         break;
+//     }
+//     return ESP_OK;
+// }
 
 
 // void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
